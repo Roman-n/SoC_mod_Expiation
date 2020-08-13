@@ -1,0 +1,6 @@
+Source/.vs/
+_appdata_/
+_appdata_cs_/
+logs/
+temp/
+/*.ini
