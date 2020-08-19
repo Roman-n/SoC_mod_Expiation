@@ -1,0 +1,19 @@
+converter_cuda_x64 -level default:l01_escape -mode le -terrain -with_lods
+converter_cuda_x64 -level default:l02_garbage -mode le -terrain -with_lods
+converter_cuda_x64 -level default:l03_agroprom -mode le -terrain -with_lods
+converter_cuda_x64 -level default:l03u_agr_underground -mode le -terrain -with_lods
+converter_cuda_x64 -level default:l04_darkvalley -mode le -terrain -with_lods
+converter_cuda_x64 -level default:l04u_labx18 -mode le -terrain -with_lods
+converter_cuda_x64 -level default:l05_bar -mode le -terrain -with_lods
+converter_cuda_x64 -level default:l06_rostok -mode le -terrain -with_lods
+converter_cuda_x64 -level default:l07_military -mode le -terrain -with_lods
+converter_cuda_x64 -level default:l08_yantar -mode le -terrain -with_lods
+converter_cuda_x64 -level default:l08u_brainlab -mode le -terrain -with_lods
+converter_cuda_x64 -level default:l10_radar -mode le -terrain -with_lods
+converter_cuda_x64 -level default:l10u_bunker -mode le -terrain -with_lods
+converter_cuda_x64 -level default:l11_pripyat -mode le -terrain -with_lods
+converter_cuda_x64 -level default:l12_stancia -mode le -terrain -with_lods
+converter_cuda_x64 -level default:l12_stancia_2 -mode le -terrain -with_lods
+converter_cuda_x64 -level default:l12u_control_monolith -mode le -terrain -with_lods
+converter_cuda_x64 -level default:l12u_sarcofag -mode le -terrain -with_lods
+pause

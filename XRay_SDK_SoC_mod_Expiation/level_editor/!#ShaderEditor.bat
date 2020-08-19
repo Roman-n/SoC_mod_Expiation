@@ -1,0 +1,1 @@
+@start bins\ShaderEditor.exe -editor -dsound

@@ -1,0 +1,1 @@
+@start bins\ActorEditor.exe -editor -dsound

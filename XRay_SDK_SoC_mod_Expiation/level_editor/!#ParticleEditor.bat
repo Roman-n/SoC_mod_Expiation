@@ -1,0 +1,1 @@
+@start bins\ParticleEditor.exe -editor -dsound
