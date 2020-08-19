@@ -4,3 +4,5 @@ _appdata_cs_/
 logs/
 temp/
 /*.ini
+*.bak
+gamedata/scripts/mod.script
