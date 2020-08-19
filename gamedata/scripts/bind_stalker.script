@@ -57,6 +57,51 @@ function actor_binder:net_spawn(data)
 
 	return true
 end
+
+
+
+-- ------------------------------------------------------------------
+-- схема за 05.07.2015 от makdm с правками от Zander_driver
+-- В начале игры удаляем все объекты ставящие себе ID от левелчейнжера в качестве PARENT_ID
+-- что приводит к битью сейвов и вылету движка по CHILD REGISTERED BUT NOT FOUND
+
+local parent_id = {}
+
+local remove_sobj = {}
+local i = 1
+-- Пробегаем по объектам и айдишники всех level_changer помещаем в талицу
+while i < 65535 do 
+local sobj = alife():object( i )
+if sobj and sobj:clsid() == clsid.level_changer then
+parent_id[ sobj.id ] = sobj.id
+end
+i = i + 1
+end
+-- Пробегаем по объектам и все child level_changer помещаем в талицу
+for n = 1, 65534 do
+local sobj = alife():object( n )
+if sobj then
+for k,v in pairs( parent_id ) do
+if sobj.parent_id == v then 
+
+table.insert(remove_sobj, sobj.id)
+
+end
+end
+end
+end
+--Удаляем child level_changer
+for _k,_v in pairs( remove_sobj ) do
+
+local sobj_for_remove = alife():object(_v)
+
+if sobj_for_remove then
+
+alife():release(sobj_for_remove, true)
+
+end
+end
+
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:net_destroy()
 	if(actor_stats.remove_from_ranking~=nil)then
@@ -335,7 +380,41 @@ function actor_binder:update(delta)
 
 		self.bCheckStart = false		
 	end		
+
+--ссылаемся на секцию спринта
+self:hud_sprint_animation() 
+
 end
+
+
+----------------------------------------------------------------------------------------------------------------------
+--спринт by RayTwitty
+
+local sprint = false
+local last_active_item_id = 0
+function actor_binder:hud_sprint_animation()
+    local active_item = self.object:active_item()
+    if active_item and last_active_item_id ~= active_item:id() then
+        last_active_item_id = active_item:id()
+        sprint = false
+    end
+    if active_item and (active_item:is_knife() or active_item:is_missile()) then
+        if (active_item:get_hud_item_state() == 0 and active_item:is_knife()) or (active_item:get_hud_item_state() == 2 and active_item:is_missile()) then
+            if self.object:is_actor_sprinting() then
+                if not sprint then
+                    active_item:play_hud_animation(system_ini():r_string(active_item:section().."_hud", "anim_idle_sprint"), true)
+                    sprint = true
+                end
+            elseif sprint then
+                active_item:play_hud_animation(system_ini():r_string(active_item:section().."_hud", "anim_idle"), true)
+                sprint = false
+            end
+        elseif sprint then
+            sprint = false
+        end
+    end
+end
+
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:save(packet)
 	
@@ -356,7 +435,8 @@ function actor_binder:save(packet)
 	if self.st.disable_input_time == nil then
 		packet:w_bool(false)
 	else
-		packer:w_bool(true)
+	-- исправляем опечатку ПЫСов в слове packet
+		packet:w_bool(true)
 		utils.w_CTime(packet, self.st.disable_input_time)
 	end
 
@@ -371,6 +451,51 @@ function actor_binder:save(packet)
 
 	task_manager.save(packet)
 	self.actor_detector:save(packet)	
+
+-- ------------------------------------------------------------------
+-- схема за 05.07.2015 от makdm с правками от Zander_driver
+-- перед сейвом удаляем все объекты ставящие себе ID от левелчейнжера в качестве PARENT_ID
+-- что приводит к битью сейвов и вылету движка по CHILD REGISTERED BUT NOT FOUND
+
+local parent_id = {}
+
+local remove_sobj = {}
+local i = 1
+-- Пробегаем по объектам и айдишники всех level_changer помещаем в талицу
+while i < 65535 do 
+local sobj = alife():object( i )
+if sobj and sobj:clsid() == clsid.level_changer then
+parent_id[ sobj.id ] = sobj.id
+end
+i = i + 1
+end
+-- Пробегаем по объектам и все child level_changer помещаем в талицу
+for n = 1, 65534 do
+local sobj = alife():object( n )
+if sobj then
+for k,v in pairs( parent_id ) do
+if sobj.parent_id == v then 
+
+table.insert(remove_sobj, sobj.id)
+
+end
+end
+end
+end
+--Удаляем child level_changer
+for _k,_v in pairs( remove_sobj ) do
+
+local sobj_for_remove = alife():object(_v)
+
+if sobj_for_remove then
+
+alife():release(sobj_for_remove, true)
+
+end
+
+end
+-- ------------------------------------------------------------------
+
 end
 ----------------------------------------------------------------------------------------------------------------------
 function actor_binder:load(reader)
@@ -411,6 +536,52 @@ function actor_binder:load(reader)
 	
 	task_manager.load(reader)
 	self.actor_detector:load(reader)	
+
+
+-- ------------------------------------------------------------------
+-- схема за 05.07.2015 от makdm с правками от Zander_driver
+-- в конце загрузки удаляем все объекты ставящие себе ID от левелчейнжера в качестве PARENT_ID
+-- что приводит к битью сейвов и вылету движка по CHILD REGISTERED BUT NOT FOUND
+
+local parent_id = {}
+
+local remove_sobj = {}
+local i = 1
+-- Пробегаем по объектам и айдишники всех level_changer помещаем в талицу
+while i < 65535 do 
+local sobj = alife():object( i )
+if sobj and sobj:clsid() == clsid.level_changer then
+parent_id[ sobj.id ] = sobj.id
+end
+i = i + 1
+end
+-- Пробегаем по объектам и все child level_changer помещаем в талицу
+for n = 1, 65534 do
+local sobj = alife():object( n )
+if sobj then
+for k,v in pairs( parent_id ) do
+if sobj.parent_id == v then 
+
+table.insert(remove_sobj, sobj.id)
+
+end
+end
+end
+end
+--Удаляем child level_changer
+for _k,_v in pairs( remove_sobj ) do
+
+local sobj_for_remove = alife():object(_v)
+
+if sobj_for_remove then
+
+alife():release(sobj_for_remove, true)
+
+end
+
+end
+-- ------------------------------------------------------------------
+
 end
 ----------------------------------------------------------------------------------------------------------------------
 

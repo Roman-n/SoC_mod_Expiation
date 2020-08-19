@@ -72,7 +72,9 @@ explode_duration		 = 5		;подолжительность взрыва (с)
 snd_explode = weapons\t_rgd5_explosion     ;rgd5_explode
 snd_checkout = weapons\generic_checkout
 
-attach_position_offset	= -0.053,-0.089,0.0
+;attach_position_offset	= -0.053,-0.089,0.0
+attach_position_offset	= -0.05,-0.089,0.025
+
 attach_angle_offset		= 0,0,0
 attach_bone_name		= 
 
@@ -90,7 +92,9 @@ wallmark_section		 = explosion_marks
 fire_point          = 0.05, 0.0, 0.1
 fire_bone           = grenade_0
 orientation         = 0,0,0
-position            = 0,0,0
+;position            = 0,0,0
+position            = 0,0,0.1
+
 visual              = weapons\grenade\wpn_rgd_5_hud.ogf
 
 throw_point				 = 0.0,0.4,0.3
@@ -105,3 +109,4 @@ anim_throw_begin	= attack_0_begin
 anim_throw_idle		= attack_0_idle
 anim_throw_act		= attack_0_act	
 anim_throw_end		= attack_0_end
+anim_idle_sprint	= idle_sprint
