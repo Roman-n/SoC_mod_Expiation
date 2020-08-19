@@ -1,8 +1,9 @@
+;вырубаем ролик в х-10
 [logic]
 active    = sr_idle@wait
  
 [sr_idle@wait]
-on_info = {+bar_deactivate_radar_done} sr_sound_act@psy_sound %=run_cam_effector(radar_stop:2506:false)%
+;on_info = {+bar_deactivate_radar_done} sr_sound_act@psy_sound %=run_cam_effector(radar_stop:2506:false)%
 
 [sr_sound_act@psy_sound]
 snd = affects\psy_blackout

@@ -1,10 +1,11 @@
+;через логику дверей Сидора, мы телепортируем ГГ куда нибудь. =teleport_actor(_walk:_look) :3
 [logic]
 active = ph_door@locked
 
 [ph_door@locked]
 locked = true
 snd_open_start = trader_door_unlock
-on_info = {+esc_trader_can_leave} ph_door@closed %=play_snd(device\door_servomotor)%
+on_info = {+esc_trader_can_leave} ph_door@closed %=teleport_actor(esc_lager_wolf_walk:esc_lager_wolf_look)% ;%=play_snd(device\door_servomotor)%
 
 [ph_door@closed]
 closed = true

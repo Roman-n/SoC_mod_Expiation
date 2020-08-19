@@ -1,8 +1,9 @@
+;отключаем туторы при старте игры
 [logic]
 active = sr_idle@tutorial
 
 [sr_idle@tutorial]
-on_info = {+esc_tutorial_start} sr_idle@tutorial_jump
+;on_info = {+esc_tutorial_start} sr_idle@tutorial_jump
 
 [sr_idle@tutorial_jump]
 on_info = {+esc_find_railroad_passage_find_stalker -encyclopedy_tutorial_diary} sr_idle@wait_diary_tutor

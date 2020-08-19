@@ -1,128 +1,132 @@
+--[[
+Тут у нас инфопорции, которые мы выдаём при старте игры, чтобы обнулить большенство логик.
+]]--
 function main ()
 
 local infos_table = {"esc_kill_gunslinger",
-"storyline_actor_start",
+"storyline_actor_start", --старт сюжета
 "global_dialogs",
 "level_changer_icons",
 "esc_trader_experienced",
 "esc_trader_tutorial_chosen",
 "esc_trader_can_leave",
 "tutorial_artefact_start",
-"tutorial_flesh_start",
-"tutorial_flesh_die",
+"tutorial_flesh_start", --сценка с плотью попадающей в аномалию
+"tutorial_flesh_die", --сценка с плотью попадающей в аномалию
 "tips_esc_trader_about_anomalies",
 "tutorial_artefact_gain",
 "tutorial_artefact_done",
-"tutorial_wounded_start",
+"tutorial_wounded_start", --спавн Толика
 "esc_kill_bandits_quest_have",
 "esc_petruha_report",
-"esc_heli_go",
-"tutorial_wounded_help",
+"esc_heli_go", --пускаем вертушку
+"tutorial_wounded_help", --помощь Толику
 "tutorial_end",
 "esc_heli_direct",
 "escape_factory_assault_say_hello",
 "esc_bandits_start",
 "esc_bandits_assault",
 "esc_assault_start",
-"esc_serious_talk",
+"esc_serious_talk", --поговорить с Серым?
 "tutorial_wounded_heal",
-"esc_prison",
-"esc_kill_bandits_quest_kill",
+"esc_prison", --Поговорили с Шустрым
+"esc_kill_bandits_quest_kill", --убили бандитов на АТП
 "esc_petruha_report2",
 "tutorial_wounded_give_info",
 "esc_boar_dogs_restrictor",
 "esc_kill_bandits_quest_done",
 "esc_petruha_great",
-"esc_serious_talk",
+--"esc_serious_talk", --поговорили с Серым
 "agroprom_military_case",
-"esc_bridge_pass_fire",
-"escape_stalker_meet",
-"escape_stalker_help",
-"escape_stalker_dog_spawn",
+--"esc_bridge_pass_fire", --блокпост под мостом. враждебное отношение к ГГ
+"escape_stalker_meet", --поговорить с Лисом
+"escape_stalker_help", --помочь Лису
+"escape_stalker_dog_spawn", --спавн собачег нападающих на Лиса
 "escape_fox_heal",
 "escape_stalker_give",
-"garbage_meetstalker_start",
+"garbage_meetstalker_start", --поговорить со сталкерами на свалке
 "escape_stalker_done",
 "encyclopedy_zone_locations_escape",
 "encyclopedy_mutant_rat_general",
 "gar_dm_bandit3_dead",
 "gar_dm_bandit2_dead",
 "gar_dm_bandit1_dead",
-"gar_start_graveyard",
+"gar_start_graveyard", --старт событий на свалке техники
 "gar_animation_radio",
 "gar_start_quest",
-"gar_hellcar_help",
-"gar_bandits_raid",
+"gar_hellcar_help", --помочь Бесу
+"gar_bandits_raid", --запустить рейд бандитов
 "gar_hellcar_alarm",
 "gar_direction",
 "gar_counter_fire",
 "gar_open_fire",
-"gar_bandit_leader_dead",
+"gar_bandit_leader_dead", --ГГ завалил лидера бандитов
 "sar2_death_23",
 "gar_dm_novice_change_st",
 "gar_alarm",
 "gar_bandits_killed",
-"gar_hellcar_dialog_end",
+"gar_hellcar_dialog_end", --ГГ получил награду
 "gar_hellcar_thanks",
 "gar_distance_shooting",
 "gar_seryi_actor_enter",
-"gar_seryi_meet",
+"gar_seryi_meet", --говорим с Серым
 "gar_seryi_open_fire",
 "gar_seryi_counter_fire",
 "gar_begin_assault",
-"garbage_meetstalker_done",
+"garbage_meetstalker_done", --поговорили с Серым
 "garbage_meetstalker_end",
 "gar_help_newbie_done",
-"agr_factory_heli_start",
+"agr_factory_heli_start", --пускаем вертушки на фабрику на агропроме
 "agr_factory_assault_start",
 "agr_factory_assault_skirmish",
 "agr_meet_krot_band_done",
 "agr_attack_begin",
-"agr_help_stalkers_done",
+"agr_help_stalkers_done", --помогли сталкерам на фабрике
 "agr_help_stalkers_assault_dead",
 "agr_krot_skirmish_start",
-"agr_help_krot_done",
-"agr_factory_spawn_spetsnaz",
+"agr_help_krot_done", --помогли Кроту
+"agr_factory_spawn_spetsnaz", --спавн армейского спецназа
 "agr_krot_met",
 "agr_krot_go_to_well",
-"agr_krot_secret_info",
+"agr_krot_secret_info", --Крот палит нычку Стрелка
 "agr_find_gunslinger_cache_start",
 "agr_krot_task_complete",
 "agr_krot_band_done",
-"agr_u_zombie_start",
-"agr_find_gunslinger_cache_found",
+"agr_u_zombie_start", --whatsup????
+"agr_find_gunslinger_cache_found", --ГГ нашел флешку Стрелка
 "agr_find_gunslinger_cache_final",
 "agr_find_ghost_start",
-"agr_u_controller_start",
-"agr_sniper_killed_2",
-"agr_nii_alarm",
-"agr_nii_rupor_off",
-"agr_factory_spawn_spetznaz_start",
-"agr_sniper_killed_1",
-"agr_sniper_killed_3",
+--"agr_u_controller_start", --спавн контролёра в подземке
+"agr_knockdown",
+--"agr_sniper_killed_2", --ГГ вальнул снайпера на вышке
+--"agr_nii_alarm", --ахтунг на НИИ
+--"agr_nii_rupor_off", --ГГ стрельнул в громкоговоритель
+"agr_factory_spawn_spetznaz_start", --спавн армейского спецназа
+--"agr_sniper_killed_1", --ГГ вальнул снайпера на вышке
+--"agr_sniper_killed_3", --ГГ вальнул снайпера на вышке
 "agroprom_military_case_have",
-"agr_nii_helicopter_atack",
-"gar_test_info1",
-"gar_kill_boars_quest",
-"gar_wounded_help",
-"gar_wounded_fight",
-"ui_pda_map_local",
-"gar_kill_boars_done",
-"gar_kill_boars_request",
-"gar_free_pass",
+"agr_nii_helicopter_atack", --шозанах? осталось из старых билдов?
+"gar_test_info1", --whatsup????
+"gar_kill_boars_quest", --выдаём квест убить кабанов
+--"gar_wounded_help", --Сценка с раненым бандитом на Свалке???
+--"gar_wounded_fight", --Сценка с раненым бандитом на Свалке???
+--"ui_pda_map_local", --Сценка с раненым бандитом на Свалке???
+"gar_kill_boars_done", --ГГ убил кабанов (Помог Долгу).
+"gar_kill_boars_request", --реквестируем
+"gar_free_pass", --получен пассворд для прохода через заставу Должан
 "bar_scared_novice_attack",
 "bar_barman_stay_hole",
 "bar_dolg_base_rules_start",
-"agroprom_military_case_done",
-"agroprom_military_case_learn",
-"bar_darklab_document_start",
+"agroprom_military_case_done", --
+"agroprom_military_case_learn", --квест с кейсом на НИИ
+"bar_darklab_document_start", --бармен даёт ГГ квест в Дарклабе 
 "val_actor_has_barman_key",
 "val_escort_begin",
 "val_nap1_phrase1_end",
 "val_halfdead_phrase_end",
 "val_nap1_stop_talk_to_bandit",
 "val_escort_task_start",
-"val_escort_start",
+"val_escort_start", --сценка с эскортом пленного долговца в Тёмной долине
 "val_escort_actor_at_ambush",
 "val_escort_combat",
 "val_escort_actor_helped",
@@ -134,12 +138,12 @@ local infos_table = {"esc_kill_gunslinger",
 "val_escort_got_reward",
 "val_escort_captive_give_main_info",
 "val_escort_captive_give_info",
-"val_escort_help_prisoner_task",
-"val_sos_start_task",
-"val_sos_actor_near_wounded",
+"val_escort_help_prisoner_task",--сценка с эскортом пленного долговца в Тёмной долине
+--"val_sos_start_task", --тёмная долина. помощь новичку в логове кровососа
+--"val_sos_actor_near_wounded", --тёмная долина. помощь новичку в логове кровососа
 "encyclopedy_mutant_crow_general",
-"val_sos_got_medkit",
-"val_sos_give_info",
+--"val_sos_got_medkit", --тёмная долина. помощь новичку в логове кровососа
+--"val_sos_give_info", --тёмная долина. помощь новичку в логове кровососа
 "val_sacrifice_spawn",
 "val_actor_on_bandits_base",
 "val_sacrifice_start",
@@ -152,33 +156,34 @@ local infos_table = {"esc_kill_gunslinger",
 "val_lager_bandits_show_leader_company",
 "val_prisoner_near_door",
 "val_prisoner_door_unlocked",
-"val_prisoner_free",
+"val_prisoner_free", --ГГ освобождает пленного Долговца из клетки
 "val_prisoner_give_info",
 "val_escort_scene_end",
 "val_actor_has_borov_key",
 "encyclopedy_zone_zone-story_story-raid",
 "val_actor_leave_bandits_base",
-"val_x18_door_open",
+"val_x18_door_open", --дверь в х18 открыта
 "dar_run_quest",
 "dar_door1_closed",
 "dar_document1",
 "dar_document2",
 "dar_password_info1",
-"dar_codelock1_unlock",
+"dar_codelock1_unlock", --открываем первую дверь
 "dar_open_door1",
 "dar_document3",
 "dar_document4",
 "dar_password_info2",
 "encyclopedy_zone_artifact_af-soul",
 "dar_door2_closed",
-"dar_codelock2_unlock",
+"dar_codelock2_unlock", --открываем вторую дверь
 "dar_open_door2",
 "ui_pda_events",
 "ui_pda_news_hide",
 "dar_door3_closed",
 "dar_door3_free",
 "dar_document5",
-"val_raid_start",
+"x18_actor_fall",
+"val_raid_start", --начало рейда вояк в тёмной долине
 "val_raid_go1",
 "val_raid_go2",
 "val_raid_go3",
@@ -187,22 +192,24 @@ local infos_table = {"esc_kill_gunslinger",
 "esc_trader_speak",
 "esc_darklab_documents_read",
 "esc_trader_return",
-"escape_blockpost_case",
-"escape_blockpost_case_have",
-"escape_blockpost_case_done",
+"escape_blockpost_case", --квест с кейсом на блокпосте
+"escape_blockpost_case_have", --квест с кейсом на блокпосте
+"escape_blockpost_case_done", --квест с кейсом на блокпосте
 "esc_close_door",
 "esc_blockpost_normal",
 "ui_pda_contacts",
-"bar_darklab_document_done",
-"bar_x16_documents_start",
-"rostok_sniper_1_die",
+"bar_bar_hunter_quest_start", --квест в фамильным ружьём (пока что забиваем).
+"bar_bar_hunter_quest_finish",
+"bar_darklab_document_done", --ГГ отнёс Сидору/Бармену доки из дарклабы
+"bar_x16_documents_start", -- получен квест с доками из х16
+"rostok_sniper_1_die", --ГГ велит снайперов на Ростоке
 "rostok_sniper_3_die",
 "rostok_sniper_2_die",
 "rostok_sniper_4_die",
-"bar_ecolog_crush_heli_start",
-"rostok_actor_kill_killer",
+"bar_ecolog_crush_heli_start", --падает вертолёт экологов
+"rostok_actor_kill_killer", --ГГ эпично завалил всех киллеров
 "bar_freedom_attack_ecolog",
-"bar_ecolog_crush_heli_down",
+"bar_ecolog_crush_heli_down", --вертолёт упал
 "bar_actor_heared_freedom_talk",
 "bar_kill_professor_volkodav_dead",
 "bar_heli_scene_volkodav_die",
@@ -210,49 +217,49 @@ local infos_table = {"esc_kill_gunslinger",
 "bar_rescue_research_start",
 "bar_freedom_defence_ecolog",
 "rostok_objective_1",
-"bar_kruglov_follow_actor",
+"bar_kruglov_follow_actor", --круглов просит ГГ о помощи
 "bar_actor_helps_kruglov",
 "bar_rescue_research_chasing_start",
 "bar_rescue_research_chasing_end",
 "bar_bandits_alive",
 "bar_bandits_dead",
-"rostok_spawn_naemniki",
+"rostok_spawn_naemniki", --спавн наёмников на Ростоке
 "rostok_ambush_killer_2_die",
 "rostok_ambush_killer_1_die",
 "rostok_ambush_killer_3_die",
 "bar_ambush_dead",
 "bar_fire_anomaly_forward",
-"bar_kruglov_follow_tunnel",
+"bar_kruglov_follow_tunnel", --Круглов проходит через тоннель
 "bar_go_through_anomaly",
 "bar_rescue_research_follow",
 "bar_ecolog_research_normal",
 "bar_rescue_research_reward",
 "bar_rescue_research_done",
-"yantar_scientists_talk",
+"yantar_scientists_talk", --сюжет на янтаре
 "yantar_kruglov_phrase_1",
 "yantar_professor_phrase_2",
 "yantar_kruglov_phrase_2",
 "yan_ecolog_outfit_given",
-"yantar_professor_talk_about_brain",
+"yantar_professor_talk_about_brain",--сюжет на янтаре
 "yan_find_scientist_start",
 "yan_find_scientist_task_start",
 "yan_kruglov_after_actor",
 "yan_scientist_point_to_1",
 "yantar_kruglov_talk",
-"yan_scientist_researching",
+"yan_scientist_researching",--сюжет на янтаре
 "yan_scientist_return_to_bunker",
 "yan_scientist_gulag_state_3",
 "yan_find_scientist_done",
 "yan_find_vasilyev_start",
-"yan_find_vasilyev_end",
+"yan_find_vasilyev_end",--сюжет на янтаре
 "encyclopedy_zone_anomalies_gravi",
 "yantar_vasilyev_info",
-"yan_zombied_respawn_01",
+"yan_zombied_respawn_01", --респавн зомбей
 "yan_zombied_respawn_02",
 "yan_zombied_respawn_04",
 "yan_zombied_respawn_08",
 "yan_zombied_respawn_05",
-"labx16_find",
+"labx16_find", --найдена инфа о входе в х16
 "yan_test_info",
 "yan_labx16_switcher_3_off",
 "yan_labx16_switcher_3_end",
@@ -262,57 +269,59 @@ local infos_table = {"esc_kill_gunslinger",
 "yan_labx16_switcher_1_end",
 "yan_labx16_switcher_primary_off",
 "yantar_attack_start",
-"yan_has_ghost_pda",
+"yan_has_ghost_pda", --ПДА Призрака
 "encyclopedy_zone_artifact_af-gold-fish",
 "yan_provodnik_spawn",
 "yantar_find_ghost_task_end",
 "yan_x16_documents_gain",
 "yan_kill_brain_task_start",
-"yantar_tunnel_start",
-"yantar_tunnel_finish",
+"yantar_tunnel_start", --сценка в тонеле
+"yantar_tunnel_finish", --сценка в тонеле
 "yan_kill_brain_done",
 "bar_rescue_research_fail",
 "bar_psih_come",
-"bar_x16_documents_done",
-"bar_deactivate_radar_start",
+"bar_x16_documents_done", --доки из х16 принесены
+"bar_deactivate_radar_start", --квест вырубить Радар
 "bar_dolg_base_rules_finish",
-"bar_dolg_base_pass",
+"bar_dolg_base_pass", --ГГ получает пассворд для прохода на базу Долга на Ростоке
 "bar_dolg_community_start",
 "bar_dolg_community_leader",
-"bar_svoboda_rg6_start",
+"bar_svoboda_rg6_start", --квест с РГ-6
 "mil_freedom_rg6_task",
+"mil_lukash_question_already", -- диалог с бодигардом Свободовцем
 "mil_actor_nearest",
-"mil_patrol_kill_continue",
+"mil_patrol_kill_continue", --Арм. Склады. Сценка с на блокпосте
 "mil_patrol_go_cover",
 "mil_patrol_man2_dead",
 "mil_patrol_man3_dead",
 "mil_patrol_man1_dead",
-"mil_patrol_dead",
+"mil_patrol_dead", --Долговцы вокосили Свободовцев на блокпосте
 "encyclopedy_zone_artifact_af-electra-flash",
 "encyclopedy_social_stalker-clans_loners",
+"mil_lukash_guard_talked", --Пропустить ГГ к Лукашу
 "mil_zoneguard_talk",
 "mil_cook_question_already",
-"mil_lukash_dolg_task",
+"mil_lukash_dolg_task", --квест лукаша, выкосить долговцев в деревне
 "mil_max_arrive",
 "mil_max_talk3",
 "mil_freedom_attack_continue1",
 "mil_scull_dead",
 "sar2_death_38",
-"mil_dolg_dead",
+"mil_dolg_dead", --спецназ долга "готов".
 "mil_freedom_arrive",
-"mil_lukash_dolg_task_complete",
+"mil_lukash_dolg_task_complete", --квест лукаша выполнен
 "mil_lukash_task_dolg_end",
 "mil_leader_quest2_start",
 "mil_actor_in_khutor_zone",
 "mil_courier_in_khutor_zone",
 "mil_actor_in_khutor_zone_inside",
 "mil_courier_call",
-"mil_courier_dead",
+"mil_courier_dead", --Павлик помер
 "sar2_death_33",
 "mil_courier_khutor_leave",
 "mil_ara_entered",
 "mil_ara_arrive",
-"mil_ara_dead",
+"mil_ara_dead", --Ара помер
 "sar2_death_20",
 "encyclopedy_mutant_controller_general",
 "mil_leader_quest2_complete",
@@ -326,6 +335,7 @@ local infos_table = {"esc_kill_gunslinger",
 "mil_fblockpost_rush_wave4",
 "mil_fblockpost_quest_complete",
 "mil_fblockpost_actor_outside",
+"mil_car_ok",
 "rad_pre_drop_barrel3",
 "rad_start_ambush_after_valley",
 "rad_start_ambush_before_tramplin",
@@ -336,19 +346,21 @@ local infos_table = {"esc_kill_gunslinger",
 "rad_pre_drop_barrel4",
 "rad_alarm",
 "rad_antennas_reached",
-"rad_bun_found",
+"rad_bun_found", --бункер х-10 найден
 "rad_start_ambush_in_antenna_tunnel",
-"bar_deactivate_radar_done",
+--"bar_deactivate_radar_done", --всё хорошо, но падла запускает меседж бармена - Меченый, живой и т.д. и т.п.???????????????????????????????????????????????????????????
+"rad_start_svoboda_vs_dolg", --Свобода vs Долг :3
 "bun_actor_fall",
 "bun_patrol_start",
 "sar_monolith_call",
-"bun_antenna_off",
+"bun_antenna_off", --антены выключены
 "rad_pre_start_monolith_vs_military",
 "rad_start_monolith_vs_military",
+"cit_jail_doctor_pryp_task", --открываем дверь в Припяти.
 "pri_followers_leader_phrase1_end",
 "pri_followers_mission_accept",
-"pri_followers_start",
-"pri_helicopters_start",
+"pri_followers_start", --сценка с помощью сталкерам ветеранам
+"pri_helicopters_start", --сценка с пролетающими вертолётами в Припяти
 "pri_followers_heli_look",
 "pri_wave1_monolith3_dead",
 "pri_wave1_start",
@@ -393,15 +405,15 @@ local infos_table = {"esc_kill_gunslinger",
 "pri_wave7_end",
 "pri_followers_leader_give_info",
 "pri_corner_end",
-"pri_followers_actor_leave",
+--"pri_followers_actor_leave", ГГ убежал от сталкеров нейтралов в Припяти. gamedata\scripts\gulag_pripyat.script
 "pri_actor_in_hotel",
 "pri_decoder_docs_conclusion_info",
-"pri_followers_scene_end",
+"pri_followers_scene_end", --сценка с помошью сталкерам ветеранам закончена
 "pri_actor_in_hiding_place",
 "pri_monolith_decoder_got",
 "pri_stadium_scene_start",
-"rad_task_aes",
-"aes_arrive_to",
+"rad_task_aes", --ГГ на АЭС
+-- "aes_arrive_to", --Лукаш,макс,снайперы,повар(ну кудаж без него) и торгаш в симуляции фигачат куда-то
 "aes_first_sound",
 "ui_pda_hide",
 "aes_desant_go",
@@ -435,12 +447,12 @@ local infos_table = {"esc_kill_gunslinger",
 "aes_desant_proceed2",
 "aes_desant_wave7",
 "aes_found_sarcofag",
-"bar_svoboda_rg6_done",
+"bar_svoboda_rg6_done", --ГГ сдал квест с РГ-6
 "bar_dolg_community_leader_done",
-"esc_find_doctor_start",
+"esc_find_doctor_start", --найти доктора
 "sar_enter_command_center",
-"sar_monolith_destroy",
-"esc_find_doctor_done",
+--"sar_monolith_destroy", --ГГ уничтожил монолит
+"esc_find_doctor_done", --найти доктора готово
 "cit_fail_first_task",
 "gar_after_battle",
 "agr_krot_band_start",

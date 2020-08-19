@@ -1,8 +1,12 @@
+;Вырубаем сцену с Доктором в подземке
+;Всю эту бадью запускает инфа esc_find_doctor_start которую ГГ получает от Проводника
+;Проводника спавнит yan_provodnik_spawn
+;Мля, ПЫСы эпичны...
 [logic]
 active = sr_idle@start
 
 [sr_idle@start]
-on_info = sr_idle %=turn_off(399)%
+;on_info = sr_idle %=turn_off(399)%
 
 [sr_idle]
 on_info = {+agr_knockdown} sr_idle@1

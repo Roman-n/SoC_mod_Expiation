@@ -1,3 +1,5 @@
+-- вырезаем выдачу сюжетных сообщений (голос/текст).
+
 ----------------------------------------------------------------------------------------------------
 -- Proceed
 ----------------------------------------------------------------------------------------------------
@@ -40,14 +42,14 @@ function proceed()
 		not has_alife_info("dar_password_info1_know") 
 	then
 		actor:give_info_portion("dar_password_info1_know")
-		news_manager.send_tip(db.actor, "pass_to_1st_door")
+		-- news_manager.send_tip(db.actor, "pass_to_1st_door")
 	end
 	
 	if has_alife_info("dar_password_info2") and
 		not has_alife_info("dar_password_info2_know") 
 	then
 		actor:give_info_portion("dar_password_info2_know")
-		news_manager.send_tip(db.actor, "pass_to_2nd_door")
+		-- news_manager.send_tip(db.actor, "pass_to_2nd_door")
 	end
 	
 end
@@ -77,12 +79,12 @@ function process_info_portion(info_id)
 end
 
 --function send_codedoor1_tip()
---    news_manager.send_tip(db.actor, "pass_to_1st_door")
+--    -- news_manager.send_tip(db.actor, "pass_to_1st_door")
 --end
 
 
 --function send_codedoor2_tip()
---    news_manager.send_tip(db.actor, "pass_to_2nd_door")
+--    -- news_manager.send_tip(db.actor, "pass_to_2nd_door")
 --end
 
 

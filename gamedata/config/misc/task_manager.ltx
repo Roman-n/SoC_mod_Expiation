@@ -1,3 +1,4 @@
+;Убираем авто-квесты, появляющиеся после перехода ГГ на определённую локацию. Если эта фича нужна, просто удалить этот файл.
 [list]
 ;----------Trader--------------------------------------------------
 ;-----------Eliminate Camp--------
@@ -127,22 +128,22 @@ freedom_defend_lager_2
 
 ;tasks for zastava_commander
 zastava_commander_eliminate_lager
-;tasks for wolf  
+;tasks for wolf 
 wolf_eliminate_lager_1
 wolf_eliminate_lager_2
 ;tasks for petrenko 
 petrenko_kill_stalker
-;tasks for hunter	
+;tasks for hunter 
 hunter_eliminate_lager
-;tasks for lisiy	
-lisiy_kill_stalker	
+;tasks for lisiy 
+lisiy_kill_stalker 
 ;tasks for drunk dolg
-drunk_dolg_find_item	
-;tasks for shustriy	
+drunk_dolg_find_item 
+;tasks for shustriy 
 shustriy_find_item
 ;tasks for Mercenary
 mercenary_kill_stalker
-	
+ 
 
 ;-------STORYLINE TASKS-------
 tutorial_find_artefact
@@ -212,7 +213,7 @@ sar_monolith
 [tm_eliminate_camp_1]
 type = eliminate_lager
 community = actor
-init_condition = {=actor_on_level(l02_garbage) +agroprom_military_case_have}
+init_condition = {-storyline_actor_start =actor_on_level(l02_garbage) +agroprom_military_case_have}
 text = tm_eliminate_camp_1_text
 description = tm_eliminate_camp_1_descr
 parent = trader
@@ -228,7 +229,7 @@ time = 86400
 [tm_eliminate_camp_2]
 type = eliminate_lager
 community = actor
-init_condition = {=actor_on_level(l01_Escape) +agroprom_military_case_have}
+init_condition = {-storyline_actor_start =actor_on_level(l01_Escape) +agroprom_military_case_have}
 text = tm_eliminate_camp_2_text
 description = tm_eliminate_camp_2_descr
 parent = trader
@@ -245,7 +246,7 @@ prior = 3
 [tm_eliminate_camp_3]
 type = eliminate_lager
 community = actor
-init_condition = {=actor_on_level(l03u_agr_underground)}
+init_condition = {-storyline_actor_start =actor_on_level(l03u_agr_underground)}
 text = tm_eliminate_camp_3_text
 description = tm_eliminate_camp_3_descr
 parent = trader
@@ -276,7 +277,7 @@ prior = 1
 [tm_eliminate_camp_5]
 type = eliminate_lager
 community = actor
-;--init_condition = {=actor_on_level(l02_garbage) +agroprom_military_case_have}
+;--init_condition = {-storyline_actor_start =actor_on_level(l02_garbage) +agroprom_military_case_have}
 text = tm_eliminate_camp_5_text
 description = tm_eliminate_camp_5_descr
 parent = trader
@@ -293,7 +294,7 @@ prior = 2
 [tm_eliminate_camp_6]
 type = eliminate_lager
 community = actor
-init_condition = {=actor_on_level(l04_darkvalley)}
+init_condition = {-storyline_actor_start =actor_on_level(l04_darkvalley)}
 text = tm_eliminate_camp_6_text
 description = tm_eliminate_camp_6_descr
 parent = trader
@@ -367,7 +368,7 @@ prior = 3
 [tm_kill_stalker_1]
 type = kill_stalker
 community = actor
-init_condition = {=actor_on_level(l02_garbage)}
+init_condition = {-storyline_actor_start =actor_on_level(l02_garbage)}
 text = tm_kill_stalker_1_text
 description = tm_kill_stalker_1_descr
 parent = trader
@@ -466,7 +467,7 @@ time = 86400
 [tm_defend_camp_1]
 type = defend_lager
 community = actor
-init_condition = {=actor_on_level(l04_darkvalley) =gulag_state(val_smart_bandit_2:1)}
+init_condition = {-storyline_actor_start =actor_on_level(l04_darkvalley) =gulag_state(val_smart_bandit_2:1)}
 text = tm_defend_camp_1_text
 description = tm_defend_camp_1_descr
 parent = trader
@@ -527,7 +528,7 @@ prior = 1
 [barmen_eliminate_camp_2]
 type = eliminate_lager
 community = actor
-init_condition = {=actor_on_level(l06_rostok)}
+init_condition = {-storyline_actor_start =actor_on_level(l06_rostok)}
 text = barmen_eliminate_camp_2_text
 description = barmen_eliminate_camp_2_descr
 parent = barman
@@ -568,7 +569,7 @@ prior = 4
 [barmen_eliminate_camp_5]
 type = eliminate_lager
 community = actor
-init_condition = {=actor_on_level(l06_rostok)}
+init_condition = {-storyline_actor_start =actor_on_level(l06_rostok)}
 text = barmen_eliminate_camp_5_text
 description = barmen_eliminate_camp_5_descr
 parent = barman
@@ -716,7 +717,7 @@ prior = 3
 [barmen_kill_stalker_3]
 type = kill_stalker
 community = actor
-init_condition = {=actor_on_level(l10_radar) +yan_kill_brain_done}
+init_condition = {-storyline_actor_start =actor_on_level(l10_radar) +yan_kill_brain_done}
 need_return = false
 text = barmen_kill_stalker_3_text
 description = barmen_kill_stalker_3_descr
@@ -819,7 +820,7 @@ type = defend_lager
 community = actor
 text = barmen_defend_camp_1_text
 description = barmen_defend_camp_1_descr
-init_condition = {=actor_on_level(l02_garbage) =gulag_state(gar_smart_bandit_large_lager:1)}
+init_condition = {-storyline_actor_start =actor_on_level(l02_garbage) =gulag_state(gar_smart_bandit_large_lager:1)}
 parent = barman
 target = gar_smart_garage
 reward_reputation = +45
@@ -833,7 +834,7 @@ type = defend_lager
 community = actor
 text = barmen_defend_camp_2_text
 description = barmen_defend_camp_2_descr
-init_condition = {=actor_on_level(l03_agroprom) =gulag_state(agr2_bandit_st:1)}
+init_condition = {-storyline_actor_start =actor_on_level(l03_agroprom) =gulag_state(agr2_bandit_st:1)}
 parent = barman
 target = agr2_st_factory
 reward_reputation = +35
@@ -848,7 +849,7 @@ time = 86400
 [ecolog_eliminate_lager_1]
 type = eliminate_lager
 community = actor
-init_condition = {=actor_on_level(l08_yantar) +yan_kill_brain_done}
+init_condition = {-storyline_actor_start =actor_on_level(l08_yantar) +yan_kill_brain_done}
 text = ecolog_eliminate_lager_1_text
 description = ecolog_eliminate_lager_1_descr
 parent = ecolog
@@ -864,7 +865,7 @@ prior = 1
 [ecolog_eliminate_lager_2]
 type = eliminate_lager
 community = actor
-init_condition = {=actor_on_level(l06_rostok) +yan_kill_brain_done}
+init_condition = {-storyline_actor_start =actor_on_level(l06_rostok) +yan_kill_brain_done}
 text = ecolog_eliminate_lager_2_text
 description = ecolog_eliminate_lager_2_descr
 parent = ecolog
@@ -1049,7 +1050,7 @@ prior = 5
 [dolg_defend_lager_1]
 type = defend_lager
 community = actor
-init_condition = {=actor_on_level(l02_garbage) =gulag_state(gar_smart_boars:1)}
+init_condition = {-storyline_actor_start =actor_on_level(l02_garbage) =gulag_state(gar_smart_boars:1)}
 text = dolg_defend_lager_1_text
 description = dolg_defend_lager_1_descr
 parent = dolg
@@ -1065,7 +1066,7 @@ time = 86400
 [dolg_eliminate_lager_1]
 type = eliminate_lager
 community = actor
-init_condition = {=actor_on_level(l08_yantar) +yantar_tunnel_finish}
+init_condition = {-storyline_actor_start =actor_on_level(l08_yantar) +yantar_tunnel_finish}
 text = dolg_eliminate_lager_1_text
 description = dolg_eliminate_lager_1_descr
 parent = dolg
@@ -1081,7 +1082,7 @@ time = 86400
 [dolg_eliminate_lager_2]
 type = eliminate_lager
 community = actor
-;init_condition = {=actor_on_level(L02_Garbage) +agroprom_military_case_done +bar_svoboda_rg6_done}
+;init_condition = {-storyline_actor_start =actor_on_level(L02_Garbage) +agroprom_military_case_done +bar_svoboda_rg6_done}
 text = dolg_eliminate_lager_2_text
 description = dolg_eliminate_lager_2_descr
 parent = dolg
@@ -1112,7 +1113,7 @@ prior = 5
 [dolg_eliminate_lager_4]
 type = eliminate_lager
 community = actor
-;init_condition = {=actor_on_level(l07_military)}
+;init_condition = {-storyline_actor_start =actor_on_level(l07_military)}
 text = dolg_eliminate_lager_4_text
 description = dolg_eliminate_lager_4_descr
 parent = dolg
@@ -1484,7 +1485,7 @@ type = defend_lager
 community = actor
 text = freedom_defend_lager_1_text
 description = freedom_defend_lager_1_descr
-init_condition = {+mil_leader_quest2_complete =actor_on_level(l07_military) =gulag_state(mil_bandit:1)}, {++mil_leader_quest2_failed =actor_on_level(l07_military) =gulag_state(mil_bandit:1)}
+init_condition = {+mil_leader_quest2_complete -storyline_actor_start =actor_on_level(l07_military) =gulag_state(mil_bandit:1)}, {++mil_leader_quest2_failed -storyline_actor_start =actor_on_level(l07_military) =gulag_state(mil_bandit:1)}
 parent = freedom
 target = mil_lager
 ;reward_money = 5000
@@ -1501,7 +1502,7 @@ text = freedom_defend_lager_2_text
 description = freedom_defend_lager_2_descr
 parent = freedom
 target = mil_fblockpost
-init_condition = {+mil_fblockpost_quest_complete =actor_on_level(l07_military) =gulag_state(mil_monster:1)}, {+mil_fblockpost_quest_fail =actor_on_level(l07_military) =gulag_state(mil_monster:1)}
+init_condition = {+mil_fblockpost_quest_complete -storyline_actor_start =actor_on_level(l07_military) =gulag_state(mil_monster:1)}, {+mil_fblockpost_quest_fail -storyline_actor_start =actor_on_level(l07_military) =gulag_state(mil_monster:1)}
 reward_money = 5000
 reward_reputation = 150
 reward_relation = freedom, +150
@@ -1682,7 +1683,7 @@ reward_rank = 10
 type = storyline
 reward_rank = 10
 reward_reputation = +20
-  
+ 
 [yan_find_scientist]
 type = storyline
 reward_rank = 5
@@ -1794,7 +1795,7 @@ reward_rank = 8
 reward_item = af_mincer_meat
 time = 86400
 
-;tasks for wolf  
+;tasks for wolf 
 [wolf_eliminate_lager_1]
 type = eliminate_lager
 community = actor
@@ -1840,7 +1841,7 @@ reward_item = dolg_scientific_outfit
 time = 86400
 
 
-;tasks for hunter	
+;tasks for hunter 
 [hunter_eliminate_lager]
 type = eliminate_lager
 community = actor
@@ -1855,8 +1856,8 @@ reward_rank = 3
 reward_item = af_dummy_battery
 time = 86400
 
-;tasks for lisiy	
-[lisiy_kill_stalker]	
+;tasks for lisiy 
+[lisiy_kill_stalker] 
 type = kill_stalker
 community = actor
 text = lisiy_kill_stalker_text
@@ -1881,11 +1882,11 @@ target = wpn_abakan_m2
 ;reward_money = 8000
 reward_reputation = 10
 reward_rank = 4
-reward_item = af_ameba_slug	
+reward_item = af_ameba_slug 
 time = 86400
 
 
-;tasks for shustriy	
+;tasks for shustriy 
 
 [shustriy_find_item]
 type = find_item

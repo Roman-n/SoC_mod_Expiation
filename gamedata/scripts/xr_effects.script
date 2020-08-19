@@ -1,3 +1,5 @@
+-- вырезаем выдачу сюжетных сообщений (голос/текст). +вырезаем функции запускающие ролики игры -- game.start_tutorial("
+
 -- ----------------------------------------------------------------------------------------------------
 -- Общие функции
 -- ----------------------------------------------------------------------------------------------------
@@ -217,7 +219,7 @@ send_tip(news_id:sender:sender_id)
     * - not necessary
 --]]
 function send_tip(actor, npc, p)
-    news_manager.send_tip(actor, p[1], nil, p[2], nil, p[3])
+    -- news_manager.send_tip(actor, p[1], nil, p[2], nil, p[3])
 end
 
 
@@ -557,33 +559,33 @@ end
 
 function gar_send_dymon_alarm(actor, npc)
 	if has_alife_info("gar_start_graveyard") then
-		news_manager.send_tip(actor, "tips_gar_hellcar_alarm", 2, "stalker", 10000)
+		-- news_manager.send_tip(actor, "tips_gar_hellcar_alarm", 2, "stalker", 10000)
 	end
 end
 
 function gar_direction_fire(actor, npc)
 	if has_alife_info("gar_hellcar_help") and not has_alife_info("gar_counter_fire") and not has_alife_info("gar_open_fire") then
-		news_manager.send_tip(actor, "gar_direction_fire", 0, "stalker", 0)
+		-- news_manager.send_tip(actor, "gar_direction_fire", 0, "stalker", 0)
 	end
 end
 
 function gar_hellcar_victory(actor, npc)
 	if not has_alife_info("gar_hellcar_tips_end") and has_alife_info("gar_hellcar_help") and not has_alife_info("gar_hellcar_thanks") then
-		news_manager.send_tip(actor, "gar_hellcar_victory", 0, "stalker", 0)
+		-- news_manager.send_tip(actor, "gar_hellcar_victory", 0, "stalker", 0)
 		db.actor:give_info_portion("gar_hellcar_tips_end")
 	end
 end
 
 function gar_seryi_victory(actor, npc)
-		news_manager.send_tip(actor, "gar_hellcar_victory", 0, "stalker", 0)
+		-- news_manager.send_tip(actor, "gar_hellcar_victory", 0, "stalker", 0)
 end
 
 function gar_boars_counter(actor, npc)
 	local c = xr_logic.pstor_retrieve(actor, "gar_boars_counter", 0)
 	if c < 1 then
-		news_manager.send_tip(actor, "gar_actor_looser", 0, "dolg", 0)
+		-- news_manager.send_tip(actor, "gar_actor_looser", 0, "dolg", 0)
 	else
-		news_manager.send_tip(actor, "gar_actor_normal", 0, "dolg", 0)
+		-- news_manager.send_tip(actor, "gar_actor_normal", 0, "dolg", 0)
 		db.actor:give_info_portion("gar_kill_boars_request")
 	end
 end
@@ -598,18 +600,18 @@ end
 
 function esc_direction_fire(actor, npc)
 	if not has_alife_info("esc_fanat_die") then
-		news_manager.send_tip(actor, "esc_direction_fire", 7, "stalker", 0)
+		-- news_manager.send_tip(actor, "esc_direction_fire", 7, "stalker", 0)
 	end
 end
 
 function esc_fanat_victory(actor, npc)
 	if has_alife_info("escape_lager_killers_die") and not has_alife_info("esc_fanat_die") then
-		news_manager.send_tip(actor, "esc_fanat_victory", 0, "stalker", 10000)
+		-- news_manager.send_tip(actor, "esc_fanat_victory", 0, "stalker", 10000)
 	end
 end
 
 function esc_return_dv(actor, npc)
-		news_manager.send_tip(actor, "esc_return_dv", 0, "trader", 10)
+		-- news_manager.send_tip(actor, "esc_return_dv", 0, "trader", 10)
 end
 
 
@@ -756,41 +758,41 @@ end
 --------------------------------------------------------- 
 
 function bar_freedom_spam_1(actor, npc)
-	news_manager.send_tip(actor, "bar_freedom_spam_1", nil, "killer", nil, 509)
+	-- news_manager.send_tip(actor, "bar_freedom_spam_1", nil, "killer", nil, 509)
 end
 function bar_freedom_spam_2(actor, npc)
-	news_manager.send_tip(actor, "bar_freedom_spam_2", nil, "killer", nil, 509)
+	-- news_manager.send_tip(actor, "bar_freedom_spam_2", nil, "killer", nil, 509)
 end
 function bar_freedom_spam_3(actor, npc)
-	news_manager.send_tip(actor, "bar_freedom_spam_3", nil, "killer", nil, 509)
+	-- news_manager.send_tip(actor, "bar_freedom_spam_3", nil, "killer", nil, 509)
 end
 function bar_freedom_spam_4(actor, npc)
-	news_manager.send_tip(actor, "bar_freedom_spam_4", nil, "killer", nil, 509)
+	-- news_manager.send_tip(actor, "bar_freedom_spam_4", nil, "killer", nil, 509)
 end
 function bar_ecolog_spam_1(actor, npc)
-	news_manager.send_tip(actor, "bar_ecolog_spam_1", nil, "ecolog", nil, 503)
+	-- news_manager.send_tip(actor, "bar_ecolog_spam_1", nil, "ecolog", nil, 503)
 end
 function bar_ecolog_spam_2(actor, npc)
-	news_manager.send_tip(actor, "bar_ecolog_spam_2", nil, "ecolog", nil, 503)
+	-- news_manager.send_tip(actor, "bar_ecolog_spam_2", nil, "ecolog", nil, 503)
 end
 function bar_ecolog_spam_3(actor, npc)
-	news_manager.send_tip(actor, "bar_ecolog_spam_3", nil, "ecolog", nil, 503)
+	-- news_manager.send_tip(actor, "bar_ecolog_spam_3", nil, "ecolog", nil, 503)
 end
 function bar_ecolog_spam_4(actor, npc)
-	news_manager.send_tip(actor, "bar_ecolog_spam_4", nil, "ecolog", nil, 503)
+	-- news_manager.send_tip(actor, "bar_ecolog_spam_4", nil, "ecolog", nil, 503)
 end
 function bar_ecolog_spam_5(actor, npc)
 	if not has_alife_info("bar_heli_scene_volkodav_die") and not has_alife_info("bar_ecolog_saw_chase") then
-		news_manager.send_tip(actor, "bar_freedom_chase", nil, "ecolog", nil, 503)
+		-- news_manager.send_tip(actor, "bar_freedom_chase", nil, "ecolog", nil, 503)
 		db.actor:give_info_portion("bar_ecolog_saw_chase")
 	end
 end
 function bar_ecolog_hit(actor, npc)
-	news_manager.send_tip(actor, "bar_ecolog_hit", nil, "ecolog", nil, 503)
+	-- news_manager.send_tip(actor, "bar_ecolog_hit", nil, "ecolog", nil, 503)
 end
 function bar_freedom_spam_5(actor, npc)
 	if not has_alife_info("bar_heli_scene_volkodav_die") then
-		news_manager.send_tip(actor, "bar_ecolog_escape", nil, "killer", nil, 509)
+		-- news_manager.send_tip(actor, "bar_ecolog_escape", nil, "killer", nil, 509)
 	end
 end
 function bar_freedom_angry_actor(actor,npc)
@@ -800,21 +802,21 @@ function bar_freedom_angry_actor(actor,npc)
 	end
 end
 function bar_freedom_defence_ecolog(actor,npc)
-	news_manager.send_tip(db.actor, "bar_ecolog_attack", nil, "ecolog", nil, 503)
+	-- news_manager.send_tip(db.actor, "bar_ecolog_attack", nil, "ecolog", nil, 503)
 end		
 function bar_freedom_angry_actor_notify(actor,npc)
 	if has_alife_info("bar_ecolog_crush_actor_enemy") then
-		news_manager.send_tip(actor, "bar_freedom_attack_spy", 4, "killer", nil, 509)
+		-- news_manager.send_tip(actor, "bar_freedom_attack_spy", 4, "killer", nil, 509)
 	end
 end
 function bar_crush_heli_start(actor,npc)
-	news_manager.send_tip(actor, "bar_ecolog_crush_start_heli", nil, "ecolog", nil, 503)
+	-- news_manager.send_tip(actor, "bar_ecolog_crush_start_heli", nil, "ecolog", nil, 503)
 end
 function rostok_kruglov_tip_1(actor,npc)
-	news_manager.send_tip(actor, "rostok_kruglov_spam_1", nil, "ecolog", nil, 503)
+	-- news_manager.send_tip(actor, "rostok_kruglov_spam_1", nil, "ecolog", nil, 503)
 end
 function rostok_kruglov_tip_2(actor,npc)
-	news_manager.send_tip(actor, "rostok_kruglov_spam_2", nil, "ecolog", nil, 503)
+	-- news_manager.send_tip(actor, "rostok_kruglov_spam_2", nil, "ecolog", nil, 503)
 	level_tasks.add_location(597, "volkodav_location", "rostok_banda_volkodava")
 end
 function rostok_kruglov_attract_1(actor,npc)
@@ -842,19 +844,19 @@ function rostok_kruglov_ambush(actor,npc)
 	end
 end
 function bar_crush_heli_down(actor,npc)
-	news_manager.send_tip(actor, "bar_ecolog_crush_heli_down", 1, "killer", nil, 509)
+	-- news_manager.send_tip(actor, "bar_ecolog_crush_heli_down", 1, "killer", nil, 509)
 end
 function bar_ecolog_crush_attract_actor(actor,npc)
 	if not has_alife_info("bar_heli_scene_professor_die") then
-		news_manager.send_tip(actor, "bar_ecolog_crush_attract_actor", nil, "ecolog")
+		-- news_manager.send_tip(actor, "bar_ecolog_crush_attract_actor", nil, "ecolog")
 	end
 end
 function bar_freedom_attack_attract_actor(actor,npc)
-		news_manager.send_tip(actor, "bar_freedom_attack_attract_actor", nil, "killer")
+		-- news_manager.send_tip(actor, "bar_freedom_attack_attract_actor", nil, "killer")
 	end
 function bar_freedom_attack_start(actor,npc)
 		if not has_alife_info("bar_freedom_defence_ecolog") then
-			news_manager.send_tip(db.actor, "bar_freedom_attack", nil, "killer", nil, 509)
+			-- news_manager.send_tip(db.actor, "bar_freedom_attack", nil, "killer", nil, 509)
             db.actor:give_info_portion("bar_freedom_defence_ecolog")
 		end
 	end
@@ -886,7 +888,7 @@ function bar_territory_logic(actor, npc)
 	if 	level == "l05_bar" then
 		if dialogs.actor_in_dolg(actor,npc) then
 			if has_alife_info("bar_dolg_territory_kill") then
-				news_manager.send_tip(actor, "bar_territory_dolg_kill", nil, "dolg", nil, 507)
+				-- news_manager.send_tip(actor, "bar_territory_dolg_kill", nil, "dolg", nil, 507)
 				xr_gulag.setGulagEnemy("bar_dolg_general", db.actor)
 				xr_gulag.setGulagEnemy("bar_dolg_veterans", db.actor)
 				xr_gulag.setGulagEnemy("bar_dolg_bunker", db.actor)
@@ -896,7 +898,7 @@ function bar_territory_logic(actor, npc)
 				return
 			end
 			if has_alife_info("bar_dolg_territory_3_hit") then
-				news_manager.send_tip(actor, "bar_territory_dolg_3_hit", nil, "dolg", nil, 507)
+				-- news_manager.send_tip(actor, "bar_territory_dolg_3_hit", nil, "dolg", nil, 507)
 				xr_gulag.setGulagEnemy("bar_dolg_general", db.actor)
 				xr_gulag.setGulagEnemy("bar_dolg_veterans", db.actor)
 				xr_gulag.setGulagEnemy("bar_dolg_bunker", db.actor)
@@ -905,17 +907,17 @@ function bar_territory_logic(actor, npc)
 				return
 			end
 			if has_alife_info("bar_dolg_territory_2_hit") then
-				news_manager.send_tip(actor, "bar_territory_dolg_2_hit", nil, "dolg", nil, 507)
+				-- news_manager.send_tip(actor, "bar_territory_dolg_2_hit", nil, "dolg", nil, 507)
 				return
 			end
 			if has_alife_info("bar_dolg_territory_1_hit") then
-				news_manager.send_tip(actor, "bar_territory_dolg_1_hit", nil, "dolg", nil, 507)
+				-- news_manager.send_tip(actor, "bar_territory_dolg_1_hit", nil, "dolg", nil, 507)
 				return
 			end
 		else
 			if has_alife_info("bar_dolg_territory_kill") then
 				db.actor:give_info_portion("bar_territory_nodolg_kill")
-				news_manager.send_tip(actor, "bar_territory_nodolg_kill", nil, "dolg", nil, 507)
+				-- news_manager.send_tip(actor, "bar_territory_nodolg_kill", nil, "dolg", nil, 507)
 				xr_gulag.setGulagEnemy("bar_dolg_general", db.actor)
 				xr_gulag.setGulagEnemy("bar_dolg_veterans", db.actor)
 				xr_gulag.setGulagEnemy("bar_dolg_bunker", db.actor)
@@ -926,7 +928,7 @@ function bar_territory_logic(actor, npc)
 			end
 			if has_alife_info("bar_dolg_territory_2_hit") then
 				db.actor:give_info_portion("bar_territory_nodolg_2_hit")
-				news_manager.send_tip(actor, "bar_territory_nodolg_2_hit", nil, "dolg", nil, 507)
+				-- news_manager.send_tip(actor, "bar_territory_nodolg_2_hit", nil, "dolg", nil, 507)
 				xr_gulag.setGulagEnemy("bar_dolg_general", db.actor)
 				xr_gulag.setGulagEnemy("bar_dolg_veterans", db.actor)
 				xr_gulag.setGulagEnemy("bar_dolg_bunker", db.actor)
@@ -937,7 +939,7 @@ function bar_territory_logic(actor, npc)
 			end
 			if has_alife_info("bar_dolg_territory_1_hit") then
 				db.actor:give_info_portion("bar_territory_nodolg_1_hit")
-				news_manager.send_tip(actor, "bar_territory_nodolg_1_hit", nil, "dolg", nil, 507)
+				-- news_manager.send_tip(actor, "bar_territory_nodolg_1_hit", nil, "dolg", nil, 507)
 				return
 			end	
 		end
@@ -946,7 +948,7 @@ function bar_territory_logic(actor, npc)
 end
 
 function bar_psih_come(actor, npc)
-	news_manager.send_tip(actor, "bar_psih_come", nil, "barman")
+	-- news_manager.send_tip(actor, "bar_psih_come", nil, "barman")
 end
 
 function bar_actor_is_enemy(actor, npc)
@@ -1292,7 +1294,7 @@ end
 function gar_send_dolg_warning()
 	if db.actor then
 		if xr_gulag.getGulagPopulation("gar_dolg") > 0 then
-			news_manager.send_tip(db.actor, "gar_dolg_warning", 0, "dolg")
+			-- news_manager.send_tip(db.actor, "gar_dolg_warning", 0, "dolg")
 		end
 	end
 end
@@ -1385,7 +1387,7 @@ end
 -------------------------------------------------------------------------------------
 
 function agr_krot_sos( actor, npc )
-	news_manager.send_tip( actor, "tips_agr_krot_sos", 0, "krot", 10000 )
+	-- news_manager.send_tip( actor, "tips_agr_krot_sos", 0, "krot", 10000 )
 end
 
 function agr_krot_sos_1_2( actor, npc )
@@ -1395,10 +1397,10 @@ function agr_krot_sos_1_2( actor, npc )
 	   not has_alife_info( "agr_krot_dead" ) and not(agroprom_tasks.agr_actor_enemy())
 	then
 		actor:give_info_portion( "agr_help_krot_start" )
-		news_manager.send_tip( actor, "tips_agr_krot_sos1", 0, "krot", 10000 )
+		-- news_manager.send_tip( actor, "tips_agr_krot_sos1", 0, "krot", 10000 )
 
 		if has_alife_info( "agr_help_stalkers_defence_dead" ) then
-			news_manager.send_tip( actor, "tips_agr_krot_sos2", 0, "krot", 10000 )
+			-- news_manager.send_tip( actor, "tips_agr_krot_sos2", 0, "krot", 10000 )
 		end
 	end
 end
@@ -1479,7 +1481,7 @@ end
 -- Sarcofag + Monolith
 ---------------------------------------------------------
 function osoznanie_call(actor, npc)
-	news_manager.send_tip(db.actor, "o_soznanie_text", 0, "o_soznanie")
+	-- news_manager.send_tip(db.actor, "o_soznanie_text", 0, "o_soznanie")
 end
 
 function death_monolith_ghosts(actor, npc)
@@ -1892,36 +1894,36 @@ function yantar_kruglov_talk(actor,npc)
 end
 
 function yantar_professor_spam_1 (actor, npc)
-    news_manager.send_tip(db.actor, "general_ecolog_tip_1", nil, "saharov", nil, 902)
+    -- news_manager.send_tip(db.actor, "general_ecolog_tip_1", nil, "saharov", nil, 902)
 end
 
 function yantar_professor_spam_2 (actor, npc)
-    news_manager.send_tip(db.actor, "general_ecolog_tip_2", nil, "saharov", nil, 902)
+    -- news_manager.send_tip(db.actor, "general_ecolog_tip_2", nil, "saharov", nil, 902)
 end
 
 function yantar_vasilyev_spam (actor, npc)
-    news_manager.send_tip(db.actor, "storyline_vasilyev_tip", nil, "ecolog", nil, 903)
+    -- news_manager.send_tip(db.actor, "storyline_vasilyev_tip", nil, "ecolog", nil, 903)
 end
 function yan_saharov_message (actor, npc)
-    news_manager.send_tip(db.actor, "yan_saharov_message", nil, "saharov", nil, 902)
+    -- news_manager.send_tip(db.actor, "yan_saharov_message", nil, "saharov", nil, 902)
     db.actor:give_info_portion("labx16_find")
 end
 
 function yan_saharov_message_2 (actor, npc)
-    news_manager.send_tip(db.actor, "yan_saharov_message_2", nil, "saharov", nil, 902)
+    -- news_manager.send_tip(db.actor, "yan_saharov_message_2", nil, "saharov", nil, 902)
 end
 function yan_saharov_message_3 (actor, npc)
-    news_manager.send_tip(db.actor, "yan_saharov_message_3", nil, "saharov", nil, 902)
+    -- news_manager.send_tip(db.actor, "yan_saharov_message_3", nil, "saharov", nil, 902)
 end
 function yan_ghost_pda (actor, npc)
     if has_alife_info("agr_gunslinger_flash_have") then 
         db.actor:give_info_portion("yan_provodnik_spawn")
     end
-    news_manager.send_tip(db.actor, "storyline_ghost_tip", nil, "wolf")
+    -- news_manager.send_tip(db.actor, "storyline_ghost_tip", nil, "wolf")
 end
 
 function start_yantar_dream(actor, npc)
-	game.start_tutorial("yantar_dream")
+	-- game.start_tutorial("yantar_dream")
 end
 
 function end_yantar_dream(actor, npc)
@@ -1929,7 +1931,7 @@ function end_yantar_dream(actor, npc)
 end
 -----------------------------radar
 function rad_sos_spam(actor, npc)
-	news_manager.send_tip(actor, "tips_rad_sos_suicide", nil, "stalker", nil, 1004)
+	-- news_manager.send_tip(actor, "tips_rad_sos_suicide", nil, "stalker", nil, 1004)
 end
 
 
@@ -1939,7 +1941,7 @@ end
 
 
 function start_x18_dream(actor, npc)
-	game.start_tutorial("x18_dream")
+	-- game.start_tutorial("x18_dream")
 end
 function end_x18_dream(actor, npc)
 	db.actor:give_info_portion("dar_x18_dream")
@@ -1956,7 +1958,7 @@ function rad_psi_hit (actor, npc)
 end
 
 function start_radar_dream(actor, npc)
-	game.start_tutorial("radar_dream")
+	-- game.start_tutorial("radar_dream")
 end
 
 function end_radar_dream(actor, npc)
@@ -1994,34 +1996,34 @@ function sar_monolith_miracle(actor, npc)
 	if has_alife_info("mil_lukash_dead") and
 	   has_alife_info("bar_voronin_dead")
 	then
-		game.start_tutorial("mov_desire_3")
+		 game.start_tutorial("mov_desire_3")
 		return
 	end
 
 	--' Много денег
 	if db.actor:money() >= 50000 then
-		game.start_tutorial("mov_desire_2")	
+		 game.start_tutorial("mov_desire_2")	
 		return
 	end
 
 	--' Хорошая репутация
 	if db.actor:character_reputation() >= 1000 then
-		game.start_tutorial("mov_desire_1")	
+		 game.start_tutorial("mov_desire_1")	
 		return
 	end
 
 	--' плохая репутация
 	if db.actor:character_reputation() <= -1000 then
-		game.start_tutorial("mov_desire_4")	
+		 game.start_tutorial("mov_desire_4")	
 		return
 	end
 
-	game.start_tutorial("mov_desire_5")	
+	 game.start_tutorial("mov_desire_5")	
 end
 
 function game_credits(actor, npc)
 	db.gameover_credits_started = true
-	game.start_tutorial("credits_seq")
+	 game.start_tutorial("credits_seq")
 end
 
 function game_over(actor, npc)

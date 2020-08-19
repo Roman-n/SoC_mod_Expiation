@@ -1,5 +1,7 @@
+;Вырубаем стартовую реплику Сидора
 [logic]
-active = {+esc_trader_hello_played} mob_trader@new_idle1, mob_trader@new_start_wait
+active = mob_trader@new_idle1
+;active = {+esc_trader_hello_played} mob_trader@new_idle1, mob_trader@new_start_wait
 on_trade = mob_trade@new
 trade = misc\trade_trader.ltx
 
@@ -23,7 +25,7 @@ tip_text =
 ;Первая фраза "я тебя спас..."
 [mob_trader@new_start_intro2]
 anim_global = first_phrase
-anim_head	= first_phrase
+anim_head = first_phrase
 sound_phrase = trader_monolog1
 on_signal = animation_end| mob_trader@new_start_intro3
 can_talk = false
@@ -90,7 +92,7 @@ on_info = {=talking} mob_trader@new_idle5_to_idle1
 on_actor_dist_ge_nvis = 5 | {-esc_trader_bye_played +esc_trader_hello_played} mob_trader@new_bye %+esc_trader_bye_played%
 on_actor_dist_ge_nvis2 = 12 | mob_trader@new_wait
 ;----------------------------------
-;--------   Автопереходы   --------
+;-------- Автопереходы --------
 ;----------------------------------
 
 ; Стол - стол (промежуточная)
@@ -119,7 +121,7 @@ anim_global = listen_idle
 on_signal = animation_end| mob_trader@new_idle5
 
 ;----------------------------------
-;----- Переходы  между idle-ми ----
+;----- Переходы между idle-ми ----
 ;----------------------------------
 
 ; Диагональ - компьютер
@@ -238,4 +240,4 @@ on_signal = animation_end | mob_trader@new_wait
 anim_global = diagonal_idle_short
 on_actor_dist_le_nvis = 3 | {-esc_trader_hello_played} mob_trader@new_hello %+esc_trader_hello_played%
 on_actor_dist_ge_nvis = 5 | {-esc_trader_bye_played +esc_trader_hello_played} mob_trader@new_bye %+esc_trader_bye_played%
-on_actor_dist_ge_nvis2 = 12    | %-esc_trader_hello_played -esc_trader_bye_played%
+on_actor_dist_ge_nvis2 = 12 | %-esc_trader_hello_played -esc_trader_bye_played%

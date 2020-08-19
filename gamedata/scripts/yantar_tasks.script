@@ -1,3 +1,5 @@
+-- вырезаем выдачу сюжетных сообщений (голос/текст).
+
 function proceed()
 
 end
@@ -26,5 +28,5 @@ function yan_scientist_task_fail ()
 end
 
 function yantar_vasilyev_spam (actor, npc)
-    news_manager.send_tip(db.actor, "storyline_vasilyev_tip", nil, "ecolog", nil, 903)
+    -- news_manager.send_tip(db.actor, "storyline_vasilyev_tip", nil, "ecolog", nil, 903)
 end
