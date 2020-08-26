@@ -1,13 +1,28 @@
-[sect_surge_day]
-00:01:00			=	base_v_01
-00:02:00			=	base_v_02
-00:03:00			=	base_v_03
-00:04:00			=	base_v_02
-00:05:00			=	base_v_01
+[amk_sect_surge_day]
+00:02:00			=	v_01
+00:10:00			=	v_02
+00:15:00			=	v_03
+00:24:00			=	v_02
+00:24:30			=	v_01
 
-[base_v_01]
+[amk_sect_p_surge_day]
+00:00:00			=	vp_02
+05:00:00			=	vp_01
+
+[amk_sect_for_sun]
+00:00:00            =   v_02
+12:00:00            =   v_02
+
+[sect_surge_day]
+00:01:00			=	v_01
+00:02:00			=	v_02
+00:03:00			=	v_03
+00:04:00			=	v_02
+00:05:00			=	v_01
+
+[v_01]
 flares			=	
-sky_texture		=	sky\sky_13_cube
+sky_texture		=	sky\sky_15_vibros_cube
 sky_rotation	=	0
 sky_color		=	0.50,	0.50,	0.50
 clouds_texture	=	sky\sky_oblaka
@@ -27,12 +42,12 @@ ambient			=	0.01,   0.01,  	0.01
 lmap_color		=	1.0,    1.0,  	1.0
 hemi_color		=	0.204, 0.200, 0.204
 sun_color		=	0.000, 0.000, 0.000
-sun_dir			=	-26.0, 291.0
+sun_dir			=	-26.0, 292.0
 env_ambient		=	ambient_env_stancia1
 
-[base_v_02]
+[v_02]
 flares			=	
-sky_texture		=	sky\sky_13_vibros_cube
+sky_texture		=	sky\sky_14_vibros_cube
 sky_rotation	=	0
 sky_color		=	1.0,    1.0,  	1.0
 clouds_texture	=	sky\sky_oblaka
@@ -52,12 +67,12 @@ ambient			=	0.036, 0.045, 0.044
 lmap_color		=	1.0,    1.0,  	1.0
 hemi_color		=	0.365, 0.455, 0.443
 sun_color		=	0.000, 0.000, 0.000
-sun_dir			=	-26.0, 291.0
+sun_dir			=	-26.0, 292.0
 env_ambient		=	ambient_env_stancia1
 
-[base_v_03]
+[v_03]
 flares			=	
-sky_texture		=	sky\sky_12_vibros_cube
+sky_texture		=	sky\sky_14_vibros_cube
 sky_rotation	=	0
 sky_color		=	1.0,    1.0,  	1.0
 clouds_texture	=	sky\sky_oblaka
@@ -77,8 +92,10 @@ ambient			=	0.075, 0.000, 0.0063
 lmap_color		=	1.0,    1.0,  	1.0
 hemi_color		=	0.749, 0.000, 0.063
 sun_color		=	0.000, 0.000, 0.000
-sun_dir			=	-26.0, 291.0
+sun_dir			=	-16.0, 292.0
 env_ambient		=	ambient_env_stancia1
+
+-------------------------------------------------------
 
 [sect_p_surge_day]
 00:01:00			=	vp_01
@@ -87,7 +104,7 @@ env_ambient		=	ambient_env_stancia1
 
 [vp_01]
 flares			=	
-sky_texture		=	sky\sky_13_cube
+sky_texture		=	sky\sky_15_vibros_cube
 sky_rotation	=	0
 sky_color		=	0.50,	0.50,	0.50
 clouds_texture	=	sky\sky_oblaka
@@ -107,12 +124,12 @@ ambient			=	0.01,   0.01,  	0.01
 lmap_color		=	1.0,    1.0,  	1.0
 hemi_color		=	0.204, 0.200, 0.204
 sun_color		=	0.000, 0.000, 0.000
-sun_dir			=	-26.0, 291.0
+sun_dir			=	-26.0, 292.0
 env_ambient		=	ambient_env_stancia1
 
 [vp_02]
 flares			=	
-sky_texture		=	sky\sky_13_vibros_cube
+sky_texture		=	sky\sky_15_vibros_cube
 sky_rotation	=	0
 sky_color		=	1.0,    1.0,  	1.0
 clouds_texture	=	sky\sky_oblaka
@@ -120,7 +137,7 @@ clouds_color	=	0.5,	0.5,	0.5,	0.0
 far_plane		=	750
 fog_distance	=	700
 fog_color		=	0.365, 0.455, 0.443
-fog_density		=	0. nnmk
+fog_density		=	0.
 rain_density	=	0.00
 rain_color		=	0.70,	0.70,	0.70
 thunderbolt		= 	thunderbolt_collection_stancia
@@ -132,18 +149,21 @@ ambient			=	0.036, 0.045, 0.044
 lmap_color		=	1.0,    1.0,  	1.0
 hemi_color		=	0.365, 0.455, 0.443
 sun_color		=	0.000, 0.000, 0.000
-sun_dir			=	-26.0, 291.0
+sun_dir			=	-26.0, 292.0
 env_ambient		=	ambient_env_stancia1
+
+-------------------------------------------------------
 
 [sect_m_black]
 00:00:00			=	black_01
 12:00:00			=	black_02
 
+
 [black_01]
 flares			=	
 sky_texture		=	sky\sky_black
 sky_rotation	=	0
-sky_color		=	1.0,    1.0,  	1.0
+sky_color		=	1,	1,	1
 clouds_texture	=	sky\sky_oblaka
 clouds_color	=	0.5,	0.5,	0.5,	0.0
 far_plane		=	160
@@ -161,13 +181,13 @@ ambient			=	0.02,   0.02,  	0.03
 lmap_color		=	1.0,    1.0,  	1.0
 hemi_color		=	0.0, 0.0, 0.0
 sun_color		=	0.000, 0.000, 0.000
-sun_dir			=	-26.0, 291.0
+sun_dir			=	-26.0, 292.0
 
 [black_02]
 flares			=	
 sky_texture		=	sky\sky_black
 sky_rotation	=	0
-sky_color		=	1.0,    1.0,  	1.0
+sky_color		=	1,	1,	1
 clouds_texture	=	sky\sky_oblaka
 clouds_color	=	0.5,	0.5,	0.5,	0.0
 far_plane		=	150
@@ -185,643 +205,5 @@ ambient			=	0.01,   0.01,  	0.01
 lmap_color		=	1.0,    1.0,  	1.0
 hemi_color		=	0.0, 0.0, 0.0
 sun_color		=	0.000, 0.000, 0.000
-sun_dir			=	-26.0, 291.0
+sun_dir			=	-26.0, 292.0
 
-[sect_surge]
-01:00:00		=	surge_01
-02:00:00		=	surge_02
-03:00:00		=	surge_03
-04:00:00		=	surge_04
-05:00:00		=	surge_05
-06:00:00		=	surge_06
-07:00:00		=	surge_07
-08:00:00		=	surge_08
-09:00:00		=	surge_09
-10:00:00		=	surge_10
-10:40:00		=	surge_10_40
-10:55:00		=	surge_10_55
-11:00:00		=	surge_11
-11:45:00		=	surge_11_45
-12:00:00		=	surge_12
-13:00:00		=	surge_13
-14:00:00		=	surge_14
-15:00:00		=	surge_15
-16:00:00		=	surge_16
-17:00:00		=	surge_17
-18:00:00		=	surge_18
-19:00:00		=	surge_19
-20:00:00		=	surge_20
-21:00:00		=	surge_21
-22:00:00		=	surge_22
-23:00:00		=	surge_23
-00:00:00		=	surge_00
-
-[surge_base]
-flares			= 	
-sky_texture		=	sky\sky_9_cube
-sky_rotation	=	0
-sky_color		=	1.0,    1.0,  	1.0
-clouds_texture	=	sky\sky_oblaka
-clouds_color	=	0.333, 0.341, 0.431, 1.0, 1.7
-far_plane		=	250
-fog_distance	=	230
-fog_color		=	0.172, 0.176, 0.196
-fog_density		=	0.9
-rain_density	=	0.0
-rain_color		=	0.62, 0.66, 0.76
-thunderbolt		=	thunderbolt_collection_stancia
-bolt_period		=	5.f
-bolt_duration	=	0.25f
-wind_velocity	=	20.0
-wind_direction	=	0.0
-ambient			=	0.06, 0.065, 0.07
-lmap_color		=	1.0,	1.0,	1.0
-hemi_color		=	0.7, 0.725, 0.75, 1.0
-sun_color		=	0.0,    0.0,  	0.0
-sun_dir			=	-25.0, 291
-env_ambient		=	ambient_env_stancia1
-
-[surge_01]:surge_base
-sun_dir			=	-37.0, 291	
-
-[surge_02]:surge_base
-sun_dir			=	-37.0, 291
-
-[surge_03]:surge_base
-sun_dir			=	-16.0, 291
-
-[surge_04]:surge_base
-sun_dir			=	6.0, 291
-
-[surge_05]:surge_base
-sun_dir			=	6.0, 291
-
-[surge_06]:surge_base
-sun_dir			=	-15.0, 291
-
-[surge_07]:surge_base
-sun_dir			=	-26.0, 291
-
-[surge_08]:surge_base
-sun_dir			=	-33.0, 291
-
-[surge_09]:surge_base
-sun_dir			=	-38.0, 291
-
-[surge_10]:surge_base
-sun_dir			=	-42.0, 291
-
-[surge_10_40]:surge_base
-sun_dir			=	-44.0, 291
-
-[surge_10_55]:surge_base
-sun_dir			=	-45.0, 291
-
-[surge_11]:surge_base
-sun_dir			=	-45.0, 291
-
-[surge_11_45]:surge_base
-sun_dir			=	-45.0, 291
-
-[surge_12]:surge_base
-sun_dir			=	-46.0, 291
-
-[surge_13]:surge_base
-sun_dir			=	-47.0, 291
-
-[surge_14]:surge_base
-sun_dir			=	-46.0, 291
-
-[surge_15]:surge_base
-sun_dir			=	-45.0, 291
-
-[surge_16]:surge_base
-sun_dir			=	-42.0, 291
-
-[surge_17]:surge_base
-sun_dir			=	-38.0, 291
-
-[surge_18]:surge_base
-sun_dir			=	-33.0, 291
-
-[surge_19]:surge_base
-sun_dir			=	-26.0, 291
-
-[surge_20]:surge_base
-sun_dir			=	-15.0, 291
-
-[surge_21]:surge_base
-sun_dir			=	6.0, 291
-
-[surge_22]:surge_base
-sun_dir			=	6.0, 291
-
-[surge_23]:surge_base
-sun_dir			=	-16.0, 291
-
-[surge_00]:surge_base
-sun_dir			=	-37.0, 291
-
-[sect_surge_day_01]
-00:01:00			=	01_v_01
-00:02:00			=	01_v_02
-00:03:00			=	01_v_03
-00:04:00			=	01_v_02
-00:05:00			=	01_v_01
-
-[01_v_01]:base_v_01
-sun_dir			=	-37.0, 291
-
-[01_v_02]:base_v_02
-sun_dir			=	-37.0, 291
-
-[01_v_03]:base_v_03
-sun_dir			=	-37.0, 291
-
-[sect_surge_day_02]
-00:01:00			=	02_v_01
-00:02:00			=	02_v_02
-00:03:00			=	02_v_03
-00:04:00			=	02_v_02
-00:05:00			=	02_v_01
-
-[02_v_01]:base_v_01
-sun_dir			=	-37.0, 291
-
-[02_v_02]:base_v_02
-sun_dir			=	-37.0, 291
-
-[02_v_03]:base_v_03
-sun_dir			=	-37.0, 291
-
-[sect_surge_day_03]
-00:01:00			=	03_v_01
-00:02:00			=	03_v_02
-00:03:00			=	03_v_03
-00:04:00			=	03_v_02
-00:05:00			=	03_v_01
-
-[03_v_01]:base_v_01
-sun_dir			=	-16.0, 291
-
-[03_v_02]:base_v_02
-sun_dir			=	-16.0, 291
-
-[03_v_03]:base_v_03
-sun_dir			=	-16.0, 291
-
-[sect_surge_day_04]
-00:01:00			=	04_v_01
-00:02:00			=	04_v_02
-00:03:00			=	04_v_03
-00:04:00			=	04_v_02
-00:05:00			=	04_v_01
-
-[04_v_01]:base_v_01
-sun_dir			=	6.0, 291
-
-[04_v_02]:base_v_02
-sun_dir			=	6.0, 291
-
-[04_v_03]:base_v_03
-sun_dir			=	6.0, 291
-
-[sect_surge_day_05]
-00:01:00			=	05_v_01
-00:02:00			=	05_v_02
-00:03:00			=	05_v_03
-00:04:00			=	05_v_02
-00:05:00			=	05_v_01
-
-[05_v_01]:base_v_01
-sun_dir			=	6.0, 291
-
-[05_v_02]:base_v_02
-sun_dir			=	6.0, 291
-
-[05_v_03]:base_v_03
-sun_dir			=	6.0, 291
-
-[sect_surge_day_06]
-00:01:00			=	06_v_01
-00:02:00			=	06_v_02
-00:03:00			=	06_v_03
-00:04:00			=	06_v_02
-00:05:00			=	06_v_01
-
-[06_v_01]:base_v_01
-sun_dir			=	-15.0, 291
-
-[06_v_02]:base_v_02
-sun_dir			=	-15.0, 291
-
-[06_v_03]:base_v_03
-sun_dir			=	-15.0, 291
-
-[sect_surge_day_07]
-00:01:00			=	07_v_01
-00:02:00			=	07_v_02
-00:03:00			=	07_v_03
-00:04:00			=	07_v_02
-00:05:00			=	07_v_01
-
-[07_v_01]:base_v_01
-sun_dir			=	-26.0, 291
-
-[07_v_02]:base_v_02
-sun_dir			=	-26.0, 291
-
-[07_v_03]:base_v_03
-sun_dir			=	-26.0, 291
-
-[sect_surge_day_08]
-00:01:00			=	08_v_01
-00:02:00			=	08_v_02
-00:03:00			=	08_v_03
-00:04:00			=	08_v_02
-00:05:00			=	08_v_01
-
-[08_v_01]:base_v_01
-sun_dir			=	-33.0, 291
-
-[08_v_02]:base_v_02
-sun_dir			=	-33.0, 291
-
-[08_v_03]:base_v_03
-sun_dir			=	-33.0, 291
-
-[sect_surge_day_09]
-00:01:00			=	09_v_01
-00:02:00			=	09_v_02
-00:03:00			=	09_v_03
-00:04:00			=	09_v_02
-00:05:00			=	09_v_01
-
-[09_v_01]:base_v_01
-sun_dir			=	-38.0, 291
-
-[09_v_02]:base_v_02
-sun_dir			=	-38.0, 291
-
-[09_v_03]:base_v_03
-sun_dir			=	-38.0, 291
-
-[sect_surge_day_10]
-00:01:00			=	10_v_01
-00:02:00			=	10_v_02
-00:03:00			=	10_v_03
-00:04:00			=	10_v_02
-00:05:00			=	10_v_01
-
-[10_v_01]:base_v_01
-sun_dir			=	-42.0, 291
-
-[10_v_02]:base_v_02
-sun_dir			=	-42.0, 291
-
-[10_v_03]:base_v_03
-sun_dir			=	-42.0, 291
-
-[sect_surge_day_11]
-00:01:00			=	11_v_01
-00:02:00			=	11_v_02
-00:03:00			=	11_v_03
-00:04:00			=	11_v_02
-00:05:00			=	11_v_01
-
-[11_v_01]:base_v_01
-sun_dir			=	-45.0, 291
-
-[11_v_02]:base_v_02
-sun_dir			=	-45.0, 291
-
-[11_v_03]:base_v_03
-sun_dir			=	-45.0, 291
-
-[sect_surge_day_12]
-00:01:00			=	12_v_01
-00:02:00			=	12_v_02
-00:03:00			=	12_v_03
-00:04:00			=	12_v_02
-00:05:00			=	12_v_01
-
-[12_v_01]:base_v_01
-sun_dir			=	-46.0, 291
-
-[12_v_02]:base_v_02
-sun_dir			=	-46.0, 291
-
-[12_v_03]:base_v_03
-sun_dir			=	-46.0, 291
-
-[sect_surge_day_13]
-00:01:00			=	13_v_01
-00:02:00			=	13_v_02
-00:03:00			=	13_v_03
-00:04:00			=	13_v_02
-00:05:00			=	13_v_01
-
-[13_v_01]:base_v_01
-sun_dir			=	-47.0, 291
-
-[13_v_02]:base_v_02
-sun_dir			=	-47.0, 291
-
-[13_v_03]:base_v_03
-sun_dir			=	-47.0, 291
-
-[sect_surge_day_14]
-00:01:00			=	14_v_01
-00:02:00			=	14_v_02
-00:03:00			=	14_v_03
-00:04:00			=	14_v_02
-00:05:00			=	14_v_01
-
-[14_v_01]:base_v_01
-sun_dir			=	-46.0, 291
-
-[14_v_02]:base_v_02
-sun_dir			=	-46.0, 291
-
-[14_v_03]:base_v_03
-sun_dir			=	-46.0, 291
-
-[sect_surge_day_15]
-00:01:00			=	15_v_01
-00:02:00			=	15_v_02
-00:03:00			=	15_v_03
-00:04:00			=	15_v_02
-00:05:00			=	15_v_01
-
-[15_v_01]:base_v_01
-sun_dir			=	-45.0, 291
-
-[15_v_02]:base_v_02
-sun_dir			=	-45.0, 291
-
-[15_v_03]:base_v_03
-sun_dir			=	-45.0, 291
-
-[sect_surge_day_16]
-00:01:00			=	16_v_01
-00:02:00			=	16_v_02
-00:03:00			=	16_v_03
-00:04:00			=	16_v_02
-00:05:00			=	16_v_01
-
-[16_v_01]:base_v_01
-sun_dir			=	-42.0, 291
-
-[16_v_02]:base_v_02
-sun_dir			=	-42.0, 291
-
-[16_v_03]:base_v_03
-sun_dir			=	-42.0, 291
-
-[sect_surge_day_17]
-00:01:00			=	17_v_01
-00:02:00			=	17_v_02
-00:03:00			=	17_v_03
-00:04:00			=	17_v_02
-00:05:00			=	17_v_01
-
-[17_v_01]:base_v_01
-sun_dir			=	-38.0, 291
-
-[17_v_02]:base_v_02
-sun_dir			=	-38.0, 291
-
-[17_v_03]:base_v_03
-sun_dir			=	-38.0, 291
-
-[sect_surge_day_18]
-00:01:00			=	18_v_01
-00:02:00			=	18_v_02
-00:03:00			=	18_v_03
-00:04:00			=	18_v_02
-00:05:00			=	18_v_01
-
-[18_v_01]:base_v_01
-sun_dir			=	-33.0, 291
-
-[18_v_02]:base_v_02
-sun_dir			=	-33.0, 291
-
-[18_v_03]:base_v_03
-sun_dir			=	-33.0, 291
-
-[sect_surge_day_19]
-00:01:00			=	19_v_01
-00:02:00			=	19_v_02
-00:03:00			=	19_v_03
-00:04:00			=	19_v_02
-00:05:00			=	19_v_01
-
-[19_v_01]:base_v_01
-sun_dir			=	-26.0, 291
-
-[19_v_02]:base_v_02
-sun_dir			=	-26.0, 291
-
-[19_v_03]:base_v_03
-sun_dir			=	-26.0, 291
-
-[sect_surge_day_20]
-00:01:00			=	20_v_01
-00:02:00			=	20_v_02
-00:03:00			=	20_v_03
-00:04:00			=	20_v_02
-00:05:00			=	20_v_01
-
-[20_v_01]:base_v_01
-sun_dir			=	-15.0, 291
-
-[20_v_02]:base_v_02
-sun_dir			=	-15.0, 291
-
-[20_v_03]:base_v_03
-sun_dir			=	-15.0, 291
-
-[sect_surge_day_21]
-00:01:00			=	21_v_01
-00:02:00			=	21_v_02
-00:03:00			=	21_v_03
-00:04:00			=	21_v_02
-00:05:00			=	21_v_01
-
-[21_v_01]:base_v_01
-sun_dir			=	6.0, 291
-
-[21_v_02]:base_v_02
-sun_dir			=	6.0, 291
-
-[21_v_03]:base_v_03
-sun_dir			=	6.0, 291
-
-[sect_surge_day_22]
-00:01:00			=	22_v_01
-00:02:00			=	22_v_02
-00:03:00			=	22_v_03
-00:04:00			=	22_v_02
-00:05:00			=	22_v_01
-
-[22_v_01]:base_v_01
-sun_dir			=	6.0, 291
-
-[22_v_02]:base_v_02
-sun_dir			=	6.0, 291
-
-[22_v_03]:base_v_03
-sun_dir			=	6.0, 291
-
-[sect_surge_day_23]
-00:01:00			=	23_v_01
-00:02:00			=	23_v_02
-00:03:00			=	23_v_03
-00:04:00			=	23_v_02
-00:05:00			=	23_v_01
-
-[23_v_01]:base_v_01
-sun_dir			=	-16.0, 291
-
-[23_v_02]:base_v_02
-sun_dir			=	-16.0, 291
-
-[23_v_03]:base_v_03
-sun_dir			=	-16.0, 291
-
-[sect_surge_day_00]
-00:01:00			=	00_v_01
-00:02:00			=	00_v_02
-00:03:00			=	00_v_03
-00:04:00			=	00_v_02
-00:05:00			=	00_v_01
-
-[00_v_01]:base_v_01
-sun_dir			=	-37.0, 291
-
-[00_v_02]:base_v_02
-sun_dir			=	-37.0, 291
-
-[00_v_03]:base_v_03
-sun_dir			=	-37.0, 291
-
-[sect_p_surge_day_01]
-00:01:00			=	01_v_01
-00:02:00			=	01_v_02
-00:03:00			=	01_v_01
-
-[sect_p_surge_day_02]
-00:01:00			=	02_v_01
-00:02:00			=	02_v_02
-00:03:00			=	02_v_01
-
-[sect_p_surge_day_03]
-00:01:00			=	03_v_01
-00:02:00			=	03_v_02
-00:03:00			=	03_v_01
-
-[sect_p_surge_day_04]
-00:01:00			=	04_v_01
-00:02:00			=	04_v_02
-00:03:00			=	04_v_01
-
-[sect_p_surge_day_05]
-00:01:00			=	05_v_01
-00:02:00			=	05_v_02
-00:03:00			=	05_v_01
-
-[sect_p_surge_day_06]
-00:01:00			=	06_v_01
-00:02:00			=	06_v_02
-00:03:00			=	06_v_01
-
-[sect_p_surge_day_07]
-00:01:00			=	07_v_01
-00:02:00			=	07_v_02
-00:03:00			=	07_v_01
-
-[sect_p_surge_day_08]
-00:01:00			=	08_v_01
-00:02:00			=	08_v_02
-00:03:00			=	08_v_01
-
-[sect_p_surge_day_09]
-00:01:00			=	09_v_01
-00:02:00			=	09_v_02
-00:03:00			=	09_v_01
-
-[sect_p_surge_day_10]
-00:01:00			=	10_v_01
-00:02:00			=	10_v_02
-00:03:00			=	10_v_01
-
-[sect_p_surge_day_11]
-00:01:00			=	11_v_01
-00:02:00			=	11_v_02
-00:03:00			=	11_v_01
-
-[sect_p_surge_day_12]
-00:01:00			=	12_v_01
-00:02:00			=	12_v_02
-00:03:00			=	12_v_01
-
-[sect_p_surge_day_13]
-00:01:00			=	13_v_01
-00:02:00			=	13_v_02
-00:03:00			=	13_v_01
-
-[sect_p_surge_day_14]
-00:01:00			=	14_v_01
-00:02:00			=	14_v_02
-00:03:00			=	14_v_01
-
-[sect_p_surge_day_15]
-00:01:00			=	15_v_01
-00:02:00			=	15_v_02
-00:03:00			=	15_v_01
-
-[sect_p_surge_day_16]
-00:01:00			=	16_v_01
-00:02:00			=	16_v_02
-00:03:00			=	16_v_01
-
-[sect_p_surge_day_17]
-00:01:00			=	17_v_01
-00:02:00			=	17_v_02
-00:03:00			=	17_v_01
-
-[sect_p_surge_day_18]
-00:01:00			=	18_v_01
-00:02:00			=	18_v_02
-00:03:00			=	18_v_01
-
-[sect_p_surge_day_19]
-00:01:00			=	19_v_01
-00:02:00			=	19_v_02
-00:03:00			=	19_v_01
-
-[sect_p_surge_day_20]
-00:01:00			=	20_v_01
-00:02:00			=	20_v_02
-00:03:00			=	20_v_01
-
-[sect_p_surge_day_21]
-00:01:00			=	21_v_01
-00:02:00			=	21_v_02
-00:03:00			=	21_v_01
-
-[sect_p_surge_day_22]
-00:01:00			=	22_v_01
-00:02:00			=	22_v_02
-00:03:00			=	22_v_01
-
-[sect_p_surge_day_23]
-00:01:00			=	23_v_01
-00:02:00			=	23_v_02
-00:03:00			=	23_v_01
-
-[sect_p_surge_day_00]
-00:01:00			=	00_v_01
-00:02:00			=	00_v_02
-00:03:00			=	00_v_01
