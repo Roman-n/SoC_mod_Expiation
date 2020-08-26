@@ -160,12 +160,6 @@
     <disable>agroprom_meet_gunslinger_band</disable>
     </info_portion>
 
-	<!-- Используется для отладки скрипта -->
-	<info_portion id="escape_stalker_help">
-	</info_portion>
-
-
-
 	<info_portion id="storyline_start">
 	</info_portion>
 

@@ -286,9 +286,6 @@ if type == "esc_specnaz" then
 		table.insert(sj, t)
 	end
 
-
-
-
 	--' Лагерь новичков на Escape
 	if type == "esc_lager" then
 		-- охранники
@@ -335,7 +332,7 @@ if type == "esc_specnaz" then
 			in_rest = "", out_rest = "esc_lager_guard_kill_zone"
 		}
 		table.insert(sj, t)
-		-- Волк, собственной персоной.
+		--[[ Волк, собственной персоной.
 		t = { section = "logic@esc_lager_volk",
 			idle = 0,
 			prior = 16, state = {0,1},
@@ -366,11 +363,11 @@ if type == "esc_specnaz" then
 						end
 		}
 		table.insert(sj, t)
-		
+		 ]]
 		-- Фанат
 		t = { section = "logic@esc_lager_fanat",
 			idle = 0,
-			prior = 16, state = {0,1},
+			prior = 16, state = {0,2},
 			in_rest = "", out_rest = "esc_lager_guard_kill_zone",
 			predicate = function(obj_info)
         					return obj_info.profile_name == "esc_fanat"
@@ -498,17 +495,9 @@ if type == "esc_specnaz" then
 						end
 		}
 		table.insert(sj, t)
-		t = { section = "logic@esc_lager_defend13",
-			idle = 0,
-			prior = 20, state = {2},
-			in_rest = "", out_rest = "esc_lager_guard_kill_zone",
-			predicate = function(obj_info)
-        					return obj_info.profile_name == "esc_wolf" and not (has_alife_info("agroprom_military_case_have") and has_alife_info("esc_fanat_spawn"))
-						end
-		}
-		table.insert(sj, t)
-	end
 
+	end
+--[[
 	--' Бандиты на фабрике
 	if type == "esc_fabrika_bandit" then
 		-- часовые днём
@@ -976,7 +965,7 @@ if type == "esc_specnaz" then
 		}
 		table.insert(sj, t)
 	end
-
+]]
 
 	if type == "esc_dogs_to_fox" then
 		t = { section = "logic@esc_dogs_to_fox_home",
@@ -1490,7 +1479,7 @@ if type == "esc_specnaz" then
 		}
 		table.insert(sj, t)
 	end
-
+--[[
 	if type == "esc_assault" then
 		t = { section = "logic@esc_assault1",
 			idle = 0,
@@ -1634,7 +1623,7 @@ if type == "esc_specnaz" then
 		}
 		table.insert(sj, t)
 	end
-
+]]
 	if type == "esc_zombie_1" then
 		t = { section = "logic@esc_zombie_1_fd",
 			idle = 0,
@@ -1967,7 +1956,7 @@ if type == "esc_specnaz" then
 		}
 		table.insert(sj, t)
 	end
-
+--[[
 	if type == "esc_stalker_camp" then
 		t = { section = "logic@esc_stalker_camp_provodnik",
 			idle = 0,
@@ -2009,7 +1998,7 @@ if type == "esc_specnaz" then
 		}
 		table.insert(sj, t)
 	end
-	
+]]
 end
 
 function load_states(gname, type)
@@ -2043,15 +2032,13 @@ function load_states(gname, type)
 		end
 	end
 
-
-
 	if type == "esc_lager" then
 		return function(gulag)
 			local actor = db.actor
 			if not actor then
 				return gulag.state
 			end
-			if has_alife_info("escape_lager_help") and not has_alife_info("escape_lager_killers_die") then
+			if has_alife_info("escape_lager_help") then
 				return 2 -- оборона лагеря
 			elseif level.get_time_hours() >= 5 and level.get_time_hours() <= 22 then
 				return 0  -- день
@@ -2075,7 +2062,7 @@ function load_states(gname, type)
 		end
 	end
 
-
+--[[
 	if type == "esc_fabrika_bandit" then
 		return function(gulag)
 				for k,v in pairs(gulag.Object) do
@@ -2093,7 +2080,7 @@ function load_states(gname, type)
 				end
 		end
 	end
-
+]]
 	if type == "esc_dogs_to_fox" then
 		return function(gulag)
 			local actor = db.actor
@@ -2128,7 +2115,7 @@ function load_states(gname, type)
 		end
 	end
 
-
+--[[
 	if type == "esc_killers" then
 		return function(gulag)
 			local actor = db.actor
@@ -2149,7 +2136,7 @@ function load_states(gname, type)
 			return gulag.state
 		end
 	end
-
+]]
 	if type == "esc_dogs_swarm" then
 		return function(gulag)
 			if game.get_game_time():diffSec(gulag.stateBegin) > 900 then
@@ -2246,7 +2233,7 @@ function load_states(gname, type)
 			return 0
 		end
 	end
-
+--[[
 	if type == "esc_stalker_camp" then
 		return function(gulag)
 			if has_alife_info("yan_provodnik_spawn") then
@@ -2256,8 +2243,6 @@ function load_states(gname, type)
 			end
 		end
 	end
-	
-	
 
 
 	if type == "esc_assault" then
@@ -2275,10 +2260,8 @@ function load_states(gname, type)
 			end
 		end
 	end
-
+]]
 end
-
-
 
 --------------------------------------------------------------------------
 -- Dynamic ltx
@@ -2300,19 +2283,19 @@ function checkStalker(npc_community, gulag_type, npc_rank, se_obj)
 	if gulag_type == "esc_blokpost" then
 		return npc_community == "military"
 	end
-
+--[[
 	if gulag_type == "esc_killers" then
 		return npc_community == "killer"
 	end
-
+]]
 	if gulag_type == "esc_lager" then
 		return npc_community == "stalker"
 	end
-
+--[[
 	if gulag_type == "esc_fabrika_bandit" then
 		return npc_community == "bandit"
 	end
-
+]]
 	if gulag_type == "esc_ambush" then
 		return npc_community == "bandit"
 	end
@@ -2320,7 +2303,7 @@ function checkStalker(npc_community, gulag_type, npc_rank, se_obj)
 	if gulag_type == "esc_corps" then
 		return npc_community == "stalker"
 	end
-
+--[[
 	if gulag_type == "esc_assault" then
 		return npc_community == "stalker"
 	end
@@ -2328,8 +2311,7 @@ function checkStalker(npc_community, gulag_type, npc_rank, se_obj)
 	if gulag_type == "esc_stalker_camp" then
 		return npc_community == "stalker"
 	end
-	
-	
+]]
 	return false
 end
 

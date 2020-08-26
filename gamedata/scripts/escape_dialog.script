@@ -154,13 +154,6 @@ function have_fox_info(first_speaker, second_speaker)
   	return first_speaker:object("fox_flash") ~= nil
 end
 
---' fox help
-
-function transfer_medikit_to_fox (player, wounded)
-	wounded:set_relation(game_object.friend, player)
-	db.actor:give_info_portion("escape_fox_heal")
-end
-
 function give_weapon_to_actor (trader, actor)
     dialogs.relocate_item_section(trader, "wpn_pm", "in")
     dialogs.relocate_item_section(trader, "ammo_9x18_fmj", "in")

@@ -90,8 +90,7 @@ ammo_12x70_buck=4 \n
 		</supplies>
 				
 #include "gameplay\character_criticals_4.xml"
-				
-		<start_dialog>escape_lager_leader_hello</start_dialog>
+
 		<start_dialog>dm_hello_dialog</start_dialog>
 		<actor_dialog>dm_cool_info_dialog</actor_dialog>
 		<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>
@@ -124,8 +123,7 @@ ammo_9x19_fmj=2 \n
 		</supplies>
 				
 #include "gameplay\character_criticals_4.xml"
-				
-		<start_dialog>escape_fox_hello_dialog</start_dialog>
+
 		<start_dialog>dm_hello_dialog</start_dialog>
 		<actor_dialog>dm_cool_info_dialog</actor_dialog>
 		<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>

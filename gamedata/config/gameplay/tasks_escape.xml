@@ -28,31 +28,6 @@
 		</objective>
 	</game_task>
 
-	<game_task id="esc_help_wounded_from_raid" prio="485">
-		<title>esc_help_wounded_from_raid</title>
-		<objective>
-			<text>esc_help_wounded_from_raid_0</text>
-			<icon>ui_iconsTotal_esc_help_wounded_from_raid</icon>
-			<function_complete>escape_tasks.task_fox_complete</function_complete>
-			<infoportion_set_complete>garbage_meetstalker_start</infoportion_set_complete>			
-			<article>esc_fox_help</article>
-		</objective>
-		<objective>
-			<text>esc_help_wounded_from_raid_1</text>
-			<map_location_type hint="esc_fox">green_location</map_location_type>
-			<object_story_id>Escape_stalker_from_raid</object_story_id>
-			<infoportion_complete>escape_fox_heal</infoportion_complete>
-			<infoportion_fail>esc_dogs_return</infoportion_fail>
-		</objective>
-		<objective>
-			<text>esc_help_wounded_from_raid_2</text>
-			<map_location_type hint="esc_fox">green_location</map_location_type>
-			<object_story_id>Escape_stalker_from_raid</object_story_id>
-			<infoportion_complete>escape_stalker_done</infoportion_complete>
-		</objective>
-	</game_task>
-
-
 	<game_task id="esc_blockpost_case_to_trader" prio="390">
 		<title>esc_blockpost_case_to_trader</title>
 		<objective>
@@ -104,30 +79,6 @@
 		</objective>
 	</game_task>
 
-	<game_task id="esc_defend_lager" prio="385">
-		<title>esc_defend_lager</title>
-		<objective>
-			<text>esc_defend_lager_from_killers_0</text>
-			<icon>ui_iconsTotal_esc_defend_lager</icon>
-			<function_complete>escape_tasks.task_lager_complete</function_complete>
-			<infoportion_fail>esc_lager_destroyed</infoportion_fail>
-			<function_fail>escape_tasks.is_actor_enemy_lager</function_fail>
-		</objective>
-		<objective>
-			<text>esc_defend_lager_from_killers_1</text>
-			<map_location_type hint="killers_team">green_location</map_location_type>
-			<object_story_id>esc_leader_killers</object_story_id>
-			<infoportion_complete>escape_lager_killers_die</infoportion_complete>
-		</objective>		
-		<objective>
-			<text>esc_defend_lager_from_killers_2</text>
-			<map_location_type hint="novice_leader">green_location</map_location_type>
-			<object_story_id>esc_lager_leader</object_story_id>
-			<infoportion_complete>escape_lager_complete</infoportion_complete>
-			<infoportion_fail>esc_fanat_die</infoportion_fail>
-		</objective>
-	</game_task>
-	
 	<game_task id="doctor_meet">
 		<title>meet_with_doctor</title>
 		<objective>

@@ -99,18 +99,6 @@ function proceed()
 	end
 end
 
-function task_lager_complete()
-	if has_alife_info("escape_lager_help") and
-		has_alife_info("escape_lager_killers_die") and
-	   (has_alife_info("esc_fanat_die") or
-	   has_alife_info("escape_lager_complete"))
-	then
-		return true
-	else
-		return false
-	end
-end	
-
 function task_fox_complete()
 	if has_alife_info("garbage_meetstalker_start") or
 	   has_alife_info("escape_stalker_done")
