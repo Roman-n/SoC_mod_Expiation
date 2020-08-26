@@ -35,6 +35,10 @@
    <article id="tutorial_wound" name="wound" group="tutorial">
         <text>wound_tutorial</text>
     </article>
-
+   <article id="tutorial_satiety" name="satiety" group="tutorial">
+        <text>satiety_tutorial</text>
+    </article>
+   <article id="tutorial_psy" name="psy1" group="tutorial">
+        <text>psy1_tutorial</text>
+    </article>
 </encyclopedia>
-

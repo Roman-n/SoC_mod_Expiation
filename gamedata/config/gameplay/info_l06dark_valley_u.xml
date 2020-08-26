@@ -33,26 +33,12 @@
 
 <info_portion id="dar_password_info2_know"></info_portion>
 
+<info_portion id="dar_document1"></info_portion>
+<info_portion id="dar_document2"></info_portion>
+<info_portion id="dar_document3"></info_portion>
+<info_portion id="dar_document4"></info_portion>
 
-
-<info_portion id="dar_document1">
- <article>dar_document1</article>
-</info_portion>
-
-<info_portion id="dar_document2">
- <article>dar_document2</article>
-</info_portion>
-
-<info_portion id="dar_document3">
- <article>dar_document3</article>
-</info_portion>
-
-<info_portion id="dar_document4">
- <article>dar_document4</article>
-</info_portion>
-
-<info_portion id="x18_actor_fall">
-</info_portion>
+<info_portion id="x18_actor_fall"></info_portion>
 
 <info_portion id="dar_x18_dream">
  <article>sl_x18_dream</article>
@@ -64,7 +50,7 @@
  <article>dar_document2</article>
  <article>dar_document3</article>
  <article>dar_document4</article> -->
- <article>dar_document5</article> 
+ <article>dar_document5</article>
 </info_portion>
 
 
@@ -83,10 +69,10 @@
 
 <!-- Кодовые двери -->
 <info_portion id="dar_door1_closed">
- <!-- task>dar_codedoor_1</task --> 
+ <!-- task>dar_codedoor_1</task -->
 </info_portion>
 <info_portion id="dar_door2_closed">
- <!-- task>dar_codedoor_2</task --> 
+ <!-- task>dar_codedoor_2</task -->
 </info_portion>
 
 

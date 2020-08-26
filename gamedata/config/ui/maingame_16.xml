@@ -31,21 +31,21 @@
 	</progress_bar_armor>
 	
 	<static_weapon x="900" y="692" width="123" height="65" stretch="1">
-		<text complex_mode="0" x="45" y="0" font="letterica16" r="255" g="255" b="255" a="130"/>
+		<text complex_mode="0" x="36" y="0" font="letterica16" r="255" g="255" b="255" a="130"/>
 		<texture>ui_hud_frame_patron</texture>
 	</static_weapon>
 	
 	<static_ammo x="65" y="22" width="53" height="30">
-		<text align="c" complex_mode="0" font="graffiti22" r="238" g="155" b="23" a="255">Ammo</text>
+		<text x="2" y="3" align="c" complex_mode="0" font="graffiti22" r="238" g="155" b="23" a="255">Ammo</text>
 	</static_ammo>
 	
-	<static_wpn_icon x="-5" y="13" width="41" height="42"/>
+	<static_wpn_icon x="-5" y="13" width="80" height="42"/>
 
 	<car_panel x="900" y="584" width="123" height="200"/>
 	
 	<static_pda_online x="104" y="167" width="27" height="28" light_anim="ui_pda_contacts" la_cyclic="0" la_texture="0" la_text="1" la_alpha="1" stretch="1">
 		<texture>ui_hud_map_counter</texture>
-		<text y="4" align="c" font="graffiti19" r="238" g="155" b="23" a="255"/>
+		<text y="7" align="c" font="graffiti19" r="238" g="155" b="23" a="255"/>
 	</static_pda_online>
 	
 	
@@ -91,7 +91,7 @@
 
 	<flashing_icons>
 		<flashing_icon x="13" y="210" width="48" height="29" type="pda" light_anim="ui_slow_blinking_alpha">
-			<texture>ui_hud_icon_PDA</texture>
+			<!-- <texture>ui_hud_icon_PDA</texture> -->
 		</flashing_icon>
 	</flashing_icons>
 

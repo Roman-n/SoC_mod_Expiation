@@ -3,6 +3,7 @@
 <game_information_portions>
 
 <info_portion id="encyclopedy">
+  <article>zone_surge</article>
   <article>zone_artifact_af-medusa</article>
   <article>zone_artifact_af-cristall-flower</article>
   <article>zone_artifact_af-night-star</article>
@@ -55,6 +56,12 @@
   <article>zone_locations_stancia</article>
   <article>mutant_crow_general</article>
   <article>mutant_flesh_general</article>
+  <article>mutant_cat_general</article>
+  <article>mutant_burer_general</article>
+  <article>mutant_zombie_general</article>
+  <article>mutant_zombieg_general</article>
+  <article>mutant_fracture_general</article>
+  <article>mutant_chimera_general</article>
   <article>mutant_blind_general</article>
   <article>mutant_tushkano</article>
   <article>mutant_boar_general</article>
@@ -85,12 +92,19 @@
 	<article>tutorial_weakness</article>
 	<article>tutorial_weapon</article>
 	<article>tutorial_wound</article>
+	<article>tutorial_psy</article>
+	<article>tutorial_satiety</article>
+
 </info_portion>
   
   <info_portion id="encyclopedy_zone_artifact_af-medusa">
 	<article>zone_artifact_af-medusa</article>
  </info_portion>
- 
+
+  <info_portion id="encyclopedy_zone_surge">
+	<article>zone_surge</article>
+ </info_portion>
+
    <info_portion id="encyclopedy_zone_artifact_af-cristall-flower">
 	<article>zone_artifact_af-cristall-flower</article>
  </info_portion>
@@ -317,8 +331,31 @@
    <info_portion id="encyclopedy_mutant_bloodsucker_general">
 	<article>mutant_bloodsucker_general</article>
  </info_portion>
+
+
+   <info_portion id="encyclopedy_mutant_fracture_general">
+	<article>mutant_fracture_general</article>
+ </info_portion>
+
+   <info_portion id="encyclopedy_mutant_chimera_general">
+	<article>mutant_chimera_general</article>
+ </info_portion>
+
  
    <info_portion id="encyclopedy_mutant_burer_general">
+	<article>mutant_burer_general</article>
+ </info_portion>
+
+   <info_portion id="encyclopedy_mutant_zombie_general">
+	<article>mutant_zombie_general</article>
+ </info_portion>
+
+   <info_portion id="encyclopedy_mutant_zombieg_general">
+	<article>mutant_zombieg_general</article>
+ </info_portion>
+ 
+   <info_portion id="encyclopedy_mutant_cat_general">
+	<article>mutant_cat_general</article>
  </info_portion>
  
    <info_portion id="encyclopedy_mutant_pseudogiant_general">
@@ -410,15 +447,16 @@
 	<info_portion id="encyclopedy_tutorial_wound">
 		<article>tutorial_wound</article>
 	</info_portion>
-
-	<info_portion id="encyclopedy_tutorial_diary"></info_portion>
-
-
-
-
+	<info_portion id="encyclopedy_tutorial_psy">
+		<article>tutorial_psy</article>
+	</info_portion>
+	<info_portion id="encyclopedy_tutorial_satiety">
+		<article>tutorial_satiety</article>
+	</info_portion>
+		<info_portion id="encyclopedy_tutorial_diary">
+	</info_portion>
 	<info_portion id="tr_escape_broken_car">
 		<article>tr_escape_broken_car</article>
 	</info_portion>
 
- 
 </game_information_portions>

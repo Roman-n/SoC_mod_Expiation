@@ -75,6 +75,7 @@
 		<object_story_id>agr_zaz</object_story_id>
 		<map_location_hidden>1</map_location_hidden>
 		<infoportion_complete>agr_find_gunslinger_cache_final</infoportion_complete>
+		<function_call_complete>agroprom_tasks.agroprom_mapspot_rem_1</function_call_complete>
 	</objective>
 </game_task>
 <game_task id="agroprom_find_stalker_phantom" prio="0">

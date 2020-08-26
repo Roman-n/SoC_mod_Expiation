@@ -13,7 +13,7 @@
 		<text>Справка</text>
 	</string>
 	<string id="global_map_btn_hint">
-		<text>На карту зоны</text>
+		<text>На карту Зоны</text>
 	</string>
 	<string id="level_changer_invitation">
 		<text>Перейти на другую локацию?</text>
@@ -40,7 +40,7 @@
 		<text>Показать список контактов сталкеров</text>
 	</string>
 	<string id="pda_btn_diary">
-		<text>Журнал</text>
+		<text>Дневник</text>
 	</string>
 	<string id="pda_btn_diary_hint">
 		<text>Показать дневник игрока</text>
@@ -61,13 +61,13 @@
 		<text>Информация</text>
 	</string>
 	<string id="pda_btn_journal">
-		<text>Журнал</text>
+		<text>Дневник</text>
 	</string>
 	<string id="pda_btn_journal_hint">
 		<text>Показать записи игрока</text>
 	</string>
 	<string id="pda_btn_map">
-		<text>План</text>
+		<text>Карта</text>
 	</string>
 	<string id="pda_btn_map_hint">
 		<text>Показать карту Зоны</text>
@@ -94,7 +94,7 @@
 		<text>Показать информацию по квестам</text>
 	</string>
 	<string id="pda_btn_ranking">
-		<text>Ранги</text>
+		<text>Рейтинг</text>
 	</string>
 	<string id="pda_btn_ranking_hint">
 		<text>Показать рейтинг лучших сталкеров</text>
@@ -189,9 +189,6 @@
 	<string id="st_tip">
 		<text>Сообщение</text>
 	</string>
-	<string id="svoboda_outfit_description_m1">
-		<text>В комбинезон интегрирована металлическая сетка, защищающая от электрических и магнитных полей. В комплект также включен прибор ночного видения.</text>
-	</string>
 	<string id="Tasks">
 		<text>Задания</text>
 	</string>
@@ -199,9 +196,12 @@
 		<text>Время</text>
 	</string>
 	<string id="zoom_in_btn_hint">
-		<text>масштаб +</text>
+		<text>Масштаб +</text>
 	</string>
 	<string id="zoom_out_btn_hint">
-		<text>масштаб -</text>
+		<text>Масштаб -</text>
+	</string>
+	<string id="st_detail_list_for_foo">
+		<text>Статистика</text>
 	</string>
 </string_table>

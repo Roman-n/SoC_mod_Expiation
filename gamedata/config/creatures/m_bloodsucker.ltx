@@ -10,7 +10,7 @@ $npc			     		 = on							; option for Level Editor
 visual						 = monsters\krovosos\krovosos
 corpse_visual				 = monsters\krovosos\krovosos_dead
 icon						 = ui_npc_monster_krovosos
-MaxHealthValue		 		 = 2.0							; range [0..200]
+MaxHealthValue		 		 = 200							; range [0..200]
 
 
 ef_creature_type			 = 13							; option for evaluation functions
@@ -28,7 +28,7 @@ bone_fire					 = bip01_head
 weapon_usage				 = 0							; boolean
 
 Spawn_Inventory_Item_Section = mutant_krovosos_jaw
-Spawn_Inventory_Item_Probability = 0.2
+Spawn_Inventory_Item_Probability = 0.4
 
 ;------------------------------------------------------------------------
 ; Offline Alife
@@ -54,17 +54,16 @@ ph_foot_size 		  			= 0.20, 0.23, 0.20
 ph_crash_speed_min				= 100
 ph_crash_speed_max				= 200
 ph_collision_damage_factor		= 0.1
-ph_mass 						= 150;120
+ph_mass 						= 100
 
-destroyed_vis_name				= physics\Dead_Body\trupik_crash
+destroyed_vis_name				= physics\Dead_Body\skelet_crash
 
 ;---------------------------------------------------------------------
-ph_skeleton_airr_lin_factor   = 2.0 ;550.0 (изменно из-за того, что убрано домножение коэффициент 0.002 из кода)
-ph_skeleton_airr_ang_factor   = 0.0 ;0.0 (изменно из-за того, что убрано домножение на коэффициент 0.3 из кода (0.0*0.3=0.0))
-ph_skeleton_hinger_factor1    = 1.0 ;1.0 (изменно из-за того, что убрано домножение на коэффициент 5.0 из кода)
-ph_skeleton_ddelay	     	  = 15.0 ;Время изменения значения трения в суставе с момента создания шелла, сек
-
-ph_skel_fatal_impulse_factor  = 12.0
+ph_skeleton_airr_lin_factor   = 2.0
+ph_skeleton_airr_ang_factor   = 0.0
+ph_skeleton_hinger_factor1    = 1.0
+ph_skeleton_ddelay            = 15.0
+ph_skel_fatal_impulse_factor  = 2.0
 ph_after_death_velocity_factor= 0.75
 ph_skel_shot_up_factor        = 0.25
 ;---------------------------------------------------------------------
@@ -187,7 +186,7 @@ max_hear_dist				= 80
 ;-------------------------------------------------------------------------
 ; Vision
 ;-------------------------------------------------------------------------
-eye_fov						= 110	;150	
+eye_fov						= 120	;150	
 eye_range					= 80	;120	
 
 DynamicObjectsCount	 		= 32
@@ -254,6 +253,9 @@ LegsCount						= 2
 
 ;species of monster
 species							= bloodsucker
+rank							= 0
+spec_rank						= weak
+community						= bloodsucker
 
 ;-------------------------------------------------------------------------
 ; Invisible Ability
@@ -494,7 +496,7 @@ radiation_immunity		= 0.0
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 1.0
 explosion_immunity		= 0.7
-fire_wound_immunity		= 0.18
+fire_wound_immunity		= 0.09
 
 ;*********************************************************************************
 ; WEAK PROFILE
@@ -538,7 +540,7 @@ radiation_immunity		= 0.0
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 1.0
 explosion_immunity		= 0.5
-fire_wound_immunity		= 0.12
+fire_wound_immunity		= 0.06
 
 ;*********************************************************************************
 ; NORMAL PROFILE
@@ -569,12 +571,11 @@ visual				= monsters\krovosos\krovosos_strong
 icon				= ui_npc_monster_krovosos_strong
 Predator_Visual		= monsters\krovosos\krovosos_strong_xray
 panic_threshold		= 0.05
-rank				= 401
+rank				= 801
 immunities_sect		= bloodsucker_immunities_strong
 attack_params		= bloodsucker_attack_params_strong
 spec_rank			= strong
 community			= bloodsucker
-
 
 [bloodsucker_immunities_strong]
 burn_immunity			= 1.0
@@ -585,7 +586,7 @@ radiation_immunity		= 0.0
 telepatic_immunity		= 1.0
 chemical_burn_immunity	= 1.0
 explosion_immunity		= 0.3
-fire_wound_immunity		= 0.09
+fire_wound_immunity		= 0.045
 
 ;*********************************************************************************
 ; STRONG PROFILE

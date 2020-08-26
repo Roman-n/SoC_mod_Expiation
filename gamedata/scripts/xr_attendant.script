@@ -13,12 +13,12 @@
 -----------------------------------------------------------------------------------
 -- Ёвалуатор ожидани€ лидера
 class "evaluator_leader" (property_evaluator)
---------
+
 function evaluator_leader:__init (name, storage) super (nil, name)
     self.st = storage
     self.time = 0
 end
---------
+
 function evaluator_leader:evaluate ()
     -- Ћидер уже есть
     if self.st.leader_id ~= nil then return true end
@@ -58,9 +58,9 @@ function evaluator_leader:evaluate ()
     else
        if device ():time_global () - self.time > 10000 then
           if t ~= nil and t.dependent ~= nil then 
-             printf ("!!! ERROR !!! FOLLOWER %s NOT FOUND LEADER WITH JOB %s", self.object:name (), t.dependent)
+            --printf ("!!! ERROR !!! FOLLOWER %s NOT FOUND LEADER WITH JOB %s", self.object:name (), t.dependent)
           else
-             printf ("!!! ERROR !!! FOLLOWER %s NOT FOUND LEADER BECAUSE LEADER NOT DEFINED", self.object:name ())
+            --printf ("!!! ERROR !!! FOLLOWER %s NOT FOUND LEADER BECAUSE LEADER NOT DEFINED", self.object:name ())
           end    
           abort ("!!! ERROR !!! Leader for object %s not defined from GULAG system", self.object:name ())
           self.time = 0
@@ -76,11 +76,11 @@ end
 -----------------------------------------------------------------------------------
 -- Ёвалуатор следовани€ за лидером
 class "evaluator_follow" (property_evaluator)
---------
+
 function evaluator_follow:__init (name, storage) super (nil, name)
     self.st = storage
 end
---------
+
 function evaluator_follow:evaluate ()
     return xr_logic.is_active (self.object, self.st)
 end
@@ -89,17 +89,17 @@ end
 -----------------------------------------------------------------------------------
 -- Ёкшен ожидани€ лидера
 class "action_wait" (action_base)
---------
+
 function action_wait:__init (name, storage) super (nil, name)
     self.st = storage
     self.was_reset  = false
     self:reset_scheme()
 end
---------
+
 function action_wait:initialize ()
     action_base.initialize (self)
 end
---------
+
 function action_wait:execute ()
     action_base.execute (self)
 
@@ -113,15 +113,15 @@ function action_wait:execute ()
     end
     
 end
---------
+
 function action_wait:finalize ()
     action_base.finalize (self)
 end
---------
+
 function action_wait:reset_scheme ()
     self.was_reset = true
 end
---------
+
 function action_wait:activate_scheme ()
     self.was_reset = false
 end
@@ -131,17 +131,17 @@ end
 -----------------------------------------------------------------------------------
 -- Ёкшен движени€ за лидером
 class "action_follow" (action_base)
---------
+
 function action_follow:__init (name, storage) super (nil, name)
     self.st = storage
     self.was_reset  = false
 end
---------
+
 function action_follow:initialize ()
     action_base.initialize (self)
     self:reset_scheme ()
 end
---------
+
 function action_follow:execute ()
     action_base.execute (self)
     
@@ -247,7 +247,7 @@ function action_follow:execute ()
     end    
         
 end
---------
+
 function action_follow:finalize ()
     action_base.finalize (self)
     if self.index ~= nil then
@@ -256,7 +256,7 @@ function action_follow:finalize ()
     end   
     --xr_sound.set_sound(self.object, nil)
 end
---------
+
 function action_follow:calculate_position ()
     -- получим от лидера ноду и направление
     local leader = level.object_by_id(self.st.leader_id)
@@ -308,7 +308,7 @@ function action_follow:calculate_position ()
     if self.object:accessible (need_id) == false then
        need_id = leader:level_vertex_id ()
        if self.object:accessible (need_id) == false then
-          printf ("!!!ERROR!!! Follower %s can't found accessible vertex id !!!", self.object:name ())
+          --printf ("!!!ERROR!!! Follower %s can't found accessible vertex id !!!", self.object:name ())
           need_id = self.object:nearest_accessible_position ()
           --abort ("ERROR: can't find vertex id for object %s", self.object:name ())
        end 
@@ -317,7 +317,7 @@ function action_follow:calculate_position ()
     l_dir = level.vertex_position (need_id)
     return need_id, l_dir:distance_to (self.object:position ()), l_dir
 end
---------
+
 function action_follow:check_list ()
     -- возьмем хранилище лидера
     local storage = db.storage[self.st.leader_id]
@@ -344,14 +344,14 @@ function action_follow:check_list ()
     self.index = table.getn (storage.followers)
     --printf ("SET OBJECT %s AS FOLLOWER %d", self.object:name (), self.index)
 end
---------
+
 function action_follow:free ()
     -- если мы под гулагом, то запросим другую работу, иначе пр€ма€ дорога в logic
     local gulag = xr_gulag.get_npc_gulag (self.object)
 
     if gulag ~= nil then
        if self.st.dont_change_job == false then
-          printf ("!!!FOLLOWER %s!!! LEADER SECTION CHANGED - NEED NEW JOB FROM GULAG", self.object:name ()) 
+          --printf ("!!!FOLLOWER %s!!! LEADER SECTION CHANGED - NEED NEW JOB FROM GULAG", self.object:name ()) 
           xr_gulag.resetJob (self.object)
        end   
     else
@@ -359,7 +359,7 @@ function action_follow:free ()
        xr_logic.try_switch_to_another_section (self.object, self.st, db.actor)
     end
 end
---------
+
 function action_follow:reset_scheme ()
     self.was_reset = true
     self.vertex_id = nil
@@ -372,7 +372,7 @@ function action_follow:reset_scheme ()
     self.st.signals["leader_dead"] = false
     --xr_sound.set_sound(self.object, self.st.sound_theme)
 end
---------
+
 function action_follow:activate_scheme ()
     self.was_reset = false
 end

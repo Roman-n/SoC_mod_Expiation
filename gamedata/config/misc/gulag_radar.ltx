@@ -283,7 +283,7 @@ def_state_moving3 = assault
 center_point = kamp_center1
 radius = 3
  
-----------------кулак на входе-----------------
+;----------------кулак на входе-----------------
 
 [logic@rad_entrance_binocular0]
 active = walker@rad_entrance_binocular0
@@ -343,10 +343,10 @@ path_walk = walker3
 path_look = look
 danger=danger_condition
 
-[rad_monolith]
+[combat@rad_monolith]
 combat_type = monolith
 
-----------------кулак v долине-----------------
+;----------------кулак в долине-----------------
 [logic@rad_valley_kamp]
 active = kamp@rad_valley_kamp
 on_combat = combat@rad_monolith
@@ -381,3 +381,4 @@ on_combat = combat@rad_monolith
 path_walk = walk3
 path_look = look
 danger=danger_condition
+

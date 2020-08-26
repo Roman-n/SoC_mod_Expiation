@@ -5,9 +5,37 @@ function proceed()
 	
 	if	not has_alife_info("tutorial_artefact_start") and
 		not has_alife_info("tutorial_artefact_gain") and 
-		actor:object("af_blood_tutorial") ~= nil 
-	then		
-		actor:give_info_portion("tutorial_artefact_gain")
+		(actor:object("af_medusa") ~= nil or
+		actor:object("af_cristall_flower") ~= nil or
+		actor:object("af_night_star") ~= nil or
+		actor:object("af_ameba_slime") ~= nil or
+		actor:object("af_ameba_slug") ~= nil or
+		actor:object("af_ameba_mica") ~= nil or
+		actor:object("af_dummy_pellicle") ~= nil or
+		actor:object("af_dummy_dummy") ~= nil or
+		actor:object("af_dummy_spring") ~= nil or
+		actor:object("af_dummy_battery") ~= nil or
+		actor:object("af_dummy_glassbeads") ~= nil or
+		actor:object("af_electra_sparkler") ~= nil or
+		actor:object("af_electra_flash") ~= nil or
+		actor:object("af_electra_moonlight") ~= nil or
+		actor:object("af_vyvert") ~= nil or
+		actor:object("af_gravi") ~= nil or
+		actor:object("af_gold_fish") ~= nil or
+		actor:object("af_rusty_thorn") ~= nil or
+		actor:object("af_rusty_sea-urchin") ~= nil or
+		actor:object("af_rusty_kristall") ~= nil or
+		actor:object("af_blood") ~= nil or
+		actor:object("af_mincer_meat") ~= nil or
+		actor:object("af_soul") ~= nil or
+		actor:object("af_drops") ~= nil or
+		actor:object("af_fireball") ~= nil or
+		actor:object("af_cristall") ~= nil or
+		actor:object("af_fuzz_kolobok") ~= nil)
+	then
+		if not has_alife_info("tutorial_artefact_gain") then
+			actor:give_info_portion("tutorial_artefact_gain")
+		end
 	end 
 	
 	if	(has_alife_info("tutorial_end") or
@@ -116,6 +144,9 @@ function petruha_talk()
 	if has_alife_info("escape_factory_assault_say_hello") or
 		has_alife_info("esc_petruha_great")
 	then
+	for i=0, 100 do
+		level_tasks.remove_location (9, "green_location")
+	end
 		return true
 	else
 		return false
@@ -136,10 +167,10 @@ function process_info_portion(info_id)
 	--' пометки на карте
 	
 	if info_id == "esc_tutorial_secret_place" then
-		level_tasks.add_location(025, "green_location", "tutorial_secret_place1")
+		level_tasks.add_location(026, "crlc_small", "tutorial_secret_place1")
 		
-	elseif info_id == "esc_tutorial_secret_place_found" then
-		level_tasks.remove_location(025, "green_location")
+	elseif info_id == "esc_tutorial_secret_find" then
+		level_tasks.remove_location(026, "crlc_small")
 		
 	elseif info_id == "esc_kolyan_lost" then
 		level_tasks.add_location(028, "crlc_big", "esc_mill")
@@ -151,10 +182,10 @@ function process_info_portion(info_id)
 		level_tasks.add_location(031, "crlc_big", "soldiers_bridge")
 		
 	elseif info_id == "esc_tutorial_secret" then
-		level_tasks.add_location(026, "crlc_small", "tutorial_secret")
+		level_tasks.add_location(025, "crlc_small", "tutorial_secret")
 
-	elseif info_id == "esc_tutorial_secret_find" then
-		level_tasks.remove_location(026, "crlc_small")
+	elseif info_id == "esc_tutorial_secret_place_found" then
+		level_tasks.remove_location(025, "crlc_small") 
 		
 	elseif info_id == "esc_shustryi_secret" then
 		level_tasks.add_location(027, "crlc_small", "tutorial_secret_shustryi")
@@ -164,4 +195,16 @@ function process_info_portion(info_id)
 		
 	return false
 	end
+end
+
+function esc_mapspot_rem_1 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (17, "green_location")
+end
+end
+
+function esc_mapspot_rem_2 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (4, "green_location")
+end
 end

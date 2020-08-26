@@ -35,15 +35,14 @@
 		<objective>
 			<text>sar_secret_lab_1</text>
 			<icon x="100" y="50" width="50" height="50">ui\ui_icons_task</icon>
-			<map_location_hidden>1</map_location_hidden>
+			<map_location_type hint="sar_secret_door_hint">green_location</map_location_type>
+			<object_story_id>sar_secret_door</object_story_id>
 			<infoportion_complete>sar_secret_door_find</infoportion_complete>
+			<function_call_complete>radar_tasks.radar_mapspot_rem_4</function_call_complete>
 		</objective>
 		<objective>
 			<text>sar_secret_lab_2</text>
 			<icon x="100" y="50" width="50" height="50">ui\ui_icons_task</icon>
-			<map_location_type hint="sar_secret_door_hint">green_location</map_location_type>
-			<map_location_hidden>1</map_location_hidden>
-			<object_story_id>sar_secret_door</object_story_id>
 			<infoportion_complete>sar_finish_decoding</infoportion_complete>		
 		</objective>
 		<objective>
@@ -64,7 +63,8 @@
 		<objective>
 			<text>sar_monolith_destroy_1</text>
 			<icon x="100" y="50" width="50" height="50">ui\ui_icons_task</icon>
-			<infoportion_complete>sar_monolith_destory</infoportion_complete>
+			<infoportion_complete>sar_monolith_destroy</infoportion_complete>
+			<function_call_complete>radar_tasks.radar_mapspot_rem_5</function_call_complete>
 		</objective>
 </game_task>
 

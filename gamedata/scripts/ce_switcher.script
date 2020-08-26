@@ -9,7 +9,7 @@ class "ce_switcher" (CGameObject)
 
 function ce_switcher:__init() super()
 	self.m_state = 0
-	_printf("ce_switcher:__init() is called (%d)",self.m_state)
+	--_printf("ce_switcher:__init() is called (%d)",self.m_state)
 end
 
 function ce_switcher:SetState(s)
@@ -19,12 +19,12 @@ function ce_switcher:SetState(s)
 	local old = self.m_state
 
 	self.m_state = s
-	
+
 	self:OnStateChanged(old, self.m_state)
 end
 
 function ce_switcher:GetState()
-	return self.m_state;
+	return self.m_state
 end
 
 function ce_switcher:PlayAnim(anim_name)
@@ -42,21 +42,21 @@ function ce_switcher:shedule_Update(dt)
 end
 
 function ce_switcher:net_Export(packet)
-	_printf("ce_switcher:net_Export called")
+	--_printf("ce_switcher:net_Export called")
 	CGameObject.net_Export(self, packet)
 	packet:w_u32(self.m_state)
-	_printf("ce_switcher:net_Export done")
+	--_printf("ce_switcher:net_Export done")
 end
 
 function ce_switcher:net_Import(packet)
-	_printf("ce_switcher:net_Import called")
+	--_printf("ce_switcher:net_Import called")
 	CGameObject.net_Import(self, packet)
 	self.m_state = packet:r_u32()
-	_printf("ce_switcher:net_Import done")
+	--_printf("ce_switcher:net_Import done")
 end
 
 function ce_switcher:net_Spawn(se_object)
-	_printf("ce_switcher:net_Spawn called")
+	--_printf("ce_switcher:net_Spawn called")
 	CGameObject.net_Spawn(self, se_object)
 
 	self.m_state = se_object.m_state
@@ -66,9 +66,9 @@ function ce_switcher:net_Spawn(se_object)
 	self:setVisible(1)
 	self:setEnabled(1)
 
-	_printf("ce_switcher:net_Spawn done")
-	
-	return true;
+	--_printf("ce_switcher:net_Spawn done")
+
+	return true
 end
 
 function ce_switcher:net_Destroy()
@@ -87,22 +87,22 @@ end
 
 
 function ce_switcher:use(who)
-	printf("----ce_switcher used " )
+	--printf("----ce_switcher used " )
 	
 	if self.m_state==0 then 
 		self:SetState(1)
 	else
 		self:SetState(0)
 	end
-	
-	return true;
+
+	return true
 end
 
-/*
+--[[
 class "switcher_handler"
 
 function switcher_handler:on_use(what,who)
-	printf("---- used by %s", who:name() )
+	--printf("---- used by %s", who:name() )
 	local state = self.o:GetState()
 	if state==0 then 
 		self.o:SetState(1)
@@ -119,7 +119,7 @@ function switcher_handler:init()
 	if self.o==nil then 
 		return
 	end
-
+	
 	o:set_use_callback( self,"on_use")
 end
 
@@ -131,7 +131,7 @@ function main()
 	while true do
 		wait(10000)
 	end
-		
+
 end
 
-*/
+]]--

@@ -26,3 +26,15 @@ function process_info_portion(info_id)
 
 	return true
 end
+
+function pripyat_mapspot_rem_1 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (825, "green_location")
+end
+end
+
+function pripyat_mapspot_rem_2 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (822, "green_location")
+end
+end

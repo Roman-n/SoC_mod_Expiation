@@ -20,7 +20,7 @@ function mob_walker:__init(obj, storage)
 end
 
 function mob_walker:reset_scheme()
-	printf("_bp: mob_walker:reset_scheme: %s", self.object:name())
+	--printf("_bp: mob_walker:reset_scheme: %s", self.object:name())
 	
 	mob_state_mgr.set_state(self.object, db.actor, self.st.state)
 
@@ -113,9 +113,9 @@ function mob_walker:arrived_to_first_waypoint()
 end
 
 function mob_walker:waypoint_callback(obj, action_type, index)
-	printf("mob_walker:waypoint_callback(): name=%s, index=%d", self.object:name(), index)
+	--printf("mob_walker:waypoint_callback(): name=%s, index=%d", self.object:name(), index)
 	if index == -1 or index == nil then
-		printf("ERROR: mob_walker: waypoint_callback: index is %s", if_then_else(index == -1, "-1", "nil"))
+		--printf("ERROR: mob_walker: waypoint_callback: index is %s", if_then_else(index == -1, "-1", "nil"))
 		return
 	end
 
@@ -147,7 +147,7 @@ function mob_walker:waypoint_callback(obj, action_type, index)
 		local scheme = db.storage[npc_id]["active_scheme"]
 		local signals = db.storage[npc_id][scheme].signals
 		signals[sig] = true
-		printf("_bp: mob_walker [%s]: SIGNALLING: %s", self.object:name(), sig)
+		--printf("_bp: mob_walker [%s]: SIGNALLING: %s", self.object:name(), sig)
 	end
 	
 	local beh = self.path_walk_info[index]["b"]
@@ -160,7 +160,7 @@ function mob_walker:waypoint_callback(obj, action_type, index)
 	local search_for = self.path_walk_info[index].flags
 	if search_for:get() == 0 then
 		-- TODO: запретить одноточечные пути без соответствующего path_look по аналогии с move_mgr
-		printf("_bp: no flags")
+		--printf("_bp: no flags")
 		self:update_movement_state() -- идти дальше
 		return
 	end
@@ -212,7 +212,7 @@ function mob_walker:waypoint_callback(obj, action_type, index)
 end
 
 function mob_walker:update_movement_state()
-	printf("_bp [%s]: update_movement_state", self.object:name())
+	--printf("_bp [%s]: update_movement_state", self.object:name())
 	xr_logic.mob_capture(self.object, true)
 	
 	local m
@@ -225,7 +225,7 @@ function mob_walker:update_movement_state()
 	end
 
 	if self.scheduled_snd then
-		printf("_bp [%s]: playing scheduled sound", self.object:name())
+		--printf("_bp [%s]: playing scheduled sound", self.object:name())
 		action(self.object, move(m, patrol(self.st.path_walk, patrol.next, patrol.continue)),
 			sound(sound[self.scheduled_snd]), cond(cond.move_end))
 		self.scheduled_snd = nil
@@ -235,9 +235,9 @@ function mob_walker:update_movement_state()
 end
 
 function mob_walker:update_standing_state()
-	printf("_bp [%s]: update_standing_state", self.object:name())
+	--printf("_bp [%s]: update_standing_state", self.object:name())
 	if self.scheduled_snd then
-		printf("_bp [%s]: playing scheduled sound", self.object:name())
+		--printf("_bp [%s]: playing scheduled sound", self.object:name())
 		action(self.object, anim(self.cur_anim_set, 0),
 			sound(sound[self.scheduled_snd]), cond(cond.time_end, self.pt_wait_time))
 		self.scheduled_snd = nil
@@ -262,7 +262,7 @@ end
 
 ---------------------------------------------------------------------------------------------------------------------
 function add_to_binder(npc, ini, scheme, section, storage)
-	printf("DEBUG: add_to_binder: npc:name()='%s', scheme='%s', section='%s'", npc:name(), scheme, section)
+	--printf("DEBUG: add_to_binder: npc:name()='%s', scheme='%s', section='%s'", npc:name(), scheme, section)
 
 	local new_action = mob_walker(npc, storage)
 

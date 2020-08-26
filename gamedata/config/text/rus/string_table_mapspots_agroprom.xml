@@ -11,7 +11,7 @@
 		<text>Найти в катакомбах тайник Стрелка</text>
 	</string>
 	<string id="agr_give_case_to_barman_hint">
-		<text>Отдать бармену документы</text>
+		<text>Отдать Бармену документы</text>
 	</string>
 	<string id="agr_help_krot_hint">
 		<text>Спасти Крота</text>
@@ -23,7 +23,7 @@
 		<text>Встретиться с Кротом</text>
 	</string>
 	<string id="agr_nii_hint">
-		<text>НИИ "Агропром". База военных</text>
+		<text>НИИ «Агропром». База военных.</text>
 	</string>
 	<string id="agr_swamp_hint">
 		<text>Безопасное место</text>
@@ -36,4 +36,10 @@
 	</string>
 	<string id="agr_zaz_hint">
 		<text>Запорожец</text>
+	</string>
+	<string id="agroprom_find_gunslinger_cache_0">
+		<text>Найти тайник группировки Стрелка</text>
+	</string>
+	<string id="agroprom_find_gunslinger_cache_3">
+		<text>Выбраться из подземелья</text>
 	</string>

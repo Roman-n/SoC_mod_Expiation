@@ -3,7 +3,7 @@
 -----------------------------------------------------------------------------------
 
 function bind(obj)
-	printf("_bp: monster.bind: name='%s', id='%d'", obj:name(), obj:id())
+	--printf("_bp: monster.bind: name='%s', id='%d'", obj:name(), obj:id())
 
 	-- Для спауна
 	--xr_spawner.spawn_client(obj)
@@ -89,8 +89,16 @@ function generic_object_binder:waypoint_callback(obj, action_type, index)
 end
 
 function generic_object_binder:death_callback(victim, who)
-	if who:id() == db.actor:id() then
-		xr_statistic.addKillCount(self.object)
+	local name = tostring(victim:name())
+	
+	if not self.object then
+		self.object = victim
+	end
+
+	if db.actor then
+		if who:id() == db.actor:id() then
+			xr_statistic.addKillCount(self.object)
+		end
 	end
 
 	if self.st.mob_death then
@@ -107,7 +115,11 @@ function generic_object_binder:death_callback(victim, who)
 	local h = hit()
 	h.draftsman = self.object
 	h.type = hit.fire_wound
-	h.direction = db.actor:position():sub(self.object:position())
+
+	if db.actor ~= nil then
+		h.direction = db.actor:position():sub(self.object:position())
+	end
+
 	h:bone("pelvis")
 	h.power = 1
 	h.impulse = 10
@@ -161,7 +173,7 @@ function generic_object_binder:net_save_relevant()
 end
 
 function generic_object_binder:save(packet)
-	printf("generic_object_binder:save(): self.object:name()='%s'", self.object:name())
+	--printf("generic_object_binder:save(): self.object:name()='%s'", self.object:name())
 	object_binder.save(self, packet)
 
 	xr_logic.save_obj(self.object, packet)
@@ -173,7 +185,7 @@ end
 function generic_object_binder:load(reader)
 	self.loaded = true
 
-	printf("generic_object_binder:load(): self.object:name()='%s'", self.object:name())
+	--printf("generic_object_binder:load(): self.object:name()='%s'", self.object:name())
 	object_binder.load(self, reader)
 
 	if reader:r_eof() then

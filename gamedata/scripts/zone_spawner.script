@@ -27,14 +27,14 @@ function add_member (obj)
     local zone_id = ini:r_u32 ("zone_spawner", "id")
     for a = 1, table.getn (zones), 1 do
         if zones[a].id == zone_id then
-           printf ("Object %s attached to zone with id %d", obj:name (), zones[a].id)
+           --printf ("Object %s attached to zone with id %d", obj:name (), zones[a].id)
            zones[a]:add_member (obj)
            return
         end
     end 
     
     local t = {id = obj.id, id_spawner = zone_id}
-    printf ("Object %s include to temporary store", obj:name ())
+    --printf ("Object %s include to temporary store", obj:name ())
     table.insert (temporary_store, t)
     this.switch_offline (t.id)
     
@@ -71,13 +71,13 @@ function zone_spawner:__init (zone, ini)
     if ini:line_exist ("zone_spawner", "infoportion") == true then
        local infos = ini:r_string ("zone_spawner", "infoportion")
        if infos ~= nil then 
-          printf ("Zone has infoportions - %s", infos)
+          --printf ("Zone has infoportions - %s", infos)
           self.infoportions = utils.parse_params (infos)
        end
     end   
     
     table.insert (zones, self)
-    printf ("Zone %s is added to binder", zone:name ())
+    --printf ("Zone %s is added to binder", zone:name ())
     self.members = {}
     for a = 1, table.getn (temporary_store), 1 do
         if temporary_store[a].id_spawner == self.id then

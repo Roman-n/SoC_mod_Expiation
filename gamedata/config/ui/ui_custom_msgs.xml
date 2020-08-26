@@ -58,7 +58,7 @@
 		<text font="graffiti22"  r="240" g="217" b="182" a="255" align="c">cant_walk</text>
 	</cant_walk>
 	
-	<cant_walk_weight x="20" y="650" width="600" height="30" ttl="3">
+	<cant_walk_weight x="200" y="650" width="600" height="30" ttl="3">
 		<text font="graffiti22"  r="240" g="217" b="182" a="255" align="c">cant_walk_weight</text>
 	</cant_walk_weight>
 	

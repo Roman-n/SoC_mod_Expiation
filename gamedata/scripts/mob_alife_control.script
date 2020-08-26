@@ -18,7 +18,7 @@ end
 -- RESET SCHEME
 ----------------------------------------------------------------------------------------------------
 function mob_alife_control:reset_scheme()
-    printf("Mob Alife Control: reset_scheme: %s", self.object:name())
+    --printf("Mob Alife Control: reset_scheme: %s", self.object:name())
 
 	self.st.signals				= {}
 	
@@ -57,7 +57,7 @@ end
 -- ADD_TO_BINDER
 ----------------------------------------------------------------------------------------------------
 function add_to_binder(npc, ini, scheme, section, storage)
-	printf("DEBUG: add_to_binder: npc:name()='%s', scheme='%s', section='%s'", npc:name(), scheme, section)
+	--printf("DEBUG: add_to_binder: npc:name()='%s', scheme='%s', section='%s'", npc:name(), scheme, section)
 
 	local new_action = mob_alife_control(npc, storage)
 

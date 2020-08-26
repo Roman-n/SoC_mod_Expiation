@@ -1,6 +1,6 @@
 <game_task id="yan_kill_brain_task" prio="335">
 		<title>yan_kill_brain</title>
-		<objective>
+		<objective>			
 			<text>yan_kill_brain</text>
 			<icon>ui_iconsTotal_yan_kill_brain_task</icon>
 			<infoportion_complete>yan_labx16_switcher_primary_off</infoportion_complete>
@@ -8,29 +8,33 @@
 		</objective>
 		<objective>
 			<text>yan_switcher_off_1</text>
-			<map_location_type>green_location</map_location_type>
+			<map_location_type hint="yan_switcher_off_1_hint">green_location</map_location_type>
 			<object_story_id>yan_labx16switcher_lamp3</object_story_id>
 			<infoportion_complete>yan_labx16_switcher_3_off</infoportion_complete>
 		</objective>
 		<objective>
 			<text>yan_switcher_off_2</text>
-			<map_location_type>green_location</map_location_type>
+			<map_location_type hint="yan_switcher_off_2_hint">green_location</map_location_type>
 			<object_story_id>yan_labx16switcher_lamp2</object_story_id>
+			<map_location_hidden>1</map_location_hidden>
 			<infoportion_complete>yan_labx16_switcher_2_off</infoportion_complete>
 		</objective>
 		<objective>
 			<text>yan_switcher_off_3</text>
-			<map_location_type>green_location</map_location_type>
+			<map_location_type hint="yan_switcher_off_3_hint">green_location</map_location_type>
 			<object_story_id>yan_labx16switcher_lamp1</object_story_id>
+			<map_location_hidden>1</map_location_hidden>
 			<infoportion_complete>yan_labx16_switcher_1_off</infoportion_complete>
 		</objective>
 		<objective>
 			<text>yan_kill_brain_task</text>
-			<map_location_type>green_location</map_location_type>
+			<map_location_type hint="yan_switcher_off_4_hint">green_location</map_location_type>
 			<object_story_id>yan_labx16switcher_primary_1_green</object_story_id>
+			<map_location_hidden>1</map_location_hidden>
 			<infoportion_complete>yan_labx16_switcher_primary_off</infoportion_complete>			
 		</objective>
 </game_task>
+
 <game_task id="yan_kill_brain_task_2" prio="330">
 		<title>yan_kill_brain_task_2</title>		
 		<objective>
@@ -41,13 +45,13 @@
 		</objective>	
 		<objective>
 			<text>yan_secret_tonnel</text>
-			<map_location_type>green_location</map_location_type>
+			<map_location_type hint="yan_secret_tonnel">green_location</map_location_type>
 			<object_story_id>yan_secret_exit</object_story_id>
 			<infoportion_complete>yantar_tunnel_finish</infoportion_complete>
 		</objective>
 		<objective>
 			<text>yan_scientist_return</text>
-			<map_location_type hint="yan_scientist_return">green_location</map_location_type>
+			<map_location_type hint="yan_scientist_return">blue_location</map_location_type>
 			<object_story_id>yan_general_ecolog</object_story_id>
 			<infoportion_complete>yan_kill_brain_done</infoportion_complete>
 		</objective>		
@@ -58,8 +62,6 @@
 		<objective>
 			<text>yan_find_scientist</text>
 			<icon>ui_iconsTotal_yan_find_scientist</icon>
-			<map_location_type hint="yan_find_scientist">green_location</map_location_type>
-			<object_story_id>yan_ecolog_help</object_story_id>
 			<infoportion_complete>yan_find_scientist_done</infoportion_complete>
 			<function_fail>yantar_tasks.yan_scientist_task_fail</function_fail>
 			<article>descr_yan_find_scientist</article>
@@ -74,11 +76,13 @@
 			<text>yan_psi_zone_find</text>
 			<map_location_type hint="yan_psi_zone_find">green_location</map_location_type>
 			<object_story_id>yan_ecolog_help</object_story_id>
+			<map_location_hidden>1</map_location_hidden>
 			<infoportion_complete>yan_scientist_return_to_bunker</infoportion_complete>
+			<function_call_complete>yantar_tasks.yan_labx16_mapspot_rem_2</function_call_complete>
 		</objective>
 		<objective>
 			<text>yan_return_to_bunker</text>
-			<map_location_type hint="yan_return_to_bunker">green_location</map_location_type>
+			<map_location_type hint="yan_return_to_bunker">blue_location</map_location_type>
 			<object_story_id>yan_general_ecolog</object_story_id>
 			<infoportion_complete>yan_find_scientist_done</infoportion_complete>
 		</objective>
@@ -88,9 +92,7 @@
 		<title>yan_find_scientist</title>
 		<objective>
 			<text>yan_find_scientist</text>
-			<icon x="450" y="150" width="50" height="50">ui\ui_icons_task</icon>
-			<map_location_type hint="yan_find_scientist">green_location</map_location_type>
-			<object_story_id>yan_semenov_help</object_story_id>
+			<icon>ui_iconsTotal_yan_find_scientist</icon>
 			<infoportion_complete>yan_find_scientist_done</infoportion_complete>
 			<function_fail>yantar_tasks.yan_scientist_task_fail</function_fail>
 			<article>descr_yan_find_scientist_semenov</article>
@@ -105,11 +107,13 @@
 			<text>yan_psi_zone_find_semenov</text>
 			<map_location_type hint="yan_psi_zone_find_semenov">green_location</map_location_type>
 			<object_story_id>yan_semenov_help</object_story_id>
+			<map_location_hidden>1</map_location_hidden>
 			<infoportion_complete>yan_scientist_return_to_bunker</infoportion_complete>
+			<function_call_complete>yantar_tasks.yan_labx16_mapspot_rem_3</function_call_complete>
 		</objective>
 		<objective>
 			<text>yan_return_to_bunker</text>
-			<map_location_type hint="yan_return_to_bunker">green_location</map_location_type>
+			<map_location_type hint="yan_return_to_bunker">blue_location</map_location_type>
 			<object_story_id>yan_general_ecolog</object_story_id>
 			<infoportion_complete>yan_find_scientist_done</infoportion_complete>
 		</objective>
@@ -119,13 +123,13 @@
 		<title>yan_scientist_return_task</title>
 		<objective>
 			<text>yan_scientist_return_task</text>
-			<icon x="450" y="150" width="50" height="50">ui\ui_icons_task</icon>
+			<icon>ui_iconsTotal_yan_scientist_return_task</icon>
 			<infoportion_complete>yan_find_vasilyev_start</infoportion_complete>
 			<article>descr_yan_scientist_return_task</article>
 		</objective>
 		<objective>
 			<text>yan_scientist_return</text>
-			<map_location_type hint="yan_scientist_return">green_location</map_location_type>
+			<map_location_type hint="yan_scientist_return">blue_location</map_location_type>
 			<object_story_id>yan_general_ecolog</object_story_id>
 			<infoportion_complete>yan_find_vasilyev_start</infoportion_complete>
 		</objective>
@@ -152,6 +156,7 @@
 			<object_story_id>yan_mapspot_from_vasilyev</object_story_id>
 			<map_location_hidden>1</map_location_hidden>
 			<infoportion_complete>yan_find_laboratory_end</infoportion_complete>
+			<function_call_complete>yantar_tasks.yan_labx16_mapspot_rem_1</function_call_complete>
 		</objective>
 </game_task>
 
@@ -159,15 +164,9 @@
 		<title>yan_find_ghost_task</title>
 		<objective>
 			<text>yan_find_ghost_task</text>
-			<icon x="350" y="50" width="50" height="50">ui\ui_icons_task</icon>
+			<icon>ui_iconsTotal_bar_darklab_documents2</icon>
 			<infoportion_complete>yantar_find_ghost_task_end</infoportion_complete>
 			<article>descr_yan_find_ghost_task</article>
-		</objective>
-		<objective>
-			<text>yan_find_labX16</text>
-			<map_location_type hint="yan_find_labX16">green_location</map_location_type>
-			<object_story_id>yan_mapspot_from_vasilyev</object_story_id>
-			<infoportion_complete>labx16_find</infoportion_complete>
 		</objective>
 		<objective>
 			<text>yan_find_ghost</text>
@@ -176,6 +175,7 @@
 			<function_complete>yantar_tasks.has_labx16_documents</function_complete>
 		</objective>
 </game_task>
+
 <game_task id="yan_provodnik_task">
 		<title>yan_provodnik_task</title>
 		<objective>
@@ -192,8 +192,7 @@
 		</objective>
 </game_task>
 
-
-	<game_task id="yan_scientist_job" prio="0">
+<game_task id="yan_scientist_job" prio="0">
 		<title>yan_scientist_job</title>
 		<objective>
 			<icon>ui_iconsTotal_yan_scientist_job</icon>
@@ -201,8 +200,8 @@
 		</objective>
 		<objective>
 			<text>yan_scientist_job_text</text>
-			<map_location_type hint="yan_scientist_job_text">green_location</map_location_type>
+			<map_location_type hint="yan_scientist_job_text">blue_location</map_location_type>
 			<object_story_id>yan_general_ecolog</object_story_id>
 			<infoportion_complete>yan_find_vasilyev_start</infoportion_complete>
 		</objective>
-	</game_task>
+</game_task>

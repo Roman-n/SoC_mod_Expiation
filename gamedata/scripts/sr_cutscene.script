@@ -158,6 +158,6 @@ end
 
 ----------------------------------------------------------------------------------------------------
 function effector_callback()
-	printf("HUYYASE")
+	--printf("HUYYASE")
 	cutscene_finished = true
 end

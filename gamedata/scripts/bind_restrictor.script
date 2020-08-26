@@ -91,15 +91,18 @@ end
 function restrictor_binder:save(packet)
 	object_binder.save(self, packet)
 
-	xr_logic.save_obj(self.object, packet)
+	xr_logic.save_obj(self.object, packet, not self.initialized)
 end
 
 function restrictor_binder:load(reader)
-	self.loaded = true
 
-	printf( "restrictor_binder:load" )
+	--printf( "restrictor_binder:load" )
 
 	object_binder.load(self, reader)
 
 	xr_logic.load_obj(self.object, reader)
+
+	if self.st.loaded_ini_filename then
+		self.loaded = true
+	end
 end

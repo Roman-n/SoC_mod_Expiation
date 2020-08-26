@@ -68,16 +68,16 @@ function action_alive:initialize()
 --	self.object:set_path_evaluator		()
 	self.object:set_desired_position	()
 	self.object:set_desired_direction	()
-	printf								("script action is initialized!")
+--	printf								("script action is initialized!")
 end
 
 function action_alive:execute()
 	action_base.execute					(self)
-	
 
-	self.object:set_sight				(look.search,nil,0);
 
-	self.object:set_item				(object.idle);
+	self.object:set_sight				(look.search,nil,0)
+
+	self.object:set_item				(object.idle)
 
 	self.object:set_path_type			(game_object.game_path)
 	self.object:set_detail_path_type	(move.line)
@@ -90,17 +90,14 @@ function action_alive:finalize()
 	action_base.finalize	(self)
 end
 
---///////////////////////////////////////////////////
---///////////////////////////////////////////////////
---///////////////////////////////////////////////////
 class "stalker_binder" (object_binder)
 
 function stalker_binder:__init		(object) super(object)
-	printf					("Binded object for core object %s is constructed!",object:name())
+--	printf					("Binded object for core object %s is constructed!",object:name())
 end
 
 function stalker_binder:__finalize	()
-	printf					("Binded object for core object %s is destroyed!",self.object:name())
+--	printf					("Binded object for core object %s is destroyed!",self.object:name())
 end
 
 function stalker_binder:reinit		()
@@ -114,7 +111,7 @@ function stalker_binder:reload		(section)
 	local					properties	= {}
 	local					manager		= self.object:motivation_action_manager()
 	local					goal		= world_state()
-	
+
 	manager:clear			()
 
 	motivations["global"]	= 0
@@ -133,14 +130,14 @@ function stalker_binder:reload		(section)
 
 	goal:clear				()
 	goal:add_property		(world_property(properties["dead"],	true))
-printf	("Right now will be crash")
+--	printf	("Right now will be crash")
 	manager:add_motivation	(motivations["dead"],		this.motivation_final(goal))
-printf	("It works!!!")
+--	printf	("It works!!!")
 
 	goal:clear				()
 	goal:add_property		(world_property(properties["solved"],true))
 	manager:add_motivation	(motivations["alive"],		motivation_action(goal))
-  
+
 	manager:add_connection	(motivations["global"],		motivations["dead"])
 	manager:add_connection	(motivations["global"],		motivations["alive"])
 
@@ -155,7 +152,7 @@ printf	("It works!!!")
 	action:add_precondition	(world_property(properties["dead"],		false))
 	action:add_effect		(world_property(properties["dead"],		true))
 	manager:add_action		(operators["dead"],			action)
-
+	
 	action					= this.action_alive()
 	action:add_precondition	(world_property(properties["alive"],	true))
 	action:add_precondition	(world_property(properties["solved"],	false))

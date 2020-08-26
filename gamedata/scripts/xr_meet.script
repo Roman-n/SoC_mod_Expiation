@@ -33,9 +33,41 @@ function evaluator_contact:evaluate()
 			self.object:disable_talk()
 			return false
 		end
+		local tken = (self.a.meet_manager.state ~= "nil")
+		local istk = self.object:is_talking()
+		if self.begtime == nil and tken then
+			self.begtime = time_global()
+		elseif not tken then
+			self.begtime = nil
+		elseif self.begtime+10000 < time_global() and (not istk) then
+      		return false
+		end
 		return tostring(self.a.meet_manager.state) ~= "nil"
 	else
 		return false
+	end
+end
+
+
+-- Таблица запрещения попугаев
+local arastop={}
+
+-- Я попугай, слющай нехорошо, да?
+function am_i_ara(npc, sound)
+	if sound==nil then
+		return false
+	end
+	if arastop[npc:id()]==nil or 
+			arastop[npc:id()][sound]==nil or 
+			arastop[npc:id()][sound]<time_global() 
+			then
+		if arastop[npc:id()]==nil then
+			arastop[npc:id()]={}
+		end
+		arastop[npc:id()][sound]=time_global()+300000
+		return false
+	else
+		return true
 	end
 end
 
@@ -59,7 +91,9 @@ function action_meet_wait:initialize()
 
 	-- Здороваемся.
 	if self.a.init_meet ~= "" then
-		xr_sound.set_sound_play(self.object, self.a.init_meet)
+		if not am_i_ara(self.a.meet_manager.npc, self.a.init_meet) then
+			xr_sound.set_sound_play(self.object, self.a.init_meet)
+		end
 	end
 end
 function action_meet_wait:execute ()
@@ -98,6 +132,13 @@ function action_meet_wait:execute ()
 				synsound = meet_manager.sound
 			end
 		end
+
+--' эта часть кажется не влияет на попугайность, но на всякий случай оставлю
+		if synsound then
+			if am_i_ara(meet_manager.npc,synsound) then
+				synsound=nil
+			end
+		end
 		
 		if meet_manager.emerg_state == true then
 			state_mgr.set_state(self.object, meet_manager.state, nil, nil, {look_object = victim}, {animation = true}, synsound)
@@ -117,7 +158,11 @@ function action_meet_wait:execute ()
 				if meet_manager.sound == "wait" then
 					idle_timeout = 10000
 				end
-				xr_sound.set_sound(self.object, meet_manager.sound, nil, idle_timeout)
+				if not am_i_ara(meet_manager.npc,meet_manager.sound) then
+					xr_sound.set_sound(self.object, meet_manager.sound, nil, idle_timeout)
+				else
+					xr_sound.set_sound(self.object, nil)
+				end
 			end
 		end
 	else
@@ -130,10 +175,10 @@ function action_meet_wait:execute ()
 
 	--' Туториал на спрятать оружие
 	if meet_manager.disable_talk_weapon == true and 
-       not has_alife_info("tutorial_part_15_hide_weapon") 
+       not has_alife_info("encyclopedy_tutorial_hide_weapon") 
 	then
 		game.start_tutorial("part_15_hide_weapon")
-		db.actor:give_info_portion("tutorial_part_15_hide_weapon")		
+		db.actor:give_info_portion("encyclopedy_tutorial_hide_weapon")		
 	end
 
 	local tt = db.storage[self.object:id()]

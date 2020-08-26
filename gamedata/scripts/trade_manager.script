@@ -8,7 +8,7 @@ local trade_manager = {
 
 
 function trade_init(npc, cfg)
-	printf("TRADE INIT[%s]", npc:name())
+	--printf("TRADE INIT[%s]", npc:name())
 --'	if trade_manager[npc:id()] == nil then
 		trade_manager[npc:id()] = {}
 --'	end
@@ -52,14 +52,14 @@ function update(npc)
 	
 	local str = xr_logic.pick_section_from_condlist(db.actor, npc, tt.buy_condition)
 	if tt.current_buy_condition ~= str then
-		printf("TRADE [%s]: buy condition = %s", npc:name(), str)
+		--printf("TRADE [%s]: buy condition = %s", npc:name(), str)
 		npc:buy_condition(tt.config, str)
 		tt.current_buy_condition = str
 	end
 
 	str = xr_logic.pick_section_from_condlist(db.actor, npc, tt.sell_condition)
 	if tt.current_sell_condition ~= str then
-		printf("TRADE [%s]: sell condition = %s", npc:name(), str)
+		--printf("TRADE [%s]: sell condition = %s", npc:name(), str)
 		npc:sell_condition(tt.config, str)
 		tt.current_sell_condition = str
 	end
@@ -73,7 +73,7 @@ function update(npc)
 		if tt.resuply_time ~= nil and tt.resuply_time < time_global() then
 			return
 		end
-		printf("TRADE [%s]: buy_supplies = %s", npc:name(), str)
+		--printf("TRADE [%s]: buy_supplies = %s", npc:name(), str)
 		npc:buy_supplies(tt.config, str)
 		tt.current_buy_supplies = str
 		tt.resuply_time = time_global() + 24*3600000
@@ -86,7 +86,7 @@ function save(obj, packet)
 
 	--' Сохраняем присутствует ли инициализированная торговля в принципе.
 	if tt == nil then
-		printf("TRADE SAVE [%s]: ignored", obj:name())
+		--printf("TRADE SAVE [%s]: ignored", obj:name())
 		packet:w_bool(false)
 		return
 	else
@@ -95,21 +95,21 @@ function save(obj, packet)
 
 	packet:w_stringZ(tt.cfg_ltx)
 
-	printf("TRADE SAVE [%s]: current_buy_condition = %s", obj:name(), tostring(tt.current_buy_condition))
+	--printf("TRADE SAVE [%s]: current_buy_condition = %s", obj:name(), tostring(tt.current_buy_condition))
 	if tt.current_buy_condition == nil then
 		packet:w_stringZ("")
 	else
 		packet:w_stringZ(tt.current_buy_condition)
 	end
 
-	printf("TRADE SAVE [%s]: current_sell_condition = %s", obj:name(), tostring(tt.current_sell_condition))
+	--printf("TRADE SAVE [%s]: current_sell_condition = %s", obj:name(), tostring(tt.current_sell_condition))
 	if tt.current_sell_condition == nil then
 		packet:w_stringZ("")
 	else
 		packet:w_stringZ(tt.current_sell_condition)
 	end
 
-	printf("TRADE SAVE [%s]: current_buy_supplies = %s", obj:name(), tostring(tt.current_buy_supplies))
+	--printf("TRADE SAVE [%s]: current_buy_supplies = %s", obj:name(), tostring(tt.current_buy_supplies))
 	if tt.current_buy_supplies == nil then
 		packet:w_stringZ("")
 	else
@@ -134,7 +134,7 @@ end
 function load(obj, packet)
 	local a = packet:r_bool()
 	if a == false then
-		printf("TRADE LOAD [%s]: ignored", obj:name())
+		--printf("TRADE LOAD [%s]: ignored", obj:name())
 		return
 	end
 
@@ -143,26 +143,26 @@ function load(obj, packet)
 	local tt = trade_manager[obj:id()]
 
 	tt.cfg_ltx = packet:r_stringZ()
-	printf("TRADE LOAD [%s]: cfg_ltx = %s", obj:name(), tostring(tt.cfg_ltx))
+	--printf("TRADE LOAD [%s]: cfg_ltx = %s", obj:name(), tostring(tt.cfg_ltx))
 
 	tt.config = ini_file(tt.cfg_ltx)
 
 	a = packet:r_stringZ()
-	printf("TRADE LOAD [%s]: current_buy_condition = %s", obj:name(), tostring(a))
+	--printf("TRADE LOAD [%s]: current_buy_condition = %s", obj:name(), tostring(a))
 	if a ~= "" then
 		tt.current_buy_condition = a
 		obj:buy_condition(tt.config, a)
 	end
 	
 	a = packet:r_stringZ()
-	printf("TRADE LOAD [%s]: current_sell_condition = %s", obj:name(), tostring(a))
+	--printf("TRADE LOAD [%s]: current_sell_condition = %s", obj:name(), tostring(a))
 	if a ~= "" then
 		tt.current_sell_condition = a
 		obj:sell_condition(tt.config, a)
 	end
 
 	a = packet:r_stringZ()
-	printf("TRADE LOAD [%s]: current_buy_supplies = %s", obj:name(), tostring(a))
+	--printf("TRADE LOAD [%s]: current_buy_supplies = %s", obj:name(), tostring(a))
 	if a ~= "" then
 		tt.current_buy_supplies = a	
 	end

@@ -52,7 +52,7 @@ ignore_artefacts			= false
 blowout_light				= on
 light_color		    		= 1.1,1.7,1.4
 light_animation             = light_green_01
-light_range		    		= 5
+light_range		    		= 5.0
 light_time 		    		= 0.35
 light_height				= 0.75			;подъем источника света на высоту
 
@@ -67,7 +67,7 @@ awaking_time				= 50
 blowout_time				= 100	
 accamulate_time				= 500
 
-visible_by_detector 		= off
+visible_by_detector 		= on
 
 blowout_wind				= off
 
@@ -125,3 +125,30 @@ min_artefact_count	= 1
 max_artefact_count	= 2
 artefact_spawn_idle	= 24  ;насколько часто спонить артефакты в офлайне, в часах
 artefact_spawn_rnd	= 90  ;вероятность заспавнить артефакт в процентах.
+
+[noartf_buzz_weak]:zone_buzz_weak
+$spawn 				= "zones\buzz_weak_noartf"
+;artefacts			= af_ameba_slime, 0.0, af_ameba_slug, 0.0, af_ameba_mica, 0.0
+BirthProbability		= 0
+spawn_blowout_artefacts 	= off
+min_artefact_count		= 0
+max_artefact_count		= 0
+artefact_spawn_rnd		= 0
+
+[noartf_buzz_average]:zone_buzz_average
+$spawn 				= "zones\buzz_average_noart"
+;artefacts			= af_ameba_slime, 0.0, af_ameba_slug, 0.0, af_ameba_mica, 0.0
+BirthProbability		= 0
+spawn_blowout_artefacts 	= off
+min_artefact_count		= 0
+max_artefact_count		= 0
+artefact_spawn_rnd		= 0
+
+[noartf_buzz_strong]:zone_buzz_strong
+$spawn 				= "zones\buzz_strong_noartf"
+;artefacts			= af_ameba_slime, 0.0, af_ameba_slug, 0.0, af_ameba_mica, 0.0
+BirthProbability		= 0
+spawn_blowout_artefacts 	= off
+min_artefact_count		= 0
+max_artefact_count		= 0
+artefact_spawn_rnd		= 0

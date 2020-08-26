@@ -4,7 +4,7 @@
 	<task_root_item x="0" y="0" width="320" height="40">
 		<image x="8" y="16" width="83" height="47"/>
 		
-		<caption x="93" y="16" width="180" height="18" complex_mode="1">
+		<caption x="93" y="16" width="176" height="18" complex_mode="1">
 			<text align="l" x="0" y="0" font="letterica18"/>
 		</caption>
 
@@ -117,5 +117,3 @@
 	</notused_edit_user_item>
 	
 </window>
-
-"letterica16"

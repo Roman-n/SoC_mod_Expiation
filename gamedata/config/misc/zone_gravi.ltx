@@ -8,7 +8,7 @@ ef_anomaly_type			= 5
 ef_weapon_type			= 17
 
 sound			= zone_mosquito_bald
-postprocess		= postprocess_gravi
+;postprocess		= postprocess_gravi
 
 artefacts		= af_vyvert,0.8, af_gravi, 0.2, af_gold_fish, 0.00
 BirthProbability = 0.2;0.1
@@ -22,7 +22,7 @@ min_artefact_count	= 0
 max_artefact_count	= 0
 
 
-idle_particles		= anomaly2\gravity_idle
+idle_particles		= anomaly2\group_items\gravity_shield_dist
 blowout_particles	= anomaly2\gravity_blast_final00 ;gravity_blast_03
 tearing_particles	=anomaly2\body_tear_00
 torn_particles      =anomaly2\body_tear_01
@@ -59,7 +59,7 @@ ignore_artefacts	= true
 blowout_light		= on
 light_color		    = 1.4,1.6,1.3
 light_range		    = 30.0
-light_time 		    = 0.8;0.35
+light_time 		    = 0.8
 light_height		= 1.5			;подъем источника света на высоту
 
 idle_light			= off
@@ -77,8 +77,8 @@ throw_in_impulse			= 		2000;3000;4000		;сила импульса вт€гивани€ (дл€ тела 100кг
 throw_out_impulse			=		4000;		;сила выбрасывани€ взрывом
 throw_in_impulse_alive		= 		400;600 800	;сила импульса вт€гивани€ дл€ живых
 throw_in_atten				= 		2;8			;коэфф. зат€гивани€ (чем меньше, тем плавнее зат€гивает)
-blowout_radius_percent		= 		0.8		;радиус (в процентах от всего радиуса) непосредственно выброса
-actor_blowout_radius_percent=		0.5
+blowout_radius_percent		= 		0.6		;радиус (в процентах от всего радиуса) непосредственно выброса
+actor_blowout_radius_percent=		0.6
 
 tele_height				= 0.05;	3.5	;высота подъема телекинеза 
 time_to_tele			= 5000		;врем€ деражани€ объекта в воздухе
@@ -89,7 +89,7 @@ visible_by_detector = on
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ветер
-blowout_wind		= on
+blowout_wind		= off
 
 blowout_wind_time_start     = 0
 blowout_wind_time_peak      = 1500
@@ -209,3 +209,30 @@ accamulate_time		= 1000
 
 [zone_gravi_zone_killing]:zone_gravi_zone_average
 $spawn 			= "zones\gravi zone_killing"
+
+[noartf_gravi_zone_weak]:zone_gravi_zone_weak
+$spawn 				= "zones\gravi_zone_weak_noartf"
+;artefacts			= af_vyvert, 0.0, af_gravi, 0.0, af_gold_fish, 0.0
+BirthProbability		= 0
+spawn_blowout_artefacts 	= off
+min_artefact_count		= 0
+max_artefact_count		= 0
+artefact_spawn_rnd		= 0
+
+[noartf_gravi_zone_average]:zone_gravi_zone_average
+$spawn 				= "zones\gravi_zone_average_noartf"
+;artefacts			= af_vyvert, 0.0, af_gravi, 0.0, af_gold_fish, 0.0
+BirthProbability		= 0
+spawn_blowout_artefacts 	= off
+min_artefact_count		= 0
+max_artefact_count		= 0
+artefact_spawn_rnd		= 0
+
+[noartf_gravi_zone_strong]:zone_gravi_zone_strong
+$spawn 				= "zones\gravi_zone_strong_noartf"
+;artefacts			= af_vyvert, 0.0, af_gravi, 0.0, af_gold_fish, 0.0
+BirthProbability		= 0
+spawn_blowout_artefacts 	= off
+min_artefact_count		= 0
+max_artefact_count		= 0
+artefact_spawn_rnd		= 0

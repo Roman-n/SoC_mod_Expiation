@@ -32,19 +32,19 @@
 
 	<frame_line_window x="218" y="485" width="600" height="250" vertical="1">
 		<texture>ui_talk_dialogue2</texture>		
-		<title x="25" y="60" width="190" height="22">
+		<title x="25" y="57" width="190" height="22">
 			<text font="graffiti22" r="238" g="153" b="26" complex_mode="0"/>
 		</title>
 	</frame_line_window>
 
 	<questions_list x="20" y="100" width="557" height="125" right_ident="5" always_show_scroll="0"/>
 
-	<answers_list x="20" y="46" width="557" height="377" right_ident="0" always_show_scroll="0"/>
+	<answers_list x="23" y="49" width="557" height="377" right_ident="0" always_show_scroll="0"/>
 
 
 	<question_item x="0" y="0" width="557" height="20" min_height="13">
 		<content_text x="0" y="0" width="550" height="20">
-		<text font="letterica18" r="255" g="232" b="208" align="l"/>
+		<text font="letterica18" r="255" g="232" b="208" align="l" complex_mode="1"/>
 		<text_color>
 			<t r="231" g="168" b="12"/> <e r="255" g="232" b="208"/> <h r="255" g="255" b="255"/>
 		</text_color>

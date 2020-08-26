@@ -9,7 +9,7 @@
 
 		<team>Killer_leader</team>				
 		<community>killer</community>
-		
+			
 		<rank>95</rank>
 		<reputation>-70</reputation>
 
@@ -27,7 +27,7 @@
 		<actor_dialog>general_pda_talk</actor_dialog>
 		<actor_dialog>esc_stalker_talk_level</actor_dialog>
 	</specific_character>
-	
+
 <!---------------------------KILLER REGULAR----------------------->
 	<specific_character id="killer_regular_default1" team_default = "1">
 		<name>Неизвестный наемник</name>
@@ -115,7 +115,7 @@
 		<actor_dialog>general_pda_talk</actor_dialog>
 		<actor_dialog>esc_stalker_talk_level</actor_dialog>
 	</specific_character>
-		
+	
 <!---------------------------KILLER SNIPER---------------------->
 	<specific_character id="killer_sniper_default1" team_default = "1">
 		<name>Неизвестный наемник</name>
@@ -145,7 +145,6 @@
 		<actor_dialog>esc_stalker_talk_level</actor_dialog>
 	</specific_character>
 
-	
 <!---------------------------KILLER SPECNAZ---------------------->
 	<specific_character id="killer_specnaz_default1" team_default = "1">
 		<name>Неизвестный наемник</name>
@@ -260,7 +259,7 @@
 		<actor_dialog>general_pda_talk</actor_dialog>
 		<actor_dialog>esc_stalker_talk_level</actor_dialog>
 	</specific_character>
-			
+	
 <!---------------------------KILLER MASTER----------------------->
 	<specific_character id="killer_master_default1" team_default = "1">
 		<name>Неизвестный наемник</name>
@@ -352,7 +351,7 @@
 		<actor_dialog>general_pda_talk</actor_dialog>
 		<actor_dialog>esc_stalker_talk_level</actor_dialog>
 	</specific_character>
-		
+
 <!---------------------------KILLER IHFORMATOR---------------------->
 	<specific_character id="killer_informator" team_default = "1">
 		<name>Ара</name>
@@ -377,7 +376,7 @@
 			ammo_5.56x45_ss190 = 1 \n
 			device_torch \n
 		</supplies>
-					
+				
 		<start_dialog>hello_dialog</start_dialog>
 		<actor_dialog>general_pda_talk</actor_dialog>
 		<actor_dialog>esc_stalker_talk_level</actor_dialog>

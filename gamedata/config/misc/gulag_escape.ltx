@@ -315,7 +315,15 @@ danger = danger_condition@shustryi
 path_walk = wolf_walk
 path_look = wolf_look
 meet = meet@wolf
-on_info = {+esc_kill_bandits_quest_have} remark@esc_lager_volk2
+on_info = {+esc_kill_bandits_quest_have} walker@esc_lager_volk_walker2_1
+danger = danger_condition@shustryi
+
+[walker@esc_lager_volk_walker2_1]
+path_walk = wolf_walk
+path_look = wolf_look
+meet = meet@wolf
+on_info = {+esc_kill_bandits_dialog_have} remark@esc_lager_volk2
+on_timer = 10000 | remark@esc_lager_volk2
 danger = danger_condition@shustryi
 
 [remark@esc_lager_volk2]
@@ -1334,7 +1342,7 @@ path_look = kamp_guard_look3
 danger = danger_condition@esc_killers
 
 [danger_condition@esc_killers]
-ignore_ distance_sound = 10
+ignore_distance_sound = 10
 
 
 

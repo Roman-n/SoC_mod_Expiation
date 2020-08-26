@@ -8,10 +8,7 @@ class					= C_HLCP_S
 script_binding          = bind_heli.bind
 visual                  = physics\vehicles\mi24\veh_mi24_u_01.ogf
 
-;wallmarks
-wallmark_section		= explosion_marks
-
-//параметры построения пути
+;параметры построения пути
 path_linear_acc_fw				=  6;8; 3;5; 3.0 ;m/s  ; линейное ускорение при разгоне
 path_linear_acc_bk				=  4;2;4; 0.5; 3;  3.5;3 ;8.0 ;m/s	; линейное ускорение торможения
 
@@ -23,7 +20,7 @@ path_angular_sp_heading_0		= 1;0.9		    ; угловая скорость пути при скорости "0"
 
 magic_angle						= 0.3
 
-//пфраметры наклона модели 
+;параметры наклона модели 
 model_angular_sp_bank			= 0.5 ;0.4 ; скорость поворота модели по оси Z (как быстро модель повернется по курсу движения с учетом угловой скорости)
 model_angular_sp_pitch			= 0.1 ;     ; скорость поворота модели по оси X в зависимости от текущей линейной скорости
 model_pitch_koef				= 0.016;0.012;0.018 ;   ; коэф наклона модели по оси X в зависимости от текущей линейной скорости
@@ -72,9 +69,7 @@ forget_timeout				= 60  ; в течении этого времени (в сек) вертолёт помнит врага,
 ; ------------------------------------------------------------------
 
 ; light, particles etc
-light_range							= 10.0
 light_brightness					= 5.0
-light_color							= 0.9,0.9,0.5
 light_color_animmator				= koster_00
 
 smoke_particle						= damage_fx\heli_burn			;партиклы при ранении
@@ -113,7 +108,6 @@ wallmark_section		= explosion_marks
 ;------------------------------коэффициенты иммунитета 
 immunities_sect			= sect_heli_immunities
 
-
 [sect_heli_immunities]
 burn_immunity			= 0.1	
 strike_immunity			= 1
@@ -122,8 +116,8 @@ wound_immunity			= 0.0
 radiation_immunity		= 0.0
 telepatic_immunity		= 0.0
 chemical_burn_immunity	= 0.0
-fire_wound_immunity		= 0.01
-explosion_immunity		= 0.2
+fire_wound_immunity		= 0.001
+explosion_immunity		= 0.1
 
 
 [helicopter_missile]
@@ -164,6 +158,7 @@ light_time 		    = 0.5
 
 
 ph_mass				= 7
+
 engine_f			= 530
 engine_u			= 90
 

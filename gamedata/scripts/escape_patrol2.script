@@ -72,9 +72,9 @@ function switch_offline (npc)
     if sim ~= nil then
        sim:set_switch_online  (npc:id (), false) 
        sim:set_switch_offline (npc:id (), true)
-       printf ("Object %s move to offline at %d time", npc:name (), device ():time_global ())
+       --printf ("Object %s move to offline at %d time", npc:name (), device ():time_global ())
     else
-       printf ("Object %s set sleep", npc:name ()) 
+       --printf ("Object %s set sleep", npc:name ()) 
        xr_sleeper.set_sleeper (npc, true)
     end       
 end

@@ -4,13 +4,13 @@
 		<text>БТР-70</text>
 	</string>
 	<string id="enc_vehicles_btr-70">
-		<text>Бронетранспортер.</text>
+		<text>Бронетранспортёр.</text>
 	</string>
 	<string id="enc_vehicles_kamaz">
-		<text>Распространенный советский грузовик.</text>
+		<text>Распространённый советский грузовик.</text>
 	</string>
 	<string id="enc_vehicles_mi-24">
-		<text>Армейский штурмовой вертолет.</text>
+		<text>Армейский штурмовой вертолёт.</text>
 	</string>
 	<string id="enc_vehicles_niva">
 		<text>Легковой автомобиль повышенной проходимости.</text>
@@ -25,7 +25,7 @@
 		<text>Грузовик КАМАЗ</text>
 	</string>
 	<string id="mi-24">
-		<text>Вертолет МИ-24</text>
+		<text>Вертолёт МИ-24</text>
 	</string>
 	<string id="Niva">
 		<text>Нива</text>

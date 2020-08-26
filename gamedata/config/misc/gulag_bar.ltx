@@ -43,7 +43,6 @@ active = walker@bar_visitors_walker
 path_walk = walker_walk
 meet = meet@bar_visitors_walker
 danger = danger@bar_inside
-sound_idle = state
 
 [meet@bar_visitors_walker]
 meet_state 		= 3| guard@talk_hello|4| guard
@@ -1500,7 +1499,7 @@ def_state_moving = rush
 
 
 ;*******************************************************************
-; Ученные
+; Ученые
 ;*******************************************************************
 
 
@@ -2114,6 +2113,4 @@ ignore_types = grenade, hit, corpse, sound
 
 [death@bar_arena_monstr_savage]
 on_info = %+bar_arena_savage_defeated +bar_arena_monstr_dead +sar2_death_53%		
-		
-		
-		
+

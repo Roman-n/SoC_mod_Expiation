@@ -21,6 +21,7 @@
 			<map_location_hidden>1</map_location_hidden>
 			<infoportion_complete>pri_aes_mapspot</infoportion_complete>
 			<infoportion_fail>pri_followers_all_dead</infoportion_fail>
+			<function_call_complete>radar_tasks.radar_mapspot_rem_1</function_call_complete>
 		</objective>
 		<objective>
 			<text>pripyat_task_objective_2</text>
@@ -28,13 +29,15 @@
 			<object_story_id>pri_stadium_entrance</object_story_id>
 			<map_location_hidden>1</map_location_hidden>
 			<infoportion_complete>pri_stadium_reached</infoportion_complete>
+			<function_call_complete>radar_tasks.radar_mapspot_rem_2</function_call_complete>
 		</objective>
 		<objective>
 			<text>rad_get_to_aes_1</text>
 			<map_location_type hint="aes_sarcofag_hint">green_location</map_location_type>
-			<infoportion_complete>aes_found_sarcofag</infoportion_complete>
 			<object_story_id>aes_sarcofag</object_story_id>
-            <map_location_hidden>1</map_location_hidden>
+            	<map_location_hidden>1</map_location_hidden>
+			<infoportion_complete>aes_found_sarcofag</infoportion_complete>
+			<function_call_complete>radar_tasks.radar_mapspot_rem_3</function_call_complete>
 		</objective>
 	</game_task>
 

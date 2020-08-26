@@ -1,7 +1,7 @@
 class "ui_game_LastStanding" (UIGame_custom_script)
 
 function ui_game_LastStanding:__init() super()
-	printf		("ui_game_LastStanding::ui_game_LastStanding() called!")
+	--printf		("ui_game_LastStanding::ui_game_LastStanding() called!")
    self.m_frag_list        = CUIWindow()
    self.m_players_list  = CUIWindow()
 
@@ -14,7 +14,7 @@ function ui_game_LastStanding:__init() super()
 end
 
 function ui_game_LastStanding:__finalize()
-	printf		("ui_game_LastStanding::~ui_game_LastStanding() called!")
+	--printf		("ui_game_LastStanding::~ui_game_LastStanding() called!")
    self.m_players_list:DetachAll()
    self.m_frag_list:DetachAll()
 
@@ -62,7 +62,7 @@ function ui_game_LastStanding:ShowFragList	(bShow)
 	if(bShow==true) then
 		self:AddDialogToRender(self.m_frag_list)
 	else
-		self:RemoveDialogToRender(self.m_frag_list);
+		self:RemoveDialogToRender(self.m_frag_list)
    end
 end
 

@@ -30,11 +30,11 @@ function action_camera_activity:__init(obj, storage)
 	self.state = camera_off
 	self.enemy_pos = nil
 	
-	printf("_hr: action_camera_activity:__init")
+	--printf("_hr: action_camera_activity:__init")
 end
 
 function action_camera_activity:reset_scheme()
-	printf("_hr: action_camera_activity:reset_scheme: self.object:name()='%s'", self.object:name())
+	--printf("_hr: action_camera_activity:reset_scheme: self.object:name()='%s'", self.object:name())
 	
 	--self.st.signals = {}
 
@@ -115,15 +115,12 @@ function action_camera_activity:in_focus(a1, a2, dist)
 		diff_angle = angle_diff(a1, a2)
 		--printf("_hr: cam_dir(%f,%f,%f) diff_angle(%f)", a1.x, a1.y, a1.z, diff_angle)
 		if diff_angle < self.st.focus_angle / 2 then
-			printf("_hr: res=%s angle(%.2f:%.2f) dist(%.2f:%.2f)",
-				if_then_else(res,"true","false"),
-				diff_angle, self.st.focus_angle / 2, dist, self.st.warn_distance)
+			--printf("_hr: res=%s angle(%.2f:%.2f) dist(%.2f:%.2f)", if_then_else(res,"true","false"), diff_angle, self.st.focus_angle / 2, dist, self.st.warn_distance)
 			return res 
 		end
     end
     
-	printf("_hr: res=false angle(%.2f:%.2f) dist(%.2f:%.2f)",
-		diff_angle, self.st.focus_angle / 2, dist, self.st.warn_distance)
+	--printf("_hr: res=false angle(%.2f:%.2f) dist(%.2f:%.2f)", diff_angle, self.st.focus_angle / 2, dist, self.st.warn_distance)
     return false
 end
 
@@ -164,13 +161,13 @@ function action_camera_activity:update(delta)
 		if self:in_focus(lense_dir, actor_dir, dist) then
 			if actor_pos:distance_to_xz(self.enemy_pos) > 0.3 then
 				if self.object:action() then
-					printf("_hr: del SOME action")
+					--printf("_hr: del SOME action")
 					xr_logic.mob_capture(self.object, true)
 				end
 				self.track_enemy = actor
 				self.enemy_pos = actor_pos
 				
-				printf("_hr: reset TRACKING action")
+				--printf("_hr: reset TRACKING action")
 				action(self.object, look(actor_pos, 5, 5), cond(cond.look_end))
 			end
 		else
@@ -180,11 +177,11 @@ function action_camera_activity:update(delta)
 				
 				-- Проверяем нужно ли делать паузу
 				if self.st.pause_after_lost_target > 0 then
-					printf("_hr: mode PAUSA time = %d", time_global())
+					--printf("_hr: mode PAUSA time = %d", time_global())
 					self.state = camera_pause
 					self.pause_start = time_global()
 				else --if self.st.signals["enemy_tracking"] then
-					printf("_hr: mode MOVE time = %d", time_global())
+					--printf("_hr: mode MOVE time = %d", time_global())
 					self.state = camera_move
 					self.st.signals["enemy_tracking"] = false
 				end
@@ -200,9 +197,9 @@ function action_camera_activity:update(delta)
     elseif self.state == camera_move then
 		--printf("camera state == camera_move")
 		if self:in_focus(lense_dir, actor_dir, dist) then
-			printf("_hr: mode TRACKING time = %d", time_global())
+			--printf("_hr: mode TRACKING time = %d", time_global())
 			if self.object:action() then
-				printf("_hr: del MOVING action")
+				--printf("_hr: del MOVING action")
 				xr_logic.mob_capture(self.object, true)
 			end
 			--printf("_hr:\n  cam_dir(%f,%f,%f) actor_dir(%f,%f,%f)\n  actor_pos(%f,%f,%f) lense_pos(%f,%f,%f)\n  diff_angle(%f) hp(%f,%f)\n",
@@ -217,7 +214,7 @@ function action_camera_activity:update(delta)
 			self.track_enemy = actor
 			self.enemy_pos = actor_pos
 			
-			printf("_hr: set TRACKING action")
+			--printf("_hr: set TRACKING action")
 			action(self.object, look(actor_pos, 5, 5), cond(cond.look_end))
 		else
 			if not self.object:action() then
@@ -236,7 +233,7 @@ function action_camera_activity:update(delta)
 					self.cur_wp = self.cur_wp + self.move_direction
 		            
 					--printf("_hr: action_camera_activity:update: cur_wp = %d", self.cur_wp)
-					printf("_hr: set MOVING action")
+					--printf("_hr: set MOVING action")
 					action(self.object, look(self.path:point(self.cur_wp), self.st.speed_h, self.st.speed_p), cond(cond.look_end))
 				-- Двигаем камеру в диапазоне
 				--elseif self.st.state == "range_tracking" then
@@ -246,28 +243,28 @@ function action_camera_activity:update(delta)
     end
 	
     if self.state == camera_pause then
-		printf("camera state == camera_pause")
+		--printf("camera state == camera_pause")
 		if time_global() >= self.pause_start + self.st.pause_after_lost_target
 		then
-			printf("_hr: mode MOVE time = %d", time_global())
+			--printf("_hr: mode MOVE time = %d", time_global())
 			self.state = camera_move
 		end
     end
 --[[
     
-    printf("_hr:\n    cam_ang(%f) hp(%f,%f)\n  actor_ang(%f) hp(%f,%f)\n angle_diff(%f) hp(%f,%f)\n",
-		angle_diff(a4, a1),
-		rad2deg(a4:getH() - a1:getH()),
-		rad2deg(a4:getP() - a1:getP()),
-		angle_diff(a4, a2),
-		rad2deg(a4:getH() - a2:getH()),
-		rad2deg(a4:getP() - a2:getP()),
-		angle_diff(a1, a2),
-		rad2deg(a1:getH() - a2:getH()),
-		rad2deg(a1:getP() - a2:getP()))
+    --printf("_hr:\n    cam_ang(%f) hp(%f,%f)\n  actor_ang(%f) hp(%f,%f)\n angle_diff(%f) hp(%f,%f)\n",
+		--  angle_diff(a4, a1),
+		--  rad2deg(a4:getH() - a1:getH()),
+		--  rad2deg(a4:getP() - a1:getP()),
+		--  angle_diff(a4, a2),
+		--  rad2deg(a4:getH() - a2:getH()),
+		--  rad2deg(a4:getP() - a2:getP()),
+		--  angle_diff(a1, a2),
+		--  rad2deg(a1:getH() - a2:getH()),
+		--  rad2deg(a1:getP() - a2:getP()))
 
     local v = self.object:direction()
-	printf("_hr: lense a(%f) hp(%f,%f)", angle_diff(v, a1), a1:getH() - v:getH(), a1:getP() - v:getP())
+	--printf("_hr: lense a(%f) hp(%f,%f)", angle_diff(v, a1), a1:getH() - v:getH(), a1:getP() - v:getP())
 
 	in_focus = check_in_focus(a1, a2, self.st.focus_type, self.st.focus_angle)
 	
@@ -279,9 +276,7 @@ function action_camera_activity:update(delta)
 		--and actor:see(self.object)
 		and in_focus
 		then
-			printf("_hr: cam_dir(%f,%f,%f) actor_dir(%f,%f,%f) diff_angle(%f) hp(%f,%f)",
-					a1.x, a1.y, a1.z, a2.x, a2.y, a2.z, diff_angle,
-					a1:getH() - a2:getH(), a1:getP() - a2:getP())
+			--printf("_hr: cam_dir(%f,%f,%f) actor_dir(%f,%f,%f) diff_angle(%f) hp(%f,%f)", a1.x, a1.y, a1.z, a2.x, a2.y, a2.z, diff_angle, a1:getH() - a2:getH(), a1:getP() - a2:getP())
 					
 			if not self.st.signals["enemy_tracking"] then
 				self.st.signals["enemy_tracking"] = true
@@ -345,7 +340,7 @@ end
 
 ---------------------------------------------------------------------------------------------------------------------
 function add_to_binder(npc, ini, scheme, section, storage)
-	printf("DEBUG: add_to_binder: scheme='%s', section='%s'", scheme, section)
+	--printf("DEBUG: add_to_binder: scheme='%s', section='%s'", scheme, section)
 
 	local new_action = action_camera_activity(npc, storage)
 

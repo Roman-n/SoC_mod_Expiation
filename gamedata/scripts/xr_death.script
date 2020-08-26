@@ -12,10 +12,10 @@ end
 
 function action_process_death:death_callback(victim, who)
 	if who ~= nil then
-		printf("[%s] killed by [%s]", victim:name(), who:name() )
+		--printf("[%s] killed by [%s]", victim:name(), who:name() )
 		db.storage[victim:id()].death.killer = who:id()
 	else
-		printf("[%s] killed by [Unknown]", victim:name())
+		--printf("[%s] killed by [Unknown]", victim:name())
 		db.storage[victim:id()].death.killer = -1
 	end
 

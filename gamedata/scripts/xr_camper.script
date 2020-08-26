@@ -23,7 +23,7 @@ function evaluator_end:__init(name, storage) super (nil, name)
 end
 function evaluator_end:evaluate()
 	if self.object:name() == "mil_freedom_stalker0010" then
-		printf("%s evaluate camper_end [%s]", self.object:name(), tostring(not xr_logic.is_active(self.object, self.a)))
+		--printf("%s evaluate camper_end [%s]", self.object:name(), tostring(not xr_logic.is_active(self.object, self.a)))
 	end
 	return not xr_logic.is_active(self.object, self.a)
 end
@@ -36,7 +36,7 @@ function evaluator_close_combat:__init(name, storage) super (nil, name)
 end
 function evaluator_close_combat:evaluate()
 	if self.object:name() == "mil_freedom_stalker0010" then
-		printf("%s evaluate close_combat [%s]", self.object:name(), tostring(not xr_logic.is_active(self.object, self.a)))
+		--printf("%s evaluate close_combat [%s]", self.object:name(), tostring(not xr_logic.is_active(self.object, self.a)))
 	end
 
 	if not xr_logic.is_active(self.object, self.a) then
@@ -102,7 +102,7 @@ function action_patrol:initialize()
 	self.enemy_position = nil
 end
 function action_patrol:reset_scheme()
-	printf("CAMPER %s RESET SCHEME", self.object:name())
+	--printf("CAMPER %s RESET SCHEME", self.object:name())
 	state_mgr.set_state(self.object, "patrol")	
 	self.a.signals = {}
 	self.a.scan_table = {}
@@ -204,7 +204,7 @@ function action_patrol:execute()
 					state_mgr.set_state(self.object, "hide_fire", nil, nil, {look_object = self.enemy, look_position = self.enemy:position()}, {animation = true}, nil, {yaw_delta = 0.2})
 				end
 			end
-			printf("attack sound [%s]", tostring(self.a.attack_sound))
+			--printf("attack sound [%s]", tostring(self.a.attack_sound))
 			xr_sound.set_sound(self.object, self.a.attack_sound)
 
 		else
@@ -350,7 +350,7 @@ function action_patrol:process_danger()
 	-- Отсеиваем по расстоянию
 --	if not self:on_place() then
 		if xr_danger.check_danger_distance(self.object, best_danger) == false then
-			printf("DANGER [%s] [FALSE] danger_distance camper", self.object:name())
+			--printf("DANGER [%s] [FALSE] danger_distance camper", self.object:name())
 			return false
 		end
 --	end
@@ -562,7 +562,7 @@ function set_scheme(npc, ini, scheme, section, gulag_name)
 		st.attack_sound = nil
 	end
 	
-	printf("camper attack sound [%s]", tostring(st.attack_sound))
+	--printf("camper attack sound [%s]", tostring(st.attack_sound))
 	
 	-- Время забывания врага
 	st.idle = utils.cfg_get_number(ini, section, "enemy_idle", npc, false, 60000)

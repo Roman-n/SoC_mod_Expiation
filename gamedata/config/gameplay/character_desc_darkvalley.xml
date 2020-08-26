@@ -24,9 +24,7 @@
 			ammo_9x19_pbp = 2 \n
 			wpn_ak74 \n
 			ammo_5.45x39_fmj \n
-			;borov_flash \n
 			device_torch \n
-			;val_key_to_underground \n
 		</supplies>
 				
 #include "gameplay\character_criticals_4.xml"
@@ -500,6 +498,7 @@
 			ammo_9x19_fmj \n
 			wpn_abakan \n
 			ammo_5.45x39_fmj \n
+ammo_5.56x45_ss190=2 \n
 			device_torch \n			
 #include "gameplay\character_items.xml"
 #include "gameplay\character_food.xml"
@@ -537,6 +536,7 @@
 			ammo_9x19_fmj \n
 			wpn_abakan \n
 			ammo_5.45x39_fmj \n
+ammo_9x18_pmm=3 \n
 			device_torch \n
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"
@@ -573,6 +573,7 @@
 			ammo_9x19_fmj \n
 			wpn_ak74 \n
 			ammo_5.45x39_ap = 1 \n
+ammo_9x39_pab9 \n
 			device_torch \n
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"
@@ -1011,6 +1012,7 @@
 			[spawn] \n
 			wpn_walther \n
 			ammo_9x19_fmj \n
+ammo_12x70_buck \n
 			device_torch \n
 #include "gameplay\character_items.xml"
 #include "gameplay\character_food.xml"
@@ -1032,7 +1034,7 @@
 		<class>val_stalker_novice</class>
 		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
 		
-		<rank>290</rank>
+		<rank>265</rank>
 		<reputation>3</reputation>
 
 		<visual>actors\novice\green_stalker_3</visual>
@@ -1045,6 +1047,7 @@
 			device_torch \n
 			wpn_bm16 \n
 			ammo_12x70_buck \n
+ammo_5.45x39_fmj \n
 #include "gameplay\character_items.xml"
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"
@@ -1075,6 +1078,7 @@
 			[spawn] \n
 			wpn_walther \n
 			ammo_9x19_fmj \n
+ammo_12x70_buck \n
 			device_torch \n		
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"
@@ -1105,6 +1109,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_fmj \n
+ammo_9x19_fmj=3 \n
 			device_torch \n
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"
@@ -1137,7 +1142,8 @@
 			ammo_9x19_fmj \n
 			device_torch \n
 			wpn_bm16 \n
-			ammo_12x70_buck \n			
+			ammo_12x70_buck \n	
+ammo_9x18_pmm=5 \n		
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -1167,6 +1173,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
+ammo_9x19_fmj=3 \n
 			device_torch \n
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"
@@ -1200,6 +1207,7 @@
 			ammo_9x18_pmm = 1 \n
 			wpn_bm16 \n
 			ammo_12x76_zhekan = 1 \n
+ammo_5.45x39_fmj=3 \n
 			device_torch \n
 #include "gameplay\character_items.xml"
 #include "gameplay\character_food.xml"
@@ -1233,6 +1241,7 @@
 			ammo_9x19_fmj \n
 			wpn_mp5 \n
 			ammo_9x19_fmj = 1 \n
+ammo_5.45x39_fmj=3 \n
 			device_torch \n
 #include "gameplay\character_items.xml"
 #include "gameplay\character_food.xml"
@@ -1266,6 +1275,7 @@
 			ammo_9x18_fmj = 1 \n
 			wpn_mp5 \n
 			ammo_9x19_fmj = 1 \n
+ammo_12x76_zhekan \n
 			device_torch \n
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"
@@ -1298,6 +1308,7 @@
 			ammo_9x19_fmj \n
 			wpn_ak74u \n
 			ammo_5.45x39_ap = 1 \n
+ammo_12x70_buck \n
 			device_torch \n
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"
@@ -1330,6 +1341,7 @@
 			ammo_9x18_pmm \n
 			wpn_ak74 \n
 			ammo_5.45x39_fmj \n
+ammo_12x70_buck \n
 			device_torch \n
 #include "gameplay\character_food.xml"
 #include "gameplay\character_drugs.xml"
@@ -1362,6 +1374,7 @@
 			[spawn] \n
 			wpn_ak74 \n
 			ammo_5.45x39_fmj \n
+ammo_5.56x45_ss190 \n
 			device_torch \n
 		</supplies>
 		
@@ -1466,7 +1479,7 @@
 		<rank>765</rank>
 		<reputation>23</reputation>
 
-		<visual>actors\soldier\soldier_spetsnaz</visual>		
+		<visual>actors\soldier\soldier_spetsnaz</visual>
 		<snd_config>characters_voice\human_02\military\</snd_config>
 		<supplies>
 			[spawn] \n

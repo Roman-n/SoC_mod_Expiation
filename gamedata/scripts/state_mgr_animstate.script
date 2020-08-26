@@ -315,7 +315,7 @@ function body_state:state()
 end
 --' Установка нового положения тела
 function body_state:set_state(id)
-	printf("set new target state %s", id)
+	--printf("set new target state %s", id)
 	
 	self.npc:clear_animations()
 	if self.transfer_anim[self.current_state] ~= nil and

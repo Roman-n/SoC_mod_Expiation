@@ -1,10 +1,28 @@
 [trader]
 buy_condition = trader_generic_buy
-sell_condition = {+esc_kill_bandits_quest_done} trader_after_fabric_sell, trader_start_sell
-buy_supplies = {+esc_kill_bandits_quest_done} supplies_after_fabric, supplies_start
+sell_condition = {+esc_serious_talk} trader_after_fabric_sell, trader_start_sell
+buy_supplies = {+esc_serious_talk} supplies_after_fabric, supplies_start
 
 
 [trader_generic_buy]
+;Броники
+novice_outfit			= 0.3,	0.1
+bandit_outfit			= 0.3,	0.1
+killer_outfit			= 0.3,	0.1
+monolit_outfit			= 0.3,	0.1
+soldier_outfit			= 0.3,	0.1
+specops_outfit			= 0.3,	0.1
+military_outfit			= 0.3,	0.1
+stalker_outfit			= 0.3,	0.1
+scientific_outfit		= 0.3,	0.1
+exo_outfit				= 0.3,	0.1
+svoboda_light_outfit	= 0.3,	0.1
+svoboda_heavy_outfit	= 0.3,	0.1
+dolg_outfit				= 0.3,	0.1
+dolg_scientific_outfit	= 0.3,	0.1
+ecolog_outfit			= 0.3,	0.1
+protection_outfit		= 0.3,	0.1
+
 ;Артефакты
 af_medusa				= 1,	0.3
 af_cristall_flower		= 1,	0.3
@@ -93,30 +111,13 @@ wpn_rpg7				= 0.3,	0.1
 wpn_g36					= 0.3,	0.1
 wpn_fn2000				= 0.3,	0.1
 
+
 ;ADDONS
 wpn_addon_scope					= 0.7,	0.2
 wpn_addon_scope_susat			= 0.7,	0.2
 wpn_addon_silencer				= 0.7,	0.2
 wpn_addon_grenade_launcher		= 0.7,	0.2
 wpn_addon_grenade_launcher_m203 = 0.7,	0.2
-
-;Броники
-novice_outfit			= 1,	0.3
-bandit_outfit			= 1,	0.3
-killer_outfit			= 1,	0.3
-monolit_outfit			= 1,	0.3
-soldier_outfit			= 1,	0.3
-specops_outfit			= 1,	0.3
-military_outfit			= 1,	0.3
-stalker_outfit			= 1,	0.3
-scientific_outfit		= 1,	0.3
-exo_outfit				= 1,	0.3
-svoboda_light_outfit	= 1,	0.3
-svoboda_heavy_outfit	= 1,	0.3
-dolg_outfit				= 1,	0.3
-dolg_scientific_outfit	= 1,	0.3
-ecolog_outfit			= 1,	0.3
-protection_outfit		= 1,	0.3
 
 ;Медикаменты
 bandage					= 1,	0.5
@@ -143,14 +144,15 @@ vodka					= 0.3,	0.1
 energy_drink			= 0.3,	0.1
 
 ;Предметы
-device_torch			;NO TRADE
-detector_simple			;NO TRADE
-detector_advances		;NO TRADE
-detector_elite			;NO TRADE
-device_pda				= 1,	0.5
-hand_radio				;NO TRADE
-guitar_a				= 0.3,	0.1
-harmonica_a				= 0.3,	0.1
+device_torch		= 1,	0.5
+detector_simple		= 1,	0.5
+detector_advances	= 1,	0.5
+detector_elite		= 1,	0.5
+device_pda		= 1,	0.5
+hand_radio		= 1,	0.5
+guitar_a			= 1,	0.5
+harmonica_a		= 1,	0.5
+explosive_tank	= 1, 0.5
 
 ;Квестовые предметы
 gunslinger_flash		;NO TRADE
@@ -173,6 +175,7 @@ hunters_toz				;NO TRADE
 bar_ecolog_flash		;NO TRADE
 bar_tiran_pda			;NO TRADE
 bar_lucky_pda			;NO TRADE
+pri_decoder_documents		;NO TRADE
 
 ;Уникальные предметы
 outfit_novice_m1		= 1,	0.3
@@ -216,17 +219,18 @@ wpn_val_arena			;NO TRADE
 wpn_groza_arena			;NO TRADE
 wpn_fn2000_arena		;NO TRADE
 wpn_g36_arena			;NO TRADE
-
+wpn_vintorez_m1			= 1,	0.3
+wpn_sig220_m1			= 1,	0.3
 
 [supplies_start]
-;Аммуниция
-ammo_5.45x39_fmj		= 1,	0.1
 
-;Оружие
-wpn_groza_m1			= 1,	0.1
+;Аммуниция
+ammo_5.45x39_fmj		= 1,	0.2
+ammo_12x70_buck		= 10,	0.5
+ammo_9x19_fmj		= 10, 0.6
 
 ;Броники
-killer_outfit			= 1,	0.1
+killer_outfit			= 1,	0.2
 
 ;Медикаменты
 bandage					= 5,	0.6
@@ -240,19 +244,27 @@ conserva				= 10,	0.5
 vodka					= 10,	0.3
 energy_drink			= 10,	0.3
 
-
+;Предметы
+detector_simple		= 1,	0.7
 
 [supplies_after_fabric]
+
 ;Аммуниция
 ammo_9x18_fmj			= 10,	0.6
 ammo_9x18_pmm			= 10,	0.5
 ammo_12x70_buck			= 10,	0.5
+ammo_9x19_fmj			= 10, 0.6
+ammo_9x19_pbp			= 10, 0.6
+ammo_12x76_dart			= 10, 0.3
+ammo_12x76_zhekan			= 10, 0.5
+
 
 ;Броники
 novice_outfit			= 3,	0.8
 bandit_outfit			= 2,	0.6
 killer_outfit			= 2,	0.5
 stalker_outfit			= 1,	0.5
+soldier_outfit			= 1,	1
 
 ;Оружие
 wpn_pm					= 5,	0.5
@@ -273,9 +285,11 @@ conserva				= 10,	0.5
 vodka					= 10,	0.3
 energy_drink			= 10,	0.3
 
-
+;Предметы
+detector_simple		= 1,	0.7
 
 [trader_start_sell]
+
 ;Артефакты
 af_medusa				;NO TRADE
 af_cristall_flower		;NO TRADE
@@ -308,13 +322,13 @@ af_fuzz_kolobok			;NO TRADE
 ;Аммуниция
 ammo_9x18_fmj				;NO TRADE
 ammo_9x18_pmm				;NO TRADE
-ammo_9x19_pbp				;NO TRADE
-ammo_9x19_fmj				;NO TRADE
+ammo_9x19_pbp				= 1, 3
+ammo_9x19_fmj				= 1, 3
 ammo_11.43x23_hydro			;NO TRADE
 ammo_11.43x23_fmj			;NO TRADE
-ammo_12x70_buck				;NO TRADE
-ammo_12x76_dart				;NO TRADE
-ammo_12x76_zhekan			;NO TRADE
+ammo_12x70_buck				= 1, 3
+ammo_12x76_dart				= 1, 3
+ammo_12x76_zhekan				= 1, 3
 ammo_5.45x39_ap				;NO TRADE
 ammo_5.45x39_fmj			= 1, 3
 ammo_9x39_sp5				;NO TRADE
@@ -414,13 +428,13 @@ vodka					= 1, 3
 energy_drink			= 1, 3
 
 ;Предметы
-device_torch			;NO TRADE
-detector_simple			;NO TRADE
-detector_advances		;NO TRADE
-detector_elite			;NO TRADE
-device_pda				;NO TRADE
-guitar_a				;NO TRADE
-harmonica_a				;NO TRADE
+device_torch		;NO TRADE
+detector_simple		= 3,   5
+detector_advances	;NO TRADE
+detector_elite		;NO TRADE
+device_pda		;NO TRADE
+guitar_a			;NO TRADE
+harmonica_a		;NO TRADE
 
 ;Квестовые предметы
 gunslinger_flash		;NO TRADE
@@ -443,6 +457,7 @@ hunters_toz				;NO TRADE
 bar_ecolog_flash		;NO TRADE
 bar_tiran_pda			;NO TRADE
 bar_lucky_pda			;NO TRADE
+pri_decoder_documents		;NO TRADE
 
 ;Уникальные предметы
 outfit_novice_m1		;NO TRADE
@@ -486,10 +501,12 @@ wpn_val_arena			;NO TRADE
 wpn_groza_arena			;NO TRADE
 wpn_fn2000_arena		;NO TRADE
 wpn_g36_arena			;NO TRADE
-
+wpn_vintorez_m1			;NO TRADE
+wpn_sig220_m1			;NO TRADE
 
 
 [trader_after_fabric_sell]
+
 ;Артефакты
 af_medusa				;NO TRADE
 af_cristall_flower		;NO TRADE
@@ -522,13 +539,13 @@ af_fuzz_kolobok			;NO TRADE
 ;Аммуниция
 ammo_9x18_fmj				= 1, 3
 ammo_9x18_pmm				= 1, 3
-ammo_9x19_pbp				;NO TRADE
+ammo_9x19_pbp				= 1, 3
 ammo_9x19_fmj				= 1, 3
 ammo_11.43x23_hydro			;NO TRADE
 ammo_11.43x23_fmj			;NO TRADE
 ammo_12x70_buck				= 1, 3
-ammo_12x76_dart				;NO TRADE
-ammo_12x76_zhekan			;NO TRADE
+ammo_12x76_dart				= 1, 3
+ammo_12x76_zhekan				= 1, 3
 ammo_5.45x39_ap				;NO TRADE
 ammo_5.45x39_fmj			;NO TRADE
 ammo_9x39_sp5				;NO TRADE
@@ -590,10 +607,10 @@ novice_outfit			= 1, 3
 bandit_outfit			= 2, 4
 killer_outfit			= 3, 5
 monolit_outfit			;NO TRADE
-soldier_outfit			;NO TRADE
+soldier_outfit			= 2, 4
 specops_outfit			;NO TRADE
 military_outfit			;NO TRADE
-stalker_outfit			= 3, 5
+stalker_outfit			= 2, 3
 scientific_outfit		;NO TRADE
 exo_outfit				;NO TRADE
 svoboda_light_outfit	;NO TRADE
@@ -629,12 +646,13 @@ energy_drink			= 1, 3
 
 ;Предметы
 device_torch			;NO TRADE
-detector_simple			;NO TRADE
+detector_simple			= 1, 3
 detector_advances		;NO TRADE
 detector_elite			;NO TRADE
 device_pda				;NO TRADE
 guitar_a				;NO TRADE
 harmonica_a				;NO TRADE
+explosive_tank			;NO TRADE
 
 ;Квестовые предметы
 gunslinger_flash		;NO TRADE
@@ -657,6 +675,7 @@ hunters_toz				;NO TRADE
 bar_ecolog_flash		;NO TRADE
 bar_tiran_pda			;NO TRADE
 bar_lucky_pda			;NO TRADE
+pri_decoder_documents		;NO TRADE
 
 ;Уникальные предметы
 outfit_novice_m1		;NO TRADE
@@ -700,3 +719,14 @@ wpn_val_arena			;NO TRADE
 wpn_groza_arena			;NO TRADE
 wpn_fn2000_arena		;NO TRADE
 wpn_g36_arena			;NO TRADE
+wpn_vintorez_m1			;NO TRADE
+wpn_sig220_m1			;NO TRADE
+
+;xrs_medic
+yad					;NO TRADE
+
+;xrs_grenade
+grenade_f1_test			;NO TRADE
+grenade_rgd5_test			;NO TRADE
+grenade_f1_fake			;NO TRADE
+grenade_rgd5_fake			;NO TRADE

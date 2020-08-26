@@ -2,7 +2,7 @@
 
 <game_information_portions>
  <!-- комментируем теги <task></task> -->
- 
+
  <!-- атака бандитов на Серого -->
  <info_portion id="garbage_meetstalker_start">
  <!-- task>garbage_meet_stalker</task -->
@@ -51,14 +51,13 @@
  <info_portion id="gar_hellcar_death_2"></info_portion>
  <info_portion id="gar_hellcar_thanks"></info_portion>
  <info_portion id="gar_hellcar_alarm"></info_portion>
- 
- 
+
  <!-- Застава Долга -->
  <info_portion id="gar_kill_boars_quest">
  <!-- task>gar_kill_boars</task -->
  </info_portion> 
  <info_portion id="gar_kill_boars_done"></info_portion>
- <info_portion id="gar_kill_boars_request"></info_portion> 
+ <info_portion id="gar_kill_boars_request"></info_portion>
  <info_portion id="gar_free_pass"></info_portion>
 
  <!-- Тестовые инфопошены -->

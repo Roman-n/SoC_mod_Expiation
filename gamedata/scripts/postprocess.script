@@ -4,7 +4,8 @@ local func_sinus = 0
 local func_cosinus = 1
 local func_linear = 2
 
-function printf () end
+function printf ()
+end
 
 
 class "PPData" (effector)
@@ -16,23 +17,23 @@ function PPData:__init (host) super (1003,10000000)
 end
 ----------------
 function PPData:process (pp)
-	printf	("0")
+--	printf	("0")
     effector.process (self, pp)
-	printf	("1")
+--	printf	("1")
     local t = time_global ()
-	printf	("2")
+--	printf	("2")
     --if t - self.time ~= 0 then
        self.host:update2 ((t - self.time) * 0.001)
-	printf	("3")
+--	printf	("3")
        self.time = t
        pp:assign (self.params)
-	printf	("4")
+--	printf	("4")
     --end    
     return true
 end
 
 function PPData:__finalize()
-	printf	("PPData::~PPData() called!")
+--	printf	("PPData::~PPData() called!")
 end
 ----------------
 
@@ -238,12 +239,12 @@ function PostProcess:__init (ini_file)
 
     self.pp = PPData (self)
     self.pp:start ()
-    self.pp.params.color_base = color (0.5, 0.5, 0.5)               // max base color diff       [0.0-0.5]
-    self.pp.params.color_gray = color (0.0, 0.0, 0.0)               // RGB                       [0.0-1.0]
-    self.pp.params.color_add  = color (0.0, 0.0, 0.0)               // RGB                       [0.0-1.0]
-    self.pp.params.gray       = 0.0                                 // gray max intensity        [0.0-1.0]
+    self.pp.params.color_base = color (0.5, 0.5, 0.5)               -- max base color diff       [0.0-0.5]
+    self.pp.params.color_gray = color (0.0, 0.0, 0.0)               -- RGB                       [0.0-1.0]
+    self.pp.params.color_add  = color (0.0, 0.0, 0.0)               -- RGB                       [0.0-1.0]
+    self.pp.params.gray       = 0.0                                 -- gray max intensity        [0.0-1.0]
     self.pp.params.dual       = duality (0.0, 0.0)
-    self.pp.params.noise      = noise   (0.0, 0.0, 30)              // intensity, grain, fps     [0.0-1.0,0.0-1.0,1-100]
+    self.pp.params.noise      = noise   (0.0, 0.0, 30)              -- intensity, grain, fps     [0.0-1.0,0.0-1.0,1-100]
     
     self.update_called = false
 end
@@ -314,8 +315,8 @@ function main ()
     level.set_weather_fx ("surge_day")
         local prev_time        = time_global ()
         while 1 do
-                        wait ();
-                        local dt = time_global () - prev_time;
+                        wait ()
+                        local dt = time_global () - prev_time
                         prev_time = time_global()
                         if process:update () == true then
                            break

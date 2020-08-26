@@ -94,7 +94,7 @@
             ui\ui_icons_task
         </icon>
         <map_location_type hint="cit_doctor_task_1_hint">
-            blue_location
+            green_location
         </map_location_type>
         <object_story_id>
             pri_hotel_zone
@@ -102,6 +102,7 @@
         <infoportion_complete>
             pri_actor_in_hotel
         </infoportion_complete>
+		<function_call_complete>pripyat_tasks.pripyat_mapspot_rem_1</function_call_complete>
     </objective>
     <objective key="2">
         <text>
@@ -111,12 +112,13 @@
             ui\ui_icons_task
         </icon>
         
-        <map_location_type hint="cit_doctor_task_2">green_location</map_location_type>
+        <map_location_type hint="cit_doctor_task_2_hint">green_location</map_location_type>
 			<object_story_id>pri_decoder_room_door</object_story_id>		
-        
+        <map_location_hidden>1</map_location_hidden>
         <infoportion_complete>
             pri_actor_in_hiding_place
         </infoportion_complete>
+		<function_call_complete>pripyat_tasks.pripyat_mapspot_rem_2</function_call_complete>
     </objective>
     <objective key="3">
         <text>

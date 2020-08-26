@@ -47,7 +47,7 @@ end
 
 ---------------------------------------------------------------------------------------------------------------------
 function add_to_binder(npc, ini, scheme, section, storage)
-	printf("DEBUG: add_to_binder: scheme='%s', section='%s'", scheme, section)
+	--printf("DEBUG: add_to_binder: scheme='%s', section='%s'", scheme, section)
 	local new_action = action_light (npc, storage)
 	xr_logic.subscribe_action_for_events(npc, storage, new_action)
 end
@@ -93,12 +93,20 @@ function check_light(stalker)
 	    end
 	end
 
+	--'Фикс ошибки с наличием источников света под ногами НПС, lvg_brest
+	if stalker and stalker:alive() and torch then
+		light = true
+		torch:enable_attachable_item(light)
+	end
+
 	--'printf("[check_light %s] lightzone_passed: light=%s, forced=%s", stalker:name(), tostring(light), tostring(forced))
 	if not forced then
 		--' Проверка по времени суток (ночью всегда включено)
 		local htime = level.get_time_hours()
 		if htime <= 4 or htime >= 22 then
 			light = true
+		else
+			light = false
 		end
 	
 		--' Проверка на индор-аутдор (внутри всегда включено)
@@ -115,7 +123,8 @@ function check_light(stalker)
 		--' Фонарики должны быть выключены у костра
 		local scheme = db.storage[stalker:id()].active_scheme
 		if scheme == "kamp" or
-		   scheme == "camper" 
+		   scheme == "camper" or
+		   scheme == "sleeper"			
 		then
 			light = false
 			forced = true
@@ -123,12 +132,12 @@ function check_light(stalker)
 	end
 
 	--'printf("[check_light %s] scheme_passed: light=%s, forced=%s", stalker:name(), tostring(light), tostring(forced))	
---	if not forced and light == true then
---		--' Фонарики должны быть выключены в бою. Но если в бою идет поиск врага - то включены.
---		if stalker:best_enemy() ~= nil then
---			light = false
---		end				
---	end
+	if not forced and light == true then
+		--' Фонарики должны быть выключены в бою. Но если в бою идет поиск врага - то включены.
+		if stalker:best_enemy() ~= nil and indoor_levels[level.name()] ~= true then
+			light = false
+		end				
+	end
 	
 	if light ~= nil then
 		torch:enable_attachable_item(light)

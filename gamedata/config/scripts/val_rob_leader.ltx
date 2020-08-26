@@ -29,15 +29,15 @@ use_wpn         = false
 [walker@val_rob_leader_start]
 path_walk           = leader_walk
 path_look           = leader_look
-on_info             = {+val_rob_actor_enter} remark@val_rob_leader_call
-;on_info             = {+val_rob_buying} remark@val_rob_leader_wait_to_go ;walker@val_rob_leader_to_kamp
+on_info             = {-val_rob_buying +val_rob_actor_enter} remark@val_rob_leader_call
+on_info2            = {+val_rob_buying +val_rob_actor_enter} remark@val_rob_leader_ignore
 ;on_actor_dist_le    = 30 | remark@val_rob_leader_call
 meet                = meet@ignore_abuse ;meet@val_rob_start
 
 [remark@val_rob_leader_call]
 anim                = wait
 snd                 = val_rob_leader_call
-tips                = val_rob_leader_call
+;tips                = val_rob_leader_call
 target              = actor
 on_actor_dist_ge_nvis = 35 | walker@val_rob_leader_start
 on_actor_dist_le_nvis = 10 | remark@val_rob_leader_talk
@@ -70,3 +70,18 @@ snd                 = val_rob_leader_jeer
 tips                = val_rob_leader_jeer_1
 on_signal           = sound_end | kamp@val_rob_kamp
 meet                = no_meet ;meet@val_rob_ignore
+
+[remark@val_rob_leader_ignore]
+path_walk           = leader_walk
+path_look           = leader_look
+on_actor_dist_le_nvis = 35 | walker@val_rob_leader_to_kamp_no_jeer
+meet                = no_meet
+
+[walker@val_rob_leader_to_kamp_no_jeer]
+path_walk           = leader_kamp_walk
+path_look           = leader_kamp_look
+def_state_moving1   = walk
+def_state_moving2   = walk
+def_state_moving3   = walk
+on_signal           = arrived | kamp@val_rob_kamp
+meet                = no_meet 

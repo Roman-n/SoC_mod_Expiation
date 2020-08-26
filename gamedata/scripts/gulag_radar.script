@@ -154,7 +154,7 @@ function load_job(sj, gname, type, squad, groups)
 	end
 ----------------------------------------------------------------------------
 	if type == "rad_snork1" then
-		for i = 1, 5 do
+		for i = 1, 6 do
 			t = { section = "logic@rad_snork1_"..i , 
 				idle = 0,
 				prior = 5, state = {0}, squad = squad, group = groups[1],
@@ -263,7 +263,8 @@ function load_job(sj, gname, type, squad, groups)
 				predicate = function(obj_info) return obj_info.profile_name == "rad_Dolg_master"
 							end
 			}
-			table.insert(sj, t)			t = { section = "logic@rad_svoboda3", 
+			table.insert(sj, t)			
+			t = { section = "logic@rad_svoboda3", 
 				idle = 0,
 				prior = 5, state = {0}, squad = squad, group = groups[1],
 				in_rest = "", out_rest = "",
@@ -279,7 +280,8 @@ function load_job(sj, gname, type, squad, groups)
 				predicate = function(obj_info) return obj_info.profile_name == "rad_Dolg_master"
 							end
 			}
-			table.insert(sj, t)			t = { section = "logic@rad_svoboda4", 
+			table.insert(sj, t)			
+			t = { section = "logic@rad_svoboda4", 
 				idle = 0,
 				prior = 5, state = {0}, squad = squad, group = groups[1],
 				in_rest = "", out_rest = "",
@@ -1379,7 +1381,7 @@ function load_ltx_rad_prip_road(gname, type)
 					"danger=danger_condition@" .. gname .. "\n" ..
 					
 					"[combat@" .. gname .. "]\n" ..
-					"combat_type = monolith \n" ..
+					"combat_type = monolith\n" ..
 
 					"[danger_condition@" .. gname .. "]\n" ..
 					"danger_expiration_time = 60000\n" ..
@@ -1417,8 +1419,8 @@ function load_ltx_rad_prip_teleport(gname, type)
 					"[walker@3" .. gname  .. i .. "]\n" ..
 					"path_walk = cache_quard"..i .. "_walk\n" ..
 					"path_look = cache_quard"..i .. "_look\n" ..
-					"danger=danger_condition@" .. gname .. "\n" .. 
-					";combat_ignore_cond = {!_actor} true \n" ..
+					"danger=danger_condition@" .. gname .. "\n" ..
+					"combat_ignore_cond = {!fighting_actor} true \n" ..
 					"on_hit = hit@" .. gname .. "\n"
 
 	end
@@ -1433,7 +1435,7 @@ function load_ltx_rad_prip_teleport(gname, type)
 					"danger=danger_condition@" .. gname .. "\n" ..
 					
 					"[combat@" .. gname .. "]\n" ..
-					"combat_type = monolith \n" ..
+					"combat_type = monolith\n" ..
 
 					"[danger_condition@" .. gname .. "]\n" ..
 					"danger_expiration_time = 60000\n" ..

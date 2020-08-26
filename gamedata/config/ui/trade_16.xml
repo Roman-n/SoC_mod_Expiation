@@ -19,11 +19,11 @@
 		<texture>ui\ui_bottom_background</texture>
 	</bottom_background>
 
-	<button x="360" y="705" width="157" height="48"  hR="255" hB="83" hG="179" highlight_text="1">
+	<button x="352" y="705" width="157" height="48"  hR="255" hB="83" hG="179" highlight_text="1">
 		<texture>ui_button_main01</texture>
 		<text font="graffiti22" r="238" g="153" b="26" align="c">ui_st_trade</text>
 	</button>
-	<button x="570" y="705" width="157" height="48"  hR="255" hB="83" hG="179" highlight_text="1">
+	<button x="530" y="705" width="157" height="48"  hR="255" hB="83" hG="179" highlight_text="1">
 		<texture>ui_button_main01</texture>
 		<text font="graffiti22" r="238" g="153" b="26" align="c">ui_st_leave</text>
 	</button>
@@ -33,12 +33,12 @@
 		<texture width="305" height="455">ui\ui_dg_inventory_exchange_trade</texture>
 	</our_bag_static>
 	
-	<our_money_static x="0" y="-17" width="119" height="46">
+	<our_money_static x="18" y="-17" width="119" height="46">
 	<texture>ui_hud_frame_moneyNumber</texture>
-		<text align="c" y="10" font="graffiti22" r="238" g="155" b="23" complex_mode="0"/>
+		<text align="c" y="13" font="graffiti22" r="238" g="155" b="23" complex_mode="0"/>
 	</our_money_static>
 
-	<dragdrop_list x="29" y="37" width="296" height="410"
+	<dragdrop_list x="29" y="33" width="296" height="410"
 			cell_width = "31" cell_height="41" rows_num="10" cols_num="9" 
 			group_similar="1" unlimited="1"/>
 
@@ -47,9 +47,9 @@
 		<texture mirror="h" width="305" height="455">ui\ui_dg_inventory_exchange_trade</texture>
 	</others_bag_static>
 
-	<other_money_static x="168" y="-17" width="119" height="46">
+	<other_money_static x="183" y="-17" width="119" height="46">
 	<texture>ui_hud_frame_moneyNumber</texture>
-		<text align="c" y="10" font="graffiti22" r="238" g="155" b="23" complex_mode="0"/>
+		<text align="c" y="13" font="graffiti22" r="238" g="155" b="23" complex_mode="0"/>
 	</other_money_static>
 
 	<dragdrop_list x="29" y="35" width="296" height="410"
@@ -60,7 +60,7 @@
 		<texture width="350" height="210">ui\ui_trade_list_back</texture>
 	</static>
 
-	<dragdrop_list x="31" y="37" width="296" height="164"
+	<dragdrop_list x="28" y="37" width="296" height="164"
 			cell_width = "31" cell_height="41"
 			rows_num="4" cols_num="9" 
 			group_similar="1" unlimited="1"/>
@@ -70,7 +70,7 @@
 		<texture width="350" height="210">ui\ui_trade_list_back</texture>
 	</static>
 
-	<dragdrop_list x="31" y="37" width="296" height="164"
+	<dragdrop_list x="28" y="37" width="296" height="164"
 			cell_width = "31" cell_height="41"
 			rows_num="4" cols_num="9" 
 			group_similar="1" unlimited="1"/>

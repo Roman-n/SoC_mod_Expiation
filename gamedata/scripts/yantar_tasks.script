@@ -7,8 +7,27 @@ function process_info_portion(info_id)
 end
 
 function yan_labx16_mapspot (actor, npc)
-    	level_tasks.add_location (907, "green_location")
+   	level_tasks.add_location (907, "green_location")
 end
+
+function yan_labx16_mapspot_rem_1 (actor, npc)
+for i=0, 200 do
+    	level_tasks.remove_location (907, "green_location")
+end
+end
+
+function yan_labx16_mapspot_rem_2 (actor, npc)
+for i=0, 200 do
+    	level_tasks.remove_location (900, "green_location")
+end
+end
+
+function yan_labx16_mapspot_rem_3 (actor, npc)
+for i=0, 200 do
+    	level_tasks.remove_location (905, "green_location")
+end
+end
+
 function has_labx16_documents ()
         if db.actor:object ("lab_x16_documents") ~= nil then
            db.actor:give_info_portion ("yantar_find_ghost_task_end")

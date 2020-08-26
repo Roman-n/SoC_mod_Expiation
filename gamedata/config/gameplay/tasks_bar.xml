@@ -23,8 +23,8 @@
 			<infoportion_complete>bar_kruglov_follow_actor</infoportion_complete>
 		</objective>
 	</game_task>
-		
-		
+
+
 	<game_task id="bar_resque_information_2" prio="360">
 		<title>bar_resque_information_2</title>
 		<objective>
@@ -58,14 +58,14 @@
 		<title>bar_hunter_rifle</title>
 		<objective>
 			<text>bar_bring_hunter_rifle</text>
-			<icon x="150" y="50" width="50" height="50">ui\ui_icons_task</icon>
+			<icon>ui_iconsTotal_bar_hunter_rifle</icon>
 			<infoportion_complete>bar_bar_hunter_quest_finish</infoportion_complete>
 			<article>descr_bar_hunter_rifle</article>
 		</objective>
 		<objective>
 			<text>bar_hunter_find_rifle</text>
 			<icon x="100" y="50" width="50" height="50">ui\ui_icons_task</icon>
-			<map_location_type hint="bar_hunter_find_rifle">green_location</map_location_type>
+			<map_location_type hint="bar_hunter_find_rifle_hint">find_item_location</map_location_type>
 			<object_story_id>bar_hunter_toz</object_story_id>
 			<function_complete>bar_rostok_tasks.has_hunter_rifle</function_complete>
 			<infoportion_set_complete>bar_bar_hunter_quest_find_rifle</infoportion_set_complete>
@@ -73,12 +73,12 @@
 		<objective>
 			<text>bar_hunter_return_rifle</text>
 			<icon x="150" y="50" width="50" height="50">ui\ui_icons_task</icon>
-			<map_location_type hint="bar_hunter_return_rifle">green_location</map_location_type>
+			<map_location_type hint="bar_hunter_return_rifle">blue_location</map_location_type>
 			<object_story_id>bar_hunter</object_story_id>			
 			<infoportion_complete>bar_bar_hunter_quest_finish</infoportion_complete>
 		</objective>
 	</game_task>
-
+	
 	<game_task id="bar_crazy_veterans_quest">
 		<title>bar_crazy_veterans_quest</title>
 		<objective>
@@ -235,7 +235,7 @@
 			<infoportion_complete>bar_kill_svoboda_leader_done</infoportion_complete>
 		</objective>
 	</game_task>
-	
+
 
 	<game_task id="bar_x16_documents" prio="380">
 		<title>bar_x16_documents</title>
@@ -248,7 +248,7 @@
 		<objective>
 			<text>look_for_x16_lab</text>
 			<icon x="400" y="50" width="50" height="50">ui\ui_icons_task</icon>
-			<map_location_type>green_location</map_location_type>
+			<map_location_type hint="look_for_x16_lab_sci">green_location</map_location_type>
 			<object_story_id>yan_general_ecolog</object_story_id>
 			<infoportion_complete>yan_x16_documents_gain</infoportion_complete>	
 		</objective>
@@ -270,24 +270,22 @@
 		<objective>
 			<text>get_to_antennas</text>
 			<icon x="100" y="50" width="50" height="50">ui\ui_icons_task</icon>
-			<map_location_type hint="find_and_deactivate_radar">green_location</map_location_type>
-
-            <object_story_id>rad_antenna</object_story_id>
+			<map_location_type hint="rad_antenna_location">green_location</map_location_type>
+			<object_story_id>rad_antenna</object_story_id>
 			<infoportion_complete>rad_antennas_reached</infoportion_complete>
 		</objective>
 		<objective>
 			<text>find_and_deactivate_radar</text>
 			<icon x="100" y="50" width="50" height="50">ui\ui_icons_task</icon>
-			 <map_location_type hint="find_and_deactivate_radar">green_location</map_location_type> 
-			 <object_story_id>rad_bunker</object_story_id>
-			 
+			<map_location_type hint="entrance_to_bunker">green_location</map_location_type> 
+			<object_story_id>rad_bunker</object_story_id>			 
 			<infoportion_complete>rad_bun_found</infoportion_complete>
 		</objective>
 		<objective>
 			<text>deactivate_radar_now</text>
 			<icon x="100" y="50" width="50" height="50">ui\ui_icons_task</icon>
-			<map_location_type hint="find_and_deactivate_radar">green_location</map_location_type> 
-			 <object_story_id>rad_swith</object_story_id>
+			<map_location_type hint="deactivate_radar_now">green_location</map_location_type> 
+			<object_story_id>rad_swith</object_story_id>
 			<infoportion_complete>bar_deactivate_radar_done</infoportion_complete>
 		</objective>
 	</game_task>
@@ -332,5 +330,3 @@
 			<infoportion_complete>bar_deactivate_radar_start</infoportion_complete>
 		</objective>
 	</game_task>
-	
-	

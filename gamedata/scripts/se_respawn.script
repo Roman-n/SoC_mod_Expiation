@@ -12,28 +12,31 @@ local i,k,v = 0,0,0
 -- Таблица ограничений на спаун: всего в симуляции не должно быть больше, чем указано.
 local simMaxCount = {
 	stalker_novice = 43, stalker_regular = 48, stalker_veteran = 43, stalker_master = 20,
-	monolith_novice = 0, monolith_regular = 30, monolith_veteran = 35, monolith_master = 30,
-	military_novice = 0, military_regular = 32, military_veteran = 22, military_master = 5,
-	killer_novice = 0, killer_regular = 18, killer_veteran = 17, killer_master = 10,
+	monolith_novice = 20, monolith_regular = 30, monolith_veteran = 35, monolith_master = 30,
+	military_novice = 20, military_regular = 32, military_veteran = 52, military_master = 85,
+	killer_novice = 20, killer_regular = 38, killer_veteran = 47, killer_master = 70,
 	ecolog_novice = 1, ecolog_regular = 1, ecolog_veteran = 1, ecolog_master = 1,
-	dolg_novice = 0, dolg_regular = 33, dolg_veteran = 36, dolg_master = 17,
-	freedom_novice = 50, freedom_regular = 20, freedom_veteran = 26, freedom_master = 21,
+	dolg_novice = 20, dolg_regular = 33, dolg_veteran = 36, dolg_master = 77,
+	freedom_novice = 50, freedom_regular = 20, freedom_veteran = 26, freedom_master = 51,
 	bandit_novice = 40, bandit_regular = 50, bandit_veteran = 18, bandit_master = 10,
-	zombied_novice = 20, zombied_regular = 15, zombied_veteran = 10, zombied_master = 10,
+	zombied_novice = 30, zombied_regular = 45, zombied_veteran = 60, zombied_master = 90,
 	
 	rat_weak = 0,	
 	tushkano_weak = 150,
 	flesh_weak = 14, flesh_normal = 38, flesh_strong = 22,
 	boar_weak = 52, boar_normal = 38, boar_strong = 27,
-	dog_weak = 53, dog_normal = 126, dog_strong = 130,
+	dog_weak = 53, dog_normal = 66, dog_strong = 78, dog_cute = 8,
+	cat_weak = 100,
 	pseudodog_weak = 59, pseudodog_normal = 80, pseudodog_strong = 60,
 	psy_dog_weak = 15, psy_dog_normal = 15, psy_dog_strong = 15,
-	zombie_weak = 61, zombie_normal = 50, zombie_strong = 35,
+	zombie_weak = 41, zombie_normal = 50, zombie_strong = 35,
 	snork_weak = 50, snork_normal = 61, snork_strong = 15,
 	poltergeist_weak = 10,
 	pseudo_gigant_weak = 23,
 	controller_weak = 18,
-	burer_weak = 20,
+	burer_weak = 50,
+	fracture_weak = 50,
+	chimera_weak = 20,
 	bloodsucker_weak = 7, bloodsucker_normal = 40, bloodsucker_strong = 15	
 }
 
@@ -278,7 +281,7 @@ end
 -- Создаем объект
 function se_respawn:create(prob)
 	if tostring(prob) == "nil" then		
-		print_table(self.conditions)
+--		print_table(self.conditions)
 		abort("RESPAWN[%s]spawn probability doesn't set", tostring(self:name()))
 		prob = 0
 	end
@@ -365,11 +368,13 @@ function se_respawn:create(prob)
 					local pos = obj.position
 --					printf("SPAWNING [%s] -> [%s], position [%s][%s][%s]", tostring(self:name()), spawn_section, pos.x, pos.y, pos.z)
 					local sm_obj = alife():object(smart_terrain_id)
-					printf("SPAWNING for SMART [%s] : [%s] -> [%s]", self:name(), obj:name(), sm_obj:name())
+--					printf("SPAWNING for SMART [%s] : [%s] -> [%s]", self:name(), obj:name(), sm_obj:name())
 
 					return true
 				else
-					alife():release(obj, true)
+					if obj then	
+						local result = pcall(prot_release_sres, obj)
+					end	
 --					printf("SPAWNING [%s] -> [%s], CANT SPAWN. NO SMART_TERRAIN AVAILABLE!!!", tostring(self:name()), spawn_section)
 					return false
 				end
@@ -379,6 +384,7 @@ function se_respawn:create(prob)
 		return true
 	end
 end
+
 -- Попытка спаунить объекты. Анализируется сколько уже заспавнено и выбирается один из механизмов - либо 
 -- мы доспавниваем до минимального количества, либо спавним с заданной вероятностью
 function se_respawn:spawn()
@@ -508,7 +514,7 @@ function stats()
 	local total_spawned = 0
 	local total_avail = 0
 	local total = 0
-	printf("***************** RESPAWN STATISTIC *********************")
+--	printf("***************** RESPAWN STATISTIC *********************")
 	for k,v in pairs(respawners) do
 		local s = xr_logic.pick_section_from_condlist(db.actor_proxy, v, v.conditions)
 		local pops = "DISABLE"
@@ -521,8 +527,8 @@ function stats()
 		else
 			str_pops = tostring(pops)
 		end
-		printf("[%s] spawns [%s] object", tostring(v:name()), str_pops)
-		print_table(v.respawn_section)
+--		printf("[%s] spawns [%s] object", tostring(v:name()), str_pops)
+--		print_table(v.respawn_section)
 		-- Увеличиваем общие счетчики
 		total = total + v.max_count
 		if pops ~= "DISABLE" then
@@ -530,11 +536,11 @@ function stats()
 			total_spawned = total_spawned + pops
 		end
 	end
-	printf("*** SUMMARY ***")
-	printf("	total = %s", total)
-	printf("	total_avail = %s", total_avail)
-	printf("	total_spawned = %s", total_spawned)
-	printf("***************")
+--	printf("*** SUMMARY ***")
+--	printf("	total = %s", total)
+--	printf("	total_avail = %s", total_avail)
+--	printf("	total_spawned = %s", total_spawned)
+--	printf("***************")
 end
 
 
@@ -542,7 +548,7 @@ end
 -- Сбор продвинутой статистики статистики по лимитам
 function lstats()
 	local can_spawn = {}
-	printf("***************** LIMITS STATISTIC *********************")
+--	printf("***************** LIMITS STATISTIC *********************")
 	for k,v in pairs(respawners) do
 		-- Запоминаем максимальное количество весов для данного респавнера
 		local wage = 0
@@ -569,25 +575,25 @@ function lstats()
 		total_current = total_current + cs
 		total_limit = total_limit + gl
 		
-		printf("%s current=%s limit=%s", k, cs, gl)
+--		printf("%s current=%s limit=%s", k, cs, gl)
 	end
-	printf("TOTAL: current=%s limit=%s", total_current, total_limit)
+--	printf("TOTAL: current=%s limit=%s", total_current, total_limit)
 end
 
 
 -- Сбор статистики по ненастроенным объектам
 function estats()
-	printf("***************** SPAWN ERROR STATISTIC *********************")
+--	printf("***************** SPAWN ERROR STATISTIC *********************")
 	for k,v in pairs(respawners) do
 		-- Заносим максимальное количество всех типов чуваков, которые данный респавнер может наспаунить.
 		for kk,vv in pairs(v.respawn_section) do
 			local tt = v.sectSpawnProps[vv.section]
 			if tt.community == "nil" or tt.rank == "nil" then
-				printf("respawner [%s]", tostring(v:name()))
-				printf("Section [%s] community[%s] rank [%s]", vv.section, tt.community, tt.rank)
+--				printf("respawner [%s]", tostring(v:name()))
+--				printf("Section [%s] community[%s] rank [%s]", vv.section, tt.community, tt.rank)
 			end
 		end
-	end	
+	end
 end
 
 
@@ -598,8 +604,22 @@ function create_ammo(section, position, lvi, gvi, pid, num)
 	local num_in_box = ini:r_u32(section, "box_size")
 
 	while num > num_in_box do
-		alife():create_ammo(section, position, lvi,	gvi, pid, num_in_box)
-		num = num - num_in_box
+		local result = pcall(prot_create_sr_1, section, position, lvi, gvi, pid, num_in_box)
+		if result then
+			num = num - num_in_box
+		end
 	end
-	alife():create_ammo(section, position, lvi,	gvi, pid, num)
+	local result = pcall(prot_create_sr_2, section, position, lvi, gvi, pid, num)
+end
+
+function prot_release_sres(obj)
+	alife():release(obj, true)
+end
+
+function prot_create_sr_1(section, position, lvi, gvi, pid, num_in_box)
+	alife():create_ammo(section, position, lvi, gvi, pid, num_in_box)
+end
+
+function prot_create_sr_2(section, position, lvi, gvi, pid, num)
+	alife():create_ammo(section, position, lvi, gvi, pid, num)
 end

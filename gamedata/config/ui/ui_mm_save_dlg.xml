@@ -22,7 +22,7 @@
 		<_texture_offset x="-29" y="-19"/>
 		<texture>ui_menu_options_dlg</texture>
 		
-		<caption x="65" y="10" width="500" height="25" complex_mode="0">
+		<caption x="65" y="7" width="500" height="25" complex_mode="0">
 			<text font="graffiti22" r="184" g="168" b="131">ui_mm_save_game</text>
 		</caption>
 		

@@ -4,16 +4,16 @@
 		<text>Дикая территория - Росток</text>
 	</string>
 	<string id="car_character_use">
-		<text>Открыть дверь ($$ACTION_USE$$)</text>
+		<text>Открыть дверь ($$ACTION_USE$$).</text>
 	</string>
 	<string id="character_use">
-		<text>Говорить ($$ACTION_USE$$)</text>
+		<text>Говорить ($$ACTION_USE$$).</text>
 	</string>
 	<string id="dead_character_use_or_drag">
-		<text>Обыскать труп ($$ACTION_USE$$) \n Тащить труп (SHIFT+$$ACTION_USE$$)</text>
+		<text>Обыскать труп ($$ACTION_USE$$). \n Тащить труп (SHIFT+$$ACTION_USE$$).</text>
 	</string>
 	<string id="dead_character_use">
-		<text>Обыскать труп ($$ACTION_USE$$)</text>
+		<text>Обыскать труп ($$ACTION_USE$$).</text>
 	</string>
 	<string id="general_complete_task">
 		<text>Задание выполнено:</text>
@@ -49,10 +49,10 @@
 		<text>Задание обновлено:</text>
 	</string>
 	<string id="physic_shell_use">
-		<text>Двигать объект ($$ACTION_USE$$)</text>
+		<text>Двигать объект ($$ACTION_USE$$).</text>
 	</string>
 	<string id="st_codelock">
-		<text>Кодовый замок ($$ACTION_USE$$)</text>
+		<text>Кодовый замок ($$ACTION_USE$$).</text>
 	</string>
 	<string id="to_aes">
 		<text>На ЧАЭС</text>
@@ -67,25 +67,25 @@
 		<text>На Росток</text>
 	</string>
 	<string id="to_darkvalley">
-		<text>В темную долину</text>
+		<text>В Тёмную долину</text>
 	</string>
 	<string id="to_escape">
-		<text>На кордон</text>
+		<text>На Кордон</text>
 	</string>
 	<string id="to_garbage">
-		<text>На свалку</text>
+		<text>На Свалку</text>
 	</string>
 	<string id="to_military">
-		<text>На склады</text>
+		<text>На Армейские склады</text>
 	</string>
 	<string id="to_pripyat">
-		<text>На Припять</text>
+		<text>В Припять</text>
 	</string>
 	<string id="to_radar">
-		<text>К "Выжигателю мозгов"</text>
+		<text>К Выжигателю мозгов</text>
 	</string>
 	<string id="to_rostok">
-		<text>На дикую территорию</text>
+		<text>На Дикую территорию</text>
 	</string>
 	<string id="to_yantar">
 		<text>На Янтарь</text>
@@ -94,7 +94,7 @@
 		<text>Отключение защиты</text>
 	</string>
 	<string id="st_psy_danger">
-		<text>Критический уровень пси излучения. Немедленно покиньте опасную зону.</text>
+		<text>Критический уровень пси-излучения. Немедленно покиньте опасную зону.</text>
 	</string>
 	<string id="st_radiation_danger">
 		<text>Опасный уровень радиации. Необходима защита, чтобы пройти.</text>

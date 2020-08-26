@@ -521,9 +521,6 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 	
-	
-	
-	
 	<specific_character id="rad_monolit_strong_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_mo_head_1</icon>
@@ -778,7 +775,6 @@
 		<start_dialog>hello_dialog</start_dialog>
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
-	
 
 
 <!---------------------------MONOLIT SNIPER---------------------->
@@ -1442,7 +1438,6 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-
 <!---------------------------STALKER VETERAN---------------------->
 	<specific_character id="rad_stalker_veteran_default1" team_default = "1">
 		<name>GENERATE_NAME_stalker</name>
@@ -1466,6 +1461,7 @@
 			ammo_9x19_pbp = 1 \n
 			wpn_lr300 \n
 			ammo_5.56x45_ap = 1 \n
+ammo_12x70_buck=9 \n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -1499,6 +1495,7 @@
 			ammo_9x19_pbp = 1 \n
 			wpn_ak74 = 1, scope \n
 			ammo_5.45x39_ap = 1 \n
+ammo_7.62x54_7h1=1 \n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -1532,6 +1529,7 @@
 			ammo_9x19_pbp = 1 \n
 			wpn_l85 \n
 			ammo_5.56x45_ss190 = 1 \n
+ammo_5.45x39_ap=6 \n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -1565,6 +1563,7 @@
 			ammo_9x19_pbp = 1 \n
 			wpn_abakan \n
 			ammo_5.45x39_fmj \n
+ammo_5.56x45_ap=8 \n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -1598,6 +1597,7 @@
 			ammo_9x19_pbp = 1 \n
 			wpn_abakan = 1, scope silencer launcher\n
 	    	ammo_5.45x39_ap = 1 \n
+ammo_9x39_sp5=4 \n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -1632,6 +1632,7 @@
 			ammo_9x19_pbp = 1 \n
 			wpn_val \n
 			ammo_9x39_sp5 = 1 \n
+ammo_7.62x54_ap=2 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
 
@@ -1664,6 +1665,7 @@
 			ammo_9x19_pbp = 1 \n
 			wpn_lr300 = 1, scope \n
 			ammo_5.56x45_ap \n
+ammo_9x39_ap=5 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
 
@@ -1696,6 +1698,7 @@
 			ammo_9x19_pbp = 1 \n
 			wpn_abakan = 1, scope \n
 			ammo_5.45x39_fmj \n
+ammo_9x39_ap=6 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
 
@@ -1727,6 +1730,7 @@
 			ammo_9x19_pbp = 1 \n
 			wpn_ak74 = 1, scope silencer \n
 	    	ammo_5.45x39_ap = 1 \n
+ammo_11.43x23_hydro=10 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
 		
@@ -1758,6 +1762,7 @@
 			ammo_9x19_pbp = 1 \n
 			wpn_val \n
 			ammo_9x39_sp5 = 1 \n
+ammo_5.45x39_fmj=9 \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
 		
@@ -1767,8 +1772,7 @@
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
 
-
-	<!---------------------------SOLDIER SPECNAZ---------------------->
+<!---------------------------SOLDIER SPECNAZ---------------------->
 
 	<specific_character id="rad_soldier_specnaz_default1" team_default = "1">
 		<name>GENERATE_NAME_lieutenant</name>
@@ -1893,6 +1897,7 @@
 			ammo_11.43x23_fmj = 1 \n
 			wpn_g36 \n
 			ammo_5.56x45_ap = 1 \n
+ammo_5.45x39_fmj=6 \n
 #include "gameplay\character_drugs.xml"
 #include "gameplay\character_food.xml"
 		</supplies>
@@ -1925,6 +1930,7 @@
 			ammo_11.43x23_fmj = 1 \n
 			wpn_lr300 = 1, scope \n
 			ammo_5.56x45_ap = 1 \n
+ammo_9x39_pab9=3 \n
 #include "gameplay\character_drugs.xml"
 #include "gameplay\character_food.xml"
 		</supplies>
@@ -1957,6 +1963,7 @@
 			ammo_11.43x23_fmj = 1 \n
 			wpn_g36 \n
 			ammo_5.56x45_ap = 1 \n
+ammo_9x39_sp5=6 \n
 #include "gameplay\character_drugs.xml"
 #include "gameplay\character_food.xml"
 		</supplies>
@@ -1990,6 +1997,8 @@
 			ammo_11.43x23_hydro = 1 \n
 			wpn_val \n
 			ammo_9x39_sp5 = 1 \n
+ammo_5.45x39_ap=3 \n
+ammo_12x70_buck=6 \n
 #include "gameplay\character_drugs.xml"
 #include "gameplay\character_food.xml"
 		</supplies>
@@ -2024,6 +2033,7 @@
 			ammo_9x39_pab9 = 1 \n
 			ammo_9x39_sp5 = 1 \n
 			ammo_vog-25 = 2 \n
+ammo_12x70_buck=9 \n
 #include "gameplay\character_drugs.xml"
 #include "gameplay\character_food.xml"
 		</supplies>
@@ -2056,6 +2066,7 @@
 			ammo_11.43x23_hydro = 1 \n
 			wpn_val \n
 			ammo_9x39_sp5 = 1 \n
+ammo_5.45x39_ap=9 \n
 #include "gameplay\character_drugs.xml"
 #include "gameplay\character_food.xml"
 		</supplies>
@@ -2127,6 +2138,7 @@
 #include "gameplay\character_criticals_3.xml"
 			
 		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
 	</specific_character>
 
 	<specific_character id="rad_ecolog_default2" team_default = "1">
@@ -2158,6 +2170,7 @@
 #include "gameplay\character_criticals_3.xml"
 			
 		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
 	</specific_character>
 
 	<specific_character id="rad_ecolog_default3" team_default = "1">
@@ -2189,8 +2202,7 @@
 #include "gameplay\character_criticals_3.xml"
 			
 		<start_dialog>hello_dialog</start_dialog>
+#include "gameplay\character_dialogs.xml"
 	</specific_character>
-	
-	
 
 </xml>

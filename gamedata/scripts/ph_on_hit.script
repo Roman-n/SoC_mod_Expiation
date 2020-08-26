@@ -25,7 +25,7 @@ function ph_on_hit:hit_callback(obj, amount, local_direction, who, bone_index)
 		who_name = "nil"
 	end
 
-	printf("_bp: ph_on_hit:hit_callback: obj='%s', amount=%d, who='%s', bone='%s'", obj:name(), amount, who_name, tostring(bone_index))
+	--printf("_bp: ph_on_hit:hit_callback: obj='%s', amount=%d, who='%s', bone='%s'", obj:name(), amount, who_name, tostring(bone_index))
 	
 	if db.storage[self.object:id()].active_scheme then
 		if xr_logic.try_switch_to_another_section(obj, self.st, db.actor) then
@@ -34,7 +34,7 @@ function ph_on_hit:hit_callback(obj, amount, local_direction, who, bone_index)
 	end
 end
 function ph_on_hit:deactivate()
-	printf("PH_ON_HIT: deactivate")
+	--printf("PH_ON_HIT: deactivate")
 end
 
 ---------------------------------------------------------------------------------------------------------------------
@@ -49,7 +49,7 @@ function set_scheme(npc, ini, scheme, section, gulag_name)
 
 	local st = xr_logic.assign_storage_and_bind(npc, ini, scheme, section)
 	st.logic = xr_logic.cfg_get_switch_conditions(ini, section, npc)
-	print_table(st.logic)
+	--print_table(st.logic)
 	xr_logic.subscribe_action_for_events(npc, st, st.action)	
 end
 

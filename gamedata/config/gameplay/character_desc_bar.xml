@@ -17,13 +17,13 @@
 		<visual>actors\barman\barman</visual>
 		<snd_config>characters_voice\human_01\stalker\</snd_config>
 		<crouch_type>-1</crouch_type>
-		
+
 		<supplies>
 			[spawn] \n
 			stalker_outfit \n
-			
+
 		</supplies>
-					
+		
 		<start_dialog>bar_bar_barmen_start</start_dialog>
 		<actor_dialog>bar_bar_barmen_talk_info</actor_dialog>
 		<!--actor_dialog>bar_bar_barmen_jobs</actor_dialog-->
@@ -58,6 +58,8 @@
 			[spawn] \n
 			wpn_ak74 \n
 			ammo_5.45x39_fmj \n
+ammo_9x19_pbp=3 \n
+
 		</supplies>
 
 #include "gameplay\character_criticals_3.xml"
@@ -86,6 +88,7 @@
 			[spawn] \n
 			wpn_mp5 \n
 			ammo_9x19_pbp \n
+ammo_12x70_buck=2 \n
 		</supplies>
 
 #include "gameplay\character_criticals_3.xml"
@@ -114,6 +117,7 @@
 			[spawn] \n
 			wpn_ak74u \n
 			ammo_5.45x39_fmj \n
+ammo_5.56x45_ss190=2 \n
 		</supplies>
 
 #include "gameplay\character_criticals_3.xml"
@@ -142,6 +146,7 @@
 			[spawn] \n
 			wpn_ak74u \n
 			ammo_5.45x39_fmj \n
+ammo_9x19_fmj=4 \n
 		</supplies>
 
 #include "gameplay\character_criticals_3.xml"
@@ -170,6 +175,7 @@
 			[spawn] \n
 			wpn_ak74 \n
 			ammo_5.45x39_fmj \n
+ammo_9x19_fmj=3 \n
 		</supplies>
 
 #include "gameplay\character_criticals_4.xml"
@@ -198,6 +204,7 @@
 			[spawn] \n
 			wpn_ak74 \n
 			ammo_5.45x39_fmj \n
+ammo_9x18_pmm=5 \n
 		</supplies>
 
 #include "gameplay\character_criticals_4.xml"
@@ -228,6 +235,7 @@
 			ammo_9x19_fmj \n
 			wpn_abakan \n
 			ammo_5.45x39_fmj \n
+ammo_11.43x23_fmj=2 \n
 		</supplies>
 		
 #include "gameplay\character_criticals_6.xml"
@@ -239,7 +247,7 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_bandit_veteran</icon>
 		<map_icon x="0" y="0"></map_icon>
-		<bio>sim_bandit_general_bio</bio>
+		<bio>sim_stalker_general_bio</bio>
 
 		<class>bar_stalker_bandit</class>
 		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
@@ -256,6 +264,7 @@
 			[spawn] \n
 			wpn_val \n
 			ammo_9x39_pab9 \n
+ammo_5.45x39_ap=3 \n
 		</supplies>
 
 #include "gameplay\character_criticals_4.xml"
@@ -267,7 +276,7 @@
 		<name>GENERATE_NAME_stalker</name>
 		<icon>ui_npc_u_stalker_ki_head_1</icon>
 		<map_icon x="0" y="0"></map_icon>
-		<bio>sim_killer_veteran_bio</bio>
+		<bio>sim_stalker_general_bio</bio>
 
 		<class>bar_stalker_killer</class>
 		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
@@ -284,6 +293,7 @@
 			[spawn] \n
 			wpn_lr300 \n
 			ammo_5.56x45_ss190 \n
+ammo_12x76_dart=2 \n
 		</supplies>
 		
 #include "gameplay\character_criticals_4.xml"
@@ -312,6 +322,7 @@
 			[spawn] \n
 			wpn_ak74 \n
 			ammo_5.45x39_fmj \n
+ammo_12x76_zhekan=3 \n
 		</supplies>
 
 #include "gameplay\character_criticals_4.xml"
@@ -339,6 +350,7 @@
 			[spawn] \n
 			wpn_ak74 \n
 			ammo_5.45x39_fmj \n
+ammo_9x18_pmm=4 \n
 		</supplies>
 
 #include "gameplay\character_criticals_4.xml"
@@ -383,7 +395,7 @@
 		<name>bar_hunter_name</name>
 		<icon>ui_npc_u_green_stalker_3</icon>
 		<map_icon x="0" y="0"></map_icon>
-		<bio>Добродушный весельчак, единственная его проблема это то, что умеет стрелять только из охотничьего ружья. Остальное даже не пробует. Недавно попал в передрягу на Дикой территории и потерял там свое фамильное ружье. Теперь околачивается в баре, надеется, что кто-то вернет ему его ружье.</bio>
+		<bio>bar_hunter_bio</bio>
 
 		<class>bar_stalker_hunter</class>
 		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
@@ -462,6 +474,7 @@
 			[spawn] \n
 			wpn_ak74u \n
 			ammo_5.45x39_fmj \n
+ammo_7.62x54_7h1 \n
 		</supplies>
 		
 #include "gameplay\character_criticals_4.xml"
@@ -617,6 +630,7 @@
 			ammo_11.43x23_hydro \n	
 			wpn_val \n
 			ammo_9x39_sp5 = 1 \n
+ammo_5.56x45_ap=2 \n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -625,7 +639,6 @@
 		
 		<start_dialog>bar_dolg_leader_start</start_dialog>
 		<actor_dialog>bar_dolg_leader_join</actor_dialog>
-		
 		<actor_dialog>bar_dolg_leader_quest_rg6_finish</actor_dialog>
 		<actor_dialog>tm_dolg_dialog</actor_dialog>
 		<actor_dialog>tm_dolg_reward</actor_dialog>
@@ -692,6 +705,7 @@
 			ammo_9x19_fmj \n			
 			wpn_groza \n
 			ammo_9x39_ap \n	
+ammo_5.45x39_ap=2 \n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -726,6 +740,7 @@
 			ammo_9x19_fmj \n
 			wpn_abakan \n
 			ammo_5.45x39_fmj \n
+ammo_12x70_buck=2 \n
 			device_torch \n			
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
@@ -743,7 +758,7 @@
 		<name>bar_kicenko_name</name>
 		<icon>ui_npc_u_stalker_do_balon_1</icon>
 		<map_icon x="0" y="0"></map_icon>
-		<bio>sim_dolg_veteran_bio</bio>
+		<bio>bar_kicenko_bio</bio>
 
 		<class>bar_zastava_commander</class>
 		<community>dolg</community> <terrain_sect>stalker_dolg_terrain</terrain_sect>
@@ -790,8 +805,8 @@
 		<community>ecolog</community> <terrain_sect>stalker_ecolog_terrain</terrain_sect>
 		<money min="600" max="2000" infinitive="0"></money>
 		
-		<rank>450</rank>
-		<reputation>90</reputation>
+		<rank>682</rank>
+		<reputation>50</reputation>
 
 		<visual>actors\ecolog\stalker_ecolog_military</visual>
 		<snd_config>characters_voice\human_03\eco\</snd_config>
@@ -801,6 +816,7 @@
 			[spawn] \n
 			wpn_walther \n
 			ammo_9x19_fmj \n
+ammo_5.56x45_ss190 \n
 			bar_ecolog_flash \n
 			hand_radio \n
 		</supplies>
@@ -1026,6 +1042,7 @@
 			ammo_9x19_fmj \n
 			wpn_abakan \n
 			ammo_5.45x39_fmj \n
+ammo_5.56x45_ss190=2 \n
 			device_torch \n			
 #include "gameplay\character_items.xml"\n
 #include "gameplay\character_food.xml" \n
@@ -1059,6 +1076,7 @@
 			ammo_9x19_fmj \n
 			wpn_abakan \n
 			ammo_5.45x39_fmj \n
+ammo_12x70_buck=3 \n
 			device_torch \n
 #include "gameplay\character_items.xml"\n
 #include "gameplay\character_food.xml" \n
@@ -1092,6 +1110,7 @@
 			ammo_9x19_fmj \n
 			wpn_abakan \n
 			ammo_5.45x39_fmj \n
+ammo_12x70_buck=2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n			
 #include "gameplay\character_food.xml" \n
@@ -1126,6 +1145,7 @@
 			ammo_9x19_fmj = 1 \n
 			wpn_l85 \n
 			ammo_5.56x45_ap = 1 \n
+ammo_7.62x54_7h1=1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n	
 #include "gameplay\character_food.xml" \n
@@ -1190,6 +1210,7 @@
 			ammo_9x19_fmj = 1 \n
 			wpn_l85 \n
 			ammo_5.56x45_ap = 1 \n
+ammo_7.62x54_7h1=1 \n
 			device_torch \n
 #include "gameplay\character_items.xml"	\n
 #include "gameplay\character_food.xml" \n
@@ -1223,6 +1244,7 @@
 			ammo_9x19_fmj \n
 			wpn_groza \n
 			ammo_9x39_ap \n	
+ammo_5.45x39_ap=1 \n
 #include "gameplay\character_items.xml"	\n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
@@ -1255,6 +1277,7 @@
 			ammo_9x19_fmj \n
 			wpn_groza \n
 			ammo_9x39_ap \n	
+ammo_5.45x39_ap=2 \n
 #include "gameplay\character_items.xml"	\n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
@@ -1321,6 +1344,7 @@
 			ammo_9x19_fmj \n
 			wpn_groza \n
 			ammo_9x39_ap \n	
+ammo_5.56x45_ss190=2 \n
 #include "gameplay\character_items.xml" \n	
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
@@ -1354,6 +1378,7 @@
 			ammo_11.43x23_fmj \n		
 			wpn_val \n
 			ammo_9x39_sp5 = 1 \n
+ammo_5.56x45_ss190=3 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
@@ -1419,6 +1444,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
+ammo_12x70_buck=1 \n
 			device_torch \n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
@@ -1448,6 +1474,7 @@
 			[spawn] \n
 			wpn_ak74u \n
 			ammo_5.45x39_fmj \n
+ammo_12x70_buck=1 \n
 			device_torch \n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
@@ -1478,6 +1505,7 @@
 			[spawn] \n
 			wpn_pb \n
 			ammo_9x18_fmj = 1 \n
+ammo_9x19_fmj=2 \n
 			device_torch \n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
@@ -1507,6 +1535,7 @@
 			[spawn] \n
 			wpn_mp5 \n
 			ammo_9x19_fmj \n
+ammo_9x18_pmm=3 \n
 			device_torch \n		
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
@@ -1536,6 +1565,7 @@
 			[spawn] \n
 			wpn_ak74 \n
 			ammo_5.45x39_fmj \n
+ammo_9x18_pmm=2 \n
 			device_torch \n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
@@ -1565,6 +1595,7 @@
 			[spawn] \n
 			wpn_ak74u \n
 			ammo_5.45x39_fmj \n
+ammo_5.56x45_ap=1 \n
 			device_torch \n		
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
@@ -1594,6 +1625,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
+ammo_11.43x23_fmj=2 \n
 			device_torch \n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
@@ -1623,6 +1655,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
+ammo_12x76_zhekan=1 \n
 			device_torch \n
 #include "gameplay\character_food.xml" \n
 #include "gameplay\character_drugs.xml"
@@ -1655,6 +1688,7 @@
 			ammo_9x18_pmm = 1 \n
 			wpn_bm16 \n
 			ammo_12x76_zhekan = 1 \n
+ammo_5.56x45_ss190=2 \n
 			device_torch \n
 #include "gameplay\character_items.xml"\n
 #include "gameplay\character_food.xml" \n
@@ -1676,7 +1710,7 @@
 		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
 		<money min="200" max="600" infinitive="0"></money>
 		
-		<rank>232</rank>
+		<rank>342</rank>
 		<reputation>0</reputation>
 
 		<visual>actors\neytral\stalker_neytral_balon_8</visual>
@@ -1688,6 +1722,7 @@
 			ammo_9x18_pmm = 1 \n
 			wpn_mp5 \n
 			ammo_9x19_fmj = 1 \n
+ammo_5.56x45_ss190=1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_food.xml" \n
@@ -1720,6 +1755,7 @@
 			ammo_9x18_fmj = 1 \n
 			wpn_mp5 \n
 			ammo_9x19_fmj = 1 \n
+ammo_5.45x39_fmj=3 \n
 			device_torch \n
 #include "gameplay\character_items.xml"\n
 #include "gameplay\character_food.xml" \n
@@ -1784,6 +1820,7 @@
 			ammo_9x18_pmm \n
 			wpn_ak74 \n
 			ammo_5.45x39_fmj \n
+ammo_9x39_pab9=1 \n
 			device_torch \n
 #include "gameplay\character_items.xml"\n
 #include "gameplay\character_food.xml" \n
@@ -1817,6 +1854,7 @@
 			ammo_9x19_fmj \n
 			wpn_lr300 \n
 			ammo_5.56x45_ap = 1 \n
+ammo_9x39_pab9=2 \n
 			device_torch \n
 #include "gameplay\character_items.xml"\n
 #include "gameplay\character_food.xml" \n
@@ -1883,6 +1921,7 @@
 			ammo_9x19_fmj \n
 			wpn_lr300 \n
 			ammo_5.56x45_ap = 1 \n
+ammo_5.45x39_fmj=3 \n
 			device_torch \n
 #include "gameplay\character_items.xml"\n
 #include "gameplay\character_food.xml" \n
@@ -1949,6 +1988,7 @@
 			ammo_9x19_fmj = 1 \n
 			wpn_lr300 \n
 			ammo_5.56x45_ss190 = 1 \n
+ammo_5.45x39_fmj=1 \n
 			device_torch \n
 #include "gameplay\character_items.xml"\n
 #include "gameplay\character_food.xml" \n
@@ -1984,6 +2024,7 @@
 			ammo_9x19_fmj \n
 			wpn_l85 \n
 			ammo_5.56x45_ap = 1 \n
+ammo_5.45x39_fmj=4 \n
 		</supplies>
 			
 #include "gameplay\character_criticals_3.xml"
@@ -2013,6 +2054,7 @@
 			ammo_9x19_fmj \n
 			wpn_l85 \n
 			ammo_5.56x45_ap = 1 \n
+ammo_9x39_ap=2 \n
 		</supplies>
 				
 #include "gameplay\character_criticals_3.xml"

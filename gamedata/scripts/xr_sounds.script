@@ -3,7 +3,7 @@ local themes = {}   --name = "themes"
 -----------------------------------------------------------------------------------------------------------------------------------
 function load_sounds (obj)
     local sounds_base = stalker_ids.sound_script + 8192
-    printf ("SOUNDS BASE %d", stalker_ids.sound_script)
+    --printf ("SOUNDS BASE %d", stalker_ids.sound_script)
     sounds_base = this.load_common (obj, sounds_base)
 end
 -----------------------------------------------------------------------------------------------------------------------------------
@@ -32,7 +32,7 @@ function play_sound_rnd (obj, min_delay, max_delay, theme, sub_theme, phrase_set
 		return
 	end
        if num == 0 then
-          printf ("NO SOUNDS LOADED !!! Theme : %s, sub theme : %d, phrases set : %d", theme, sub_theme, phrase_set)
+          --printf ("NO SOUNDS LOADED !!! Theme : %s, sub theme : %d, phrases set : %d", theme, sub_theme, phrase_set)
           return
        end
        if num == 1 then
@@ -70,7 +70,7 @@ end
 function get_random_subtheme (theme)
     local num = table.getn (themes[theme])
     if num == 0 then
-       printf ("No subthemes in %s theme", theme)
+       --printf ("No subthemes in %s theme", theme)
        return
     end
     if num == 1 then return 1 end
@@ -80,7 +80,7 @@ end
 function get_random_phrases_set (theme, sub_theme)
     local num = table.getn (themes[theme][sub_theme])
     if num == 0 then
-       printf ("No phrases set in %s theme, %d sub theme", theme, sub_theme)
+       --printf ("No phrases set in %s theme, %d sub theme", theme, sub_theme)
        return
     end
     if num == 1 then return 1 end
@@ -90,7 +90,7 @@ end
 function get_random_phrase (theme, sub_theme, phrase_set)
     local num = this.get_num_subphrases (theme, sub_theme, phrase_set)
     if num == 0 then
-       printf ("NO SOUNDS LOADED !!! Theme : %s, sub theme : %d, phrases set : %d", theme, sub_theme, phrase_set)
+       --printf ("NO SOUNDS LOADED !!! Theme : %s, sub theme : %d, phrases set : %d", theme, sub_theme, phrase_set)
        return
     end
     if num == 1 then
@@ -198,13 +198,13 @@ function load_common (obj, sounds_base)
               }
               }
               
-    //themes["commander_patrol"] =
-              //{
-              //{
-              //sounds_base,
-              //obj:add_sound ("Scripts\\Patrol\\Commander1_",   20, snd_type.talk, 2, 1, id ()),
-              //}
-              //}
+    --themes["commander_patrol"] =
+              --{
+              --{
+              --sounds_base,
+              --obj:add_sound ("Scripts\\Patrol\\Commander1_",   20, snd_type.talk, 2, 1, id ()),
+              --}
+              --}
 
 	themes["commander_agroprom"] =
     		{

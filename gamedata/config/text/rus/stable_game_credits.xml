@@ -7,7 +7,7 @@
 		<text>Продюсер</text>
 	</string>
 	<string id="st_gsc">
-		<text>Сергей "-GSC-" Григорович</text>
+		<text>Сергей «-GSC-» Григорович</text>
 	</string>
 	<string id="st_project_lead">
 		<text>Лидер проекта</text>
@@ -19,7 +19,7 @@
 		<text>Ведущие дизайнеры</text>
 	</string>
 	<string id="st_prokhorov">
-		<text>Андрей "Prof" Прохоров</text>
+		<text>Андрей «Prof» Прохоров</text>
 	</string>
 	<string id="st_yuriy_negrobov">
 		<text>Юрий Негробов</text>
@@ -49,13 +49,13 @@
 		<text>уровней</text>
 	</string>
 	<string id="st_tkachenko">
-		<text>Андрей "Rainbow"</text>
+		<text>Андрей «Rainbow»</text>
 	</string>
 	<string id="st_tkachenko2">
 		<text>Ткаченко</text>
 	</string>
 	<string id="st_kurbatov">
-		<text>Сергей "Mike"</text>
+		<text>Сергей «Mike»</text>
 	</string>
 	<string id="st_kurbatov2">
 		<text>Курбатов</text>
@@ -79,7 +79,7 @@
 		<text>Зайцев</text>
 	</string>
 	<string id="st_pavlenko">
-		<text>Александр "SU-27"</text>
+		<text>Александр «SU-27»</text>
 	</string>
 	<string id="st_pavlenko2">
 		<text>Павленко</text>
@@ -103,25 +103,25 @@
 		<text>Супрун</text>
 	</string>
 	<string id="st_karmalskiy">
-		<text>Сергей "Karma"</text>
+		<text>Сергей «Karma»</text>
 	</string>
 	<string id="st_karmalskiy2">
 		<text>Кармальский</text>
 	</string>
 	<string id="st_petrovskiy">
-		<text>Юрий "Jip"</text>
+		<text>Юрий «Jip»</text>
 	</string>
 	<string id="st_petrovskiy2">
 		<text>Петровский</text>
 	</string>
 	<string id="st_shelekhov">
-		<text>Максим "ghouL"</text>
+		<text>Максим «ghouL»</text>
 	</string>
 	<string id="st_shelekhov2">
 		<text>Шелехов</text>
 	</string>
 	<string id="st_pshenichniy">
-		<text>Александр "LEX"</text>
+		<text>Александр «LEX»</text>
 	</string>
 	<string id="st_pshenichniy2">
 		<text>Пшеничный</text>
@@ -133,7 +133,7 @@
 		<text>Грабовский</text>
 	</string>
 	<string id="st_karpenko">
-		<text>Евгений "Frodo"</text>
+		<text>Евгений «Frodo»</text>
 	</string>
 	<string id="st_karpenko2">
 		<text>Карпенко</text>
@@ -178,7 +178,7 @@
 		<text>Models</text>
 	</string>
 	<string id="st_goncharenko">
-		<text>Слава "Glory"</text>
+		<text>Слава «Glory»</text>
 	</string>
 	<string id="st_goncharenko2">
 		<text>Гончаренко</text>
@@ -387,13 +387,13 @@
 		<text>Сытьянов</text>
 	</string>
 	<string id="st_aristov">
-		<text>Вячеслав "must_die"</text>
+		<text>Вячеслав «must_die»</text>
 	</string>
 	<string id="st_aristov2">
 		<text>Аристов</text>
 	</string>
 	<string id="st_veretiannikov">
-		<text>Иван "E1"</text>
+		<text>Иван «E1»</text>
 	</string>
 	<string id="st_veretiannikov2">
 		<text>Веретянников</text>
@@ -411,7 +411,7 @@
 		<text>Волвач</text>
 	</string>
 	<string id="st_dushynsky">
-		<text>Петр </text>
+		<text>Пётр </text>
 	</string>
 	<string id="st_dushynsky2">
 		<text>Душинский</text>
@@ -429,7 +429,7 @@
 		<text>Кузьмин</text>
 	</string>
 	<string id="st_lekhno">
-		<text>Дмитрий "Krondor"</text>
+		<text>Дмитрий «Krondor»</text>
 	</string>
 	<string id="st_lekhno2">
 		<text>Лехно</text>
@@ -447,7 +447,7 @@
 		<text>Шишкин</text>
 	</string>
 	<string id="st_sound_producer">
-		<text>Звукорежиссер</text>
+		<text>Звукорежиссёр</text>
 	</string>
 	<string id="st_kuzmenko">
 		<text>Дмитрий Кузьменко</text>
@@ -486,7 +486,7 @@
 		<text>ОТДЕЛ КОНТРОЛЯ КАЧЕСТВА</text>
 	</string>
 	<string id="st_dyukov">
-		<text>Петр </text>
+		<text>Пётр </text>
 	</string>
 	<string id="st_dyukov2">
 		<text>Дюков</text>
@@ -556,7 +556,7 @@
 	</string>
 
 	<string id="st_russian_voice">
-		<text>Актеры</text>
+		<text>Актёры</text>
 	</string>
 	<string id="st_vilkov">
 		<text>Александр  </text>
@@ -753,7 +753,7 @@
 		<text>Castaneda</text>
 	</string>
 	<string id="st_plianpho">
-		<text>Chalermchai "Kata"</text>
+		<text>Chalermchai «Kata»</text>
 	</string>
 	<string id="st_plianpho2">
 		<text>Plianpho</text>
@@ -2025,10 +2025,10 @@
 		<text>-= ФАНАТАМ! =-</text>
 	</string>
 	<string id="st_thanks_fanbase2">
-		<text>От всего сердца благодарим Вакуара "HeadHunter" Тарика,</text>
+		<text>От всего сердца благодарим Вакуара «HeadHunter» Тарика,</text>
 	</string>
 	<string id="st_thanks_fanbase3">
-		<text>Алексея "Don Reba" Бадалова, Эмиль aka Redrick,</text>
+		<text>Алексея «Don Reba» Бадалова, Эмиль aka Redrick,</text>
 	</string>
 	<string id="st_thanks_fanbase4">
 		<text>Петера Съобера, Pixel, Michi, nasa800, LPKorn3324,</text>

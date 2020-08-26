@@ -8,10 +8,11 @@ $spawn					= "food and drugs\bread_a"
 cform                   = skeleton
 class					= II_ATTCH
 visual                  = weapons\bred\bred.ogf
+description			= enc_equipment_food_bread1
 cost					= 20
-inv_name				= "bread"
-inv_name_short			= "bread"
-inv_weight				= .3
+inv_name				= Bread
+inv_name_short			= Bread
+inv_weight				= 0.3
 inv_grid_width			= 1
 inv_grid_height			= 1
 inv_grid_x				= 11
@@ -22,7 +23,7 @@ attach_position_offset	= 0.096910, -0.013594, 0.107925
 attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
-// should be deleted after update
+; should be deleted after update
 bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
@@ -52,13 +53,13 @@ attach_position_offset	= 0.096910, -0.013594, 0.107925
 attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
-// should be deleted after update
+; should be deleted after update
 bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
 
 ; eatable item
-eat_health = 0.05
+eat_health = 0.02
 eat_satiety = 0.2
 eat_power = 0
 eat_radiation = 0
@@ -98,7 +99,7 @@ attach_position_offset	= 0.104196, -0.010821, 0.076969
 attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
-// should be deleted after update
+; should be deleted after update
 bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
@@ -139,7 +140,7 @@ attach_position_offset	= 0.104196, -0.010821, 0.076969
 attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
-// should be deleted after update
+; should be deleted after update
 bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
@@ -165,7 +166,7 @@ inv_grid_y			= 13
 cost				= 100
 
 ; eatable item
-eat_health = 0.15
+eat_health = 0.3
 eat_satiety = 0.4
 eat_power = 0
 eat_radiation = 0
@@ -184,7 +185,7 @@ attach_position_offset	= 0.104196, -0.010821, 0.076969
 attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
-// should be deleted after update
+; should be deleted after update
 bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
@@ -210,7 +211,7 @@ attach_position_offset	= 0.087266, -0.078540, 0.052360
 attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
-// should be deleted after update
+; should be deleted after update
 bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
@@ -242,12 +243,10 @@ attach_position_offset	= 0.087266, -0.078540, 0.052360
 attach_bone_name		= bip01_r_hand
 auto_attach				= false
 
-// should be deleted after update
+; should be deleted after update
 bone_name				= bip01_r_hand
 position_offset			 = 0.0,0.0,0.0
 angle_offset			 = 1.570790,1.570790,3.92699
-
-slot				= 4
 
 ; eatable item
 eat_health		= 0.01
@@ -276,9 +275,10 @@ $spawn					= "food and drugs\guitar_a"
 cform                   = skeleton
 class					= II_ATTCH
 visual                  = Equipments\item_guitar.ogf
-cost					= 35
-inv_name				= "guitar"
-inv_name_short			= "guitar"
+description			= enc_equipment_food_guitar1
+cost					= 500
+inv_name				= guitar
+inv_name_short			= guitar
 inv_weight				= 1.5
 inv_grid_width			= 4
 inv_grid_height			= 2
@@ -296,9 +296,10 @@ $spawn					= "food and drugs\harmonica_a"
 cform                   = skeleton
 class					= II_ATTCH
 visual                  = Equipments\item_harmonica.ogf
-cost					= 35
-inv_name				= "harmonica"
-inv_name_short			= "harmonica"
+description                     = enc_equipment_food_harmonica1
+cost					= 200
+inv_name				= harmonica
+inv_name_short			= harmonica
 inv_weight				= 0.35
 inv_grid_width			= 1
 inv_grid_height			= 1
@@ -308,6 +309,35 @@ attach_angle_offset		= 0.000000, -1.204452, -1.262921
 attach_position_offset	= 0.081856, -0.035081, 0.011694
 attach_bone_name		= bip01_l_hand
 auto_attach				= false
+
+[harmonica_f]:identity_immunities
+GroupControlSection		= spawn_group
+discovery_dependency	=
+$spawn					= "food and drugs\antirad"
+cform                   = skeleton
+class					= II_ANTIR
+visual                  = equipments\item_harmonica.ogf
+description                     = enc_equipment_food_harmonica1
+cost					= 200
+inv_name				= harmonica
+inv_name_short			= harmonica
+inv_weight				= 0.35
+inv_grid_width			= 1
+inv_grid_height			= 1
+inv_grid_x				= 11
+inv_grid_y				= 2
+; eatable item
+eat_health = 0
+eat_satiety = 0
+eat_power = 0
+eat_radiation = 0
+eat_alcohol = 0
+wounds_heal_perc = 0
+eat_portions_num = 1
+; food item
+animation_slot  = 4
+;hud item
+hud = wpn_vodka_hud
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;	MEDICAL
@@ -367,11 +397,11 @@ inv_grid_y			= 14
 cost				= 150
 
 ; eatable item
-eat_health			= 0.6
+eat_health			= 0.5
 eat_satiety			= 0
 eat_power			= 0.0
 eat_radiation		= -0.1
-wounds_heal_perc	= 0.3
+wounds_heal_perc	= 0.2
 eat_portions_num	= 1
 eat_max_power		= 0.1
 
@@ -398,14 +428,14 @@ inv_grid_width		= 2
 inv_grid_height		= 1
 inv_grid_x			= 16
 inv_grid_y			= 20
-cost				= 220
+cost				= 250
 
 ; eatable item
-eat_health			= 1.0
+eat_health			= 0.75
 eat_satiety			= 0
 eat_power			= 0.0
 eat_radiation		= -0.1
-wounds_heal_perc	= 1.0
+wounds_heal_perc	= 0.5
 eat_portions_num	= 1
 eat_max_power		= 0.1
 
@@ -432,14 +462,14 @@ inv_grid_width		= 2
 inv_grid_height		= 1
 inv_grid_x			= 14
 inv_grid_y			= 20
-cost				= 200
+cost				= 300
 
 ; eatable item
 eat_health			= 1.0
 eat_satiety			= 0
 eat_power			= 0.0
 eat_radiation		= -1.0
-wounds_heal_perc	= 0.3
+wounds_heal_perc	= 0.75
 eat_portions_num	= 1
 eat_max_power		= 0.1
 
@@ -500,11 +530,11 @@ inv_grid_y			= 18
 cost				= 20
 
 ; eatable item
-eat_health = 	0.1
+eat_health = 	0.025
 eat_satiety = 	0
 eat_power = 	0.0
 eat_radiation = 0.0
-wounds_heal_perc = 1.0
+wounds_heal_perc = 0.75
 eat_portions_num = 1	;100
 
 ; food item
@@ -601,11 +631,12 @@ snd_night_vision_off		= weapons\nv_off
 snd_night_vision_idle		= weapons\nv_loop
 snd_night_vision_broken		= weapons\nv_off
 
-night_vision_recharge_time			= 6		;(c) время зарядки аккамулятора
-night_vision_recharge_time_min		= 2		;(c) мин. время зарядки аккамулятора, после которого уст-во уже может работать
+night_vision_recharge_time			= 6		;(c) время зарядки аккумулятора
+night_vision_recharge_time_min		= 2		;(c) мин. время зарядки аккумулятора, после которого уст-во уже может работать
 night_vision_discharge_time			= 20	;(c) время разрядки (работы) устройства после полной зарядки
-slot								= 9
-disabled_maps						= ai_test,ai_test2, andy_test_
+slot					= 9
+disabled_maps						= ai_test, ai_test2, andy_test_
+
 
 [detector_simple]:identity_immunities
 GroupControlSection	= spawn_group
@@ -616,25 +647,23 @@ class				= D_SIMDET
 cform				= skeleton
 visual				= equipments\item_datchik1.ogf
 description			= enc_equipment_devic_detect1
-radius				= 10	;15
+radius				= 10
 buzzer_radius		= 1.5
 noise				= zone_mosquito_bald       ;detectors\geiger_noise_loop
 buzzer				= zone_mosquito_bald       ;detectors\DA-2_alarm_loop
-slot				= 8
 ef_detector_type	= 1
 
-inv_name			= Detector
-inv_name_short		= Detector
-inv_weight			= 0
+inv_name			= detect
+inv_name_short		= detect
+inv_weight			= 0.2
 
 inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x			= 9
 inv_grid_y			= 14
-cost				= 500	;30
-;belt				= true;
-default_to_ruck		= false
-
+cost				= 1000
+belt				= true
+default_to_ruck		= true
 
 ;описание распознаваемых детектором зон
 zone_class_1		= zone_mosquito_bald
@@ -644,16 +673,15 @@ zone_sound_1_1		= detectors\DA-2_beep1
 zone_sound_1_2		= detectors\DA-2_beep1
 zone_sound_1_3		= detectors\DA-2_beep1
 
-zone_min_freq_1		= 0.1	;0.5
+zone_min_freq_1		= 0.1
 zone_max_freq_1		= 40
 
 zone_class_2		= zone_mincer
 zone_sound_2_		= detectors\DA-2_beep1
 zone_min_freq_2		= 0.1
-zone_max_freq_2		= 20
+zone_max_freq_2		= 40
 
 zone_class_3		= zone_radioactive
-; zone_sound_3_		= detectors\DA-2_beep1
 zone_sound_3_		= detectors\geiger_1
 zone_sound_3_1		= detectors\geiger_2
 zone_sound_3_2		= detectors\geiger_3
@@ -668,8 +696,28 @@ zone_max_freq_3		= 20
 
 zone_class_4		= zone_gravi_zone
 zone_sound_4_		= detectors\DA-2_beep1
-zone_min_freq_4		= 0.5
-zone_max_freq_4		= 30
+zone_min_freq_4		= 0.1
+zone_max_freq_4		= 40
+
+zone_class_5		= zone_zharka_static
+zone_sound_5_		= detectors\DA-2_beep1
+zone_min_freq_5		= 0.1
+zone_max_freq_5		= 40
+
+zone_class_6		= zone_buzz
+zone_sound_6_		= detectors\DA-2_beep1
+zone_min_freq_6		= 0.1
+zone_max_freq_6		= 40
+
+zone_class_7		= zone_burning_fuzz
+zone_sound_7_		= detectors\DA-2_beep1
+zone_min_freq_7		= 0.1
+zone_max_freq_7		= 40
+
+zone_class_8		= zone_witches_galantine
+zone_sound_8_		= detectors\DA-2_beep1
+zone_min_freq_8		= 0.1
+zone_max_freq_8		= 40
 
 
 [detector_advances]:identity_immunities
@@ -680,52 +728,74 @@ $prefetch 			= 32
 class				= D_SIMDET
 cform				= skeleton
 visual				= equipments\item_datchik2.ogf
-radius				= 10	;15
+description			= enc_equipment_devic_st_detector1
+radius				= 10
 buzzer_radius		= 1.5
 noise				= zone_mosquito_bald       ;detectors\geiger_noise_loop
 buzzer				= zone_mosquito_bald       ;detectors\DA-2_alarm_loop
 
 ef_detector_type	= 1
 
-night_vision_particle		= damage_fx\heli_burn
-
 ;описание распознаваемых детектором зон
 zone_class_1		= zone_mosquito_bald
 zone_sound_1_		= detectors\DA-2_beep1
-zone_min_freq_1		= 0.1	;0.5
+zone_min_freq_1		= 0.1
 zone_max_freq_1		= 40
-zone_map_location_1 = anomaly_zone_location
 
 zone_class_2		= zone_mincer
 zone_sound_2_		= detectors\DA-2_beep1
 zone_min_freq_2		= 0.1
-zone_max_freq_2		= 20
-zone_map_location_2 = anomaly_zone_location
+zone_max_freq_2		= 40
 
 zone_class_3		= zone_radioactive
-zone_sound_3_		= detectors\DA-2_beep1
+zone_sound_3_		= detectors\geiger_1
+zone_sound_3_1		= detectors\geiger_2
+zone_sound_3_2		= detectors\geiger_3
+zone_sound_3_3		= detectors\geiger_4
+zone_sound_3_4		= detectors\geiger_5
+zone_sound_3_5		= detectors\geiger_6
+zone_sound_3_6		= detectors\geiger_1
+zone_sound_3_7		= detectors\geiger_1
+zone_sound_3_8		= detectors\geiger_1
 zone_min_freq_3		= 1
 zone_max_freq_3		= 20
-zone_map_location_3 = anomaly_zone_location
 
 zone_class_4		= zone_gravi_zone
 zone_sound_4_		= detectors\DA-2_beep1
-zone_min_freq_4		= 0.5
-zone_max_freq_4		= 30
-zone_map_location_4 = anomaly_zone_location
+zone_min_freq_4		= 0.1
+zone_max_freq_4		= 40
 
-inv_name			= Detector
-inv_name_short		= Detector
-inv_weight			= 0
+zone_class_5		= zone_zharka_static
+zone_sound_5_		= detectors\DA-2_beep1
+zone_min_freq_5		= 0.1
+zone_max_freq_5		= 40
+
+zone_class_6		= zone_buzz
+zone_sound_6_		= detectors\DA-2_beep1
+zone_min_freq_6		= 0.1
+zone_max_freq_6		= 40
+
+zone_class_7		= zone_burning_fuzz
+zone_sound_7_		= detectors\DA-2_beep1
+zone_min_freq_7		= 0.1
+zone_max_freq_7		= 40
+
+zone_class_8		= zone_witches_galantine
+zone_sound_8_		= detectors\DA-2_beep1
+zone_min_freq_8		= 0.1
+zone_max_freq_8		= 40
+
+inv_name			= st_detector
+inv_name_short		= st_detector
+inv_weight			= 0.2
 
 inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x			= 15
 inv_grid_y			= 7
-cost				= 1000	;30
-;belt				= true;
-default_to_ruck		= false
-slot				= 8
+cost				= 5000
+belt				= true
+default_to_ruck		= true
 
 
 [detector_elite]:identity_immunities
@@ -736,62 +806,86 @@ $prefetch 			= 32
 class				= D_SIMDET
 cform				= skeleton
 visual				= equipments\item_datchik3.ogf
-radius				= 10	;15
+description                     = enc_equipment_devic_detector1
+radius				= 10
 buzzer_radius		= 1.5
 noise				= zone_mosquito_bald       ;detectors\geiger_noise_loop
 buzzer				= zone_mosquito_bald       ;detectors\DA-2_alarm_loop
 
 ef_detector_type	= 1
-night_vision_particle		= damage_fx\heli_burn
-
 
 ;описание распознаваемых детектором зон
 zone_class_1		= zone_mosquito_bald
 zone_sound_1_		= detectors\DA-2_beep1
-zone_min_freq_1		= 0.1	;0.5
+zone_min_freq_1		= 0.1
 zone_max_freq_1		= 40
 zone_map_location_1 = anomaly_zone_location
 
 zone_class_2		= zone_mincer
 zone_sound_2_		= detectors\DA-2_beep1
 zone_min_freq_2		= 0.1
-zone_max_freq_2		= 20
+zone_max_freq_2		= 40
 zone_map_location_2 = anomaly_zone_location
 
 zone_class_3		= zone_radioactive
-zone_sound_3_		= detectors\geiger_click3
+zone_sound_3_		= detectors\geiger_1
+zone_sound_3_1		= detectors\geiger_2
+zone_sound_3_2		= detectors\geiger_3
+zone_sound_3_3		= detectors\geiger_4
+zone_sound_3_4		= detectors\geiger_5
+zone_sound_3_5		= detectors\geiger_6
+zone_sound_3_6		= detectors\geiger_1
+zone_sound_3_7		= detectors\geiger_1
+zone_sound_3_8		= detectors\geiger_1
 zone_min_freq_3		= 1
 zone_max_freq_3		= 20
-zone_map_location_3 = anomaly_zone_location
+zone_map_location_3 = radio_zone_location
 
 zone_class_4		= zone_gravi_zone
 zone_sound_4_		= detectors\DA-2_beep1
-zone_min_freq_4		= 0.5
-zone_max_freq_4		= 30
+zone_min_freq_4		= 0.1
+zone_max_freq_4		= 40
 zone_map_location_4 = anomaly_zone_location
 
-inv_name			= st_detector
-inv_name_short		= st_detector
-description			= st_detector_descr
+zone_class_5		= zone_zharka_static
+zone_sound_5_		= detectors\DA-2_beep1
+zone_min_freq_5		= 0.1
+zone_max_freq_5		= 40
+zone_map_location_5 = anomaly_zone_location
 
-inv_weight			= 0
+zone_class_6		= zone_buzz
+zone_sound_6_		= detectors\DA-2_beep1
+zone_min_freq_6		= 0.1
+zone_max_freq_6		= 40
+zone_map_location_6 = anomaly_zone_location
+
+zone_class_7		= zone_burning_fuzz
+zone_sound_7_		= detectors\DA-2_beep1
+zone_min_freq_7		= 0.1
+zone_max_freq_7		= 40
+zone_map_location_7 = anomaly_zone_location
+
+zone_class_8		= zone_witches_galantine
+zone_sound_8_		= detectors\DA-2_beep1
+zone_min_freq_8		= 0.1
+zone_max_freq_8		= 40
+zone_map_location_8 = anomaly_zone_location
+
+inv_name			= detector
+inv_name_short		= detector
+inv_weight			= 0.2
 
 inv_grid_width		= 1
 inv_grid_height		= 1
 inv_grid_x			= 5
 inv_grid_y			= 14
-cost				= 1500	;30
-;belt				= true;
-slot				= 8
+cost				= 10000
+belt				= true
 
 attach_angle_offset		= -0.160570,-1.425061,-0.361283
 attach_position_offset	= 0.160570,-0.060214,0.020071
 attach_bone_name		= bip01_l_hand
 auto_attach				= false
-
-
-
-
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;	OTHERS

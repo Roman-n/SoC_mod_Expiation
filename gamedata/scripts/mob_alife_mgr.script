@@ -19,7 +19,7 @@ function issue_combat_event(obj)
 	--printf("_bp: issue_combat_event?")
 	local st = db.storage[obj:id()]
 	if st.mob_combat then
-		printf("_bp: alife_control: issuing event combat_callback")
+		--printf("_bp: alife_control: issuing event combat_callback")
 		xr_logic.issue_event(obj, st.mob_combat, "combat_callback")
 	end
 end

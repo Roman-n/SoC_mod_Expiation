@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="windows-1251" ?>
 <string_table>
 	<string id="item test1">
-		<text>Это тестовая строка для вещмешка</text>
+		<text>Это тестовая строка для вещмешка.</text>
 	</string>
 	<string id="item test2">
-		<text>Это еще одна тестовая строка для вещмешка</text>
+		<text>Это ещё одна тестовая строка для вещмешка.</text>
 	</string>
 	<string id="item_case_esc_desc">
 		<text>Кейс с документами. Сделан из огнеупорного материала.</text>
 	</string>
 	<string id="item_decoder_desc">
-		<text>Нечто вроде мощной электронной отмычки. Похоже, что она создавалась с целью взломать какой-то специфический электронный замок. Как ни странно конструкция не подразумевает универсальности - оно создавалось для конкретного замка и не способно взламывать какие-либо другие коды.</text>
+		<text>Нечто вроде мощной электронной отмычки. Похоже, что она создавалась с целью взломать какой-то специфический электронный замок. Как ни странно конструкция не подразумевает универсальности, она создавалась для конкретного замка и не способна взламывать какие-либо другие коды.</text>
 	</string>
 	<string id="item_decoder_name">
 		<text>Декодер</text>
@@ -22,28 +22,28 @@
 		<text>Сенсор ПП-4а</text>
 	</string>
 	<string id="item_doc_x16_desc">
-		<text>Полиэтиленовый файл с документами. Без ученой степени по биологии сложно что-то в них понять.</text>
+		<text>Полиэтиленовый файл с документами. Без учёной степени по биологии сложно что-то в них понять.</text>
 	</string>
 	<string id="item_doc_x16_name">
-		<text>Документы из лаборатории Х16</text>
+		<text>Документы из лаборатории Х-16</text>
 	</string>
 	<string id="item_doc_x18_desc">
 		<text>Толстая стопка научных бумаг. Сплошные термины, формулы и диаграммы.</text>
 	</string>
 	<string id="item_doc_x18p1_name">
-		<text>Документы из Х18 часть1</text>
+		<text>Документы из Х-18, часть 1</text>
 	</string>
 	<string id="item_doc_x18p2_name">
-		<text>Документы из Х18 часть2</text>
+		<text>Документы из Х-18, часть 2</text>
 	</string>
 	<string id="item_doc_x18p3_name">
-		<text>Документы из Х18 часть3</text>
+		<text>Документы из Х-18, часть 3</text>
 	</string>
 	<string id="item_doc_x18p4_name">
-		<text>Документы из Х18 часть4</text>
+		<text>Документы из лаборатории Х-18</text>
 	</string>
 	<string id="item_doc_x18p5_name">
-		<text>Документы из Х18 часть5</text>
+		<text>Документы из Х-18, часть 5</text>
 	</string>
 	<string id="item_docs_hiden_pri_desc">
 		<text>Потёртая рукопись в кожаной обложке. Написана самим Стрелком. Судя по заглавиям, в ней раскрываются некоторые загадки Зоны.</text>
@@ -52,34 +52,34 @@
 		<text>Документы из Припяти</text>
 	</string>
 	<string id="item_dynamite_esc_desc">
-		<text>Тяжёлый деревянный ящик, с надписями "Взрывоопасно" на нескольких языках.</text>
+		<text>Тяжёлый деревянный ящик с надписями «Взрывоопасно» на нескольких языках.</text>
 	</string>
 	<string id="item_dynamite_esc_name">
 		<text>Ящик с динамитом</text>
 	</string>
 	<string id="item_flash_crazy_mil_desc">
-		<text>Флеш-диск - удобное устройство для переноса информации.</text>
+		<text>Флэш-диск - удобное устройство для переноса информации.</text>
 	</string>
 	<string id="item_flash_crazy_mil_name">
-		<text>Флешка сумасшедшего</text>
+		<text>Флэшка сумасшедшего</text>
 	</string>
 	<string id="item_flash_eco_rost_desc">
-		<text>Флеш-диск - удобное устройство для переноса информации.</text>
+		<text>Флэш-диск - удобное устройство для переноса информации.</text>
 	</string>
 	<string id="item_flash_eco_rost_name">
-		<text>Флешка профессора Круглова</text>
+		<text>Флэшка профессора Круглова</text>
 	</string>
 	<string id="item_flash_esc_desc">
-		<text>Флеш-диск - удобное устройство для переноса информации.</text>
+		<text>Флэш-диск - удобное устройство для переноса информации.</text>
 	</string>
 	<string id="item_flash_esc_name">
-		<text>Флешка пленного</text>
+		<text>Флэшка пленного</text>
 	</string>
 	<string id="item_flash_gslinger_agro_desc">
-		<text>Флеш-диск - удобное устройство для переноса информации.</text>
+		<text>Флэш-диск - удобное устройство для переноса информации.</text>
 	</string>
 	<string id="item_flash_gslinger_agro_name">
-		<text>Флешка Стрелка</text>
+		<text>Флэшка Стрелка</text>
 	</string>
 	<string id="item_key_x18_desc">
 		<text>Электронный ключ от подземной лаборатории Х-18.</text>
@@ -88,7 +88,7 @@
 		<text>Ключ Борова</text>
 	</string>
 	<string id="item_krot_flash">
-		<text>Флешка Крота</text>
+		<text>Флэшка Крота</text>
 	</string>
 	<string id="item_PDA_lucky_desc">
 		<text>Карманный персональный компьютер. Незаменимое устройство в Зоне.</text>
@@ -112,13 +112,13 @@
 		<text>Документы с блокпоста</text>
 	</string>
 	<string id="yan_bad_psy_helmet_desc">
-		<text>Ненастроенный прототип, разработанный учеными для защиты от ПСИ-излучения</text>
+		<text>Ненастроенный прототип, разработанный учёными для защиты от пси-излучения.</text>
 	</string>
 	<string id="yan_bad_psy_helmet_name">
 		<text>Ненастроенный пси-шлем</text>
 	</string>
 	<string id="yan_good_psy_helmet_desc">
-		<text>Настроенный прототип, разработанный учеными для защиты от ПСИ-излучения</text>
+		<text>Настроенный прототип, разработанный учёными для защиты от пси-излучения.</text>
 	</string>
 	<string id="yan_good_psy_helmet_name">
 		<text>Настроенный пси-шлем</text>

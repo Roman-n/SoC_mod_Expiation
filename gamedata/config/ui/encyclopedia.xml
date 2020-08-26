@@ -37,7 +37,7 @@
 
 
     <!-- ENCYCLOPEDIA INDEX LIST -->
-    <idx_list x="35" y="55" width="258" height="415" item_height="20" scroll_profile="pda">
+    <idx_list x="20" y="55" width="273" height="415" item_height="20" scroll_profile="pda">
         <font font="letterica16" r="255" g="255" b="255"/>
     </idx_list>
 
@@ -45,7 +45,7 @@
         <texture>ui\ui_pda_anims_04</texture>
     </a_static>
 
-    <info_list x="20" y="41" width="422" height="428" item_height="15" right_ident="5" top_indent="47" scroll_profile="pda">
+    <info_list x="20" y="41" width="422" height="428" item_height="15" right_ident="5" top_indent="41" scroll_profile="pda">
         <font font="letterica18" r="255" g="255" b="255"/>
     </info_list>
 

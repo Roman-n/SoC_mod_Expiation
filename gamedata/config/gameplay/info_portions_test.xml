@@ -19,9 +19,9 @@
 		<article>journal_before_vasilyev_pda</article>
 		<article>journal_after_find_ghost</article>
 		<article>journal_after_kill_brain</article>
-		<article>cit_doctor_meet_conclusion_art</article>
 		<article>journal_before_radar_task</article>
 		<article>sl_provodnik</article>
+		<article>cit_doctor_meet_conclusion</article>
 		<article>rad_sleep_info</article>
 		<article>pri_decoder_docs_conclusion_art</article>		
 		<article>sl_monolith_off</article>
@@ -49,10 +49,37 @@
 
 	</info_portion>
 
-
-
 	<info_portion id="test_1">
 		<task>pl_task_1</task>
 	</info_portion>
+
+	<!-- Specific Infoportions -->
+	<info_portion id="mil_leader_attach_community2"></info_portion>
+	<info_portion id="electrochimera_dead"><article>enc_electrochimera</article></info_portion>
+	<info_portion id="psy_burer_dead"><article>enc_psy_burer</article></info_portion>
+	<info_portion id="zombie_rusty_dead"><article>enc_zombie_rusty</article></info_portion>
+	<info_portion id="zombie_plague_dead"><article>enc_zombie_plague</article></info_portion>
+	<info_portion id="psy_dog_dead"><article>enc_psydog</article></info_portion>
+	<info_portion id="zombie_dead"><article>mutant_zombie_general</article></info_portion>
+	<info_portion id="zombie_ghost_dead"><article>mutant_zombieg_general</article></info_portion>
+	<info_portion id="cat_dead"><article>mutant_cat_general</article></info_portion>
+	<info_portion id="fracture_dead"><article>mutant_fracture_general</article></info_portion>
+	<info_portion id="tushkano_dead"><article>mutant_tushkano</article></info_portion>
+	<info_portion id="chimera_dead"><article>mutant_chimera_general</article></info_portion>
+	<info_portion id="burer_dead"><article>mutant_burer_general</article></info_portion>
+	<info_portion id="dog_dead"><article>mutant_blind_general</article></info_portion>
+	<info_portion id="pseudodog_dead"><article>mutant_pseudodog_general</article></info_portion>
+	<info_portion id="flesh_dead"><article>mutant_flesh_general</article></info_portion>
+	<info_portion id="boar_dead"><article>mutant_boar_general</article></info_portion>
+	<info_portion id="snork_dead"><article>mutant_snork_general</article></info_portion>
+	<info_portion id="bloodsucker_dead"><article>mutant_bloodsucker_general</article></info_portion>
+	<info_portion id="controller_dead"><article>mutant_controller_general</article></info_portion>
+	<info_portion id="pseudogiant_dead"><article>mutant_pseudogiant_general</article></info_portion>
+	<info_portion id="poltergeist_dead"><article>mutant_poltergeist_general</article></info_portion>
+	<info_portion id="secret_talk"><article>rad_code_door_info</article></info_portion>
+	<info_portion id="freeplay"><article>freeplay_info</article></info_portion>
+	<info_portion id="game_end"></info_portion>
+	<info_portion id="pri_trader_dead"></info_portion>
+	<info_portion id="pri_trader_first_talk"></info_portion>
 
 </game_information_portions>

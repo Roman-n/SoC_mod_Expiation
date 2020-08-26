@@ -5,34 +5,34 @@
 
 class "PsyAntenna"
 function PsyAntenna:__init				()
-// ----------------------------------------------------------------------------------------
-// settings
-// ----------------------------------------------------------------------------------------
-// phantom gen
-// ----------------------------------------------------------------------------------------
-	self.phantom_max 					= 8 //10	// max phantoms
-	self.phantom_spawn_probability		= 0	// spawn probability (0..1)
-	self.phantom_spawn_radius			= 30.0	// average radius 30.0m +-15m
-	self.phantom_spawn_height			= 2.5 //3	// average height from actor pos +-1.5m
-	self.phantom_fov					= 45   // ширина сектора перед глазами актёра, в котором могут рождаться фантомы
-	// antenna
-	self.hit_amplitude					= 1.0	// размер хита = self.hit_amplitude*self.hit_intensity
-// ----------------------------------------------------------------------------------------
-// class variables initialize
-// ----------------------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------------------
+-- settings
+-- ----------------------------------------------------------------------------------------
+-- phantom gen
+-- ----------------------------------------------------------------------------------------
+	self.phantom_max 					= 8 -- max phantoms
+	self.phantom_spawn_probability		= 0 -- spawn probability (0..1)
+	self.phantom_spawn_radius			= 30.0	-- average radius 30.0m +-15m
+	self.phantom_spawn_height			= 2.5 -- average height from actor pos +-1.5m
+	self.phantom_fov					= 45   -- ширина сектора перед глазами актёра, в котором могут рождаться фантомы
+	-- antenna
+	self.hit_amplitude					= 1.0	-- размер хита = self.hit_amplitude*self.hit_intensity
+-- ----------------------------------------------------------------------------------------
+-- class variables initialize
+-- ----------------------------------------------------------------------------------------
 	self.eff_time						= 0
 	self.hit_time						= 0
 	self.phantom_time                   = 0
-	self.intensity_inertion				= 0.05	// скорость изменения интенсивности ед/секунду
+	self.intensity_inertion				= 0.05	-- скорость изменения интенсивности ед/секунду
 	self.hit_intensity					= 0
 	self.sound_intensity				= 0
-	self.sound_intensity_base			= 0	// базовая интенсивность. к ней стремится текущая со скоростью self.intensity_inertion	
+	self.sound_intensity_base			= 0	-- базовая интенсивность. к ней стремится текущая со скоростью self.intensity_inertion	
 	self.postprocess_count				= 0  --'счетчик зарегистрированных постпроцессов
 	self.postprocess					= {} --'контейнер постпроцессов
 
-// ----------------------------------------------------------------------------------------
-// sound
-// ----------------------------------------------------------------------------------------
+-- ----------------------------------------------------------------------------------------
+-- sound
+-- ----------------------------------------------------------------------------------------
 	self.sound_initialized				= false
 
 	self.sound_obj_right, self.sound_obj_left = xr_sound.get_sound_object("psy_voices", "random")
@@ -178,9 +178,12 @@ function PsyAntenna:save(p)
 	end
 end
 function PsyAntenna:load(p)
+	-- Багфикс постпроцессов пси-антены, ZRP mod
 	self.hit_intensity  = p:r_float()
-	self.sound_intensity  = p:r_float()	
-	self.sound_intensity_base = p:r_float()
+	if self.hit_intensity < 0 then self.hit_intensity = 0 end
+	self.sound_intensity  = p:r_float()
+	local saved_sib = p:r_float()
+	self.sound_intensity_base = 0
 	self.mute_sound_threshold = p:r_float()
 
 	self.postprocess_count = p:r_u8()
@@ -191,7 +194,7 @@ function PsyAntenna:load(p)
 		local ii = p:r_float()
 		local ib = p:r_float()
 		local idx = p:r_u16()
-		self.postprocess[k] = {intensity_base = ib, intensity = ii, idx = idx}
+		self.postprocess[k] = {intensity_base = 0, intensity = ii, idx = idx}
 		level.add_pp_effector(k, idx, true)
 		level.set_pp_effector_factor(idx, ii)		
 	end
@@ -296,6 +299,16 @@ function action_psy_antenna:zone_leave()
 
 	if psy_antenna.postprocess[self.st.postprocess] ~= nil then
 		psy_antenna.postprocess[self.st.postprocess].intensity_base = psy_antenna.postprocess[self.st.postprocess].intensity_base - self.st.intensity
+		-- Багфикс постпроцессов пси-антены, lvg_brest
+		local pos = db.actor:position()
+		if (level.name() == "l10_radar") and pos.x > 410 then
+			psy_antenna.postprocess[self.st.postprocess].intensity_base = 0
+			psy_antenna.sound_intensity_base = 0
+		end
+		if (level.name() == "l08_yantar") and pos.z < -130 then
+			psy_antenna.postprocess[self.st.postprocess].intensity_base = 0
+			psy_antenna.sound_intensity_base = 0
+		end
 	end
 end
 function action_psy_antenna:save()
@@ -329,7 +342,7 @@ function load(p)
 end
 
 function add_to_binder(npc, ini, scheme, section, storage)
-	printf("DEBUG: add_to_binder: scheme='%s', section='%s'", scheme, section)
+	--printf("DEBUG: add_to_binder: scheme='%s', section='%s'", scheme, section)
 
 	if not psy_antenna then
 		psy_antenna = PsyAntenna()

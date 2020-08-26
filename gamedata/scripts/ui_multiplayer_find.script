@@ -75,7 +75,7 @@ function multiplayer_find_dialog:InitControls()
 	
 	-- TAB: select Intertnet or LAN
 	local tab = CUITabControl()
-	tab:Init(tab_net_rect.x, tab_net_rect.y, tab_net_rect.width, tab_net_rect.height);
+	tab:Init(tab_net_rect.x, tab_net_rect.y, tab_net_rect.width, tab_net_rect.height)
 	self.main_frame:AttachChild(tab)
 			-- TEMP frame for tab
 	local frame = CUIFrameWindow()

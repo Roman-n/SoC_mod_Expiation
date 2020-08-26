@@ -37,7 +37,7 @@
 	</static_weapon>
 	
 	<static_ammo x="75" y="22" width="70" height="30">
-		<text align="c" complex_mode="0" font="graffiti32" r="238" g="155" b="23" a="255">Ammo</text>
+		<text align="c" complex_mode="0" font="graffiti22" r="238" g="155" b="23" a="255">Ammo</text>
 	</static_ammo>
 	
 	<static_wpn_icon x="0" y="13" width="80" height="42">
@@ -94,7 +94,7 @@
 
 	<flashing_icons>
 		<flashing_icon x="13" y="210" width="48" height="29" type="pda" light_anim="ui_slow_blinking_alpha">
-			<texture>ui_hud_icon_PDA</texture>
+			<!-- <texture>ui_hud_icon_PDA</texture> -->
 		</flashing_icon>
 	</flashing_icons>
 

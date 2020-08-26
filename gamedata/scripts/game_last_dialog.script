@@ -11,7 +11,7 @@ end
 
 function uiDialog:__init() super()
    self:SetFont(GetFontMedium()) --set base font for dialog.
-/*  set of registered in game fonts:
+--[[  set of registered in game fonts:
     function GetFontArialN21Russian();
     function GetFontGraffiti32Russian();
     function GetFontDI();
@@ -26,7 +26,7 @@ function uiDialog:__init() super()
     function GetFontBigDigit();
     function GetFontHeaderEurope();
     function GetFontGraffiti50Russian();
-*/
+]]--
    self:InitControls()
    self:InitCallBacks()
 end
@@ -150,11 +150,11 @@ function uiDialog:InitCallBacks()
 end
 
 function uiDialog:OnButton_ok_clicked()
-   printf("test_dialog:OnButton_ok_clicked()")
+   --printf("test_dialog:OnButton_ok_clicked()")
 
    local edt = self:GetEditBox("edit_1")
 -- take control by name, dependent on type
-/*
+--[[
     function GetCheckButton(string);
     function GetFrameLineWnd(string);
     function GetPropertiesBox(string);
@@ -170,44 +170,44 @@ function uiDialog:OnButton_ok_clicked()
     function GetRadioButton(string);
     function GetFrameWindow(string);
 
-*/
+]]--
    local t = edt:GetText()
 
-   printf("text is =%s",t)
+   --printf("text is =%s",t)
 
    local r0 = self:GetRadioGroup("rg_1")
    local idx = r0:GetCheckedPos()
-   printf("group active idx=%d",idx)
+   --printf("group active idx=%d",idx)
 
    r0:SetCheckedPos(2)
    idx = r0:GetCheckedPos()
-   printf("group active idx=%d",idx)
+   --printf("group active idx=%d",idx)
 
 end
 
 function uiDialog:OnButton_cancel_clicked()
-   printf("test_dialog:OnButton_cancel_clicked()")
+   --printf("test_dialog:OnButton_cancel_clicked()")
 end
 
 function uiDialog:OnButton_radio1_clicked()
-   printf("test_dialog:OnButton_radio1_clicked()")
+   --printf("test_dialog:OnButton_radio1_clicked()")
 end
 
 function uiDialog:OnButton_radio2_clicked()
-   printf("test_dialog:OnButton_radio2_clicked()")
+   --printf("test_dialog:OnButton_radio2_clicked()")
 end
 
 function uiDialog:OnButton_radio3_clicked()
-   printf("test_dialog:OnButton_radio3_clicked()")
+   --printf("test_dialog:OnButton_radio3_clicked()")
 end
 
 function uiDialog:OnButton_check_reset()
-   printf("test_dialog:OnButton_check_1_reset()")
+   --printf("test_dialog:OnButton_check_1_reset()")
 
 end
 
 function uiDialog:OnButton_check_set()
-   printf("test_dialog:OnButton_check_1_set()")
+   --printf("test_dialog:OnButton_check_1_set()")
 
 end
 
@@ -215,9 +215,9 @@ function uiDialog:OnKeyboard(dik, keyboard_action)  --virtual function
    CUIScriptWnd.OnKeyboard(self,dik,keyboard_action)
    local bind = dik_to_bind(dik)  --translate DirectInputKey to user-defined function ("bind command in user ltx")
    if keyboard_action ==ui_events.WINDOW_KEY_PRESSED then
-      printf("pressed dik=%d bind=%d",dik,bind)
+      --printf("pressed dik=%d bind=%d",dik,bind)
    elseif keyboard_action ==ui_events.WINDOW_KEY_RELEASED then
-      printf("released dik=%d bind=%d",dik,bind)
+      --printf("released dik=%d bind=%d",dik,bind)
    end
 
    if bind == key_bindings.kQUIT then

@@ -172,7 +172,8 @@ function CKampManager:__init(path)
 	end
 	--print_table(self.position)
 	--Таблица соответствий состояния лагеря и допустимых анимаций и звуков.	
-	self.avail_state = {idle				= { directed	= { "wait", "sit", "sit_ass", "sit_knee", "eat_kolbasa", "eat_vodka", "eat_energy", "eat_bread", "trans"}},
+	self.avail_state = {idle				= { directed	= { "wait", "sit", "sit_ass", "sit_knee", "eat_kolbasa", "eat_vodka", "eat_energy", "eat_bread", "trans"}, 
+												undirected	= { "wait", "sit", "sit_ass", "sit_knee", "eat_kolbasa", "eat_vodka", "eat_energy", "eat_bread", "trans"}},
 						pre_harmonica		= { directed	= { "wait_harmonica"},
 												undirected	= { "wait", "sit", "sit_ass", "sit_knee", "eat_kolbasa", "eat_vodka", "eat_energy", "eat_bread", "trans"}},
 						harmonica			= { directed	= { "play_harmonica"},
@@ -195,7 +196,7 @@ function CKampManager:__init(path)
 												undirected	= { "wait", "sit", "sit_ass", "sit_knee", "eat_kolbasa", "eat_vodka", "eat_energy", "eat_bread", "trans"}},
 						post_joke			= { directed	= { "declarate"},
 												undirected	= { "wait", "sit", "sit_ass", "sit_knee", "eat_kolbasa", "eat_vodka", "eat_energy", "eat_bread", "trans"}}}
-	self.avail_sound = {idle				= { directed = "idle"},
+	self.avail_sound = {idle				= { directed = "idle", undirected="idle"},
 						pre_harmonica		= { directed = "pre_harmonica", undirected = ""},
 						harmonica			= { directed = "play_harmonica", undirected = ""},
 						post_harmonica		= { directed = "", undirected = "reac_harmonica"},
@@ -266,11 +267,11 @@ end
 function CKampManager:getDestVertex(npc_id, radius)
 	--printf("get dest Vertex called [%s]", npc_id)
 	if self.npc[npc_id].position == nil then
-		printf("-------debug_info-------------")
-		print_table(self.npc)
-		printf("-------debug_info-------------")
-		print_table(self.position)
-		printf("-------debug_info-------------")
+		--printf("-------debug_info-------------")
+		--print_table(self.npc)
+		--printf("-------debug_info-------------")
+		--print_table(self.position)
+		--printf("-------debug_info-------------")
 		abort("get dest Vertex: nil [%s]", npc_id)
 		return nil
 	end
@@ -345,7 +346,7 @@ function CKampManager:proceedState(npc)
 	for k,v in pairs(temp) do
 		p = p - v
 		if p <= 0 then
-			printf("Selected [%s]", k)
+			--printf("Selected [%s]", k)
 			if k == "idle" then
 				self.director = nil
 				if self.kamp_state ~= "idle" then
@@ -431,7 +432,7 @@ function CKampManager:updateNpc(npc)
 	-- Просим лагерь выбрать текущее состояние. Менять состояние лагеря
 	-- имеет право только режиссер.
 	local npc_id = npc:id()
-	local director = self.director == nil or self.director == npc_id
+	local director = ( self.director == nil or self.director == npc_id ) and npc_id~=self.forbiddendirector
 	if director	then
 		self:proceedState(npc)
 	end
@@ -615,11 +616,22 @@ function CKampManager:checkNpcAbility(npc)
 			self.kamp_states["pre_joke"] = false
 			self.kamp_states["joke"] = false
 			self.kamp_states["post_joke"] = false
-		end	
+		end
+	-- Монолитовцы не рассказывают анекдоты и не играют на гитарах, lvg_brest
+	else
+			self.npc[npc_id].states["play_guitar"] = false
+			self.npc[npc_id].states["wait_guitar"] = false
+			self.kamp_states["pre_guitar"] = false
+			self.kamp_states["guitar"] = false
+			self.kamp_states["post_guitar"] = false
+
+			self.kamp_states["pre_joke"] = false
+			self.kamp_states["joke"] = false
+			self.kamp_states["post_joke"] = false
 	end
 	
 	-- Если чувак знает истории, надо добавить их к лагерю
---[[
+--[[	
 	if self.population > 1 and db.story_by_id[npc:id()] ~= nil then
 		self.kamp_states["story"] = true
 		self.kamp_states["post_story"] = true
@@ -630,9 +642,9 @@ function CKampManager:checkNpcAbility(npc)
 ]]
 end
 function CKampManager:addNpc(npc)
-	printf("KAMP [%s] add npc", npc:name())
+	--printf("KAMP [%s] add npc", npc:name())
 	if self.npc[npc:id()] ~= nil then
-		printf("NPC is already exist")
+		--printf("NPC is already exist")
 		return
 	end
 	
@@ -649,10 +661,10 @@ function CKampManager:addNpc(npc)
 								eat_kolbasa = false, eat_vodka = false, eat_energy = false, eat_bread = false, trans = false,
 								play_harmonica = false, play_guitar = false, play_joke = false, play_story = false}}
 	end
-	self:selectPosition(npc:id())	
+		self:selectPosition(npc:id())
 end
 function CKampManager:removeNpc(npc)
-	printf("KAMP [%s] remove npc", npc:name())
+	--printf("KAMP [%s] remove npc", npc:name())
 	local npc_id = npc:id()
 	if self.npc[npc_id] ~= nil then
 		-- Если удаляем режиссера - необходимо форсированно перевести лагерь в идловое состояние.
@@ -669,7 +681,9 @@ function CKampManager:removeNpc(npc)
 			stop_play_sound(npc)
 		end
 	
-		self.position[self.npc[npc_id].position].used = nil
+		if self.npc[npc_id].position ~= nil then
+			self.position[self.npc[npc_id].position].used = nil
+		end
 		self.npc[npc_id] = nil
 	end
 end
@@ -699,7 +713,7 @@ function add_to_binder(object, ini, scheme, section, storage)
 	manager:add_evaluator (properties["kamp_end"], 		this.evaluator_kamp_end		("kamp_end", storage, "kamp_end"))
 	manager:add_evaluator (properties["on_position"],	this.evaluator_on_position	("kamp_on_position", storage, "kamp_on_position"))
 
-	printf("PRP %s", stalker_ids.property_script)
+	--printf("PRP %s", stalker_ids.property_script)
 
 	-- Actions
 	local action = this.action_wait (object:name(),"action_kamp_wait", storage)
@@ -722,10 +736,8 @@ function add_to_binder(object, ini, scheme, section, storage)
 	action:add_precondition 	(world_property(properties["on_position"], 	false))
 	action:add_effect 		(world_property(properties["on_position"], 	true))
 	manager:add_action (operators["go_position"], action)
-
-	action = manager:action (xr_actions_id.alife)	
+	action = manager:action (xr_actions_id.alife)
 	action:add_precondition		(world_property(properties["kamp_end"],		true))
-
 end
 -- включение лагеря
 function set_scheme(npc, ini, scheme, section, gulag_name)

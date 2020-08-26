@@ -12,10 +12,10 @@ function action_process_hit:hit_callback(obj, amount, local_direction, who, bone
 		return
 	end
 	if who then
-		printf("[%s] hit by [%s]", obj:name(), who:name())
+--		printf("[%s] hit by [%s]", obj:name(), who:name())
 		db.storage[obj:id()].hit.who = who:id()
 	else
-		printf("[%s] hit by [Unknown]", victim:name())
+--		printf("[%s] hit by [Unknown]", victim:name())
 		db.storage[obj:id()].hit.who = -1
 	end
 	if db.storage[self.object:id()].active_scheme then

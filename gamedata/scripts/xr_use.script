@@ -20,7 +20,7 @@ end
 
 
 function notify_on_use(victim, who)
-	printf("NOTIFY [%s] used by [%s]", victim:name(), who:name())
+	--printf("NOTIFY [%s] used by [%s]", victim:name(), who:name())
 --'	if true then	
 --'		get_console():execute("dump_infos")
 --'	end

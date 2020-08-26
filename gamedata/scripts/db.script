@@ -17,11 +17,25 @@ trader				= nil
 info_restr          = {}
 strn_by_respawn     = {}
 
+creature			= {}	-- true - человек, false - животное (исключая торговца)
+
+FlagEsc = 0
+Flag2 = 0
+Dead2 = 0
+
 function add_obj( obj )
+	if IsStalker(obj) then
+		creature[obj:id()] = true
+	elseif IsMonster(obj) then
+		creature[obj:id()] = false
+	end
 end
 
 function del_obj( obj )
 	storage   [obj:id()] = nil
+	if IsStalker(obj) or IsMonster(obj) then
+		creature[obj:id()] = nil
+	end
 end
 
 

@@ -12,6 +12,16 @@
 			</auto_static>
 		</global_wnd>
 -->	
+		<item>
+			<length_sec>0</length_sec>
+			<pause_state/>
+			<guard_key/>
+			<sound/>
+			<cursor_pos/>
+			<pda_section/>
+			<grab_input>1</grab_input>
+			<main_wnd/>
+		</item>
 
 		<item> <!--Это	твой личный ПДА- полезная хреновина,
 					которая будет помогать тебе не сдохнуть в Зоне. Ну а если и сдохнешь, то хоть
@@ -30,7 +40,7 @@
 		</item>
 
 		<item><!--Твои Задания расположены в первом разделе ПДА.-->
-			<length_sec>4</length_sec>
+			<length_sec>3</length_sec>
 			<pause_state>off</pause_state>
 			<guard_key/>
 			<cursor_pos/>
@@ -64,7 +74,7 @@
 		</item>
 		
 		<item><!--Запомни - каждое новое задание автоматически переключает целеуказание на мини-карте на себя-->
-			<length_sec>9</length_sec>
+			<length_sec>8</length_sec>
 			<pause_state>off</pause_state>
 			<guard_key/>
 			<sound>characters_voice\scenario\trader\trader_tutorial_pda_4</sound>
@@ -75,7 +85,7 @@
 		</item>
 
 		<item><!--Дальше: Второй раздел ПДА - это Карта.-->
-			<length_sec>5</length_sec>
+			<length_sec>4</length_sec>
 			<pause_state>off</pause_state>
 			<guard_key/>
 			<sound>characters_voice\scenario\trader\trader_tutorial_pda_5</sound>
@@ -91,7 +101,7 @@
 		</item>
 
 		<item><!--…кнопки над картой позволят тебе увеличивать или уменьшать карту…кхе-->
-			<length_sec>5</length_sec>
+			<length_sec>6</length_sec>
 			<pause_state>off</pause_state>
 			<guard_key/>
 			<sound>characters_voice\scenario\trader\trader_tutorial_pda_6</sound>
@@ -128,7 +138,7 @@
 		</item>
 
 		<delme_item><!--…Еще сможешь добавлять или убирать собственные пометки на карте... -->
-			<length_sec>6</length_sec>
+			<length_sec>5</length_sec>
 			<pause_state>off</pause_state>
 			<guard_key/>
 			<sound>characters_voice\scenario\trader\trader_tutorial_pda_8</sound>
@@ -150,7 +160,7 @@
 		</delme_item>
 
 		<item><!--вобщем разберешься…там не сложно…В ПДА есть раздел Контакты -->
-			<length_sec>8</length_sec>
+			<length_sec>7</length_sec>
 			<pause_state>off</pause_state>
 			<guard_key/>
 			<sound>characters_voice\scenario\trader\trader_tutorial_pda_9</sound>
@@ -187,7 +197,7 @@
 		<item><!--…Будь осторожен, если рядом враги, на визоре они отмечаются красным, 
 					друзья отмечены зеленым, нейтралы - желтым. А..ну и ПДА мертвых сталкеров подсвечиваются серым. 
 					В мародерстве помогает. гы-ыы…Что еще?...ах да есть Дневник…-->
-			<length_sec>22</length_sec>
+			<length_sec>21</length_sec>
 			<pause_state>off</pause_state>
 			<guard_key/>
 			<function_on_start>mob_trader.on_start_tutorial_item_1</function_on_start>
@@ -241,7 +251,7 @@
 		</item>
 		
 		<item><!--ну там все просто..э-эээ...Далее....Энциклопедия..К-хе-->
-			<length_sec>6</length_sec>
+			<length_sec>5</length_sec>
 			<pause_state>off</pause_state>
 			<guard_key/>
 			<sound>characters_voice\scenario\trader\trader_tutorial_pda_14_1</sound>
@@ -258,7 +268,7 @@
 
 		<item><!--В нее заносится информация о Зоне и советы по выживанию, которые ты найдешь или получишь 
 					от сталкеров.... В принципе все.. -->
-			<length_sec>11</length_sec>
+			<length_sec>10</length_sec>
 			<pause_state>off</pause_state>
 			<guard_key/>
 			<sound>characters_voice\scenario\trader\trader_tutorial_pda_15</sound>
@@ -277,7 +287,7 @@
 					Моя рация тянет в радиусе 30 километров и я тебя всегда найду. 
 					Будешь получать от меня задания и последние новости. А на первых порах помогу советом. 
 					Все ясно или повторить для тех кто в танке? Гы-гы.-->
-			<length_sec>31</length_sec>
+			<length_sec>30</length_sec>
 			<pause_state>off</pause_state>
 			<guard_key/>
 			<disabled_key>use</disabled_key>
@@ -295,7 +305,7 @@
 		<global_wnd/>
 
 		<item>
-			<length_sec>5</length_sec>
+			<length_sec>0</length_sec>
 			<pause_state/>
 			<guard_key/>
 			<sound/>
@@ -339,12 +349,11 @@
 	</test>
 	<!----------------------------------------------------------------------------------->
 	
-	
 	<part_3_jump><!--делаю новый туториал-->
 		<global_wnd/>
 
 		<item><!--Для того чтобы перепрыгнуть невысокое препятствие - нажмите клавишу "пробел" $$ACTION_JUMP$$-->
-			<length_sec>5</length_sec>
+			<length_sec>0</length_sec>
 			<pause_state>off</pause_state>
 			<guard_key/>
 			<sound/>
@@ -365,7 +374,7 @@
 		<global_wnd/>
 		
 		<item><!-- Для того чтобы пройти под невысоким препятствием - нажмите клавишу "ctrl" $$ACTION_CROUCH$$-->
-			<length_sec>5</length_sec>
+			<length_sec>0</length_sec>
 			<pause_state>off</pause_state>
 			<guard_key/>
 			<sound/>
@@ -387,7 +396,7 @@
 		<global_wnd/>
 		
 		<item><!-- Для того чтобы пройти под низким препятствием - нажмите клавишу "ctrl+shift" $$ACTION_CROUCH_DOWN$$-->
-			<length_sec>5</length_sec>
+			<length_sec>0</length_sec>
 			<pause_state>off</pause_state>
 			<guard_key/>
 			<sound/>
@@ -424,33 +433,12 @@
 			</main_wnd>
 		</item>
 	</part_6_radiation>	
-
-	<part_7_psy><!--делаю новый туториал-->
-		<global_wnd/>
-		
-		<item><!-- Радиация -->
-			<length_sec>10</length_sec>
-			<pause_state>off</pause_state>
-			<guard_key/>
-			<sound/>
-			<cursor_pos/>
-			<pda_section/>
-			<grab_input>0</grab_input>
-			<main_wnd>
-				<auto_static start_time="0" length_sec="10000" x="712" y="475" width="400" height="150" alignment="c" stretch="1"
-							light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
-					<window_name>w1</window_name>
-					<text font="graffiti22" r="225" g="225" b="250" a="255">radiation_tutorial</text>
-				</auto_static>
-			</main_wnd>
-		</item>
-	</part_7_psy>	
-		
+	
 	<part_8_wound><!--делаю новый туториал-->
 		<global_wnd/>
 		
 		<item><!-- Кровотечения -->
-			<length_sec>10</length_sec>
+			<length_sec>12</length_sec>
 			<pause_state>off</pause_state>
 			<guard_key/>
 			<sound/>
@@ -492,7 +480,7 @@
 		<global_wnd/>
 		
 		<item><!-- Бег в спринте -->
-			<length_sec>10</length_sec>
+			<length_sec>0</length_sec>
 			<pause_state>off</pause_state>
 			<guard_key/>
 			<sound/>
@@ -534,7 +522,7 @@
 		<global_wnd/>
 		
 		<item><!-- отношение персонажей -->
-			<length_sec>10</length_sec>
+			<length_sec>0</length_sec>
 			<pause_state>off</pause_state>
 			<guard_key/>
 			<sound/>
@@ -550,7 +538,7 @@
 			</main_wnd>
 		</item>
 	</part_12_relations>
-		
+	
 	<part_14_overload><!--делаю новый туториал-->
 		<global_wnd/>
 		
@@ -576,7 +564,7 @@
 		<global_wnd/>
 		
 		<item><!-- спрятать/достать оружие -->
-			<length_sec>10</length_sec>
+			<length_sec>5</length_sec>
 			<pause_state>off</pause_state>
 			<guard_key/>
 			<sound/>
@@ -592,7 +580,49 @@
 			</main_wnd>
 		</item>
 	</part_15_hide_weapon>
-
+	
+	<part_7_psy><!--����� ���� ���ਠ�-->
+		<global_wnd/>
+		
+		<item><!-- �� -->
+			<length_sec>10</length_sec>
+			<pause_state>off</pause_state>
+			<guard_key/>
+			<sound/>
+			<cursor_pos/>
+			<pda_section/>
+			<grab_input>0</grab_input>
+			<main_wnd>
+				<auto_static start_time="0" length_sec="10000" x="712" y="475" width="400" height="150" alignment="c" stretch="1"
+							light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
+					<window_name>w1</window_name>
+					<text font="graffiti22" r="225" g="225" b="250" a="255">psy1_tutorial</text>
+				</auto_static>
+			</main_wnd>
+		</item>
+	</part_7_psy>
+	
+	<part_13_satiety><!--����� ���� ���ਠ�-->
+		<global_wnd/>
+		
+		<item><!-- ����� -->
+			<length_sec>12</length_sec>
+			<pause_state>off</pause_state>
+			<guard_key/>
+			<sound/>
+			<cursor_pos/>
+			<pda_section/>
+			<grab_input>0</grab_input>
+			<main_wnd>
+				<auto_static start_time="0" length_sec="10000" x="712" y="475" width="400" height="150" alignment="c" stretch="1"
+							light_anim="" la_cyclic="1" la_texture="1" la_alpha="1">
+					<window_name>w1</window_name>
+					<text font="graffiti22" r="225" g="225" b="250" a="255">satiety_tutorial</text>
+				</auto_static>
+			</main_wnd>
+		</item>
+	</part_13_satiety>	
+	
 	<part_pda_diary><!--делаю новый туториал-->
 		<global_wnd/>
 		
@@ -613,7 +643,6 @@
 			</main_wnd>
 		</item>
 	</part_pda_diary>
-
 	
 	<!-- !!!tutorials for presentation!!! -->
 	
@@ -750,6 +779,24 @@
 			</main_wnd>
 		</item>
 	</game_over>
+
+<restore_sun>
+  <play_each_item>1</play_each_item>
+  <global_wnd x="0" y="0" width="1024" height="768">
+   <auto_static x="0" y="0" width="1024" height="768" stretch="1">
+    <window_name>back</window_name>
+    <texture>intro\intro_back</texture>
+   </auto_static>
+  </global_wnd>
+          
+  <item type="video">
+   <length_sec>1</length_sec>
+   <pause_state>on</pause_state>
+   <video_wnd x="0" y="0" width="1024" height="768" stretch="1">
+    <texture x="0" y="0" width="1024" height="768">intro\intro_back</texture>
+   </video_wnd>
+  </item>
+</restore_sun>
 
 #include "ui\ui_credits.xml"
 #include "ui\ui_movies.xml"

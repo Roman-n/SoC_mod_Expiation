@@ -38,7 +38,7 @@ end
 function heli_binder:reinit()
 	object_binder.reinit( self )
 
-	printf( "heli_binder:reinit()" )
+	--printf( "heli_binder:reinit()" )
 
 	db.storage[self.object:id()] = {}
 	self.st = db.storage[self.object:id()]
@@ -113,24 +113,27 @@ end
 function heli_binder:save( packet )
 	object_binder.save( self, packet )
 
-	printf( "heli_binder: save")
+	--printf( "heli_binder: save")
 
-	xr_logic.save_obj( self.object, packet )
+	xr_logic.save_obj( self.object, packet, not self.initialized )
 
 	self.st.combat:save( packet )
 end
 
 function heli_binder:load( packet )
-	self.loaded = true
 
 	--printf("generic_object_binder:load(): self.object:name()='%s'", self.object:name())
 	object_binder.load( self, packet )
 
-	printf( "heli_binder: load")
+	--printf( "heli_binder: load")
 
 	xr_logic.load_obj( self.object, packet )
 
 	self.st.combat:load( packet )
+
+	if self.st.loaded_ini_filename then
+		self.loaded = true
+	end
 end
 
 function heli_binder:check_health()
@@ -157,7 +160,7 @@ end
 
 ------------------------------ callbacks ---------------------------------
 function heli_binder:on_hit( power, impulse, hit_type, enemy_id )
-	printf( "heli_binder: hit callback")
+	--printf( "heli_binder: hit callback")
 
 	local enemy        = level.object_by_id( enemy_id )
 	local enemy_cls_id = get_clsid( enemy )

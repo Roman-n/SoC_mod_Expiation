@@ -12,7 +12,7 @@ function mob_remark:__init(obj, storage)
 end
 
 function mob_remark:reset_scheme()
-	printf("_bp: mob_remark:reset_scheme: %s", self.object:name())
+	--printf("_bp: mob_remark:reset_scheme: %s", self.object:name())
 	
 	mob_state_mgr.set_state(self.object, db.actor, self.st.state)
 	
@@ -130,14 +130,14 @@ function mob_remark:update(delta)
 		if not self.action_end_signalled then
 			self.action_end_signalled = true
 			self.st.signals["action_end"] = true
-			printf("mob_remark: signalling action_end")
+			--printf("mob_remark: signalling action_end")
 		end
 	end
 end
 
 ---------------------------------------------------------------------------------------------------------------------
 function add_to_binder(npc, ini, scheme, section, storage)
-	printf("DEBUG: add_to_binder: npc:name()='%s', scheme='%s', section='%s'", npc:name(), scheme, section)
+	--printf("DEBUG: add_to_binder: npc:name()='%s', scheme='%s', section='%s'", npc:name(), scheme, section)
 
 	local new_action = mob_remark(npc, storage)
 

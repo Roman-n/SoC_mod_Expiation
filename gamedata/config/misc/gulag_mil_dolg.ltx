@@ -2,9 +2,9 @@
 ;-- Хутор Долга (первое состояние - убийство патруля и сбор в сарае)
 ;-------------------------------------------------------------------------------------------------
 
--------------------------
+;-------------------------
 ;Череп
--------------------------
+;-------------------------
 [logic@mil_dolg_skull]
 active = walker1@mil_dolg_skull
 actor_dialogs = actor_dialogs
@@ -50,9 +50,9 @@ hp_state_see    = 0|wounded_heavy@help_heavy
 hp_victim       = 0|nil
 hp_fight        = 0|false
 hp_cover        = 0|false
--------------------------
+;-------------------------
 ;Солдат с биноклем
--------------------------
+;-------------------------
 [logic@mil_dolg_soldier1]
 active = walker10@mil_dolg_soldier1
 on_death = death@mil_dolg_soldier1
@@ -96,9 +96,9 @@ danger = danger_condition@mil_dolg
 meet = no_meet
 
 
--------------------------
+;-------------------------
 ;Солдат, который нам говорит "ТСС"
--------------------------
+;-------------------------
 [logic@mil_dolg_soldier2]
 active = camper1@mil_dolg_soldier2
 combat_ignore = c_ignore@mil_dolg
@@ -182,7 +182,7 @@ use_wpn = true
 
 [walker5@mil_dolg_soldier2]
 path_walk = ambush_walk1_4
-on_signal = return | kamp1@mil_dolg_soldier2
+on_signal = return | kamp1@mil_dolg_soldier2 
 meet_enabled = false
 danger = danger_condition@mil_dolg
 meet = meet2@mil_dolg_soldier2
@@ -204,11 +204,12 @@ danger = danger_condition@mil_dolg
 combat_ignore_cond = {=check_fighting(704) -mil_lukash_dolg_task}
 meet = no_meet
 soundgroup = mil_dolg_kamp
+on_info = {+mil_patrol_man1_dead +mil_patrol_man2_dead +mil_patrol_man3_dead} %+mil_dolg_camp_state3%
 
 
--------------------------
+;-------------------------
 ;Солдат в засаде 1
--------------------------
+;-------------------------
 [logic@mil_dolg_soldier3]
 active = camper1@mil_dolg_soldier3
 combat_ignore = c_ignore@mil_dolg
@@ -284,10 +285,11 @@ danger = danger_condition@mil_dolg
 combat_ignore_cond = {=check_fighting(704) -mil_lukash_dolg_task}
 meet = no_meet
 soundgroup = mil_dolg_kamp
+on_info = {+mil_patrol_man1_dead +mil_patrol_man2_dead +mil_patrol_man3_dead} %+mil_dolg_camp_state3%
 
--------------------------
+;-------------------------
 ;Солдат в засаде 2
--------------------------
+;-------------------------
 [logic@mil_dolg_soldier4]
 active = camper1@mil_dolg_soldier4
 combat_ignore = c_ignore@mil_dolg
@@ -327,7 +329,7 @@ meet = no_meet
 [walker2@mil_dolg_soldier4]
 path_walk = ambush_walk5_3
 path_look = ambush_look5_3
-on_signal = return | kamp1@mil_dolg_soldier4
+on_signal = return | kamp1@mil_dolg_soldier4 
 danger = danger_condition@mil_dolg
 meet = no_meet
 combat_ignore_cond = {=check_fighting(704) -mil_lukash_dolg_task}
@@ -348,10 +350,11 @@ danger = danger_condition@mil_dolg
 combat_ignore_cond = {=check_fighting(704) -mil_lukash_dolg_task}
 meet = no_meet
 soundgroup = mil_dolg_kamp
+on_info = {+mil_patrol_man1_dead +mil_patrol_man2_dead +mil_patrol_man3_dead} %+mil_dolg_camp_state3%
 
--------------------------
+;-------------------------
 ;Солдат в засаде 3
--------------------------
+;-------------------------
 [logic@mil_dolg_soldier5]
 active = camper1@mil_dolg_soldier5
 combat_ignore = c_ignore@mil_dolg
@@ -408,10 +411,11 @@ danger = danger_condition@mil_dolg
 combat_ignore_cond = {=check_fighting(704) -mil_lukash_dolg_task}
 meet = no_meet
 soundgroup = mil_dolg_kamp
+on_info = {+mil_patrol_man1_dead +mil_patrol_man2_dead +mil_patrol_man3_dead} %+mil_dolg_camp_state3%
 
--------------------------
+;-------------------------
 ;Солдат в засаде 4
--------------------------
+;-------------------------
 [logic@mil_dolg_soldier6]
 active = camper1@mil_dolg_soldier6
 combat_ignore = c_ignore@mil_dolg
@@ -485,10 +489,11 @@ danger = danger_condition@mil_dolg
 combat_ignore_cond = {=check_fighting(704) -mil_lukash_dolg_task}
 meet = no_meet
 soundgroup = mil_dolg_kamp
+on_info = {+mil_patrol_man1_dead +mil_patrol_man2_dead +mil_patrol_man3_dead} %+mil_dolg_camp_state3%
 
--------------------------
+;-------------------------
 ;Солдат на хуторе у костра
--------------------------
+;-------------------------
 [logic@mil_dolg_soldier7]
 active = kamp1@mil_dolg_soldier7
 on_death = death@mil_dolg_soldier7
@@ -605,9 +610,9 @@ on_signal4 = sound_8 | {+mil_dolg_final_task} %+mil_dolg_sound_8%
 meet = no_meet
 
 
--------------------------------
+;-------------------------------
 ;Солдат 1
--------------------------------
+;-------------------------------
 [logic@mil_dolg_soldier1_attack]
 active = walker12@mil_dolg_soldier1_attack
 on_death = death@mil_dolg_soldier1
@@ -663,9 +668,9 @@ danger = danger_condition@mil_dolg
 on_signal2 = sound_2 | {+mil_dolg_attack} %+mil_dolg_sound_2%
 meet = no_meet
 
--------------------------------
+;-------------------------------
 ;Солдат 2
--------------------------------
+;-------------------------------
 [logic@mil_dolg_soldier2_attack]
 active = walker10@mil_dolg_soldier2_attack
 combat_ignore = c_ignore@mil_dolg
@@ -711,9 +716,9 @@ on_signal2 = sound_4 | {+mil_dolg_final_task} %+mil_dolg_sound_4%
 meet = no_meet
 
 
--------------------------------
+;-------------------------------
 ;Солдат 3
--------------------------------
+;-------------------------------
 [logic@mil_dolg_soldier3_attack]
 active = walker10@mil_dolg_soldier3_attack
 combat_ignore = c_ignore@mil_dolg
@@ -761,9 +766,9 @@ meet = no_meet
 
 
 
--------------------------------
+;-------------------------------
 ;Солдат 4
--------------------------------
+;-------------------------------
 [logic@mil_dolg_soldier4_attack]
 active = walker10@mil_dolg_soldier4_attack
 combat_ignore = c_ignore@mil_dolg
@@ -810,9 +815,9 @@ on_signal2 = sound_5 | {+mil_dolg_final_task} %+mil_dolg_sound_5%
 meet = no_meet
 
 
--------------------------------
+;-------------------------------
 ;Солдат 5
--------------------------------
+;-------------------------------
 [logic@mil_dolg_soldier5_attack]
 active = walker10@mil_dolg_soldier5_attack
 combat_ignore = c_ignore@mil_dolg
@@ -858,9 +863,9 @@ on_signal2 = sound_7 | {+mil_dolg_final_task} %+mil_dolg_sound_7%
 meet = no_meet
 
 
--------------------------------
+;-------------------------------
 ;Солдат 6
--------------------------------
+;-------------------------------
 [logic@mil_dolg_soldier6_attack]
 active = walker10@mil_dolg_soldier6_attack
 combat_ignore = c_ignore@mil_dolg
@@ -906,9 +911,9 @@ on_signal2 = sound_10 | {+mil_dolg_final_task} %+mil_dolg_sound_10%
 meet = no_meet
 
 
--------------------------------
+;-------------------------------
 ;Солдат 7
--------------------------------
+;-------------------------------
 [logic@mil_dolg_soldier7_attack]
 active = walker12@mil_dolg_soldier7_attack
 on_death = death@mil_dolg_soldier7
@@ -960,9 +965,9 @@ meet = no_meet
 ;-- Хутор Долга (возвращение на хутор)
 ;-------------------------------------------------------------------------------------------------
 
--------------------------
+;-------------------------
 ;Череп
--------------------------
+;-------------------------
 [logic@mil_dolg_skull_return]
 active = walker4@mil_dolg_skull_return
 actor_dialogs = actor_dialogs
@@ -982,9 +987,9 @@ path_look = path_look1
 meet = meet@mil_dolg_skull
 
 
--------------------------------
+;-------------------------------
 ;Солдат 1
--------------------------------
+;-------------------------------
 [logic@mil_dolg_soldier1_return]
 active = walker4@mil_dolg_soldier1_return
 on_death = death@mil_dolg_soldier1
@@ -1002,9 +1007,9 @@ center_point = camp_center
 path_walk = camp_center_task
 soundgroup = mil_dolg_kamp
 
--------------------------------
+;-------------------------------
 ;Солдат 2
--------------------------------
+;-------------------------------
 [logic@mil_dolg_soldier2_return]
 active = walker4@mil_dolg_soldier2_return
 on_death = death@mil_dolg_soldier2
@@ -1022,9 +1027,9 @@ center_point = camp_center
 path_walk = camp_center_task
 soundgroup = mil_dolg_kamp
 
--------------------------------
+;-------------------------------
 ;Солдат 3
--------------------------------
+;-------------------------------
 [logic@mil_dolg_soldier3_return]
 active = walker4@mil_dolg_soldier3_return
 on_death = death@mil_dolg_soldier3
@@ -1042,9 +1047,9 @@ center_point = camp_center
 path_walk = camp_center_task
 soundgroup = mil_dolg_kamp
 
--------------------------------
+;-------------------------------
 ;Солдат 4
--------------------------------
+;-------------------------------
 [logic@mil_dolg_soldier4_return]
 active = walker4@mil_dolg_soldier4_return
 on_death = death@mil_dolg_soldier4
@@ -1062,9 +1067,9 @@ center_point = camp_center
 path_walk = camp_center_task
 soundgroup = mil_dolg_kamp
 
--------------------------------
+;-------------------------------
 ;Солдат 5
--------------------------------
+;-------------------------------
 [logic@mil_dolg_soldier5_return]
 active = walker4@mil_dolg_soldier5_return
 on_death = death@mil_dolg_soldier5
@@ -1082,9 +1087,9 @@ center_point = camp_center
 path_walk = camp_center_task
 soundgroup = mil_dolg_kamp
 
--------------------------------
+;-------------------------------
 ;Солдат 6
--------------------------------
+;-------------------------------
 [logic@mil_dolg_soldier6_return]
 active = walker4@mil_dolg_soldier6_return
 on_death = death@mil_dolg_soldier6
@@ -1102,9 +1107,9 @@ center_point = camp_center
 path_walk = camp_center_task
 soundgroup = mil_dolg_kamp
 
--------------------------------
+;-------------------------------
 ;Солдат 7
--------------------------------
+;-------------------------------
 [logic@mil_dolg_soldier7_return]
 active = walker4@mil_dolg_soldier7_return
 on_death = death@mil_dolg_soldier7
@@ -1139,3 +1144,31 @@ danger_inertion_time_corpse	= 1000
 danger_inertion_time_hit		= 2000
 danger_inertion_time_sound	= 1500
 danger_inertion_time_ricochet	= 0
+
+;--Логика после убийства патруля. Фиксит повторную засаду.
+
+[logic@mil_dolg_soldier22]
+active = kamp1@mil_dolg_soldier2
+combat_ignore_cond = c_ignore@mil_dolg
+on_death = on_death@mil_dolg_soldier2
+
+[logic@mil_dolg_soldier33]
+active = kamp1@mil_dolg_soldier3
+combat_ignore = c_ignore@mil_dolg
+on_death = death@mil_dolg_soldier3
+
+[logic@mil_dolg_soldier44]
+active = kamp1@mil_dolg_soldier4
+combat_ignore = c_ignore@mil_dolg
+on_death = death@mil_dolg_soldier4
+
+[logic@mil_dolg_soldier55]
+active = kamp1@mil_dolg_soldier5
+combat_ignore = c_ignore@mil_dolg
+on_death = death@mil_dolg_soldier5
+
+[logic@mil_dolg_soldier66]
+active = kamp1@mil_dolg_soldier6
+combat_ignore = c_ignore@mil_dolg
+on_death = death@mil_dolg_soldier6
+

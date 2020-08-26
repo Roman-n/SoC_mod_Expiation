@@ -9,15 +9,15 @@
 		<class>trader</class>
 		<community>trader</community>
 		<visual>actors\trader\trader</visual>
-				
+
 		<rank>330</rank>
 		<reputation>23</reputation>
-		<money min="100000" max="100000" infinitive="1"/> 
+		<money min="100000" max="150000" infinitive="1"/>
 		<supplies>
 			[spawn] \n
 			wpn_knife \n
 		</supplies>
-		
+
 		<start_dialog>escape_trader_start_dialog</start_dialog>
 		<actor_dialog>escape_trader_talk_info</actor_dialog>
 		<actor_dialog>escape_trader_jobs</actor_dialog>
@@ -33,11 +33,11 @@
 
 		<class>esc_wolf</class>
 		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
-		
+
 		<rank>434</rank>
 		<reputation>5</reputation>
 		<money min="600" max="2000" infinitive="0"/>
-		
+	
 		<snd_config>characters_voice\human_01\stalker\</snd_config>
 		<crouch_type>-1</crouch_type>
  
@@ -48,6 +48,7 @@
 			ammo_9x18_fmj = 1 \n
 			wpn_ak74u \n
 			ammo_5.45x39_fmj \n
+ammo_12x70_buck=3 \n
 			device_torch \n
 			hand_radio \n
 		</supplies>
@@ -76,7 +77,7 @@
 		
 		<snd_config>characters_voice\human_01\stalker\</snd_config>
 		<crouch_type>-1</crouch_type>
-		<panic_treshold>0</panic_treshold>
+		<panic_threshold>0.0</panic_threshold>
  
 		<visual>actors\neytral\stalker_neytral_rukzak_3</visual>
 		<supplies>
@@ -85,6 +86,7 @@
 			ammo_9x18_fmj = 1 \n
 			wpn_ak74u \n
 			ammo_5.45x39_fmj \n
+ammo_12x70_buck=4 \n
 		</supplies>
 				
 #include "gameplay\character_criticals_4.xml"
@@ -108,7 +110,7 @@
 		
 		<snd_config>characters_voice\human_01\stalker\</snd_config>
 		<crouch_type>-1</crouch_type>
-		<panic_treshold>0</panic_treshold>
+		<panic_threshold>0.0</panic_threshold>
 
 		<visual>actors\neytral\stalker_neytral_balon_4</visual>
 		<supplies>
@@ -117,6 +119,7 @@
 			ammo_9x18_fmj = 1 \n
 			wpn_bm16 \n
 			ammo_12x70_buck \n
+ammo_9x19_fmj=2 \n
 			device_torch \n
 		</supplies>
 				
@@ -156,7 +159,7 @@
 		<start_dialog>dm_hello_dialog</start_dialog>
 		<actor_dialog>dm_cool_info_dialog</actor_dialog>
 		<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>
-				
+
 	</specific_character>
 <!---------------------------------------esc_shustryi----------------------------------------------------->	
 	<specific_character id="esc_shustryi" team_default = "1">
@@ -179,6 +182,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
+ammo_9x19_fmj=2 \n
 			esc_wounded_flash \n
 		</supplies>
 
@@ -208,7 +212,7 @@
 		
 		<snd_config>characters_voice\human_02\killer\</snd_config>
 		<crouch_type>0</crouch_type>
-		<panic_treshold>0</panic_treshold>
+		<panic_threshold>0.0</panic_threshold>
 		
 		<visual>actors\killer\stalker_ki_head_1</visual>
 		<supplies>
@@ -239,7 +243,7 @@
 		
 		<snd_config>characters_voice\human_01\bandit\</snd_config>
 		<crouch_type>1</crouch_type>
-		<panic_treshold>0</panic_treshold>
+		<panic_threshold>0.0</panic_threshold>
 		
 		<visual>actors\bandit\stalker_bandit_3</visual>
 		<supplies>
@@ -270,7 +274,7 @@
 		<snd_config>characters_voice\human_01\bandit\</snd_config>
 		<crouch_type>1</crouch_type>
 		
-		<panic_treshold>0</panic_treshold>
+		<panic_threshold>0.0</panic_threshold>
 		
 		<visual>actors\bandit\stalker_bandit_4</visual>
 		<supplies>
@@ -303,7 +307,7 @@
 		<snd_config>characters_voice\human_02\bandit\</snd_config>
 		<crouch_type>1</crouch_type>
 		
-		<panic_treshold>0</panic_treshold>
+		<panic_threshold>0.0</panic_threshold>
 		
 		<visual>actors\bandit\stalker_bandit_5</visual>
 		<supplies>
@@ -342,6 +346,7 @@
 			[spawn] \n
 			wpn_bm16 \n
 			ammo_12x70_buck \n
+ammo_9x18_fmj=5 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_food.xml"
 		</supplies>
@@ -372,6 +377,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
+ammo_9x18_fmj=2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_food.xml"
@@ -403,6 +409,7 @@
 			[spawn] \n
 			wpn_bm16 \n
 			ammo_12x70_buck \n
+ammo_9x18_pmm=3 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_food.xml"
 		</supplies>
@@ -433,6 +440,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
+ammo_9x18_pmm=2 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_food.xml"
 		</supplies>
@@ -463,6 +471,7 @@
 			[spawn] \n
 			wpn_bm16 \n
 			ammo_12x70_buck \n
+ammo_9x19_fmj = 2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_food.xml"
@@ -493,7 +502,8 @@
 		<supplies>
 			[spawn] \n
 			wpn_bm16 \n
-			ammo_12x70_buck \n		
+			ammo_12x70_buck \n
+ammo_9x19_fmj=1 \n		
 #include "gameplay\character_items.xml"	\n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"
@@ -525,6 +535,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
+ammo_9x19_fmj=3 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"
@@ -556,6 +567,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
+ammo_12x76_zhekan=1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -577,7 +589,7 @@
 		<class>esc_ranger</class>
 		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
 		
-		<rank>279</rank>
+		<rank>267</rank>
 		<reputation>16</reputation>
 		<money min="200" max="600" infinitive="0"/>
 		
@@ -611,7 +623,7 @@
 		<class>esc_soldier_commander</class>
 		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
 		
-		<rank>764</rank>
+		<rank>564</rank>
 		<reputation>-15</reputation>
 		
 		<snd_config>characters_voice\human_02\military\</snd_config>
@@ -797,7 +809,7 @@
 		<class>esc_soldier_blockpost_commander</class>
 		<community>military</community> <terrain_sect>stalker_military_terrain</terrain_sect>
 		
-		<rank>906</rank>
+		<rank>664</rank>
 		<reputation>20</reputation>
 		
 		<snd_config>characters_voice\human_02\military\</snd_config>
@@ -1022,6 +1034,7 @@
 			ammo_9x18_fmj = 1 \n
 			wpn_mp5 \n
 			ammo_9x19_fmj = 1 \n
+ammo_7.62x54_ap=2 \n
 			device_torch \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"				
@@ -1034,5 +1047,5 @@
 		<actor_dialog>dm_cool_info_dialog</actor_dialog>
 		<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>
 	</specific_character>
-	
+
 </xml>

@@ -122,7 +122,7 @@ function action_bodyguard_activity:waypoint_callback(obj, action_type, index)
 	self.state = state_standing
 
 	self.object:clear_animations () -- не играть анимацию во время поворота!
-	self.expiration_time = time_global() + 1500; -- дать 100 мс на поворот
+	self.expiration_time = time_global() + 1500 -- дать 100 мс на поворот
 	self:look_at_waypoint(1) -- поворачиваемся
 end
 
@@ -233,7 +233,7 @@ end
 ---------------------------------------------------------------------------------------------------------------------
 function add_to_binder(npc, char_ini)
 	if char_ini == nil or char_ini:section_exist ("bodyguard") == true then
-	printf("_bp: Bodyguard add to binder for %s", npc:name())
+	--printf("_bp: Bodyguard add to binder for %s", npc:name())
 		local operators    = {}
 		local properties  = {}
 

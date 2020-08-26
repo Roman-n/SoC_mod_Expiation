@@ -28,15 +28,16 @@
 			ammo_11.43x23_hydro = 1 \n
 			wpn_sig550 = 1 \n
 			ammo_5.56x45_ap = 1 \n
+ammo_5.45x39_fmj=4 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"			
 		</supplies>
-		
+
 #include "gameplay\character_criticals_5.xml"
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
-
+			
 <!---------------------------SVOBODA ENGINEER----------------------->
 	<specific_character id="mil_Svoboda_engineer" team_default = "1">
 		<name>mil_Svoboda_engineer_name</name>
@@ -63,11 +64,12 @@
 			wpn_sig550 = 1 \n
 			ammo_5.56x45_ap = 1 \n
 			wpn_addon_scope = 1 \n
+ammo_5.45x39_fmj=5 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"			
 		</supplies>
-
+		
 #include "gameplay\character_criticals_5.xml"
 		
 		<start_dialog>mil_screw_dialog</start_dialog>
@@ -99,6 +101,7 @@
 			ammo_9x19_fmj \n
 			wpn_lr300 \n
 			ammo_5.56x45_ss190 = 1 \n
+ammo_9x39_pab9=3 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -131,8 +134,9 @@
 			[spawn] \n
 			wpn_sig220 \n
 			ammo_11.43x23_hydro = 1 \n
-            wpn_svu \n
-            ammo_7.62x54_ap = 1 \n
+            	wpn_svu \n
+            	ammo_7.62x54_ap = 1 \n
+ammo_9x39_ap=1 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"				
@@ -200,6 +204,7 @@
 			ammo_11.43x23_hydro = 1 \n
 			wpn_sig550 = 1 \n
 			ammo_5.56x45_ap = 1 \n
+ammo_9x18_pmm=4 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"			
@@ -237,6 +242,7 @@
 			ammo_11.43x23_hydro = 1 \n
 			wpn_wincheaster1300 \n
 			ammo_12x76_zhekan = 1 \n
+ammo_9x18_pmm=6 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"			
@@ -270,6 +276,7 @@
 			ammo_11.43x23_hydro = 1 \n
 			wpn_g36 \n
 			ammo_5.56x45_ap = 1 \n
+ammo_9x39_sp5=3 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"			
@@ -294,7 +301,7 @@
 		
 		<class>mil_Svoboda_trader</class>
 		<community>freedom</community> <terrain_sect>stalker_freedom_terrain</terrain_sect>
-
+		<money min="100000" max="110000" infinitive="1"></money>
         <snd_config>characters_voice\human_02\freedom\</snd_config>
 		<crouch_type>-1</crouch_type>
 
@@ -340,8 +347,9 @@
 			wpn_usp  \n
 			ammo_11.43x23_hydro = 1 \n
 			wpn_svu \n
-			ammo_7.62x54_7h14 = 1 \n
+			ammo_7.62x54_7h1 = 1 \n
 			wpn_walther \n
+ammo_5.45x39_ap=5 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"			
@@ -377,6 +385,7 @@
 			ammo_11.43x23_hydro = 1 \n
 			wpn_g36 \n
 			ammo_5.56x45_ap = 1 \n
+ammo_9x19_pbp=4 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"			
@@ -423,12 +432,14 @@
 		<actor_dialog>mil_cook_common4</actor_dialog>
 		<actor_dialog>mil_cook_common5</actor_dialog>
 		<actor_dialog>mil_cook_common6</actor_dialog>
- 		<actor_dialog>mil_cook_drink_for_rg6_1</actor_dialog>
-        <actor_dialog>mil_cook_drink_for_rg6_2</actor_dialog>
-        <actor_dialog>mil_cook_drink_for_rg6_3</actor_dialog>
-        <actor_dialog>mil_cook_drunk_question_about_rg6_1</actor_dialog>
-        <actor_dialog>mil_cook_drunk_question_about_rg6_2</actor_dialog>
-        <actor_dialog>mil_cook_drunk_question_about_rg6_3</actor_dialog>
+
+		<actor_dialog>mil_cook_drink_for_rg6_1</actor_dialog>
+		<actor_dialog>mil_cook_drink_for_rg6_2</actor_dialog>
+		<actor_dialog>mil_cook_drink_for_rg6_3</actor_dialog>
+		<actor_dialog>mil_cook_drunk_question_about_rg6_1</actor_dialog>
+		<actor_dialog>mil_cook_drunk_question_about_rg6_2</actor_dialog>
+		<actor_dialog>mil_cook_drunk_question_about_rg6_3</actor_dialog>
+
 #include "gameplay\character_dialogs.xml"        
 
 	</specific_character>
@@ -457,6 +468,7 @@
 			ammo_11.43x23_hydro = 1 \n
 			wpn_g36 \n
 			ammo_5.56x45_ap = 1 \n
+ammo_9x19_pbp=6 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"	
@@ -492,6 +504,7 @@
 			ammo_11.43x23_hydro = 1 \n
 			wpn_g36 \n
 			ammo_5.56x45_ap = 1 \n
+ammo_9x39_sp5=3 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"			
@@ -530,7 +543,8 @@
 			wpn_walther \n
 			ammo_9x19_pbp \n
 			wpn_groza \n
-			ammo_9x39_sp5 \n	
+			ammo_9x39_sp5 \n
+ammo_5.45x39_fmj=6 \n	
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"				
@@ -564,6 +578,7 @@
 			ammo_9x19_pbp \n
 			wpn_groza \n
 			ammo_9x39_sp5 \n
+ammo_5.45x39_fmj=7 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"
@@ -599,6 +614,7 @@
 			ammo_11.43x23_hydro \n	
 			wpn_val \n
 			ammo_9x39_pab9 = 1 \n
+ammo_12x76_zhekan=5 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"	
@@ -775,6 +791,7 @@
 			wpn_val \n
 			ammo_9x39_sp5 = 1 \n
 			device_torch \n
+ammo_5.56x45_ss190=4 \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"	
@@ -806,6 +823,7 @@
 			ammo_9x19_fmj \n
 			wpn_lr300 \n
 			ammo_5.56x45_ap = 1 \n
+ammo_5.45x39_ap=5 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -815,7 +833,7 @@
 #include "gameplay\character_criticals_4.xml"
 #include "gameplay\character_dialogs.xml"			
 	</specific_character>
-	
+
 <!---------------------------SOME PROFILES----------------------->
 <!---------------------------SVOBODA CRAZY STALKER----------------------->
         <specific_character id="mil_Svoboda_zombi_stalker" team_default = "1">
@@ -903,7 +921,8 @@
       [spawn] \n
       wpn_fort \n
       ammo_9x18_fmj = 1 \n
-	  wpn_val \n
+      wpn_val \n
+      ammo_9x39_sp5 = 1 \n
 	
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -915,5 +934,5 @@
 		<start_dialog>hello_dialog</start_dialog>
 		<actor_dialog>esc_stalker_talk_level</actor_dialog>
   </specific_character>
-	
+
 </xml>

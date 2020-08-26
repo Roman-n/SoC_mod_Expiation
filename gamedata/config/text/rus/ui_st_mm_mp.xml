@@ -13,7 +13,7 @@
 		<text>Разрешить голосование</text>
 	</string>
 	<string id="mm_mp_anomalytime">
-		<text>Время аномалии (м.)</text>
+		<text>Время аномалии (мин.)</text>
 	</string>
 	<string id="mm_mp_artefactcapture">
 		<text>Захват артефакта</text>
@@ -25,7 +25,7 @@
 		<text>Кол-во артефактов</text>
 	</string>
 	<string id="mm_mp_artefstay">
-		<text>Вреня артефакта</text>
+		<text>Время артефакта</text>
 	</string>
 	<string id="mm_mp_autoteambalance">
 		<text>Автобаланс команд</text>
@@ -67,7 +67,7 @@
 		<text>Фильтры</text>
 	</string>
 	<string id="mm_mp_forcerespawn">
-		<text>Рождение (с.)</text>
+		<text>Рождение (сек.)</text>
 	</string>
 	<string id="mm_mp_fraglimit">
 		<text>Лимит фрагов</text>
@@ -133,7 +133,7 @@
 		<text>Игроки</text>
 	</string>
 	<string id="mm_mp_publicserver">
-		<text>Интернет сервер</text>
+		<text>Интернет-сервер</text>
 	</string>
 	<string id="mm_mp_quickrefresh">
 		<text>Обновить один</text>
@@ -145,7 +145,7 @@
 		<text>Обновить все</text>
 	</string>
 	<string id="mm_mp_reinforcement">
-		<text>Подкрепление (с.)</text>
+		<text>Подкрепление (сек.)</text>
 	</string>
 	<string id="mm_mp_respawnoptions">
 		<text>Опции рождения</text>
@@ -181,7 +181,7 @@
 		<text>От первого лица</text>
 	</string>
 	<string id="mm_mp_spectator_freefly">
-		<text>Свободный полет</text>
+		<text>Свободный полёт</text>
 	</string>
 	<string id="mm_mp_spectator_freelook">
 		<text>Свободно-привязанный</text>
@@ -199,7 +199,7 @@
 		<text>Погода</text>
 	</string>
 	<string id="mm_mp_timelimit">
-		<text>Лимит времени (м.)</text>
+		<text>Лимит времени (мин.)</text>
 	</string>
 	<string id="mm_mp_warmuptime">
 		<text>Разогрев (сек.)</text>
@@ -236,5 +236,8 @@
 	</string>
 	<string id="st_mp_gsfilter">
 		<text>Фильтр:</text>
+	</string>
+             <string id="mm_mp_max_ping">
+		<text>Максимальный пинг</text>
 	</string>
 </string_table>

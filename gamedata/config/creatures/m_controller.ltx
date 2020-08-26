@@ -6,7 +6,7 @@ $npc			     = on						; option for Level Editor
 $prefetch 			 = 16
 Scheduled		     = on						; option for ALife Simulator
 Human		     	 = off						; option for ALife Simulator
-Health			     = 200						; option for ALife Simulator
+Health			     = 400						; option for ALife Simulator
 MinSpeed		     = 1.0						; option for ALife Simulator
 MaxSpeed		     = 5.0						; option for ALife Simulator
 going_speed          = 5;4.5                      ; option for ALife Simulator
@@ -47,17 +47,16 @@ ph_box1_size 		 = 0.45, 0.6,  0.45
 ph_crash_speed_min			= 100
 ph_crash_speed_max			= 300
 ph_collision_damage_factor	= 0.1
-ph_mass 		     = 90; 170.
+ph_mass 		     = 90
 
-destroyed_vis_name	 = physics\Dead_Body\trupik_crash
+destroyed_vis_name	 = physics\Dead_Body\skelet_crash
 
 ;---------------------------------------------------------------------
-ph_skeleton_airr_lin_factor   = 2.0 ;550.0 (изменно из-за того, что убрано домножение коэффициент 0.002 из кода)
-ph_skeleton_airr_ang_factor   = 0.0 ;0.0 (изменно из-за того, что убрано домножение на коэффициент 0.3 из кода (0.0*0.3=0.0))
-ph_skeleton_hinger_factor1    = 1.0 ;1.0 (изменно из-за того, что убрано домножение на коэффициент 5.0 из кода)
-ph_skeleton_ddelay	     	  = 15.0 ;Время изменения значения трения в суставе с момента создания шелла, сек
-
-ph_skel_fatal_impulse_factor  = 6.0
+ph_skeleton_airr_lin_factor   = -0.4
+ph_skeleton_airr_ang_factor   = -0.2
+ph_skeleton_hinger_factor1    = 1.0
+ph_skeleton_ddelay            = 5.0
+ph_skel_fatal_impulse_factor  = 2.0
 ph_after_death_velocity_factor= 0.75
 ph_skel_shot_up_factor        = 0.25
 ;---------------------------------------------------------------------
@@ -76,7 +75,6 @@ Velocity_WalkFwdDamaged	= 0.7,		6.0,			6.0,		0.5,	2.0
 Velocity_RunFwdDamaged	= 4.0,  	4.0,			4.0,		0.2,	1
 Velocity_Drag			= -5.0,		0.01,			0.01,		1,		1
 Velocity_Steal			= 0.7,		1.3,			1.3,		1,		1
-Velocity_Drag			= -5.0,		0.01,			0.01,		1,		1
 Velocity_MoveFwd		= 5.0,		0.01,			0.01,		1,		1
 Velocity_MoveBkwd		= -5.0,		0.01,			0.01,		1,		1
 
@@ -230,7 +228,6 @@ critical_wound_bones_legs	= controller_critical_wound_bones_legs
 DamagedThreshold		= 0.1
 
 material				= creatures\medium
-DynamicObjectsCount		= 32
 
 attack_effector			= m_controller_attack_effector
 
@@ -240,17 +237,17 @@ step_params				= m_controller_step_params
 LegsCount				= 2
 damage					= m_controller_damage
 
-psy_hit_damage			= 0.15;
-tube_damage				= 0.50;
-tube_at_once			= false
-tube_min_dist			= 10
+psy_hit_damage			= 0.4
+tube_damage				= 0.50
+tube_at_once			= true
+tube_min_dist			= 1
 
 control_fx_texture		= act\act_controller_hit
 control_fx_texture2		= act\act_controller_hit1
 
 
 ; Controlling ability properties
-Max_Controlled_Count	= 10;4
+Max_Controlled_Count	= 0
 
 control_effector			= controller_control_effector
 
@@ -262,7 +259,7 @@ Friend_Community_Overrides	= monolith
 PsyAura_HeadSound			= monsters\controller\controller_control1
 PsyAura_SoundLeftPath		= monsters\controller\controller_presence_l
 PsyAura_SoundRightPath		= monsters\controller\controller_presence_r
-PsyAura_Radius				= 20	;30
+PsyAura_Radius				= 20.0	;30
 PsyAura_Damage				= 0.05
 
 aura_effector				= controller_aura_pp_effector_section
@@ -275,6 +272,7 @@ PsyAura_Fake_MinAddDist		= 20
 PsyAura_HitDelay			= 1500
 PsyAura_PPHitDelay			= 300
 
+PsyAura_Fake_Sound = $no_sound ; Исправление эффекта пси-ауры (опционально)
 
 ;------------------------------------------------------------------------- 
 
@@ -311,30 +309,30 @@ shock_immunity 						= 1.0
 wound_immunity 						= 0.2
 radiation_immunity 					= 0.0
 telepatic_immunity 					= 0.0
-chemical_burn_immunity 				= 0.9
+chemical_burn_immunity 					= 0.9
 explosion_immunity 					= 1.0
-fire_wound_immunity  				= 0.2
+fire_wound_immunity  					= 0.2
 
 ;=========================================================================================
 ; CONTROL Effector
 ;==========================================================================================
 [controller_control_effector]
-duality_h		= 0.1	;0.31
-duality_v		= 0.2	;0.31
+duality_h		= 0.1
+duality_v		= 0.2
 blur			= 0.01
-gray			= 0.5	;0.5
+gray			= 0.5
 noise_intensity = 1.0
 noise_grain		= 0.9
 noise_fps		= 30
-color_base		= 1.1,1.1,1	;0.1,0.15,0.4
-color_gray		= 1,1,1		;0.333,0.333,0.333
+color_base		= 1.1,1.1,1.0
+color_gray		= 1.0,1.0,1.0
 color_add		= 0.2,0.2,0.1
-time			= 1.0		;1.5
-time_attack		= 0.3		;0.5		; fade in
+time			= 1.0
+time_attack		= 0.3		; fade in
 time_release	= 0.5		; fade out
 
 ; camera effects
-ce_time				= 1.0	;1.5
+ce_time				= 1.0
 ce_amplitude		= 20.0
 ce_period_number	= 1.0
 ce_power			= 0.7
@@ -349,11 +347,11 @@ duality_v		= 0.01
 blur			= 0.01
 gray			= 0.5
 noise_intensity = 0.0
-noise_grain		= 1
+noise_grain		= 1.0
 noise_fps		= 30
 color_base		= 0.65,0.15,0.1
 color_gray		= 0.333,0.333,0.333
-color_add		= 0,0,0
+color_add		= 0.0,0.0,0.0
 time			= 0.3
 time_attack		= 0.05		; fade in
 time_release	        = 0.25		; fade out
@@ -361,39 +359,24 @@ time_release	        = 0.25		; fade out
 ; camera effects
 ce_time				= 0.45 ;time 
 ce_amplitude		= -15.0 
-ce_period_number	= 1.5 ;2.0 
-ce_power			= 1.5 ;0.7 ; power 
+ce_period_number	= 1.5
+ce_power			= 1.5 ; power 
 
 ;=========================================================================================
 ; Aura PP Effector
 ;=========================================================================================
 [controller_aura_pp_effector_section]
-;duality_h		= 0.001
-;duality_v		= 0.001
-;blur			= 10
-;gray			= 0.5
-;noise_intensity = 1.0 ;0.5
-;noise_grain		= 1
-;noise_fps		= 5
-;color_base		= 0.999,0.433,0.0999
-;color_gray		= 0.333,0.3330,0.3330
-;color_add		= 0.999,0.433,0.0999 ;0.00,0.01,0.00
 
 duality_h		= 0.00
 duality_v		= 0.00
-blur			= 10
+blur			= 0.00
 gray			= 0.0
-noise_intensity = 10.0
-noise_grain		= 1
-noise_fps		= 25
-;color_base		= 0.5,0.5,0.5;0.2,0.2,0.2
-;color_gray		= 0.33,0.33,0.33
-;color_add		= 0.30,0.30,0.30
-color_base		= 0.9,0.9,1.0
+noise_intensity = 0.0
+noise_grain		= 0.1
+noise_fps		= 50
+color_base		= 0.5,0.5,0.5
 color_gray		= 0.33,0.330,0.33
-color_add		= 0.00,0.00,0.015
-
-
+color_add		= 0.00,0.00,0.00
 
 
 
@@ -406,10 +389,10 @@ color_add		= 0.00,0.00,0.015
 ;	anim			| time[0..1] | hit_power | impulse | impulse_dir (x,y,z)  |	Field of hit_test  (left,right, bottom, top ) |	Test Dist
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;Right hand Strike
-stand_attack_0 =	  	0.45,		0.15,		    60,        0.0, 1.0, 0.0,		 -1.6, 1.6, -1.6, 1.6,				  3.5
+stand_attack_0 =	  	0.45,		0.45,		    60,        0.0, 1.0, 0.0,		 -1.6, 1.6, -1.6, 1.6,				  3.5
 ;RightLeft combo strike
-stand_attack_1 =	  	0.25,		0.20,		    60,        0.0, 1.0, 0.0,		 -1.6, 1.6, -1.6, 1.6,				  3.5
-;stand_attack_1 =	  	0.45,		0.30,		    200,        0.0, 1.0, 0.0,		 -1.6, 1.6, -1.6, 1.6,				  3.5
+stand_attack_1 =	  	0.25,		0.40,		    60,        0.0, 1.0, 0.0,		 -1.6, 1.6, -1.6, 1.6,				  3.5
+;stand_attack_1 =	  	0.45,		0.50,		    200,        0.0, 1.0, 0.0,		 -1.6, 1.6, -1.6, 1.6,				  3.5
 
 ;=================================================================================
 ; Terrain
@@ -460,7 +443,7 @@ spec_rank			= strong
 rank				= 801
 community			= controller
 
-[m_controller_old_fat]:m_controller_e
+[m_controller_old_fat]:m_controller_normal
 $spawn              = "monsters\old\controller_old_fat"
 visual				= monsters\kontroler\kontroler_4
 icon				= ui_npc_monster_kontroler_4
@@ -470,12 +453,7 @@ community			= controller
 
 [controller_tubeman]:m_controller_normal
 $spawn              = "monsters\controllers\controller_tubeman"
-tube_at_once		= true
-tube_damage			= 0.50
 satiety_threshold	= 0.6
-
-
-
 
 [controller_critical_wound_bones_head]
 bip01_neck
@@ -522,7 +500,6 @@ bip01_r_finger3
 bip01_r_finger31
 bip01_r_finger4
 bip01_r_finger41
-
 
 [controller_critical_wound_bones_legs]
 bip01_l_thigh

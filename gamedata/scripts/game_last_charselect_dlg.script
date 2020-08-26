@@ -144,15 +144,15 @@ function char_dialog:On_char_3_focused()
 end
 
 function char_dialog:On_char_1_selected()
-    printf("Assault selected")
+    --printf("Assault selected")
 end
 
 function char_dialog:On_char_2_selected()
-    printf("Sniper selected")
+    --printf("Sniper selected")
 end
 
 function char_dialog:On_char_3_selected()
-    printf("Tecnician selected")
+    --printf("Tecnician selected")
     local lw = self:GetListWnd("list_window")
     --add text to ListView.
     lw:AddText("Hello world!!! qwe rtyu dfgsdfg xcfbsdf wergwqr sdfgsdfg", --message text

@@ -71,13 +71,13 @@ function test_dialog:InitCallBacks()
 end
 
 function test_dialog:OnButton_1_clicked()
-   printf("test_dialog:OnButton_1_clicked()")
+   --printf("test_dialog:OnButton_1_clicked()")
    local s0 = self:GetStatic("static_0")
    s0:InitTexture("ui\\ui_map_military")
 end
 
 function test_dialog:OnButton_2_clicked()
-   printf("test_dialog:OnButton_2_clicked()")
+   --printf("test_dialog:OnButton_2_clicked()")
    local s0 = self:GetStatic("static_0")
    s0:InitTexture("ui\\ui_map_escape")
 end

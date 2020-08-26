@@ -152,8 +152,8 @@ end
 
 
 function stats()
-	printf("*** SIM ITEMS STATISTIC ***")
+	--printf("*** SIM ITEMS STATISTIC ***")
 	for k,v in pairs(registred_items) do
-		printf("item = %s, num = %s", k, v)
+		--printf("item = %s, num = %s", k, v)
 	end
 end

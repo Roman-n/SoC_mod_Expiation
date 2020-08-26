@@ -1,4 +1,3 @@
-
 <?xml version='1.0' encoding="UTF-8"?>
 <window>
 
@@ -74,13 +73,13 @@
 				<main_frame x="0" y="0" width="409" height="475" a="90">
 					<texture>ui_pda_frame_sub</texture>
 
-					<auto_static x="8" y="44" width="4" height="460">
+					<auto_static x="8" y="41" width="4" height="463">
 						<texture>ui\ui_pda_vertical_line_r_l</texture>
 					</auto_static>
-					<auto_static x="380" y="44" width="4" height="460">
+					<auto_static x="380" y="41" width="4" height="463">
 						<texture>ui\ui_pda_vertical_line_r_r</texture>
 					</auto_static>
-					<auto_static x="8" y="44" width="372" height="2" stretch="1">
+					<auto_static x="8" y="41" width="372" height="2" stretch="1">
 						<texture>ui\ui_pda_horizontal_line</texture>
 					</auto_static>
 
@@ -91,7 +90,7 @@
 						</title>
 					</header_frame_line>
 
-					<scroll_view  x="8" y="45" width="394" height="425" right_ident="10" scroll_profile="pda">
+					<scroll_view  x="9" y="41" width="394" height="428" right_ident="10" scroll_profile="pda">
 						<objective_item x="0" y="0" width="386" height="10">
 							<image x="170" y="0" width="90" height="90" stretch="1"/>
 							
@@ -109,8 +108,8 @@
 
 				<main_wnd x="0" y="0" width="409" height="475">
 
-					<text_hint x="735" y="450" width="100" height="22" complex_mode="1">
-						<text font="graffiti22"/>
+					<text_hint x="575" y="520" width="260" height="22" complex_mode="1">
+						<text font="graffiti22" align="r"/>
 					</text_hint>
 					<map_header_frame_line x="8" y="17" width="395" height="21">
 						<texture>ui_string_03</texture>
@@ -170,4 +169,3 @@
 	</main_wnd>
 	
 </window>
-

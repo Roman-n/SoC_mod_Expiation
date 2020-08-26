@@ -121,7 +121,7 @@ function load_dialog:InitCallBacks()
 end
 
 function file_exist(fname)
-	local f = getFS();
+	local f = getFS()
 	local flist = f:file_list_open_ex("$game_saves$",bit_or(FS.FS_ListFiles,FS.FS_RootOnly) , fname)
 	local f_cnt = flist:Size()
 	
@@ -159,7 +159,7 @@ function AddTimeDigit(str, dig)
 end
 
 function file_data(fname)
-	local f = getFS();
+	local f = getFS()
 	local flist = f:file_list_open_ex("$game_saves$",bit_or(FS.FS_ListFiles,FS.FS_RootOnly) , fname .. ".sav")
 	local f_cnt = flist:Size()
 	
@@ -316,7 +316,7 @@ end
 function load_dialog:OnButton_back_clicked()
 	self:GetHolder():start_stop_menu	(self.owner, true) --new(show main window)
 	self:GetHolder():start_stop_menu	(self,true)
-	self.owner:Show						(true)
+	-- self.owner:Show						(true)
 end
 
 function load_dialog:OnButton_del_clicked()
@@ -342,7 +342,7 @@ function load_dialog:OnKeyboard(dik, keyboard_action)  --virtual function
 	if dik == DIK_RETURN and keyboard_action == WINDOW_KEY_PRESSED then
 		self:GetHolder():start_stop_menu	(self.owner, true) --new
 		self:GetHolder():start_stop_menu	(self,true)
-		self.owner:Show						(true)
+		-- self.owner:Show						(true)
 	end
    
 	return true

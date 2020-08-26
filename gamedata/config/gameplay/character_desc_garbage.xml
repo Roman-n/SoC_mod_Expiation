@@ -23,6 +23,7 @@
 			[spawn] \n
 			wpn_ak74u \n
 			ammo_5.45x39_fmj \n
+ammo_5.56x45_ss190=1
 			device_torch \n
 			medkit = 1 \n
 		</supplies>
@@ -57,6 +58,7 @@
 			device_torch \n
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
+ammo_12x70_buck=2 \n
 		</supplies>
 
 #include "gameplay\character_criticals_3.xml"
@@ -84,7 +86,7 @@
 		<snd_config>characters_voice\human_01\stalker\</snd_config>
 		<crouch_type>-1</crouch_type>
 		
-		<panic_treshold>0</panic_treshold>
+		<panic_threshold>0.0</panic_threshold>
 
 		<visual>actors\neytral\stalker_neytral_balon_5</visual>
 		<supplies>
@@ -93,6 +95,7 @@
 			ammo_9x18_fmj = 1 \n
 			wpn_ak74u_m1 \n
 			ammo_5.45x39_fmj \n
+ammo_5.56x45_ap=1 \n
 			device_torch \n
 			hand_radio \n
 		</supplies>
@@ -126,6 +129,7 @@
 			[spawn] \n
 			wpn_pm \n
 			ammo_9x18_fmj = 1 \n
+ammo_9x19_pbp=1 \n
 			device_torch \n
 #include "gameplay\character_food.xml"
 		</supplies>
@@ -144,7 +148,7 @@
 		<class>gar_bandit_leader</class>
 		<community>bandit</community> <terrain_sect>stalker_bandit_terrain</terrain_sect>
 		
-		<rank>199</rank>
+		<rank>399</rank>
 		<reputation>-145</reputation>
 		
 		<snd_config>characters_voice\human_01\bandit\</snd_config>
@@ -157,6 +161,7 @@
 			ammo_9x18_fmj \n
 			wpn_mp5 \n
 			ammo_9x19_fmj \n
+ammo_11.43x23_hydro=2 \n
 			device_torch \n
 #include "gameplay\character_drugs.xml"
 		</supplies>
@@ -381,6 +386,7 @@
 			ammo_9x18_pmm = 1 \n
 			wpn_bm16 \n
 			ammo_12x70_buck = 1 \n
+ammo_11.43x23_hydro=3 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -414,6 +420,7 @@
 			ammo_9x18_fmj \n
 			wpn_mp5 \n
 			ammo_9x19_fmj = 1 \n
+ammo_5.45x39_fmj=2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -447,6 +454,7 @@
 			ammo_9x18_fmj = 1 \n
 			wpn_mp5 \n
 			ammo_9x19_fmj = 1 \n
+ammo_5.45x39_fmj=3 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -480,6 +488,7 @@
 			ammo_9x18_fmj \n
 			wpn_ak74u \n
 			ammo_5.45x39_ap = 1 \n
+ammo_9x19_fmj=3 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -514,6 +523,7 @@
 			ammo_9x18_fmj \n
 			wpn_ak74u \n
 			ammo_5.45x39_fmj \n
+ammo_9x19_fmj=2 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -580,6 +590,7 @@
 			ammo_9x18_fmj \n
             wpn_ak74u \n
 			ammo_5.45x39_fmj \n
+ammo_5.56x45_ap=1 \n
 			device_torch \n			
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -614,6 +625,7 @@
 			ammo_9x18_fmj \n
 			wpn_ak74u \n
 			ammo_5.45x39_ap \n
+ammo_9x39_pab9=1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -648,6 +660,7 @@
 			ammo_9x18_fmj \n
             wpn_ak74u \n
 			ammo_5.45x39_ap \n
+ammo_11.43x23_hydro=1 \n
 			device_torch \n
 #include "gameplay\character_items.xml" \n
 #include "gameplay\character_drugs.xml" \n
@@ -682,6 +695,7 @@
 			ammo_9x18_fmj \n
 			wpn_bm16 \n
 			ammo_12x76_dart \n
+ammo_5.45x39_ap=3 \n
 			device_torch \n
 #include "gameplay\character_drugs.xml" \n
 #include "gameplay\character_food.xml"			
@@ -724,7 +738,7 @@
 		</supplies>
 		
 #include "gameplay\character_criticals_3.xml"
-					
+				
 		<start_dialog>hello_dialog</start_dialog>
 #include "gameplay\character_dialogs.xml"
 	</specific_character>
@@ -754,5 +768,5 @@
 		<start_dialog>hello_dialog</start_dialog>
 #include "gameplay\character_dialogs.xml"	
 	</specific_character>
-	
+
 </xml>

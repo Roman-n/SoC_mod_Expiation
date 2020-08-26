@@ -139,7 +139,7 @@ function kill_entity_by_sid  (sid)
         if sim then
            local entity = sim:story_object (sid)
            if entity == nil then
-              printf ("Can't find entity with story id %d", sid)
+              --printf ("Can't find entity with story id %d", sid)
            else
               sim:kill_entity (sim:object(entity.id))
            end

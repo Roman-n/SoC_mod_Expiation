@@ -52,7 +52,7 @@ end
 
 function spawn_dialog:FillList()
 
-	local f = getFS();
+	local f = getFS()
 	local flist = f:file_list_open_ex("$game_spawn$",FS.FS_ListFiles,"*.spawn")
 	local f_cnt = flist:Size()
 	
@@ -167,7 +167,7 @@ end
 function spawn_dialog:OnButton_back_clicked()
 	self:GetHolder():start_stop_menu	(self.owner, true) --new
 	self:GetHolder():start_stop_menu	(self,true)
-	self.owner:Show						(true)
+	-- self.owner:Show						(true)
 end
 
 function spawn_dialog:OnKeyboard(dik, keyboard_action)  --virtual function
@@ -179,7 +179,7 @@ function spawn_dialog:OnKeyboard(dik, keyboard_action)  --virtual function
 	if dik == DIK_RETURN and keyboard_action == WINDOW_KEY_PRESSED then
 		self:GetHolder():start_stop_menu	(self.owner, true) --new
 		self:GetHolder():start_stop_menu	(self,true)
-		self.owner:Show						(true)
+		-- self.owner:Show						(true)
 	end
    
 	return true

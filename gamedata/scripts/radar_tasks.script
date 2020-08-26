@@ -20,3 +20,33 @@ function process_info_portion(info_id)
 	end
 	return false
 end
+
+function radar_mapspot_rem_1 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (806, "green_location")
+end
+end
+
+function radar_mapspot_rem_2 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (830, "green_location")
+end
+end
+
+function radar_mapspot_rem_3 (actor, npc)
+for i=0, 200 do
+    	level_tasks.remove_location (1102, "green_location")
+end
+end
+
+function radar_mapspot_rem_4 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (1303, "green_location")
+end
+end
+
+function radar_mapspot_rem_5 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (1300, "green_location")
+end
+end

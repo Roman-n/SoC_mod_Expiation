@@ -4,55 +4,52 @@
 		<text>Одиночка</text>
 	</string>
 	<string id="actor_dolg">
-		<text>Долг</text>
+		<text>«Долг»</text>
 	</string>
 	<string id="actor_freedom">
-		<text>Свобода</text>
+		<text>«Свобода»</text>
 	</string>
 	<string id="arena_enemy">
-		<text>Наемник</text>
+		<text>Наёмник</text>
 	</string>
 	<string id="bad">
-		<text>плохо</text>
+		<text>Плохо</text>
 	</string>
 	<string id="bandit">
 		<text>Бандит</text>
 	</string>
 	<string id="dolg">
-		<text>Долг</text>
+		<text>«Долг»</text>
 	</string>
 	<string id="ecolog">
 		<text>Эколог</text>
 	</string>
 	<string id="enemy">
-		<text>враг</text>
+		<text>Враг</text>
 	</string>
 	<string id="excellent">
-		<text>отлично</text>
-	</string>
-	<string id="exo_outfit_name_m1">
-		<text>Экзоскелет ПНБ-4УЗ</text>
+		<text>Отлично</text>
 	</string>
 	<string id="experienced">
-		<text>опытный</text>
+		<text>Опытный</text>
 	</string>
 	<string id="Found_PDA">
-		<text>Найденные КПК</text>
+		<text>Скачанные данные</text>
 	</string>
 	<string id="freedom">
-		<text>Свобода</text>
+		<text>«Свобода»</text>
 	</string>
 	<string id="friendly">
-		<text>друг</text>
+		<text>Друг</text>
 	</string>
 	<string id="good">
-		<text>хорошо</text>
+		<text>Хорошо</text>
 	</string>
 	<string id="indifferent">
-		<text>нейтрал</text>
+		<text>Нейтрал</text>
 	</string>
 	<string id="killer">
-		<text>Наемник</text>
+		<text>Наёмник</text>
 	</string>
 	<string id="l01_escape">
 		<text>Кордон</text>
@@ -61,10 +58,10 @@
 		<text>Свалка</text>
 	</string>
 	<string id="l03_agroprom">
-		<text>НИИ Агропром</text>
+		<text>НИИ «Агропром»</text>
 	</string>
 	<string id="l04_darkvalley">
-		<text>Темная Долина</text>
+		<text>Тёмная долина</text>
 	</string>
 	<string id="l05_bar">
 		<text>Бар</text>
@@ -91,61 +88,61 @@
 		<text>ЧАЭС</text>
 	</string>
 	<string id="master">
-		<text>мастер</text>
+		<text>Мастер</text>
 	</string>
 	<string id="military">
 		<text>Военный</text>
 	</string>
 	<string id="monolith">
-		<text>Монолит</text>
+		<text>«Монолит»</text>
 	</string>
 	<string id="neutral">
-		<text>нейтрал</text>
+		<text>Нейтрал</text>
 	</string>
 	<string id="novice">
-		<text>новичок</text>
+		<text>Новичок</text>
 	</string>
 	<string id="st_no_active_task">
 		<text>Нет активного задания</text>
 	</string>
 	<string id="st_time_till_surge">
-		<text>Время до выброса</text>
+		<text>Время до «выброса»:</text>
 	</string>
 	<string id="stalker">
 		<text>Одиночка</text>
 	</string>
 	<string id="terrible">
-		<text>ужасно</text>
+		<text>Ужасно</text>
 	</string>
 	<string id="trader">
 		<text>Торговец</text>
 	</string>
 	<string id="ui_st_community">
-		<text>группа</text>
+		<text>Группа</text>
 	</string>
 	<string id="ui_st_price">
 		<text>Цена</text>
 	</string>
 	<string id="ui_st_rank">
-		<text>ранг</text>
+		<text>Ранг</text>
 	</string>
 	<string id="ui_st_relation">
-		<text>отношение</text>
+		<text>Отношение</text>
 	</string>
 	<string id="ui_st_reputation">
-		<text>репутация</text>
+		<text>Репутация</text>
 	</string>
 	<string id="very_bad">
-		<text>оч. плохо</text>
+		<text>Оч. плохо</text>
 	</string>
 	<string id="very_good">
-		<text>оч. хорошо</text>
+		<text>Оч. хорошо</text>
 	</string>
 	<string id="veteran">
-		<text>ветеран</text>
+		<text>Ветеран</text>
 	</string>
 	<string id="zombied">
-		<text>зомби</text>
+		<text>Зомби</text>
 	</string>
 	<string id="Btn_Cancel">
 		<text>Отменить</text>
@@ -172,19 +169,19 @@
 		<text>Использовано</text>
 	</string>
 	<string id="st_not_enough_money">
-		<text>Недостаточно денег</text>
+		<text>Недостаточно денег.</text>
 	</string>
 	<string id="st_not_enough_money_npc">
-		<text>у НПС недостаточно денег</text>
+		<text>У НПС недостаточно денег.</text>
 	</string>
 	<string id="ui_st_opponent_items">
 		<text>Рюкзак</text>
 	</string>
 	<string id="st_search_treasure">
-		<text>Обыскать тайник ($$ACTION_USE$$)</text>
+		<text>Обыскать тайник ($$ACTION_USE$$).</text>
 	</string>
 	<string id="inventory_item_use">
-		<text>Поднять предмет ($$ACTION_USE$$)</text>
+		<text>Поднять предмет ($$ACTION_USE$$).</text>
 	</string>
 	<string id="ui_mm_check_updates">
 		<text>Обновления</text>
@@ -213,9 +210,6 @@
 	<string id="st_mp_say_to_team">
 		<text>Команде</text>
 	</string>
-	<string id="st_knife">
-		<text>Нож</text>
-	</string>
 	<string id="st_mp_disabled_voting">
 		<text>Голосование недоступно на этом сервере.</text>
 	</string>
@@ -232,7 +226,7 @@
 		<text>Голосование провалено!</text>
 	</string>
 	<string id="l03u_agr_underground">
-		<text>Подземелье НИИ Агропром</text>
+		<text>Подземелье НИИ «Агропром»</text>
 	</string>
 	<string id="l04u_labx18">
 		<text>Лаборатория X-18</text>
@@ -248,5 +242,8 @@
 	</string>
 	<string id="l12u_control_monolith">
 		<text>Управление Монолитом</text>
+	</string>
+	<string id="st_knife">
+		<text>Нож</text>
 	</string>
 </string_table>

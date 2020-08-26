@@ -534,7 +534,7 @@ if type == "esc_specnaz" then
 			idle = 5,
 			prior = 10, state = {0,2},
 			in_rest = "esc_prison_zone", out_rest = "esc_fabrika_bandit_space_restrictor",
-				redicate = function(obj_info)
+				predicate = function(obj_info)
         					return obj_info.name == "esc_factory_prisoner_guard"
 						end
 		}
@@ -2031,8 +2031,8 @@ function load_states(gname, type)
 
 			if gulag.alarm_start == nil or
 				game.get_game_time():diffSec(gulag.alarm_start) > 300 then
-				if level.get_time_hours() >= 6 and level.get_time_hours() <= 22 then
 				actor:give_info_portion("esc_blockpost_normal")
+				if level.get_time_hours() >= 6 and level.get_time_hours() <= 22 then
 					return 0  -- день
 				else
 					return 1  -- ночь
@@ -2051,7 +2051,7 @@ function load_states(gname, type)
 			if not actor then
 				return gulag.state
 			end
-			if has_alife_info("escape_lager_help") and has_alife_info("escape_lager_killers_die") then
+			if has_alife_info("escape_lager_help") and not has_alife_info("escape_lager_killers_die") then
 				return 2 -- оборона лагеря
 			elseif level.get_time_hours() >= 5 and level.get_time_hours() <= 22 then
 				return 0  -- день

@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding="UTF-8"?>
 
-<!-- Ð˜Ð½Ñ‚ÐµÑ€Ñ„ÐµÐ¹Ñ Ð¿ÐµÑ€ÐµÑ‚Ð°ÑÐºÐ¸Ð²Ð°Ð½Ð¸Ñ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¸Ð· Ð¼Ð°ÑˆÐ¸Ð½Ñ‹ Ð¸ Ñ‚Ñ€ÑƒÐ¿Ð° Ð½Ð°Ð¼ Ð² Ð¸Ð½Ð²ÐµÐ½Ñ‚Ð°Ñ€ÑŒ -->
+<!-- Èíòåðôåéñ ïåðåòàñêèâàíèÿ ýëåìåíòîâ èç ìàøèíû è òðóïà íàì â èíâåíòàðü -->
 
 <window x="0" y="0" w="640" h="480" r="227" g="121" b="222" texture="1">
 
@@ -38,7 +38,7 @@
 			rows_num="18" cols_num="6" rows_num_view="10" unlimited="1"></dragdrop_list>
 
 	<!-- DESCRIPTION WINDOW -->
-	<frame_window x="375" y="274" width="267" height="500">
+	<frame_window x="375" y="274" width="267" height="450">
 		<texture>ui_frame</texture>
 		<base_texture>ui\ui_frame</base_texture>
 		<left_top_texture x="5" y="10">ui\ui_inv_info_over_lt</left_top_texture>

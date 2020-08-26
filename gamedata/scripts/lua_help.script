@@ -571,6 +571,7 @@ C++ class story_ids {
     const pri_decoder_room_door = 822;
     const pri_exit_to_aes = 832;
     const pri_exit_to_radar = 833;
+    const pri_dark_dealer = 834;
     const pri_followers_gulag = 823;
     const pri_followers_marker = 831;
     const pri_gigant1 = 815;

@@ -23,20 +23,48 @@ function evaluator_state_mgr_idle:evaluate()
 		   self.st.planner:evaluator(self.st.properties["animstate"]):evaluate() and
 		   self.st.planner:evaluator(self.st.properties["animation"]):evaluate()
 
-	if t == true then 
+	if self.mgr == nil then
+		self.mgr = self.object:motivation_action_manager()
+	end
 
-		if self.mgr == nil then
-			self.mgr = self.object:motivation_action_manager()
-		end
-		if self.mgr:initialized() and self.mgr:current_action_id() == xr_actions_id.state_mgr + 1 then
+	if not self.mgr:initialized() then
+		return false
+	end
+
+	if xr_wounded and xr_wounded.is_wounded(self.object) then
+		self.st.combat = false
+		return false
+	end
+
+	if t == true then
+		if self.mgr:current_action_id() == xr_actions_id.state_mgr + 1 then
 			self.st.combat = true
 		end
 	end
-	
-	if self.st.combat == true then return true end
+
+	if self.st.combat == true then
+		return true
+	end
 
 	return false
 end
+
+class "evaluator_state_mgr_idle_off" (property_evaluator)
+function evaluator_state_mgr_idle_off:__init(name, state_manager) super (nil, name)
+	self.st = state_manager
+	self.mgr = nil
+end
+function evaluator_state_mgr_idle_off:evaluate()
+	local t = self.st.target_state == "idle" and 
+		   self.st.planner:evaluator(self.st.properties["movement"]):evaluate() and
+		   self.st.planner:evaluator(self.st.properties["animstate"]):evaluate() and
+		   self.st.planner:evaluator(self.st.properties["animation"]):evaluate() and 
+		   self.st.planner:evaluator(self.st.properties["bodystate"]):evaluate() and 
+		   self.st.planner:evaluator(self.st.properties["weapon"]):evaluate() and
+		   self.st.planner:evaluator(self.st.properties["mental"]):evaluate()
+	return t
+end
+
 --' Мы уже в безраличном состоянии idle или нет ()учет с проверкой alife
 class "evaluator_state_mgr_idle_alife" (property_evaluator)
 function evaluator_state_mgr_idle_alife:__init(name, state_manager) super (nil, name)
@@ -53,12 +81,24 @@ function evaluator_state_mgr_idle_alife:evaluate()
 --	printf("SECTION %s", utils.to_str(db.storage[self.st.npc:id()].active_section))
 	mgr = self.object:motivation_action_manager()
 	self.t = nil
-	if mgr:initialized() then
-		self.t = mgr:current_action_id()
-		--printf("ACTION %s", utils.to_str(self.t))
-		if self.t ~= xr_actions_id.alife then
-			self.st.alife = false
-		end
+
+	if not mgr:initialized() then
+		return false
+	end
+
+	self.t = mgr:current_action_id()
+	--printf("ACTION %s", utils.to_str(self.t))
+	if self.t ~= xr_actions_id.alife then
+		self.st.alife = false
+	end
+
+	if self.st.combat == true then
+		return false
+	end
+
+	if xr_wounded and xr_wounded.is_wounded(self.object) then
+		self.st.alife = false
+		return false
 	end
 
 	if db.storage[self.st.npc:id()].active_section == nil then		
@@ -131,6 +171,32 @@ function act_state_mgr_to_idle:finalize()
 	action_base.finalize(self)
 end
 
+--' Переход в idle
+class "act_state_mgr_to_off" (action_base)
+function act_state_mgr_to_off:__init(name,state_manager) super (nil, name)
+	self.st = state_manager
+end
+
+function act_state_mgr_to_off:initialize()
+	action_base.initialize(self)
+	self.st:set_state("idle", nil, nil, nil, {animation = true})
+	xr_sound.set_sound(self.object, nil)
+	stop_play_sound(self.object)
+end
+
+function act_state_mgr_to_off:execute()
+	action_base.execute(self)
+end
+
+function act_state_mgr_to_off:finalize()
+	-- По завершению перехода нужно записать -1 в указатель "на кого смотреть", 
+	-- чтобы при возврате было понятно что его нужно переинициализировать.
+	
+	self.st.current_object = -1
+	self.object:movement_enabled(true)
+	action_base.finalize(self)
+end
+
 
 --'-------------------------------------------------------------------------------------
 --' Эвалуаторы и экшены менеджера
@@ -143,13 +209,15 @@ function eva_state_mgr_end:__init(name, st) super (nil, name)
 end
 function eva_state_mgr_end:evaluate()
 	if self.mgr == nil then
+		action_base.finalize(self)
 		self.mgr = self.object:motivation_action_manager()
 	end
 
 	if not self.mgr:initialized() then
+		self.st.combat = false
 		return false
 	end
-	
+
 	local current_action_id = self.mgr:current_action_id()
 	if current_action_id ~= stalker_ids.action_combat_planner and
 	   current_action_id ~= stalker_ids.action_danger_planner and
@@ -214,7 +282,7 @@ function act_state_mgr_end:execute()
 				self.st.look_object = nil
 				return
 			end
-			if self.object:see(look_object) ~= nil and
+			if self.object:see(look_object) and
 				(not IsStalker(look_object) or				
 				self.object:relation(look_object) == game_object.enemy) and
 				look_object:alive() == true
@@ -305,26 +373,24 @@ function state_manager:__init(npc)
 	self.need_reweapon = false
 end
 function state_manager:set_state(state_name, callback, timeout, target, emerg, synsound, extrakeys)
-	printf("Set State called: for %s State: %s", self.npc:name(), state_name)
+--	printf("Set State called: for %s State: %s", self.npc:name(), state_name)
 	
 	if state_lib.states[state_name] == nil then
-		abort("ERROR: ILLEGAL SET STATE CALLED!!! %s fo %s", tostring(state_name), self.npc:name())
+		state_name = "idle"
 	end
 	if target then
 		if target.look_position then
-			printf("look position: %s %s %s", target.look_position.x,
-												target.look_position.y,
-												target.look_position.z)
+--			printf("look position: %s %s %s", target.look_position.x, target.look_position.y, target.look_position.z)
 		else
-			printf("look position: NIL")
+--			printf("look position: NIL")
 		end
 		if target.look_object then
-			printf("look object: %s", target.look_object:name())
+--			printf("look object: %s", target.look_object:name())
 		else
-			printf("look object: NIL")
+--			printf("look object: NIL")
 		end
 	else
-		printf("look target NIL")
+--		printf("look target NIL")
 	end
 
 	--сперва устанавливаем цели
@@ -368,11 +434,11 @@ function state_manager:set_state(state_name, callback, timeout, target, emerg, s
 
 
 		--' Если мы переключаемся из идущего положения в стоящее - надо задизаблить перемещение
-		if state_lib.states[self.target_state].movement ~= move.stand and
-		   state_lib.states[state_name].movement == move.stand
-		then
-			self.npc:movement_enabled(false)
-		end
+		-- if state_lib.states[self.target_state].movement ~= move.stand and
+		--   state_lib.states[state_name].movement == move.stand
+		-- then
+		--	self.npc:movement_enabled(false)
+		-- end
 
 
 		self.target_state = state_name	
@@ -410,9 +476,18 @@ function state_manager:set_state(state_name, callback, timeout, target, emerg, s
 		end
 	end
 	
---	if switched == true then
---		self:update()
---	end
+	if switched == true then
+		if self.npc:best_enemy() then
+			if last_state == nil or last_state == "idle" then
+				self:update()
+			end
+		elseif self.npc:best_danger() then
+			if last_state == nil or last_state == "idle" then
+				self:update()
+			end
+		end
+	end
+	
 end
 function state_manager:get_state()
 	return self.target_state
@@ -452,24 +527,31 @@ end
 function bind_manager(object)
 	local manager = object:motivation_action_manager()
 
-
 	local properties	= {}
 	properties["state_mgr_idle_combat"] 	= xr_evaluators_id.state_mgr + 1
 	properties["state_mgr_idle_alife"]	 	= xr_evaluators_id.state_mgr + 2
+	properties["state_mgr_idle_off"]	 	= xr_evaluators_id.state_mgr + 3
 
 	local operators		= {}
 	operators["state_mgr_to_idle_combat"]	= xr_actions_id.state_mgr + 1
 	operators["state_mgr_to_idle_alife"]	= xr_actions_id.state_mgr + 2
+	operators["state_mgr_to_idle_off"]		= xr_actions_id.state_mgr + 3
 
 	local state_manager = state_mgr.state_manager(object)
-	
+
 	manager:add_evaluator(properties["state_mgr_idle_combat"], 	evaluator_state_mgr_idle("state_mgr_idle_combat", state_manager))
 	manager:add_evaluator(properties["state_mgr_idle_alife"], 	evaluator_state_mgr_idle_alife("state_mgr_idle_alife", state_manager))
+	manager:add_evaluator(properties["state_mgr_idle_off"], 	evaluator_state_mgr_idle_off("state_mgr_idle_off", state_manager))
 
 	local action = this.act_state_mgr_to_idle("state_mgr_to_idle_combat", state_manager)
 	action:add_precondition		(world_property(properties["state_mgr_idle_combat"],	false))
 	action:add_effect 			(world_property(properties["state_mgr_idle_combat"],	true))
 	manager:add_action(operators["state_mgr_to_idle_combat"], action)
+
+	action = this.act_state_mgr_to_off("state_mgr_to_off", state_manager)
+	action:add_precondition		(world_property(properties["state_mgr_idle_off"],	false))
+	action:add_effect 			(world_property(properties["state_mgr_idle_off"],	true))
+	manager:add_action(operators["state_mgr_to_idle_off"], action)
 
 	action = this.act_state_mgr_to_idle("state_mgr_to_idle_alife", state_manager)
 	action:add_precondition		(world_property(stalker_ids.property_enemy,	false))
@@ -486,15 +568,12 @@ function bind_manager(object)
 
   	action = manager:action(stalker_ids.action_anomaly_planner)
   	action:add_precondition(world_property(properties["state_mgr_idle_combat"],true))
-  	
+
   	action = manager:action(stalker_ids.action_danger_planner)
   	action:add_precondition(world_property(properties["state_mgr_idle_combat"],true))
 
 	action = manager:action(stalker_ids.action_gather_items)
 	action:add_precondition(world_property(properties["state_mgr_idle_alife"],true))
-	
+
 	return state_manager
 end
-
-
-

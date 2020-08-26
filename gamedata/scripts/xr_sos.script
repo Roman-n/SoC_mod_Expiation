@@ -280,7 +280,7 @@ function action_help:execute ()
        if device ():time_global () - self.see_time > 10000 then
           self.a.npc = nil
           self.object:set_start_dialog ("hello_dialog")
-          printf ("FUCK YOU 2 !!!")
+          --printf ("FUCK YOU 2 !!!")
        end   
        return 
     end     
@@ -292,7 +292,7 @@ function action_help:execute ()
        self.object:set_movement_type (move.walk)
        if self.see_time == 0 then
           if dist < 15 then 
-             printf ("Initialize time on %f distance", dist)
+             --printf ("Initialize time on %f distance", dist)
              self.see_time = device ():time_global ()
           end   
        end   
@@ -309,7 +309,7 @@ function action_help:execute ()
     
     if self.see_time ~= 0 then
        if device ():time_global () - self.see_time > timeout then
-          printf ("FUCK YOU !!!")
+          --printf ("FUCK YOU !!!")
           self.a.npc = nil
           self.object:set_start_dialog ("hello_dialog")
        end
@@ -434,10 +434,10 @@ function action_follow_npc:execute ()
     end   
        
     if device ():time_global () - self.move_time > follow_time then 
-       printf ("FINITA LA COMEDIA !")
+       --printf ("FINITA LA COMEDIA !")
        self.a.npc = nil
        self.object:set_start_dialog ("hello_dialog")
-    end    
+    end
         
 end
 -----------------------

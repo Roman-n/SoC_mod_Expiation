@@ -43,8 +43,8 @@ function proceed()
 	if db.actor:has_info("autojump_enabled") then
 		local jname = jump_level_by_name[level.name()]
 		if jname ~= nil then
-			get_console():execute("flush")
-			get_console():execute("jump_to_level "..jname)
+			-- get_console():execute("flush")
+			-- get_console():execute("jump_to_level "..jname)
 		end
 	end
 end

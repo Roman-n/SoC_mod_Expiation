@@ -31,7 +31,7 @@ local function hook					(context,line_number)
 	local							caller = debug.getinfo(3, "f")
 	local							g = nil
 	if caller ~= nil then
-		g							= caller.func;
+		g							= caller.func
 	end
 
 --[[
@@ -59,7 +59,7 @@ local function hook					(context,line_number)
 		end
 	end
 
-	printf							("%6s : [%s]%s",context,f_name,g_name)
+	--printf							("%6s : [%s]%s",context,f_name,g_name)
 ]]
 	
 	if ("return" == context) then
@@ -121,7 +121,7 @@ function setup_hook					(do_not_print_message)
 
 	old_hook_func, 
 	old_hook_mask, 
-	old_hook_count					= debug.gethook();
+	old_hook_count					= debug.gethook()
 	
     debug.sethook					()
 	debug.sethook					(hook, "cr")
@@ -129,14 +129,14 @@ function setup_hook					(do_not_print_message)
    	started							= true
    	
    	if (do_not_print_message ~= true) then
-   		printf						("profiler is activated")
+   		--printf						("profiler is activated")
    	end
 end
 
 function clear_hook					()	
    	if started == false then		
-		printf						("profiler hook wasn't setup!")
-   		return;
+		--printf						("profiler hook wasn't setup!")
+   		return
    	end
 --	debug.sethook					(old_hook_func,old_hook_mask,old_hook_count)
 	debug.sethook					()
@@ -147,13 +147,13 @@ end
 
 function stats						()
 	if started == false then
-		printf						("profiler hook wasn't setup!")
+		--printf						("profiler hook wasn't setup!")
 		return
 	end
 
 	clear_hook						()
 	
-	printf							("profiler statistics")
+	--printf							("profiler statistics")
 	
 	local							sort_stats = {}
     for func, count in pairs(Counters) do
@@ -191,15 +191,15 @@ function stats						()
 	)
 	   
     for n,c in pairs(out_stats) do
-		printf							("%9.2fms (%5.2f%%) %9.2fms [%8d] : %s",c.count.timer:time()/1000,c.count.timer:time()*100/script:time(),c.count.child_timer:time()/1000,c.count.count,c.name)
+		--printf							("%9.2fms (%5.2f%%) %9.2fms [%8d] : %s",c.count.timer:time()/1000,c.count.timer:time()*100/script:time(),c.count.child_timer:time()/1000,c.count.count,c.name)
     end
     
-	printf								("")
-	printf								(" pure time :   %%%%   :  children  :   count  : function name")
-	printf								("")
-	printf								("profile time : %8.2fms",timer:time()/1000)
-	printf								("script time  : %8.2fms (%5.2f%%)",script:time()/1000,script:time()*100/timer:time())
-	printf								("call count   : %8d",count)
+	--printf								("")
+	--printf								(" pure time :   %%%%   :  children  :   count  : function name")
+	--printf								("")
+	--printf								("profile time : %8.2fms",timer:time()/1000)
+	--printf								("script time  : %8.2fms (%5.2f%%)",script:time()/1000,script:time()*100/timer:time())
+	--printf								("call count   : %8d",count)
 
 	setup_hook							(true)
 end

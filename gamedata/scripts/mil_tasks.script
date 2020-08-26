@@ -196,3 +196,63 @@ function bloodsuckers_dead (task_id, subtask)
     end   
     return false
 end
+
+function mil_mapspot_rem_1 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (728, "green_location")
+end
+end
+
+function mil_mapspot_rem_2 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (706, "green_location")
+end
+end
+
+function mil_mapspot_rem_3 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (734, "blue_location")
+end
+end
+
+function mil_mapspot_rem_4 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (731, "green_location")
+end
+end
+
+function mil_mapspot_rem_5 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (730, "green_location")
+end
+end
+
+function mil_mapspot_rem_6 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (732, "green_location")
+end
+end
+
+function mil_mapspot_rem_7 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (707, "green_location")
+end
+end
+
+function mil_mapspot_rem_8 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (708, "green_location")
+end
+end
+
+function mil_mapspot_rem_9 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (710, "green_location")
+end
+end
+
+function mil_mapspot_rem_10 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (719, "green_location")
+end
+end

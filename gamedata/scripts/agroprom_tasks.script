@@ -5,7 +5,6 @@
 function proceed()
     local actor = db.actor
 
-	
 
 	if actor:object("agr_nii_security_shedule_file") then
 		actor:give_info_portion("agr_nii_security_shedule_file_have")
@@ -16,7 +15,6 @@ function proceed()
 
 	end
 
-	
 end
 
 function process_info_portion(info_id)
@@ -108,4 +106,10 @@ function agr_actor_enemy ()
 		return npc:relation(actor) == game_object.enemy or (t ~= nil and t.killer == actor:id())
 	end
     return false
+end
+
+function agroprom_mapspot_rem_1 (actor, npc)
+for i=0, 100 do
+    	level_tasks.remove_location (307, "green_location")
+end
 end

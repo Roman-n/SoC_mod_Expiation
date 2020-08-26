@@ -25,7 +25,7 @@ end
 function game_sv_LastStanding:Create   (str)
    game_sv_mp_script.Create(self, str)
    self.lifecount = self:get_option_i (str,"lifecount",3)
-   self:switch_Phase(game_phases.game_phases.GAME_PHASE_PENDING);
+   self:switch_Phase(game_phases.game_phases.GAME_PHASE_PENDING)
 
 end
 
@@ -46,8 +46,8 @@ end
 
 
 function game_sv_LastStanding:OnPlayerConnect	(cl_id_who)
-	printf("---------PLAYER CONNECTED---------%d",cl_id_who:value() )
-   game_sv_mp_script.OnPlayerConnect	(self, cl_id_who);
+	--printf("---------PLAYER CONNECTED---------%d",cl_id_who:value() )
+   game_sv_mp_script.OnPlayerConnect	(self, cl_id_who)
 
 	local	ps_who	=	self:get_id	(cl_id_who)
 
@@ -69,8 +69,8 @@ function game_sv_LastStanding:OnPlayerConnect	(cl_id_who)
 
    self:u_EventSend(P)
 
---	Money_SetStart(id_who);
---	SetPlayersDefItems(ps_who);
+--	Money_SetStart(id_who)
+--	SetPlayersDefItems(ps_who)
 
 
 end
@@ -96,10 +96,10 @@ function game_sv_LastStanding:player_ready (player_cl_id )
    local	ps_who	=	self:get_id	(player_cl_id)
    if ps_who:testFlag(game_player_flags.flags.GAME_PLAYER_FLAG_READY)==true then
       ps_who:resetFlag(game_player_flags.flags.GAME_PLAYER_FLAG_READY)
-      printf("---------reset Ready")
+      --printf("---------reset Ready")
    else
       ps_who:setFlag(game_player_flags.flags.GAME_PLAYER_FLAG_READY)
-      printf("---------set Ready")
+      --printf("---------set Ready")
    end
 
 end
@@ -135,7 +135,7 @@ end
 
 
 function game_sv_LastStanding:OnRoundStart()
-   printf("---------onRoundStart")
+   --printf("---------onRoundStart")
    game_sv_mp_script.OnRoundStart(self)
 
 end

@@ -1,6 +1,5 @@
-;Убираем авто-квесты, появляющиеся после перехода ГГ на определённую локацию. Если эта фича нужна, просто удалить этот файл.
 [list]
-;----------Trader--------------------------------------------------
+;----------Trader-----------------
 ;-----------Eliminate Camp--------
 tm_eliminate_camp_1
 tm_eliminate_camp_2
@@ -8,28 +7,27 @@ tm_eliminate_camp_3
 tm_eliminate_camp_4
 tm_eliminate_camp_5
 tm_eliminate_camp_6
-;-----------Artefact------------
+;-----------Artefact--------------
 tm_find_artefact_1
 tm_find_artefact_2
 tm_find_artefact_3
 tm_find_artefact_4
-;----------Kill Staker-------
+;----------Kill Staker------------
 tm_kill_stalker_1
 tm_kill_stalker_2
 tm_kill_stalker_3
 tm_kill_stalker_4
 tm_kill_stalker_5
 tm_kill_stalker_6
-;---------Find Item-----------
-;tm_find_item_1
-;---------defend Camp--------------
+;---------Find Item---------------
+; tm_find_item_1
+;---------defend Camp-------------
 tm_defend_camp_1
-;---------Monster Part-----------
+;---------Monster Part------------
 tm_monster_part_1
 tm_monster_part_2
 
-
-;--------Barmen----------------------------------------------------------
+;--------Barmen-------------------
 ;-----------Eliminate Camp--------
 barmen_eliminate_camp_1
 barmen_eliminate_camp_2
@@ -38,53 +36,52 @@ barmen_eliminate_camp_4
 barmen_eliminate_camp_5
 barmen_eliminate_camp_6
 barmen_eliminate_camp_7
-;-----------Artefact------------
+;-----------Artefact--------------
 barmen_find_artefact_1
 barmen_find_artefact_2
 barmen_find_artefact_3
 barmen_find_artefact_4
 barmen_find_artefact_5
-;----------Kill Staker-------
+;----------Kill Staker------------
 barmen_kill_stalker_1
 barmen_kill_stalker_2
 barmen_kill_stalker_3
 barmen_kill_stalker_4
 barmen_kill_stalker_5
-;---------Find Item-----------
-;--barmen_find_item_1
+;---------Find Item---------------
 ;--barmen_find_item_2
 ;--barmen_find_item_3
-;---------Monster Part-----------
+;---------Monster Part------------
 barmen_monster_part_1
 barmen_monster_part_2
-;---------defend Camp--------------
+barmen_monster_part_3
+;---------defend Camp-------------
 barmen_defend_camp_1
 barmen_defend_camp_2
 
-;---------------Ecolog---------------------
-;---------Eliminate lager-----------
+;---------------Ecolog------------
+;---------Eliminate lager---------
 ecolog_eliminate_lager_1
 ecolog_eliminate_lager_2
-;---------Find Item-----------
+;---------Find Item---------------
 ecolog_find_item_1
-;---------Monster Part-----------
+;---------Monster Part------------
 ecolog_monster_part_1
 ecolog_monster_part_2
 ecolog_monster_part_3
 ecolog_monster_part_4
 ecolog_monster_part_5
-;--------Artefact---------------
+;--------Artefact-----------------
 ecolog_find_artefact_1
 ecolog_find_artefact_2
 ecolog_find_artefact_3
 ecolog_find_artefact_4
 ecolog_find_artefact_5
 
-
-;--------Dolg------------------------
-;----------Defend Camp----
+;--------Dolg---------------------
+;----------Defend Camp------------
 dolg_defend_lager_1
-;----------Eliminate Camp----
+;----------Eliminate Camp---------
 dolg_eliminate_lager_1
 dolg_eliminate_lager_2
 dolg_eliminate_lager_3
@@ -99,13 +96,14 @@ dolg_eliminate_lager_11
 dolg_eliminate_lager_12
 ;dolg_eliminate_lager_13
 dolg_eliminate_lager_14
-;----------Kill Staker-------
+;----------Kill Staker-------------
 dolg_kill_stalker_1
-;----------Find Item---------
+dolg_kill_stalker_2
+;----------Find Item---------------
 dolg_find_item_1
 
-;--------Freedom------------------------
-;----------Eliminate Camp----
+;--------Freedom-------------------
+;----------Eliminate Camp----------
 freedom_eliminate_camp_1
 freedom_eliminate_camp_2
 freedom_eliminate_camp_3
@@ -113,40 +111,53 @@ freedom_eliminate_camp_4
 freedom_eliminate_camp_5
 freedom_eliminate_camp_6
 freedom_eliminate_camp_7
-;----------Kill Stalker-------
+;----------Kill Stalker------------
+freedom_kill_stalker_1
+freedom_kill_stalker_2
+freedom_kill_stalker_3
 freedom_kill_stalker_4
 freedom_kill_stalker_5
 freedom_kill_stalker_6
-;----------Find Item---------
+freedom_kill_stalker_7
+;----------Find Item---------------
 freedom_find_item_3
-;-------Monster Part-------
+;-------Monster Part---------------
 freedom_monster_part_1
-;-------Defend Lager-------
+;-------Defend Lager---------------
 freedom_defend_lager_1
 freedom_defend_lager_2
 
+;--------pri_trader----------------
+;---------Eliminate lager----------
+pri_trader_eliminate_lager_1
+pri_trader_eliminate_lager_2
+pri_trader_eliminate_lager_3
+pri_trader_eliminate_lager_4
 
 ;tasks for zastava_commander
 zastava_commander_eliminate_lager
-;tasks for wolf 
+;tasks for wolf  
 wolf_eliminate_lager_1
 wolf_eliminate_lager_2
 ;tasks for petrenko 
 petrenko_kill_stalker
-;tasks for hunter 
+petrenko_eliminate_lager
+;tasks for hunter	
 hunter_eliminate_lager
-;tasks for lisiy 
-lisiy_kill_stalker 
+;tasks for lisiy	
+lisiy_kill_stalker	
 ;tasks for drunk dolg
-drunk_dolg_find_item 
-;tasks for shustriy 
+drunk_dolg_find_item	
+;tasks for shustriy	
 shustriy_find_item
 ;tasks for Mercenary
 mercenary_kill_stalker
- 
+mercenary_eliminate_camp_1
 
-;-------STORYLINE TASKS-------
+;-------STORYLINE TASKS------------
+storyline_eliminate_gunslinger
 tutorial_find_artefact
+esc_flash_task
 tutorial_help_wounded
 esc_help_wounded_from_raid
 esc_blockpost_case_to_trader
@@ -199,21 +210,17 @@ mil_freedom_rg6_task
 mil_courier_job
 mil_hunters_task
 mil_kill_controller
+cit_doctor_task
+rad_get_to_aes
 sar_secret_lab
 sar_monolith_destroy
 sar_warlab
 sar_monolith
 
 
-
-
-
-
-
 [tm_eliminate_camp_1]
 type = eliminate_lager
 community = actor
-init_condition = {-storyline_actor_start =actor_on_level(l02_garbage) +agroprom_military_case_have}
 text = tm_eliminate_camp_1_text
 description = tm_eliminate_camp_1_descr
 parent = trader
@@ -223,13 +230,12 @@ reward_reputation = +30
 reward_relation = dolg, 15
 reward_rank = 5
 reward_item = grenade_rgd5, grenade_rgd5
-time = 86400
-
+prior = 3
 
 [tm_eliminate_camp_2]
 type = eliminate_lager
 community = actor
-init_condition = {-storyline_actor_start =actor_on_level(l01_Escape) +agroprom_military_case_have}
+condlist = {+esc_serious_talk}
 text = tm_eliminate_camp_2_text
 description = tm_eliminate_camp_2_descr
 parent = trader
@@ -239,14 +245,12 @@ reward_reputation = +35
 reward_relation = dolg, 15
 reward_rank = 3
 reward_item = grenade_rgd5, grenade_rgd5
-time = 86400
-;idle_time = 84000
-prior = 3
+prior = 2
 
 [tm_eliminate_camp_3]
 type = eliminate_lager
 community = actor
-init_condition = {-storyline_actor_start =actor_on_level(l03u_agr_underground)}
+condlist = {+yan_kill_brain_done}
 text = tm_eliminate_camp_3_text
 description = tm_eliminate_camp_3_descr
 parent = trader
@@ -256,7 +260,7 @@ reward_reputation = +25
 reward_relation = dolg, 10
 reward_rank = 5
 reward_item = grenade_rgd5, grenade_rgd5
-time = 86400
+prior = 5
 
 [tm_eliminate_camp_4]
 type = eliminate_lager
@@ -270,14 +274,11 @@ reward_reputation = +7
 reward_relation = dolg, 5
 reward_rank = 1
 reward_item = ammo_12x76_zhekan, ammo_12x76_zhekan, ammo_12x76_zhekan
-time = 86400
-;idle_time = 84000
 prior = 1
 
 [tm_eliminate_camp_5]
 type = eliminate_lager
 community = actor
-;--init_condition = {-storyline_actor_start =actor_on_level(l02_garbage) +agroprom_military_case_have}
 text = tm_eliminate_camp_5_text
 description = tm_eliminate_camp_5_descr
 parent = trader
@@ -285,16 +286,14 @@ target = gar_smart_bandit2
 reward_money = 1000
 reward_reputation = +50
 reward_relation = dolg, 5
-reward_rank = 10
+reward_rank = 5
 reward_item = grenade_rgd5
-time = 86400
-;idle_time = 84000
-prior = 2
+prior = 4
 
 [tm_eliminate_camp_6]
 type = eliminate_lager
 community = actor
-init_condition = {-storyline_actor_start =actor_on_level(l04_darkvalley)}
+condlist = {+escape_blockpost_case_done}
 text = tm_eliminate_camp_6_text
 description = tm_eliminate_camp_6_descr
 parent = trader
@@ -304,7 +303,7 @@ reward_reputation = +15
 reward_relation = dolg, 5
 reward_rank = 5
 reward_item = grenade_rgd5, grenade_rgd5
-time = 86400
+prior = 6
 
 [tm_find_artefact_1]
 type = artefact
@@ -317,8 +316,6 @@ reward_money = 1500
 reward_reputation = +5
 reward_rank = 1
 reward_item = vodka
-time = 86400
-;idle_time = 84000
 prior = 1
 
 [tm_find_artefact_2]
@@ -332,7 +329,6 @@ reward_money = 3000
 reward_reputation = +20
 reward_rank = 3
 reward_item = vodka
-time = 86400
 prior = 2
 
 [tm_find_artefact_3]
@@ -343,17 +339,14 @@ text = tm_find_artefact_3_text
 description = tm_find_artefact_3_descr
 parent = trader
 target = af_night_star
-;reward_money = 10000
 reward_reputation = +40
 reward_rank = 7
 reward_item = outfit_stalker_m2
-time = 86400
 prior = 4
 
 [tm_find_artefact_4]
 type = artefact
 community = actor
-;condlist = {+agroprom_military_case_have}
 text = tm_find_artefact_4_text
 description = tm_find_artefact_4_descr
 parent = trader
@@ -362,38 +355,32 @@ reward_money = 2500
 reward_reputation = +20
 reward_rank = 3
 reward_item = medkit_army, medkit_army, medkit_army
-time = 86400
 prior = 3
 
 [tm_kill_stalker_1]
 type = kill_stalker
 community = actor
-init_condition = {-storyline_actor_start =actor_on_level(l02_garbage)}
 text = tm_kill_stalker_1_text
 description = tm_kill_stalker_1_descr
 parent = trader
 target = gar_bandit_leader
-;reward_money = 3000
 reward_reputation = +15
 reward_relation = dolg, 10
 reward_item = wpn_ak74u, ammo_5.45x39_ap, ammo_5.45x39_ap, ammo_5.45x39_ap, ammo_5.45x39_ap, ammo_5.45x39_ap
 reward_rank = 6
-time = 86400
+prior = 1
 
 [tm_kill_stalker_2]
 type = kill_stalker
 community = actor
-;condlist = {+agroprom_military_case_have}
 text = tm_kill_stalker_2_text
 description = tm_kill_stalker_2_descr
 parent = trader
 target = sim_stalker_general
-;reward_money = 2500
 reward_reputation = -15
 reward_item = af_gravi
 reward_rank = 5
-time = 86400
-prior = 3
+prior = 5
 
 [tm_kill_stalker_3]
 type = kill_stalker
@@ -402,17 +389,15 @@ text = tm_kill_stalker_3_text
 description = tm_kill_stalker_3_descr
 parent = trader
 target = sim_stalker_novice
-;reward_money = 1000
 reward_reputation = -5
 reward_rank = 2
 reward_item = af_blood
-time = 86400
-prior = 2
+prior = 4
 
 [tm_kill_stalker_4]
 type = kill_stalker
 community = actor
-condlist = {+agroprom_military_case_done}
+condlist = {+val_chase_start}
 text = tm_kill_stalker_4_text
 description = tm_kill_stalker_4_descr
 parent = trader
@@ -420,22 +405,20 @@ target = sim_stalker_veteran_gusarov
 reward_reputation = -25
 reward_rank = 4
 reward_item = af_ameba_mica
-time = 86400
-prior = 4
+prior = 2
 
 [tm_kill_stalker_5]
 type = kill_stalker
 community = actor
-condlist = {+agroprom_military_case_done}
+condlist = {+yan_kill_brain_done}
 text = tm_kill_stalker_5_text
 description = tm_kill_stalker_5_descr
 parent = trader
 target = sim_stalker_master_diador
 reward_reputation = -60
-reward_rank = 7
+reward_rank = 5
 reward_item = af_fuzz_kolobok
-time = 86400
-prior = 5
+prior = 3
 
 [tm_kill_stalker_6]
 type = kill_stalker
@@ -444,12 +427,10 @@ text = tm_kill_stalker_6_text
 description = tm_kill_stalker_6_descr
 parent = trader
 target = sim_stalker_novice
-;reward_money = 1000
 reward_reputation = +3
 reward_rank = 2
 reward_item = af_vyvert, conserva
-time = 86400
-prior = 1
+prior = 6
 
 [tm_find_item_1]
 type = find_item
@@ -462,22 +443,22 @@ target = wpn_fort_m1
 reward_money = 2000
 reward_reputation = +15
 reward_rank = 3
-time = 86400
+reward_item = ammo_vog-25, ammo_vog-25p
+prior = 1
 
 [tm_defend_camp_1]
 type = defend_lager
 community = actor
-init_condition = {-storyline_actor_start =actor_on_level(l04_darkvalley) =gulag_state(val_smart_bandit_2:1)}
+condlist = {+bar_darklab_document_done}
 text = tm_defend_camp_1_text
 description = tm_defend_camp_1_descr
 parent = trader
 target = val_smart_bandit_3
-;---reward_money = 5000
 reward_reputation = +35
 reward_relation = dolg, 50
-reward_rank = 10
+reward_rank = 8
 reward_item = af_fireball
-time = 86400
+prior = 1
 
 [tm_monster_part_1]
 type = monster_part
@@ -490,7 +471,6 @@ target = mutant_krovosos_jaw
 reward_money = 3000
 reward_reputation = +20
 reward_rank = 5
-time = 86400
 reward_item = ammo_12x76_dart, ammo_12x76_dart, ammo_12x76_dart, ammo_12x76_dart, ammo_12x76_dart
 prior = 2
 
@@ -504,7 +484,6 @@ target = mutant_psevdodog_tail
 reward_money = 1500
 reward_reputation = +10
 reward_rank = 5
-time = 86400
 reward_item = ammo_12x76_dart, ammo_12x76_dart, ammo_12x76_dart, ammo_12x76_dart, ammo_12x76_dart
 prior = 1
 
@@ -522,13 +501,12 @@ reward_reputation = +25
 reward_relation = dolg, 10
 reward_rank = 4
 reward_item = vodka, grenade_f1
-time = 86400
 prior = 1
 
 [barmen_eliminate_camp_2]
 type = eliminate_lager
 community = actor
-init_condition = {-storyline_actor_start =actor_on_level(l06_rostok)}
+condlist = {+bar_rescue_research_done}, {+bar_rescue_research_fail}
 text = barmen_eliminate_camp_2_text
 description = barmen_eliminate_camp_2_descr
 parent = barman
@@ -538,22 +516,26 @@ reward_reputation = +35
 reward_relation = dolg, 15
 reward_rank = 6
 reward_item = grenade_f1
-time = 86400
+prior = 3
 
-;--[barmen_eliminate_camp_3]
-;--type = eliminate_lager
-;--community = actor
-;--text = barmen_eliminate_camp_3_text
-;--description = barmen_eliminate_camp_3_descr
-;--parent = barman
-;--target = mil_bandit
-;--reward_money = 7000
-;--reward_reputation = +40
-;--reward_rank = 7
+[barmen_eliminate_camp_3]
+type = eliminate_lager
+community = actor
+condlist = {+yan_kill_brain_done}
+text = barmen_eliminate_camp_3_text
+description = barmen_eliminate_camp_3_descr
+parent = barman
+target = mil_bandit
+reward_money = 5000
+reward_reputation = +40
+reward_relation = dolg, 50, freedom, 50
+reward_rank = 7
+prior = 7
 
 [barmen_eliminate_camp_4]
 type = eliminate_lager
 community = actor
+condlist = {+bar_rescue_research_done}, {+bar_rescue_research_fail}
 text = barmen_eliminate_camp_4_text
 description = barmen_eliminate_camp_4_descr
 parent = barman
@@ -563,13 +545,12 @@ reward_reputation = +40
 reward_relation = dolg, 25
 reward_rank = 7
 reward_item = grenade_f1
-time = 86400
 prior = 4
 
 [barmen_eliminate_camp_5]
 type = eliminate_lager
 community = actor
-init_condition = {-storyline_actor_start =actor_on_level(l06_rostok)}
+condlist = {+bar_rescue_research_done}, {+bar_rescue_research_fail}
 text = barmen_eliminate_camp_5_text
 description = barmen_eliminate_camp_5_descr
 parent = barman
@@ -579,8 +560,7 @@ reward_reputation = +35
 reward_relation = dolg, 14
 reward_rank = 5
 reward_item = grenade_f1
-time = 86400
-prior = 3
+prior = 6
 
 [barmen_eliminate_camp_6]
 type = eliminate_lager
@@ -594,12 +574,12 @@ reward_reputation = +35
 reward_relation = dolg, 20
 reward_rank = 7
 reward_item = grenade_f1
-time = 86400
 prior = 2
 
 [barmen_eliminate_camp_7]
 type = eliminate_lager
 community = actor
+condlist = {+bar_darklab_document_done}
 text = barmen_eliminate_camp_7_text
 description = barmen_eliminate_camp_7_descr
 parent = barman
@@ -609,9 +589,7 @@ reward_reputation = +35
 reward_relation = dolg, 15
 reward_rank = 6
 reward_item = grenade_f1, grenade_f1
-time = 86400
 prior = 5
-
 
 [barmen_find_artefact_1]
 type = artefact
@@ -624,9 +602,7 @@ reward_money = 2500
 reward_reputation = +35
 reward_rank = 5
 reward_item = medkit_scientic, medkit_scientic
-time = 86400
 prior = 1
-
 
 [barmen_find_artefact_2]
 type = artefact
@@ -640,14 +616,11 @@ reward_money = 2500
 reward_reputation = +25
 reward_rank = 6
 reward_item = medkit_scientic, medkit_scientic, antirad, antirad
-time = 86400
 prior = 3
-
 
 [barmen_find_artefact_3]
 type = artefact
 community = actor
-;condlist = {+yan_kill_brain_done}
 text = barmen_find_artefact_3_text
 description = barmen_find_artefact_3_descr
 parent = barman
@@ -655,7 +628,6 @@ target = af_night_star
 reward_reputation = +60
 reward_rank = 7
 reward_item = specops_outfit, grenade_f1, grenade_f1, grenade_f1
-time = 86400
 prior = 4
 
 [barmen_find_artefact_4]
@@ -669,7 +641,6 @@ target = af_electra_flash
 reward_money = 5000
 reward_reputation = +20
 reward_rank = 4
-time = 86400
 prior = 2
 
 [barmen_find_artefact_5]
@@ -682,7 +653,6 @@ parent = barman
 target = af_gold_fish
 reward_reputation = +40
 reward_rank = 7
-time = 86400
 reward_item = wpn_lr300, wpn_addon_grenade_launcher_m203, wpn_addon_scope_susat, wpn_addon_silencer
 prior = 5
 
@@ -694,10 +664,8 @@ description = barmen_kill_stalker_1_descr
 parent = barman
 target = agr_ratcatcher
 reward_reputation = +15
-;reward_relation = dolg, -5
 reward_rank = 5
 reward_item = af_ameba_slug
-time = 86400
 prior = 1
 
 [barmen_kill_stalker_2]
@@ -711,22 +679,20 @@ target = sim_stalker_veteran
 reward_reputation = -45
 reward_rank = 6
 reward_item = af_soul
-time = 86400
-prior = 3
+prior = 5
 
 [barmen_kill_stalker_3]
 type = kill_stalker
 community = actor
-init_condition = {-storyline_actor_start =actor_on_level(l10_radar) +yan_kill_brain_done}
-need_return = false
+condlist = {+bar_deactivate_radar_done}
 text = barmen_kill_stalker_3_text
 description = barmen_kill_stalker_3_descr
 parent = barman
-target = rad_monolith_master
-reward_money = 10000
+target = pri_monolith_leader
+reward_money = 7500
 reward_reputation = +200
-reward_rank = 20
-time = 86400
+reward_rank = 9
+prior = 4
 
 [barmen_kill_stalker_4]
 type = kill_stalker
@@ -738,7 +704,6 @@ target = sim_stalker_general_upir
 reward_reputation = +5
 reward_rank = 4
 reward_item = af_fireball
-time = 86400
 prior = 2
 
 [barmen_kill_stalker_5]
@@ -752,41 +717,33 @@ target = sim_stalker_veteran_vorobey
 reward_reputation = -35
 reward_rank = 5
 reward_item = af_electra_moonlight
-time = 86400
-prior = 4
+prior = 3
 
-;--[barmen_find_item_1]
-;--type = find_item
-;--community = actor
-;--text = barmen_find_item_1_text
-;--description = barmen_find_item_1_descr
-;--parent = barman
-;--target = outfit_monolith_m1
-;--reward_money = 5000
-;--reward_reputation = +30
-;--reward_rank = 5
+[barmen_find_item_2]
+type = find_item
+community = actor
+condlist = {+bar_darklab_document_done}
+text = barmen_find_item_2_text
+description = barmen_find_item_2_descr
+parent = barman
+target = wpn_desert_eagle
+reward_money = 6000
+reward_reputation = +35
+reward_rank = 6
+prior = 1
 
-;--[barmen_find_item_2]
-;--type = find_item
-;--community = actor
-;--text = barmen_find_item_2_text
-;--description = barmen_find_item_2_descr
-;--parent = barman
-;--target = wpn_deserteagle_coll
-;--reward_money = 6000
-;--reward_reputation = +35
-;--reward_rank = 6
-
-;--[barmen_find_item_3]
-;--type = find_item
-;--community = actor
-;--text = barmen_find_item_3_text
-;--description = barmen_find_item_3_descr
-;--parent = barman
-;--target = wpn_vintorez_coll
-;--reward_money = 8500
-;--reward_reputation = +40
-;--reward_rank = 8
+[barmen_find_item_3]
+type = find_item
+community = actor
+condlist = {+bar_svoboda_rg6_done}
+text = barmen_find_item_3_text
+description = barmen_find_item_3_descr
+parent = barman
+target = wpn_vintorez_m1
+reward_item = wpn_sig_m1
+reward_reputation = +40
+reward_rank = 6
+prior = 2
 
 [barmen_monster_part_1]
 type = monster_part
@@ -799,7 +756,6 @@ reward_money = 500
 reward_reputation = +20
 reward_rank = 5
 reward_item = conserva, conserva, conserva
-time = 86400
 prior = 1
 
 [barmen_monster_part_2]
@@ -812,36 +768,46 @@ target = mutant_boar_leg
 reward_money = 1500
 reward_reputation = +20
 reward_rank = 5
-time = 86400
 prior = 2
+
+[barmen_monster_part_3]
+type = monster_part
+community = actor
+condlist = {+bar_darklab_document_start}
+text = barmen_monster_part_3_text
+description = barmen_monster_part_3_descr
+parent = barman
+target = mutant_burer_hand
+reward_money = 4500
+reward_reputation = +20
+reward_rank = 5
+prior = 3
 
 [barmen_defend_camp_1]
 type = defend_lager
 community = actor
 text = barmen_defend_camp_1_text
 description = barmen_defend_camp_1_descr
-init_condition = {-storyline_actor_start =actor_on_level(l02_garbage) =gulag_state(gar_smart_bandit_large_lager:1)}
 parent = barman
 target = gar_smart_garage
 reward_reputation = +45
 reward_relation = dolg, 30
-reward_rank = 10
+reward_rank = 8
 reward_item = af_gravi
-time = 86400
+prior = 1
 
 [barmen_defend_camp_2]
 type = defend_lager
 community = actor
 text = barmen_defend_camp_2_text
 description = barmen_defend_camp_2_descr
-init_condition = {-storyline_actor_start =actor_on_level(l03_agroprom) =gulag_state(agr2_bandit_st:1)}
 parent = barman
 target = agr2_st_factory
 reward_reputation = +35
 reward_relation = dolg, 50
 reward_rank = 8
 reward_item = af_ameba_slug
-time = 86400
+prior = 2
 
 
 ;--------------------Ecolog-----------------------------
@@ -849,7 +815,6 @@ time = 86400
 [ecolog_eliminate_lager_1]
 type = eliminate_lager
 community = actor
-init_condition = {-storyline_actor_start =actor_on_level(l08_yantar) +yan_kill_brain_done}
 text = ecolog_eliminate_lager_1_text
 description = ecolog_eliminate_lager_1_descr
 parent = ecolog
@@ -859,13 +824,12 @@ reward_reputation = +20
 reward_relation = ecolog, 20
 reward_rank = 4
 reward_item = medkit_scientic, medkit_scientic
-time = 86400
 prior = 1
 
 [ecolog_eliminate_lager_2]
 type = eliminate_lager
 community = actor
-init_condition = {-storyline_actor_start =actor_on_level(l06_rostok) +yan_kill_brain_done}
+condlist = {+bar_rescue_research_done}, {+bar_rescue_research_fail}
 text = ecolog_eliminate_lager_2_text
 description = ecolog_eliminate_lager_2_descr
 parent = ecolog
@@ -875,20 +839,20 @@ reward_reputation = +20
 reward_relation = ecolog, 20
 reward_rank = 4
 reward_item = medkit_scientic, medkit_scientic
-time = 86400
+prior = 2
 
 [ecolog_find_item_1]
 type = find_item
 community = actor
+condlist = {+yan_find_vasilyev_start}
 text = ecolog_find_item_1_text
-description = ecolog_find_item_2_descr
+description = ecolog_find_item_1_descr
 parent = ecolog
 target = outfit_stalker_m1
 reward_reputation = +30
 reward_relation = ecolog, +30
 reward_rank = 8
 reward_item = protection_outfit
-time = 86400
 prior = 1
 
 [ecolog_monster_part_1]
@@ -903,7 +867,6 @@ reward_reputation = +20
 reward_relation = ecolog, +15
 reward_rank = 2
 reward_item = medkit_scientic
-time = 86400
 prior = 1
 
 [ecolog_monster_part_2]
@@ -918,7 +881,6 @@ reward_reputation = +10
 reward_relation = ecolog, +15
 reward_rank = 2
 reward_item = wpn_addon_scope_susat
-time = 86400
 prior = 2
 
 [ecolog_monster_part_3]
@@ -933,7 +895,6 @@ reward_reputation = +10
 reward_relation = ecolog, +20
 reward_rank = 4
 reward_item = ammo_12x76_dart, ammo_12x76_dart, ammo_12x76_dart
-time = 86400
 prior = 3
 
 [ecolog_monster_part_4]
@@ -948,7 +909,6 @@ reward_reputation = +10
 reward_relation = ecolog, +15
 reward_rank = 2
 reward_item = medkit_scientic
-time = 86400
 prior = 4
 
 [ecolog_monster_part_5]
@@ -963,7 +923,6 @@ reward_reputation = +25
 reward_relation = ecolog, +15
 reward_rank = 8
 reward_item = medkit_scientic
-time = 86400
 prior = 5
 
 ;------Artefact---------------
@@ -978,7 +937,6 @@ reward_reputation = +10
 reward_rank = 5
 reward_relation = ecolog, +25
 reward_item = af_dummy_pellicle
-time = 86400
 prior = 3
 
 [ecolog_find_artefact_2]
@@ -993,7 +951,6 @@ reward_reputation = +10
 reward_relation = ecolog, +25
 reward_rank = 5
 reward_item = medkit_scientic
-time = 86400
 prior = 1
 
 [ecolog_find_artefact_3]
@@ -1008,7 +965,6 @@ reward_reputation = +10
 reward_relation = ecolog, +25
 reward_rank = 5
 reward_item = medkit_scientic
-time = 86400
 prior = 2
 
 [ecolog_find_artefact_4]
@@ -1018,12 +974,11 @@ text = ecolog_find_artefact_4_text
 description = ecolog_find_artefact_4_descr
 parent = ecolog
 target = af_electra_moonlight
-reward_money = 10000
+reward_money = 7500
 reward_reputation = +20
 reward_relation = ecolog, +40
-reward_rank = 10
+reward_rank = 5
 reward_item = medkit_scientic, medkit_scientic, medkit_scientic
-time = 86400
 prior = 4
 
 [ecolog_find_artefact_5]
@@ -1033,67 +988,57 @@ text = ecolog_find_artefact_5_text
 description = ecolog_find_artefact_5_descr
 parent = ecolog
 target = af_rusty_sea-urchin
-;reward_money = 12000
 reward_reputation = +20
 reward_relation = ecolog, +40
-reward_rank = 10
+reward_rank = 5
 reward_item = scientific_outfit
-time = 86400
 prior = 5
-
-
-
-
 
 
 
 [dolg_defend_lager_1]
 type = defend_lager
 community = actor
-init_condition = {-storyline_actor_start =actor_on_level(l02_garbage) =gulag_state(gar_smart_boars:1)}
 text = dolg_defend_lager_1_text
 description = dolg_defend_lager_1_descr
 parent = dolg
-target = gar_dolg_blockpost
+target = gar_dolg_blokpost
 reward_money = 1000
 reward_reputation = +40
 reward_relation = dolg, +150
 reward_rank = 6
 reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25
-time = 86400
-
+prior = 1
 
 [dolg_eliminate_lager_1]
 type = eliminate_lager
 community = actor
-init_condition = {-storyline_actor_start =actor_on_level(l08_yantar) +yantar_tunnel_finish}
 text = dolg_eliminate_lager_1_text
 description = dolg_eliminate_lager_1_descr
 parent = dolg
 target = yan_st_stalker1
-reward_money = 2000
+reward_money = 1000
 reward_reputation = +40
 reward_relation = dolg, +150
 reward_rank = 6
 reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25
-time = 86400
-
+idle_time = 259200
+prior = 2
 
 [dolg_eliminate_lager_2]
 type = eliminate_lager
 community = actor
-;init_condition = {-storyline_actor_start =actor_on_level(L02_Garbage) +agroprom_military_case_done +bar_svoboda_rg6_done}
 text = dolg_eliminate_lager_2_text
 description = dolg_eliminate_lager_2_descr
 parent = dolg
 target = gar_nest_flesh
-reward_money = 2000
+reward_money = 1000
 reward_reputation = +25
 reward_relation = dolg, +70
 reward_rank = 5
-reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25
-time = 86400
-prior = 2
+reward_item = ammo_9x39_ap, ammo_9x39_ap
+idle_time = 259200
+prior = 5
 
 [dolg_eliminate_lager_3]
 type = eliminate_lager
@@ -1102,29 +1047,26 @@ text = dolg_eliminate_lager_3_text
 description = dolg_eliminate_lager_3_descr
 parent = dolg
 target = mil_lair2
-reward_money = 3000
+reward_money = 1500
 reward_reputation = +25
 reward_relation = dolg, +70
 reward_rank = 5
-reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25, ammo_vog-25
-time = 86400
-prior = 5
+reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25
+prior = 10
 
 [dolg_eliminate_lager_4]
 type = eliminate_lager
 community = actor
-;init_condition = {-storyline_actor_start =actor_on_level(l07_military)}
 text = dolg_eliminate_lager_4_text
 description = dolg_eliminate_lager_4_descr
 parent = dolg
 target = mil_mercs
-reward_money = 3000
+reward_money = 1500
 reward_reputation = +40
 reward_relation = dolg, +100
 reward_rank = 7
-reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25, ammo_vog-25
-time = 86400
-prior = 6
+reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25, ammo_vog-25p
+prior = 13
 
 [dolg_eliminate_lager_5]
 type = eliminate_lager
@@ -1133,13 +1075,12 @@ text = dolg_eliminate_lager_5_text
 description = dolg_eliminate_lager_5_descr
 parent = dolg
 target = ros_smart_stalker_killers1
-reward_money = 3000
+reward_money = 1500
 reward_reputation = +50
 reward_relation = dolg, +200
 reward_rank = 8
-reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25, ammo_vog-25
-time = 86400
-prior = 10
+reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap
+prior = 14
 
 [dolg_eliminate_lager_6]
 type = eliminate_lager
@@ -1148,12 +1089,12 @@ text = dolg_eliminate_lager_6_text
 description = dolg_eliminate_lager_6_descr
 parent = dolg
 target = ros_smart_stalker2
-reward_money = 3000
+reward_money = 1500
 reward_reputation = +50
 reward_relation = dolg, +100
 reward_rank = 8
-reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25, ammo_vog-25
-time = 86400
+reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap
+idle_time = 259200
 prior = 4
 
 [dolg_eliminate_lager_7]
@@ -1163,14 +1104,12 @@ text = dolg_eliminate_lager_7_text
 description = dolg_eliminate_lager_7_descr
 parent = dolg
 target = yan_smart_controler1
-reward_money = 3000
+reward_money = 2000
 reward_reputation = +60
 reward_relation = dolg, +200
 reward_rank = 8
-reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25, ammo_vog-25
-time = 86400
-prior = 5
-prior = 10
+reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25, ammo_vog-25p
+prior = 8
 
 [dolg_eliminate_lager_8]
 type = eliminate_lager
@@ -1183,7 +1122,6 @@ reward_reputation = -10
 reward_relation = dolg, +225, freedom, -250
 reward_rank = 8
 reward_item = wpn_val_m1, ammo_9x39_sp5, ammo_9x39_sp5, ammo_9x39_sp5
-time = 86400
 prior = 9
 
 [dolg_eliminate_lager_9]
@@ -1193,12 +1131,12 @@ text = dolg_eliminate_lager_9_text
 description = dolg_eliminate_lager_9_descr
 parent = dolg
 target = gar_smart_bandit_large_lager
-reward_money = 3000
+reward_money = 1500
 reward_reputation = +50
 reward_relation = dolg, +150
 reward_rank = 5
-reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25, ammo_vog-25
-time = 86400
+reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap
+idle_time = 259200
 prior = 3
 
 [dolg_eliminate_lager_10]
@@ -1208,12 +1146,12 @@ text = dolg_eliminate_lager_10_text
 description = dolg_eliminate_lager_10_descr
 parent = dolg
 target = gar_smart_monster_lair2
-reward_money = 2000
+reward_money = 1000
 reward_reputation = +15
 reward_relation = dolg, +60
 reward_rank = 4
 reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25
-time = 86400
+idle_time = 259200
 prior = 1
 
 [dolg_eliminate_lager_11]
@@ -1223,13 +1161,13 @@ text = dolg_eliminate_lager_11_text
 description = dolg_eliminate_lager_11_descr
 parent = dolg
 target = agr2_st_factory
-reward_money = 3000
+reward_money = 2500
 reward_reputation = -35
 reward_relation = dolg, +170
 reward_rank = 7
 reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25, ammo_vog-25
-time = 86400
-prior = 9
+idle_time = 259200
+prior = 7
 
 [dolg_eliminate_lager_12]
 type = eliminate_lager
@@ -1238,13 +1176,12 @@ text = dolg_eliminate_lager_12_text
 description = dolg_eliminate_lager_12_descr
 parent = dolg
 target = ros_smart_stalker_killers1
-reward_money = 3000
+reward_money = 1000
 reward_reputation = +20
 reward_relation = dolg, +100
 reward_rank = 6
-reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25, ammo_vog-25
-time = 86400
-prior = 9
+reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap
+prior = 11
 
 [dolg_eliminate_lager_13]
 type = eliminate_lager
@@ -1254,11 +1191,11 @@ description = dolg_eliminate_lager_13_descr
 parent = dolg
 target = val_lager_bandits
 reward_money = 3000
-reward_reputation = +40
-reward_relation = dolg, +150
-reward_rank = 8
+reward_reputation = +20
+reward_relation = dolg, +100
+reward_rank = 6
 reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25, ammo_vog-25
-time = 86400
+prior = 12
 
 [dolg_eliminate_lager_14]
 type = eliminate_lager
@@ -1266,14 +1203,14 @@ community = actor
 text = dolg_eliminate_lager_14_text
 description = dolg_eliminate_lager_14_descr
 parent = dolg
-target = yan_tonnel_snorks
-reward_money = 3000
+target = yantar2_snork_small2
+reward_money = 1500
 reward_reputation = +40
 reward_relation = dolg, +100
 reward_rank = 6
-reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25, ammo_vog-25
-time = 86400
-prior = 8
+reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap
+idle_time = 259200
+prior = 6
 
 [dolg_kill_stalker_1]
 type = kill_stalker
@@ -1283,11 +1220,24 @@ description = dolg_kill_stalker_1_descr
 parent = dolg
 target = sim_bandit_master_kocherga
 reward_reputation = +120
-reward_relation = dolg, 125
+reward_relation = dolg, +125
 reward_rank = 7
-reward_item = wpn_groza, ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25, ammo_vog-25
-time = 86400
+reward_item = wpn_groza, ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25, ammo_vog-25p
 prior = 1
+
+[dolg_kill_stalker_2]
+type = kill_stalker
+community = actor
+condlist = {+bar_dolg_community_leader_done}
+text = dolg_kill_stalker_2_text
+description = dolg_kill_stalker_2_descr
+parent = dolg
+target = mil_Svoboda_leader
+reward_item = wpn_svd_m1, ammo_7.62x54_7h14, ammo_7.62x54_7h14
+reward_reputation = -350
+reward_relation = dolg, +150
+reward_rank = 10
+prior = 2
 
 [dolg_find_item_1]
 type = find_item
@@ -1300,10 +1250,7 @@ reward_reputation = +50
 reward_rank = 6
 reward_relation = dolg, 100
 reward_item = wpn_vintorez, ammo_9x39_sp5, ammo_9x39_sp5
-time = 86400
 prior = 1
-
-
 
 
 
@@ -1316,11 +1263,10 @@ parent = freedom
 target = agr2_st_nii
 reward_money = 3500
 reward_reputation = +40
-reward_relation = dolg, -50, freedom, +100
+reward_relation = freedom, +100
 reward_rank = 7
 reward_item = ammo_5.56x45_ap, ammo_5.56x45_ap, ammo_5.56x45_ap, ammo_m209,ammo_m209
-time = 86400
-prior = 5
+prior = 7
 
 [freedom_eliminate_camp_2]
 type = eliminate_lager
@@ -1334,7 +1280,6 @@ reward_reputation = +30
 reward_relation = freedom, +80
 reward_rank = 5
 reward_item = ammo_5.56x45_ap, ammo_5.56x45_ap, ammo_5.56x45_ap, ammo_m209,ammo_m209
-time = 86400
 prior = 4
 
 [freedom_eliminate_camp_3]
@@ -1346,11 +1291,10 @@ parent = freedom
 target = ros_smart_stalker1
 reward_money = 3500
 reward_reputation = +5
-reward_relation = freedom, +90, dolg, -150
+reward_relation = freedom, +60, dolg, -70
 reward_rank = 6
 reward_item = ammo_5.56x45_ap, ammo_5.56x45_ap, ammo_5.56x45_ap, ammo_m209, ammo_m209
-time = 86400
-prior = 4
+prior = 5
 
 [freedom_eliminate_camp_4]
 type = eliminate_lager
@@ -1364,8 +1308,7 @@ reward_reputation = +35
 reward_relation = freedom, +60, dolg, -70
 reward_rank = 5
 reward_item = ammo_5.56x45_ap, ammo_5.56x45_ap, ammo_5.56x45_ap, ammo_m209, ammo_m209
-time = 86400
-prior = 5
+prior = 6
 
 [freedom_eliminate_camp_5]
 type = eliminate_lager
@@ -1375,10 +1318,9 @@ description = freedom_eliminate_camp_5_descr
 parent = freedom
 target = mil_village_lair
 reward_reputation = +35
-reward_relation = freedom, +120, dolg, -30
+reward_relation = freedom, +120
 reward_rank = 7
 reward_item = wpn_sig550, wpn_addon_grenade_launcher_m203, ammo_m209, ammo_m209
-time = 86400
 prior = 3
 
 [freedom_eliminate_camp_6]
@@ -1392,7 +1334,6 @@ reward_money = 3500
 reward_reputation = +5
 reward_rank = 2
 reward_item = ammo_5.56x45_ap, ammo_5.56x45_ap, ammo_5.56x45_ap, ammo_m209, ammo_m209
-time = 86400
 prior = 2
 
 [freedom_eliminate_camp_7]
@@ -1406,8 +1347,49 @@ reward_money = 3500
 reward_reputation = +25
 reward_rank = 4
 reward_item = ammo_5.56x45_ap, ammo_5.56x45_ap, ammo_5.56x45_ap, ammo_m209, ammo_m209
-time = 86400
 prior = 1
+
+[freedom_kill_stalker_1]
+type = kill_stalker
+community = actor
+condlist = {+mil_leader_attach_community}
+text = freedom_kill_stalker_1_text
+description = freedom_kill_stalker_1_descr
+parent = freedom
+target = bar_dolg_guard_commander
+reward_reputation = 0
+reward_relation = freedom, +50, dolg, -60
+reward_rank = 8
+reward_item = af_dummy_pellicle, ammo_vog-25p, ammo_vog-25p
+prior = 3
+
+[freedom_kill_stalker_2]
+type = kill_stalker
+community = actor
+condlist = {+mil_leader_attach_community}
+text = freedom_kill_stalker_2_text
+description = freedom_kill_stalker_2_descr
+parent = freedom
+target = bar_dolg_ivancov
+reward_reputation = 0
+reward_relation = freedom, +50, dolg, -60
+reward_rank = 8
+reward_item = af_night_star, ammo_vog-25p, ammo_vog-25p, ammo_vog-25p
+prior = 5
+
+[freedom_kill_stalker_3]
+type = kill_stalker
+community = actor
+condlist = {+mil_leader_attach_community}
+text = freedom_kill_stalker_3_text
+description = freedom_kill_stalker_3_descr
+parent = freedom
+target = bar_dolg_leader
+reward_item = wpn_rg6_m1, ammo_m209, ammo_m209, ammo_m209, ammo_m209, ammo_m209, ammo_m209
+reward_reputation = -350
+reward_relation = freedom, +150
+reward_rank = 10
+prior = 7
 
 [freedom_kill_stalker_4]
 type = kill_stalker
@@ -1420,8 +1402,7 @@ reward_reputation = -30
 reward_relation = freedom, +80
 reward_rank = 5
 reward_item = af_rusty_sea-urchin
-time = 86400
-prior = 1
+prior = 4
 
 [freedom_kill_stalker_5]
 type = kill_stalker
@@ -1431,11 +1412,10 @@ description = freedom_kill_stalker_5_descr
 parent = freedom
 target = sim_dolg_master
 reward_reputation = 0
-reward_relation = freedom, +150, dolg, -150
-reward_rank = 8
+reward_relation = freedom, +50, dolg, -60
+reward_rank = 5
 reward_item = af_dummy_dummy
-time = 86400
-prior = 3
+prior = 6
 
 [freedom_kill_stalker_6]
 type = kill_stalker
@@ -1448,8 +1428,20 @@ reward_item = af_dummy_spring
 reward_reputation = +67
 reward_relation = freedom, +150
 reward_rank = 7
-time = 86400
 prior = 2
+
+[freedom_kill_stalker_7]
+type = kill_stalker
+community = actor
+text = freedom_kill_stalker_7_text
+description = freedom_kill_stalker_7_descr
+parent = freedom
+target = sim_dolg_veteran_barin
+reward_item = af_soul
+reward_reputation = 0
+reward_relation = freedom, +50, dolg, -60
+reward_rank = 8
+prior = 1
 
 [freedom_find_item_3]
 type = find_item
@@ -1461,8 +1453,7 @@ target = outfit_specnaz_m1
 reward_item = svoboda_heavy_outfit
 reward_reputation = +40
 reward_rank = 7
-reward_relation = dolg, -100, freedom +150
-time = 86400
+reward_relation = freedom, +150
 prior = 1
 
 [freedom_monster_part_1]
@@ -1475,9 +1466,8 @@ target = mutant_boar_leg
 reward_money = 1000
 reward_reputation = +15
 reward_rank = 4
-reward_relation = freedom +50
+reward_relation = freedom, +50
 reward_item = vodka
-time = 86400
 prior = 1
 
 [freedom_defend_lager_1]
@@ -1485,15 +1475,13 @@ type = defend_lager
 community = actor
 text = freedom_defend_lager_1_text
 description = freedom_defend_lager_1_descr
-init_condition = {+mil_leader_quest2_complete -storyline_actor_start =actor_on_level(l07_military) =gulag_state(mil_bandit:1)}, {++mil_leader_quest2_failed -storyline_actor_start =actor_on_level(l07_military) =gulag_state(mil_bandit:1)}
 parent = freedom
 target = mil_lager
-;reward_money = 5000
 reward_reputation = +30
 reward_relation = freedom, +100
 reward_rank = 5
 reward_item = af_cristall
-time = 86400
+prior = 1
 
 [freedom_defend_lager_2]
 type = defend_lager
@@ -1502,27 +1490,34 @@ text = freedom_defend_lager_2_text
 description = freedom_defend_lager_2_descr
 parent = freedom
 target = mil_fblockpost
-init_condition = {+mil_fblockpost_quest_complete -storyline_actor_start =actor_on_level(l07_military) =gulag_state(mil_monster:1)}, {+mil_fblockpost_quest_fail -storyline_actor_start =actor_on_level(l07_military) =gulag_state(mil_monster:1)}
 reward_money = 5000
-reward_reputation = 150
+reward_reputation = +150
 reward_relation = freedom, +150
 reward_rank = 8
 reward_item = af_rusty_sea-urchin
-time = 86400
-
+prior = 2
 
 
 
 ;*************************************************
 ;** STORYLINE TASKS
 ;*************************************************
+[storyline_eliminate_gunslinger]
+type = storyline
+reward_rank = 10
+
 [tutorial_find_artefact]
 type = storyline
 reward_rank = 1
 
+[esc_flash_task]
+type = storyline
+reward_rank = 3
+
 [tutorial_help_wounded]
 type = storyline
 reward_reputation = +10
+reward_rank = 1
 
 [esc_help_wounded_from_raid]
 type = storyline
@@ -1567,7 +1562,6 @@ reward_reputation = +10
 type = storyline
 reward_rank = 4
 
-
 [agroprom_get_military_documents]
 type = storyline
 reward_rank = 10
@@ -1579,7 +1573,7 @@ reward_rank = 4
 
 [agroprom_find_gunslinger_cache]
 type = storyline
-reward_rank = 3
+reward_rank = 6
 
 [agroprom_find_stalker_phantom]
 type = storyline
@@ -1626,10 +1620,9 @@ reward_rank = 3
 type = storyline
 reward_rank = 3
 
-
 [bar_darklab_documents]
 type = storyline
-reward_rank = 20
+reward_rank = 10
 reward_reputation = +20
 
 [bar_resque_information]
@@ -1676,14 +1669,13 @@ reward_rank = 1
 
 [bar_darklab_documents2]
 type = storyline
-reward_rank = 10
-
+reward_rank = 20
 
 [yan_kill_brain_task]
 type = storyline
 reward_rank = 10
 reward_reputation = +20
- 
+  
 [yan_find_scientist]
 type = storyline
 reward_rank = 5
@@ -1704,7 +1696,6 @@ reward_rank = 5
 type = storyline
 reward_rank = 4
 
-
 [yan_scientist_return_task]
 type = storyline
 reward_rank = 3
@@ -1712,8 +1703,6 @@ reward_rank = 3
 [yan_kill_brain_task_2]
 type = storyline
 reward_rank = 6
-
-
 
 [mil_kill_sniper]
 type = storyline
@@ -1727,12 +1716,12 @@ reward_relation = dolg, +200, freedom, -200
 
 [mil_blockpost_job]
 type = storyline
-reward_rank = 10
+reward_rank = 8
 reward_reputation = +30
 
 [mil_blockpost_job2]
 type = storyline
-reward_rank = 10
+reward_rank = 8
 reward_reputation = +30
 
 [mil_mad_job]
@@ -1743,11 +1732,11 @@ reward_relation = freedom, +50
 [mil_lukash_job]
 type = storyline
 reward_rank = 9
-reward_relation = dolg, -200, freedom, +200
+reward_relation = dolg, -150, freedom, +200
 
 [mil_freedom_rg6_task]
 type = storyline
-reward_rank = 5
+reward_rank = 7
 reward_relation = dolg, +50
 
 [mil_courier_job]
@@ -1761,6 +1750,14 @@ reward_rank = 6
 [mil_kill_controller]
 type = storyline
 reward_rank = 7
+
+[cit_doctor_task]
+type = storyline
+reward_rank = 10
+
+[rad_get_to_aes]
+type = storyline
+reward_rank = 10
 
 [sar_secret_lab]
 type = storyline
@@ -1786,44 +1783,37 @@ type = eliminate_lager
 community = actor
 text = zastava_commander_eliminate_lager_text
 description = zastava_commander_eliminate_lager_descr
-;condlist = {+esc_serious_talk}
 parent = zastava_commander
 target = bar_zastava_dogs_lair
-;reward_money = 4000
 reward_reputation = +40
-reward_rank = 8
+reward_rank = 4
 reward_item = af_mincer_meat
-time = 86400
 
-;tasks for wolf 
+;tasks for wolf  
 [wolf_eliminate_lager_1]
 type = eliminate_lager
 community = actor
+condlist = {-agroprom_military_case_have}
 text = wolf_eliminate_lager_1_text
 description = wolf_eliminate_lager_1_descr
-;condlist = {+esc_serious_talk}
 parent = wolf
 target = esc_bridge_boar
-;reward_money = 1500
 reward_reputation = +20
 reward_rank = 3
 reward_item = af_vyvert
-time = 86400
 prior = 1
 
 [wolf_eliminate_lager_2]
 type = eliminate_lager
 community = actor
+condlist = {-agroprom_military_case_have}
 text = wolf_eliminate_lager_2_text
 description = wolf_eliminate_lager_2_descr
-;condlist = {+esc_serious_talk}
 parent = wolf
 target = esc_flesh_2
-;reward_money = 2500
 reward_reputation = +30
 reward_rank = 4
 reward_item = af_blood
-time = 86400
 prior = 2
 
 ;tasks for petrenko 
@@ -1834,60 +1824,61 @@ text = petrenko_kill_stalker_text
 description = petrenko_kill_stalker_descr
 parent = petrenko
 target = sim_svoboda_specnaz_prut
-;reward_money = 5000
 reward_reputation = +3
+reward_relation = dolg, +100
 reward_rank = 9
-reward_item = dolg_scientific_outfit
-time = 86400
+reward_item = dolg_outfit
 
+[petrenko_eliminate_lager]
+type = eliminate_lager
+community = actor
+text = petrenko_eliminate_lager_text
+description = petrenko_eliminate_lager_descr
+parent = petrenko
+target = gar_dogs_lair_1
+reward_reputation = +3
+reward_relation = dolg, +70
+reward_rank = 6
+reward_item = ammo_vog-25, ammo_vog-25, ammo_vog-25, ammo_vog-25, ammo_vog-25
 
-;tasks for hunter 
+;tasks for hunter	
 [hunter_eliminate_lager]
 type = eliminate_lager
 community = actor
 text = hunter_eliminate_lager_text
 description = hunter_eliminate_lager_descr
-;condlist = {+esc_serious_talk}
 parent = hunter
 target = mil_hunters_bloodsucker
-;reward_money = 1500
 reward_reputation = +20
 reward_rank = 3
 reward_item = af_dummy_battery
-time = 86400
 
-;tasks for lisiy 
-[lisiy_kill_stalker] 
+;tasks for lisiy	
+[lisiy_kill_stalker]	
 type = kill_stalker
 community = actor
 text = lisiy_kill_stalker_text
 description = lisiy_kill_stalker_descr
 parent = lisiy
 target = sim_stalker_veteran_umnik
-;reward_money = 5000
 reward_reputation = +3
-reward_rank = 9
+reward_rank = 6
 reward_item = af_night_star
-time = 86400
-
 
 ;tasks for drunk dolg
 [drunk_dolg_find_item]
 type = find_item
 community = actor
+condlist = {+agroprom_military_case_done}
 text = drunk_dolg_find_item_text
 description = drunk_dolg_find_item_descr
 parent = drunk_dolg
 target = wpn_abakan_m2
-;reward_money = 8000
-reward_reputation = 10
-reward_rank = 4
-reward_item = af_ameba_slug 
-time = 86400
+reward_reputation = +10
+reward_rank = 6
+reward_item = af_ameba_slug
 
-
-;tasks for shustriy 
-
+;tasks for shustriy	
 [shustriy_find_item]
 type = find_item
 community = actor
@@ -1895,14 +1886,11 @@ text = shustriy_find_item_text
 description = shustriy_find_item_descr
 parent = shustriy
 target = outfit_bandit_m1
-;reward_money = 4000
-reward_reputation = 10
+reward_reputation = +10
 reward_rank = 4
 reward_item = af_cristall_flower
-time = 86400
 
 ;tasks for Mercenary
-
 [mercenary_kill_stalker]
 type = kill_stalker
 community = actor
@@ -1910,8 +1898,68 @@ text = mercenary_kill_stalker_text
 description = mercenary_kill_stalker_descr
 parent = mercenary
 target = sim_stalker_master_master
-;reward_money = 5000
 reward_reputation = +3
-reward_rank = 9
+reward_rank = 7
 reward_item = af_dummy_glassbeads
-time = 86400
+
+[mercenary_eliminate_camp_1]
+type = eliminate_lager
+community = actor
+condlist = {+bar_deactivate_radar_done}
+text = mercenary_eliminate_camp_1_text
+description = mercenary_eliminate_camp_1_descr
+parent = mercenary
+target = esc_lager
+reward_reputation = -400
+reward_rank = 8
+reward_item = ammo_5.45x39_ap, ammo_5.45x39_ap, ammo_5.45x39_ap, ammo_5.45x39_ap, ammo_5.45x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, vodka, medkit_scientic, medkit_army
+idle_time = 518400
+
+;tasks for pri_trader
+[pri_trader_eliminate_lager_1]
+type = eliminate_lager
+community = actor
+text = pri_trader_eliminate_lager_1_text
+description = pri_trader_eliminate_lager_1_descr
+parent = pri_trader
+target = pri_smart_neutral_stalker1
+reward_money = 6500
+reward_reputation = -400
+reward_rank = 8
+reward_item = ammo_5.45x39_ap, ammo_5.45x39_ap, ammo_5.45x39_ap, ammo_5.45x39_ap, ammo_5.45x39_ap, ammo_5.45x39_ap, ammo_5.45x39_ap, ammo_vog-25p, ammo_vog-25p
+
+[pri_trader_eliminate_lager_2]
+type = eliminate_lager
+community = actor
+text = pri_trader_eliminate_lager_2_text
+description = pri_trader_eliminate_lager_2_descr
+parent = pri_trader
+target = pri_smart_snork_lair2
+reward_money = 3500
+reward_reputation = +10
+reward_rank = 5
+reward_item = ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25, ammo_vog-25p, ammo_og-7b, ammo_5.45x39_ap
+
+[pri_trader_eliminate_lager_3]
+type = eliminate_lager
+community = actor
+text = pri_trader_eliminate_lager_3_text
+description = pri_trader_eliminate_lager_3_descr
+parent = pri_trader
+target = pri_smart_pseudodog_lair1
+reward_money = 4500
+reward_reputation = +10
+reward_rank = 6
+reward_item = ammo_5.45x39_ap, ammo_5.45x39_ap, ammo_5.45x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_9x39_ap, ammo_vog-25p, ammo_og-7b, ammo_og-7b, medkit_army, medkit_army
+
+[pri_trader_eliminate_lager_4]
+type = eliminate_lager
+community = actor
+text = pri_trader_eliminate_lager_4_text
+description = pri_trader_eliminate_lager_4_descr
+parent = pri_trader
+target = pri_smart_giant_lair1
+reward_money = 7500
+reward_reputation = +20
+reward_rank = 8
+reward_item = ammo_og-7b, ammo_5.45x39_ap, ammo_5.45x39_ap, ammo_5.45x39_ap, ammo_5.45x39_ap, medkit_army, medkit_army, medkit_army, ammo_9x39_ap, ammo_9x39_ap

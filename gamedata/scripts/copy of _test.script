@@ -1,16 +1,15 @@
-привет
-sss = "2andy{Scope+GrenadeLauncher+Silencer}, di_ma123{GrenadeLauncher}, oles, alexMX"
+local sss = "2andy{Scope+GrenadeLauncher+Silencer}, di_ma123{GrenadeLauncher}, oles, alexMX"
 local i = string.find(sss,";")
 if i~=nil then sss = string.sub(sss,0, i-1 ) end
-print(sss)
-print("")
+--print(sss)
+--print("")
 
 
 local default_items={}
 
 for word in string.gfind(sss, '[^, ]+') do 
-	print("--------------started---------")
-		print(word)
+	--print("--------------started---------")
+		--print(word)
 		local wpn_sect=word
 		local idx_bg = string.find(wpn_sect,"{")
 		local idx_end = string.find(wpn_sect,"}")
@@ -19,7 +18,7 @@ for word in string.gfind(sss, '[^, ]+') do
 		local isSilencer = false
 		if idx_bg~=nil then
 			wpn_sect = string.sub(wpn_sect,0,idx_bg-1)
-			print("section=",wpn_sect)
+			--print("section=",wpn_sect)
 			local addons = string.sub(word,idx_bg,idx_end)
 		
 			if string.find(addons,"Scope")~=nil then isScope=true end
@@ -36,11 +35,11 @@ for word in string.gfind(sss, '[^, ]+') do
 
 end
   
-print("---------LIST--------")
+--print("---------LIST--------")
 for i in default_items do
-	print(	"sect=",default_items[i].Section,
-			" scope=",default_items[i].Scope,
-			" g_l=",default_items[i].GrenadeLauncher,
-			" silencer=",default_items[i].Silencer )
+	--print(	"sect=",default_items[i].Section,
+	--		" scope=",default_items[i].Scope,
+	--		" g_l=",default_items[i].GrenadeLauncher,
+	--		" silencer=",default_items[i].Silencer )
 end
 
