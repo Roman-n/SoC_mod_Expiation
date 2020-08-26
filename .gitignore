@@ -6,3 +6,4 @@ temp/
 /*.ini
 *.bak
 gamedata/scripts/mod.script
+*.script_
