@@ -2,6 +2,8 @@
 #define COMMON_H
 
 #include "shared\common.h"
+#include "config.h"
+
 
 uniform half4		L_dynamic_props;	// per object, xyz=sun,w=hemi
 uniform half4		L_dynamic_color;	// dynamic light color (rgb1)	- spot/point

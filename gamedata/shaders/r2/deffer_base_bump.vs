@@ -2,20 +2,16 @@
 
 p_bumped	main	( v_static I )
 {
-	float4	w_pos	= I.P				;
-	float2 	tc		= unpack_tc_base	(I.tc,I.T.w,I.B.w);	// copy tc
-	float 	hemi 	= I.Nh.w			;
+	float4	w_pos	= I.P	;
+	float2 	tc 	= unpack_tc_base	(I.tc,I.T.w,I.B.w);	// copy tc
+	float 	hemi 	= I.Nh.w;
 
 	// Eye-space pos/normal
 	p_bumped 	O;
 	float3	Pe	= mul		(m_WV,  w_pos		);
 	O.hpos 		= mul		(m_WVP,	w_pos		);
-	O.tcdh 		= float4	(tc.xyyy			);
-	O.position	= float4	(Pe, hemi			);
-
-#if defined(USE_R2_STATIC_SUN) && !defined(USE_LM_HEMI)
-	O.tcdh.w	= I.color.w;					// (r,g,b,dir-occlusion)
-#endif
+	O.tcdh 		= float2	(tc			);
+	O.position	= float4	(Pe, hemi		);
 
 	// Calculate the 3x3 transform from tangent space to eye-space
 	// TangentToEyeSpace = object2eye * tangent2object
@@ -50,8 +46,8 @@ p_bumped	main	( v_static I )
 	O.tcdbump		= O.tcdh * dt_params;		// dt tc
 #endif
 
-#ifdef	USE_LM_HEMI
-	O.lmh 			= unpack_tc_lmap	(I.lmh);
+#ifdef USE_LM_HEMI
+	O.lmh 	= unpack_tc_lmap	(I.lmh);
 #endif
 	return	O;
 }

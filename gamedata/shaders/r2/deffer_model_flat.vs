@@ -8,13 +8,13 @@ p_flat 	_main	( v_model I )
 
 	// Eye-space pos/normal
 	p_flat 		O;
-	float3	Pe	= mul		(m_WV,  I.P					);
-	O.hpos 		= mul		(m_WVP,	I.P					);
-	O.N 		= mul		((float3x3)m_WV, (float3)I.N);
+	float3	Pe	= mul		(m_WV,  I.P				);
+	O.hpos 		= mul		(m_WVP,	I.P				);
+	O.N 		= mul		((float3x3)m_WV, (float3)I.N		);
 
-	O.tcdh 		= float4	(I.tc.xyyy					);
-	O.position	= float4	(Pe, 		L_material.x	);
-
+	O.tcdh 		= float2	(I.tc					);
+	O.position	= float4	(Pe, 		L_material.x		);
+	
 #if defined(USE_R2_STATIC_SUN) && !defined(USE_LM_HEMI)
 	O.tcdh.w	= L_material.y;							// (,,,dir-occlusion)
 #endif
@@ -22,7 +22,7 @@ p_flat 	_main	( v_model I )
 #ifdef USE_TDETAIL
 	O.tcdbump	= O.tcdh*dt_params;					// dt tc
 #endif
-
+	
 	return	O;
 }
 

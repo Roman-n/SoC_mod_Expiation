@@ -2,10 +2,10 @@
 #define  WMARK_H
 #include "common.h"
 
-#define	NORMAL_SHIFT	0.007f
-#define	MIN_SHIFT		0.003f
-#define	MAX_SHIFT		0.011f
-#define RANGE			100.f
+#define	NORMAL_SHIFT	0.005f
+#define	MIN_SHIFT	0.001f
+#define	MAX_SHIFT	0.01f
+#define RANGE		100.f
 
 float4 	wmark_shift 	(float3 pos, float3 norm)
 {

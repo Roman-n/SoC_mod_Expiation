@@ -49,7 +49,7 @@ vf main (vv v)
 	float 	sun 	= lerp 	(v.sun_af.x, v.sun_af.y, factor)	*L_SCALE;
 	float 	sun_c 	= 1 + L_SUN_HACK * dot(normal, L_sun_dir_w);		// [1+-delta], normal already inverted
 
-	float3 	L_rgb 	= rgbh.rgb;						// precalculated RGB lighting
+	float3 	L_rgb 	= L_lmap_color * rgbh.rgb;				// precalculated RGB lighting
 	float3 	L_hemi 	= L_hemi_color * rgbh.w;				// hemisphere
 	float3 	L_sun 	= L_sun_color  * sun * sun_c;				// sun
 	float3 	L_final	= L_rgb + L_hemi + L_sun + L_ambient;

@@ -1,10 +1,12 @@
 #ifndef _WATERMOVE_H
 #define _WATERMOVE_H
 
+#include "shared\waterconfig.h"
+
 float4	watermove	(float4 P)	{
 	float3 	wave1	= float3(0.11f,0.13f,0.07f)*W_POSITION_SHIFT_SPEED	;
 	float 	dh	= sin  	(timers.x+dot((float3)P,wave1))			;
-			P.y	+= dh * W_POSITION_SHIFT_HEIGHT	;
+		P.y	+= dh * W_POSITION_SHIFT_HEIGHT	;
 	return 	P	;
 }
 float2	watermove_tc	(float2 base, float2 P, float amp)	{
@@ -19,7 +21,7 @@ float3	waterrefl	(out float amount, float3 P, float3 N)	{
 	float3 	v2point	= normalize	(P-eye_position);
 	float3	vreflect= reflect	(v2point, N);
 	float 	fresnel	= (.5f + .5f*dot(vreflect,v2point));
-			amount	= 1 - fresnel*fresnel;			// 0=full env, 1=no env
+		amount	= 1 - fresnel*fresnel;			// 0=full env, 1=no env
 	return	vreflect;
 }
 
