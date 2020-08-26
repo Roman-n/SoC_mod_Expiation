@@ -1,6 +1,69 @@
-if (jit == nil) then
-	profiler.setup_hook	()
+if ( jit == nil ) then
+	profiler.setup_hook()
 end
+
+
+-- ни какой "local" ЗДЕСЬ быть не должно. Это все надо на случай, если забыли или опечатались где-то еще
+
+string_sub, string_gsub = string.sub, string.gsub
+string_find, string_gfind = string.find, string.gfind
+string_match, string_gmatch = string.match, string.gmatch
+string_format, string_char, string_byte = string.format, string.char, string.byte
+string_len = string.len	-- dc: а # - некошерно ?
+
+table_insert, table_remove = table.insert, table.remove
+table_foreach = table.foreach	-- deprecated and removed in lua 5.2; use pairs()
+
+math_random = math.random
+math_sin, math_cos, math_acos = math.sin, math.cos, math.acos
+math_floor, math_ceil = math.floor, math.ceil
+math_mod, math_sqrt = math.mod, math.sqrt
+math_acos, math_cos, math_sin = math.acos, math.cos, math.sin
+
+
+-- тоже на  всякий случай. Поиск по _G - долгий. Дублировать и инлайнить там, где нужны
+
+function log( ct, fmt, ... )	-- src - откуда вызван, если false - не выводится, категория игнорируется
+--	get_console():execute( "load ~" .. ct .. "~ [_g] " .. ( fmt or "" ) )	-- для поиска потерянных аргументов и скрипта, их потерявшего
+--	get_console():execute( "load ~" .. ct .. "~ [_g] " .. ( ( ... and string_format( fmt, ... ) ) or fmt or "" ) )
+end
+
+
+function abort( fmt, ... )	-- тоже "короткий", полный - в утилитах
+	get_console():execute( string_format( "load ~error~: %s", ( ... and string_format( fmt, ... ) ) or fmt or "" ) )
+	get_console():execute( "load ~~~ Обнаружена ошибка. Описание ошибки смотрите выше. Игра остановлена." )
+	get_console():execute( "load ~~~ Пожалуйста, не надо сообщать об ошибке в строке 40." )
+	get_console():execute( "load ~~~ Какую-либо ценность имеют 10 строк ДО этого сообщения." )
+	get_console():execute( "flush" )
+	local error ; error = 1/error; get_console():execute( "quit" )
+	-- Warning ! Может не срабатывать из апдейтов и иже с ними, если это не актор. Используейте watchdog.
+end
+
+
+-- Крешнуть игру (после вывода сообщения об ошибке в лог)
+function abort_old(fmt, ...)
+	local reason = string.format(fmt, ...)
+	assert("ERROR: " .. reason)
+	printf("ERROR: " .. reason)
+	printf("%s")
+end
+
+
+function round( v )
+	local min = math_floor( v )
+	local max = min + 1
+	-- if value - min > max - v then return max end	-- dc: приведем к "<, ==, >="
+	if ( v - min ) < ( max - v ) then return min end
+	return max
+end
+--[[
+function round (value)
+    local min = math.floor (value)
+    local max = min + 1
+    if value - min > max - value then return max end
+    return min
+end
+]]
 
 schemes = {} -- соответствие схем модулям
 stypes = {} -- типы схем
@@ -80,13 +143,6 @@ function action_first(obj,...)
         obj:command(act,true)
     end
     return  entity_action(act)
-end
-
-function round (value)
-    local min = math.floor (value)
-    local max = min + 1
-    if value - min > max - value then return max end
-    return min
 end
 
 function debug_get_level_object(obj_name)
@@ -654,7 +710,7 @@ function local_hours()
     return math.floor( math.mod( game.time()/1000, 86400 )/ 3600 )
 end
 
--- Ї абЁв бва®Єг ўЁ¤  "   , ЎЎЎ, ўўў..." ў в Ў«Ёжг { "   ", "ЎЎЎ", "ўўў", ... }
+--[[ Ї абЁв бва®Єг ўЁ¤  "   , ЎЎЎ, ўўў..." ў в Ў«Ёжг { "   ", "ЎЎЎ", "ўўў", ... }
 -- —гЈ ©
 function parse_names( s )
     local t = {}
@@ -665,8 +721,22 @@ function parse_names( s )
 
     return t
 end
+]]
 
+local cached_parse_names = {}
+local cached_hit_parse_names = 0
+function parse_names( s )
+	if not cached_parse_names[s] then
+		local t = {}
+		for name in string_gfind( s, "([%w_\\]+)%p*" ) do table_insert( t, name ) end
+		cached_parse_names[s] = t
+	else
+		cached_hit_parse_names = cached_hit_parse_names + 1
+	end
+	return cached_parse_names[s]
+end
 
+--[[
 function parse_key_value( s )
     local t = {}
 	if s == nil then
@@ -683,7 +753,30 @@ function parse_key_value( s )
     end
     return t
 end
+]]
 
+local cached_parse_key_value = {}
+local cached_hit_parse_key_value = 0
+
+function parse_key_value( s )
+	if s == nil then return nil end
+	if not cached_parse_key_value[s] then
+		local t = {}
+		local key, name
+		for name in string_gfind( s, "([%w_\\]+)%p*" ) do
+			if key == nil then key = name
+			else
+				t[key] = name
+				key = nil
+			end
+		end
+		
+		cached_parse_key_value[s] = t
+	else
+		cached_hit_parse_key_value = cached_hit_parse_key_value + 1
+	end
+	return cached_parse_key_value[s]
+end
 
 -- Ї абЁв бва®Єг ўЁ¤  "n1, n2, n3..." ў в Ў«Ёжг { n1, n2, n3, ... } Ј¤Ґ n1, n2, n3... - жҐ«лҐ зЁб« 
 -- —гЈ ©
@@ -696,7 +789,7 @@ end
 
     return t
 end
-]]
+
 
 -- Ї абЁв бва®Єг ўЁ¤  "n1, n2, n3..." ў в Ў«Ёжг { n1, n2, n3, ... } Ј¤Ґ n1, n2, n3... - ¤а®Ў­лҐ зЁб« 
 function parse_nums( s )
@@ -708,7 +801,163 @@ function parse_nums( s )
 
 	return t
 end
+]]
 
+local cached_parse_nums = {}
+local cached_hit_parse_nums = 0
+
+function parse_nums( s )
+	if not cached_parse_nums[s] then
+		local t = {}
+		for entry in string_gfind( s, "([%d%.]+)%,*" ) do table_insert( t, tonumber( entry ) ) end
+		
+		cached_parse_nums[s] = t
+	else
+		cached_hit_parse_nums = cached_hit_parse_nums + 1
+	end
+	return cached_parse_nums[s]
+end
+
+
+-- ini reading functions by sapsan --
+
+local otherIniFiles = {}
+local valTypesAllowed = {
+	["float"] = true,
+	["u32"] = true,
+	["s32"] = true,
+	["string"] = true,
+	["stringWQ"] = true,
+	["bool"] = true,
+	["clsid"] = true
+}
+
+iniLines = { ["float"]={}, ["u32"]={}, ["string"]={}, ["string_wq"]={}, ["boolean"]={}, ["line"]={} }
+
+sysIniCached = {}
+sysIniLinesCached = {}
+sysIniLinesExistCached = {}
+
+
+function g_ini_file( fileName )
+	if fileName then
+		if not otherIniFiles[fileName] then
+			otherIniFiles[fileName] = ini_file(fileName)
+		end
+		return otherIniFiles[fileName]
+	end
+end
+
+
+function getIniValueSimple(sect, line, valType, default)
+	if not valTypesAllowed[valType] then
+		abort("load error anallowed value type: "..tostring(valType).." for section: "..tostring(sect).." line: "..tostring(line).." default: "..tostring(default))
+	end
+	
+	if sysIniCached[sect] and sysIniCached[sect]["lines"][valType][line] ~= nil then
+		return sysIniCached[sect]["lines"][valType][line]
+	else
+		if iniSectionExistSimple(sect) and iniLineExistSimple(sect, line) then
+			if valType == "float" then
+				sysIniCached[sect]["lines"][valType][line] = sysIni:r_float(sect, line)
+			elseif valType == "u32" then
+				sysIniCached[sect]["lines"][valType][line] = sysIni:r_u32(sect, line)
+			elseif valType == "s32" then
+				sysIniCached[sect]["lines"][valType][line] = sysIni:r_s32(sect, line)
+			elseif valType == "string" then
+				sysIniCached[sect]["lines"][valType][line] = sysIni:r_string(sect, line)
+			elseif valType == "stringWQ" then
+				sysIniCached[sect]["lines"][valType][line] = sysIni:r_string_wq(sect, line)
+			elseif valType == "bool" then
+				sysIniCached[sect]["lines"][valType][line] = sysIni:r_bool(sect, line)
+			elseif valType == "clsid" then
+				sysIniCached[sect]["lines"][valType][line] = sysIni:r_clsid(sect, line)
+			end
+			return sysIniCached[sect]["lines"][valType][line]
+		else
+			return default
+		end
+	end
+end
+
+function getIniValueFloatSimple(sect, line, default)
+	return getIniValueSimple(sect, line, "float", default)
+end
+
+function getIniValueU32Simple(sect, line, default)
+	return getIniValueSimple(sect, line, "u32", default)
+end
+
+function getIniValueS32Simple(sect, line, default)
+	return getIniValueSimple(sect, line, "s32", default)
+end
+
+function getIniValueStringSimple(sect, line, default)
+	return getIniValueSimple(sect, line, "string", default)
+end
+
+function getIniValueStringWQSimple(sect, line, default)
+	return getIniValueSimple(sect, line, "stringWQ", default)
+end
+
+function getIniValueBoolSimple(sect, line, default)
+	return getIniValueSimple(sect, line, "bool", default)
+end
+
+function getIniValueClsidSimple(sect, line, default)
+	return getIniValueSimple(sect, line, "clsid", default)
+end
+
+function getIniLineSimple(sect, lineNumber, defaultKey, defaultValue)
+	if sysIniCached[sect] and sysIniCached[sect]["raw"][line] ~= nil then
+		local result = sysIniCached[sect]["raw"][lineNumber]
+		return result[1], result[2], result[3]
+	else
+		if iniSectionExistSimple(sect) then
+			local result, key, value = sysIni:r_line(sect, lineNumber, defaultKey, defaultValue)
+			sysIniCached[sect]["raw"][lineNumber] = {result, key, value}
+			return result, key, value
+		else
+			return false, defaultKey, defaultValue
+		end
+	end
+end
+
+function iniSectionExistSimple(sect)
+	if sysIniCached[sect] == nil then
+		if sysIni:section_exist(sect) then
+			sysIniCached[sect] = {["raw"]={}, ["lines"] = {["float"]={}, ["u32"]={}, ["s32"]={}, ["string"]={}, ["stringWQ"]={}, ["bool"]={}, ["clsid"]={}}, ["count"] = false}
+		else
+			sysIniCached[sect] = false
+		end
+	end
+	
+	return sysIniCached[sect] ~= false
+end
+
+function iniLineExistSimple(sect, line)
+	if sysIniLinesExistCached[sect] == nil then
+		sysIniLinesExistCached[sect] = {}
+	end
+	if sysIniLinesExistCached[sect][line] == nil then
+		sysIniLinesExistCached[sect][line] = sysIni:line_exist(sect, line)
+	end
+	
+	return sysIniLinesExistCached[sect][line]
+end
+
+function iniLinesCountSimple(sect)
+	if iniSectionExistSimple(sect) then
+		if not sysIniCached[sect]["count"] then
+			sysIniCached[sect]["count"] = sysIni:line_count(sect)
+		end
+		
+		return sysIniCached[sect]["count"]
+	else
+		return 0
+	end
+end
+--------------------------------------------------------------------------------------------------------------
 -- Їа®ўҐапҐв, Ґбвм «Ё ®ЎкҐЄв ў ®­« ©­Ґ
 function is_object_online(obj_id)
 	return level.object_by_id(obj_id) ~= nil
@@ -1104,14 +1353,6 @@ function id_by_sid( sid )
 	end
 
 	return nil
-end
-
--- Крешнуть игру (после вывода сообщения об ошибке в лог)
-function abort(fmt, ...)
-	local reason = string.format(fmt, ...)
-	assert("ERROR: " .. reason)
-	printf("ERROR: " .. reason)
-	printf("%s")
 end
 
 function set_postprocess(name_ini_file)

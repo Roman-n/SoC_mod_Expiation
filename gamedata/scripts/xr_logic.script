@@ -1162,6 +1162,16 @@ function pstor_is_registered_type(tv)
 	return true
 end
 
+-- Вернет ид актора, если переменной нет в таблице tabl_netpda_varnames
+-- быстрее (чтобы не перебирать таблицу) - только указывать запись конкретной переменной на ПДА
+
+function get_pda_id( var_name, action )	-- Ужос нах !
+	if tabl_netpda_varnames[var_name] == true then
+		return netpacket_pda_create.create_pda()
+	end
+	return 0
+end
+
 function pstor_store(obj, varname, val)
 	if not obj then return end
 	local npc_id = obj:id()
