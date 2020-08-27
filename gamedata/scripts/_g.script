@@ -35,7 +35,11 @@ function abort( fmt, ... )	-- тоже "короткий", полный - в утилитах
 	get_console():execute( "load ~~~ Пожалуйста, не надо сообщать об ошибке в строке 40." )
 	get_console():execute( "load ~~~ Какую-либо ценность имеют 10 строк ДО этого сообщения." )
 	get_console():execute( "flush" )
-	local error ; error = 1/error; get_console():execute( "quit" )
+	local reason = string.format(fmt, ...)
+	assert("ERROR: " .. reason)
+	printf("ERROR: " .. reason)
+	printf("%s")
+	-- local error ; error = 1/error; get_console():execute( "quit" )
 	-- Warning ! Может не срабатывать из апдейтов и иже с ними, если это не актор. Используейте watchdog.
 end
 
@@ -78,7 +82,7 @@ function load_scheme(filename, scheme, stype)
 end
 
 function printf(fmt,...)
-	log(string.format(fmt,...))
+	-- log(string.format(fmt,...))
 end
 
 if nil == time_global then
