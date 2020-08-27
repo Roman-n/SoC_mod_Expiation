@@ -20,7 +20,7 @@ function l_special	(shader, t_base, t_second, t_detail)
   shader:sampler	("s_distort")   :texture  ("pfx\\pfx_dist_glass") //:texture  (t_base) -- ("pfx\\pfx_dist_glass2"
 end
 
-function normal_hq		(shader, t_base, t_second, t_detail)
+function normal		(shader, t_base, t_second, t_detail)
   shader:begin		("model_def_lplanes","base_lplanes")
       : fog		(false)
       : zb		(true,false)

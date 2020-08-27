@@ -21,7 +21,7 @@ p_flat 	main (v_detail v)
 	pos.w 		= 1;
 
 	// Normal in world coords
-	float3 	norm;	//	= float3(0,1,0);
+	float3 	norm;	
 		norm.x 	= pos.x - m0.w	;
 		norm.y 	= pos.y - m1.w	+ .75f;	// avoid zero
 		norm.z	= pos.z - m2.w	;
@@ -29,10 +29,15 @@ p_flat 	main (v_detail v)
 	// Final out
 	float4	Pp 	= mul		(m_WVP,	pos				);
 	O.hpos 		= Pp;
-	O.N 		= mul		(m_WV,  normalize(norm)			);
+	O.N 		= mul		(m_WV,  normalize(norm)	);
 	float3	Pe	= mul		(m_WV,  pos				);
-	O.tcdh 		= float2	((v.misc * consts).xy			);
-	O.position	= float4	(Pe, 		c0.w			);
+	O.tcdh 		= float4	((v.misc * consts).xyyy	);
+
+# if defined(USE_R2_STATIC_SUN)
+	O.tcdh.w	= c0.x;								// (,,,dir-occlusion)
+# endif
+
+	O.position	= float4	(Pe, 		c0.w		);
 
 	return O;
 }

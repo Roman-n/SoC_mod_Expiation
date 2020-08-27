@@ -14,7 +14,7 @@ function l_special  (shader, t_base, t_second, t_detail)
       : blend     (true,blend.srcalpha,blend.invsrcalpha)
       : zb        (true,false)
       : fog       (false)
-      : distort   (true)
+      : distort   (true)	  :distort  (false)
   shader:sampler  ("s_base")      :texture  (t_base)
   shader:sampler  ("s_distort")   :texture  ("pfx\\pfx_dist_glass")
 end

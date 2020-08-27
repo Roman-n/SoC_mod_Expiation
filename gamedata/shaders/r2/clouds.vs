@@ -3,8 +3,8 @@
 
 struct 	vi
 {
-	float4	p	: POSITION	;
-	float4	dir	: COLOR0	;	// dir0,dir1(w<->z)
+	float4	p		: POSITION	;
+	float4	dir		: COLOR0	;	// dir0,dir1(w<->z)
 	float4	color	: COLOR1	;	// rgb. intensity
 };
 
@@ -12,8 +12,8 @@ struct 	vf
 {
 	float4 	hpos	: POSITION	;
 	float4	color	: COLOR0	;	// rgb. intensity, for SM3 - tonemap-prescaled, HI-res
-  	float2	tc0	: TEXCOORD0	;
-  	float2	tc1	: TEXCOORD1	;
+  	float2	tc0		: TEXCOORD0	;
+  	float2	tc1		: TEXCOORD1	;
 };
 
 vf main (vi v)
@@ -22,7 +22,7 @@ vf main (vi v)
 
 	o.hpos 		= mul		(m_WVP, v.p);	// xform, input in world coords
 	
-	if (length(float3(v.p.x,0,v.p.z))>CLOUD_FADE)	o.color.w = 0	;
+//	if (length(float3(v.p.x,0,v.p.z))>CLOUD_FADE)	o.color.w = 0	;
 
 	// generate tcs
 	float2  d0	= v.dir.xy*2-1;
@@ -32,11 +32,11 @@ vf main (vi v)
 	o.tc0		= _0;					// copy tc
 	o.tc1		= _1;					// copy tc
 
+	o.color		=	v.color	;			// copy color, low precision, cannot prescale even by 2
+	o.color.w	*= 	pow		(v.p.y,25);
 #ifdef USE_VTF
-	float  	scale 	= .5 + .5*tex2Dlod (s_tonemap,float4(.5,.5,.5,.5)).x ;
-	o.color 	= float4	(.5*scale*v.color.rgb, .5*v.color.a);		// high precision
-#else
-	o.color		= v.color	;			// copy color, low precision, cannot prescale even by 2
+	float  	scale 	= 	tex2Dlod (s_tonemap,float4(.5,.5,.5,.5)).x ;
+	o.color.rgb 	*= 	scale	;		// high precision
 #endif
 
 	return o;

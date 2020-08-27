@@ -8,7 +8,7 @@ t_distort	= "$user$distort"
 t_noise		= "fx\\fx_noise2"
 
 function r1_lspot	(shader, t_base, vs, aref)
-	shader:begin	("shared_spot","add_spot")
+	shader:begin	(vs,"add_spot")
 	  		: fog		(false)
 			: zb 		(true,false)
 			: blend		(true,blend.one,blend.one)
@@ -24,7 +24,7 @@ function r1_lspot	(shader, t_base, vs, aref)
 end
 
 function r1_lpoint	(shader, t_base, vs, aref)
-	shader:begin	("shared_point","add_point")
+	shader:begin	(vs,"add_point")
 	  		: fog		(false)
 			: zb 		(true,false)
 			: blend		(true,blend.one,blend.one)

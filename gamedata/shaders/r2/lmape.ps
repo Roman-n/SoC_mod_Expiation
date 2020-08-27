@@ -14,14 +14,14 @@ uniform samplerCUBE 	s_env;
 
 //////////////////////////////////////////////////////////////////////////////////////////
 // Pixel
-half4 	main_ps_1_1	( v2p I )	: COLOR
+half4 	main_ps_2_0	( v2p I )	: COLOR
 {
 	half4	t_base 	= tex2D		(s_base,I.tc0);
 	half4	t_lmap 	= tex2D		(s_lmap,I.tc1);
 	half4	t_env 	= texCUBE	(s_env,	I.tc3);
 
 	// lighting
-	half3 	l_base 	= L_lmap_color * t_lmap.rgb;		// base light-map
+	half3 	l_base 	= t_lmap.rgb;				// base light-map
 	half3	l_hemi 	= I.c0*p_hemi(I.tc2);			// hemi
 	half3 	l_sun 	= I.c1*t_lmap.a;			// sun color
 	half3	light	= L_ambient + l_base + l_sun + l_hemi;

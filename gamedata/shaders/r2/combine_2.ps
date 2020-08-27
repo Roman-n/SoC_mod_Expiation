@@ -52,8 +52,8 @@ half4 	main		( v2p I )	: COLOR
   half 	w 		=  (1-de*ne)*e_kernel.x;	// 0 - no aa, 1=full aa
 
 #ifdef 	USE_DISTORT
-	half4 	distort	= tex2D		(s_distort, I.tc0);
-	half2	doffs	= (distort.xy-.5h)*def_distort;
+	half4 	distort	= tex2D		(s_distort, I.tc0)	;
+	half2	doffs	= (distort.xy-.5h)*def_distort		;
 	float2	center	= I.tc0 + doffs;
 #else
 	float2	center 	= I.tc0;
@@ -69,6 +69,7 @@ half4 	main		( v2p I )	: COLOR
   half4 	s3 	=  tex2D	(s_image, offset + I.tc4*w);
 
 	half3 	final	=  mblur	(center, dc, (s0+s1+s2+s3)/4.h);
+	half3	bloom	=  tex2D	(s_bloom, I.tc0);
 
-  return combine_bloom(final,tex2D	(s_bloom, I.tc0));
+  return combine_bloom	(final,bloom);
 }

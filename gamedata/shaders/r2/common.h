@@ -1,5 +1,5 @@
-#ifndef	COMMON_H
-#define COMMON_H
+#ifndef        COMMON_H
+#define        COMMON_H
 
 // #define USE_SUPER_SPECULAR
 #include "shared\common.h"
@@ -7,7 +7,6 @@
 // *** options
 
 // #define USE_GAMMA_22
-// #define USE_SPECULAR_RGB
 // #define USE_SJITTER
 // #define USE_SUNFILTER
 //
@@ -44,11 +43,9 @@ uniform half4                L_material;                            // 0,0,0,mid
 uniform half4                Ldynamic_color;                      // dynamic light color (rgb1)        - spot/point
 uniform half4                Ldynamic_pos;                       // dynamic light pos+1/range(w) - spot/point
 uniform half4                Ldynamic_dir;                        // dynamic light direction         - sun
-// uniform half4		parallax;
 
-uniform half4		J_direct	[6];
-uniform half4		J_spot		[6];
-
+uniform half4                J_direct        [6];
+uniform half4                J_spot                [6];
 half          calc_fogging               (half4 w_pos)      { return dot(w_pos,fog_plane);         }
 half2         calc_detail                (half3 w_pos)      {
         float                 dtl        = distance                (w_pos,eye_position)*dt_params.w;
@@ -62,63 +59,63 @@ float3         calc_reflection     (float3 pos_w, float3 norm_w)
     return reflect(normalize(pos_w-eye_position), norm_w);
 }
 
-float3	calc_sun_r1		        (float3 norm_w) { return L_sun_color*saturate(dot((norm_w),-L_sun_dir_w));}
-float3 	calc_model_hemi_r1 	    (float3 norm_w) { return max(0,norm_w.y)*L_hemi_color.xyz;}
-float3	calc_model_lq_lighting	(float3 norm_w) { return L_material.x*calc_model_hemi_r1(norm_w) + L_ambient.xyz + L_material.y*calc_sun_r1(norm_w);}
+float3        calc_sun_r1                (float3 norm_w)    { return L_sun_color*saturate(dot((norm_w),-L_sun_dir_w));                 }
+float3        calc_model_hemi_r1         (float3 norm_w)    { return max(0,norm_w.y)*L_hemi_color.xyz;                                         }
+float3        calc_model_lq_lighting     (float3 norm_w)    { return L_material.x*calc_model_hemi_r1(norm_w) + L_ambient.xyz + L_material.y*calc_sun_r1(norm_w);         }
 
 //////////////////////////////////////////////////////////////////////////////////////////
-struct         v_static                 {
-        float4      P                	: POSITION;         // (float,float,float,1)
-        float4      Nh                	: NORMAL;           // (nx,ny,nz,hemi occlusion)
-        float4      T                 	: TANGENT;          // tangent
-        float4      B                 	: BINORMAL;         // binormal
+struct         v_static                {
+        float4      P                	: POSITION;                        // (float,float,float,1)
+        float4      Nh                	: NORMAL;                // (nx,ny,nz,hemi occlusion)
+        float4      T                 	: TANGENT;                // tangent
+        float4      B                 	: BINORMAL;                // binormal
         float2      tc                	: TEXCOORD0;        // (u,v)
         float2      lmh                	: TEXCOORD1;        // (lmu,lmv)
-        float4      color               : COLOR0;           // (r,g,b,dir-occlusion)
+        float4      color               : COLOR0;                        // (r,g,b,dir-occlusion)
 };
 
 struct         v_tree               	{
-        float4      P                	: POSITION;         // (float,float,float,1)
-        float4      Nh                	: NORMAL;           // (nx,ny,nz)
-        float3      T                 	: TANGENT;          // tangent
-        float3      B                 	: BINORMAL;         // binormal
+        float4      P                	: POSITION;                // (float,float,float,1)
+        float4      Nh                	: NORMAL;                // (nx,ny,nz)
+        float3      T                 	: TANGENT;                // tangent
+        float3      B                 	: BINORMAL;                // binormal
         float4      tc                	: TEXCOORD0;        // (u,v,frac,???)
 };
 
 struct         v_model                 	{
-        float4      P                   : POSITION;         // (float,float,float,1)
-        float3      N                	: NORMAL;           // (nx,ny,nz)
-        float3      T                	: TANGENT;          // (nx,ny,nz)
-        float3      B                	: BINORMAL;         // (nx,ny,nz)
+        float4      P                   : POSITION;                // (float,float,float,1)
+        float3      N                	: NORMAL;                // (nx,ny,nz)
+        float3      T                	: TANGENT;                // (nx,ny,nz)
+        float3      B                	: BINORMAL;                // (nx,ny,nz)
         float2      tc                	: TEXCOORD0;        // (u,v)
 };
 
-struct	v_detail                        {
-        float4      pos                 : POSITION;         // (float,float,float,1)
-        int4        misc                : TEXCOORD0;        // (u(Q),v(Q),frac,matrix-id)
+struct        v_detail                    {
+        float4      pos                : POSITION;                // (float,float,float,1)
+        int4        misc        : TEXCOORD0;        // (u(Q),v(Q),frac,matrix-id)
 };
 
-#ifdef	USE_HWSMAP
-struct 	v_shadow_direct_aref
+#ifdef  USE_HWSMAP
+struct         v_shadow_direct_aref
 {
-	float4 	hpos:	POSITION;	// Clip-space position 	(for rasterization)
-	float2 	tc0:	TEXCOORD1;	// Diffuse map for aref
+        float4      hpos:        POSITION;       // Clip-space position         (for rasterization)
+        float2      tc0:        TEXCOORD1;       // Diffuse map for aref
 };
-struct 	v_shadow_direct
+struct         v_shadow_direct
 {
-	float4 	hpos:	POSITION;	// Clip-space position 	(for rasterization)
+        float4      hpos:        POSITION;       // Clip-space position         (for rasterization)
 };
 #else
-struct 	v_shadow_direct_aref
+struct         v_shadow_direct_aref
 {
-	float4 	hpos:	POSITION;	// Clip-space position 	(for rasterization)
-	float 	depth: 	TEXCOORD0;	// Depth
-	float2 	tc0:	TEXCOORD1;	// Diffuse map for aref
+        float4      hpos:        POSITION;       // Clip-space position         (for rasterization)
+        float       depth:         TEXCOORD0;     // Depth
+        float2      tc0:        TEXCOORD1;       // Diffuse map for aref
 };
-struct 	v_shadow_direct
+struct         v_shadow_direct
 {
-	float4 	hpos:	POSITION;	// Clip-space position 	(for rasterization)
-	float 	depth: 	TEXCOORD0;	// Depth
+        float4      hpos:        POSITION;       // Clip-space position         (for rasterization)
+        float       depth:         TEXCOORD0;     // Depth
 };
 #endif
 
@@ -137,24 +134,24 @@ struct         p_bumped        {
 #if defined(USE_PARALLAX) || defined(USE_PARALLAX_OCCLUSION)
         half3       eye                : TEXCOORD5;        // vector to point in tangent space
   #ifdef USE_TDETAIL
-	float2	tcdbump	: TEXCOORD6;	// d-bump
+        float2      tcdbump     : TEXCOORD6;        // d-bump
     #ifdef USE_LM_HEMI
-	float2 	lmh	: TEXCOORD7;	// lm-hemi
+        float2      lmh                    : TEXCOORD7;        // lm-hemi
     #endif
   #else
     #ifdef USE_LM_HEMI
-	float2 	lmh	: TEXCOORD6;	// lm-hemi
+        float2      lmh                   : TEXCOORD6;        // lm-hemi
     #endif
-  #endif	
+  #endif
 #else
   #ifdef USE_TDETAIL
-	float2	tcdbump	: TEXCOORD5;	// d-bump
+        float2      tcdbump          : TEXCOORD5;        // d-bump
     #ifdef USE_LM_HEMI
-	float2 	lmh	: TEXCOORD6;	// lm-hemi
+        float2      lmh                    : TEXCOORD6;        // lm-hemi
     #endif
   #else
     #ifdef USE_LM_HEMI
-	float2 	lmh	: TEXCOORD5;	// lm-hemi
+        float2      lmh                   : TEXCOORD5;        // lm-hemi
     #endif
   #endif
 #endif
@@ -170,13 +167,13 @@ struct         p_flat                  {
         float4                position        : TEXCOORD1;        // position + hemi
         half3                N                : TEXCOORD2;        // Eye-space normal        (for lighting)
   #ifdef USE_TDETAIL
-	float2	tcdbump	: TEXCOORD3;	// d-bump
+        float2                tcdbump                : TEXCOORD3;        // d-bump
     #ifdef USE_LM_HEMI
-	float2 	lmh	: TEXCOORD4;	// lm-hemi
+        float2         lmh      : TEXCOORD4;        // lm-hemi
     #endif
   #else
     #ifdef USE_LM_HEMI
-	float2 	lmh	: TEXCOORD3;	// lm-hemi
+        float2         lmh      : TEXCOORD3;        // lm-hemi
     #endif
   #endif
 };
@@ -228,7 +225,6 @@ uniform sampler2D       s_dn_a;                	//
 uniform sampler2D       s_depth;                //
 uniform sampler2D       s_position;             //
 uniform sampler2D       s_normal;               //
-uniform sampler 	s_smap;		// 2D/cube shadowmap
 uniform sampler         s_lmap;             	// 2D/cube projector lightmap
 uniform sampler3D       s_material;             //
 uniform sampler1D       s_attenuate;        	//
@@ -242,16 +238,12 @@ uniform sampler         s_image;                // used in various post-processi
 uniform sampler2D       s_tonemap;              // actually MidleGray / exp(Lw + eps)
 //////////////////////////////////////////////////////////////////////////////////////////
 // Defines                                		//
-// OGSE - #define def_gloss       half(2.f /255.f)
-// OGSE - #define def_aref        half(200.f/255.f)
-
-#define def_gloss       half(8.f /255.f)
-#define def_aref        half(128.f/255.f)
+#define def_gloss       half(2.f /255.f)
+#define def_aref        half(200.f/255.f)
 #define def_dbumph      half(0.333f)
 #define def_virtualh    half(.05f)              // 5cm
 #define def_distort     half(0.05f)             // we get -0.5 .. 0.5 range, this is -512 .. 512 for 1024, so scale it
-#define def_hdr         half(4.h)         	    // hight luminance range half(3.h)
-// OGSE - #define def_hdr         half(8.h)     // hight luminance range half(3.h)
+#define def_hdr         half(8.h)         		// hight luminance range half(3.h)
 #define def_hdr_clip	half(0.75h)        		//
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -299,8 +291,6 @@ float4 convert_to_screen_space(float4 proj)
 	screen.w = proj.w;
 	return screen;
 }
-
 #define FXPS technique _render{pass _code{PixelShader=compile ps_3_0 main();}}
 #define FXVS technique _render{pass _code{VertexShader=compile vs_3_0 main();}}
-
 #endif
