@@ -39,7 +39,11 @@
 	<character id="esc_tutorial_wounded">
 		<class>esc_tutorial_wounded</class>
 	</character>
-	
+
+	<character id="esc_tolik">
+		<class>esc_tolik</class>
+	</character>
+
 	<character id="esc_shustryi">
 		<class>esc_shustryi</class>
 	</character>

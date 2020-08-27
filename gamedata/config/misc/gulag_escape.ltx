@@ -675,6 +675,34 @@ on_info = %+esc_open_lager_fire +esc_open_killer_fire%
 [death@killers]
 on_info = %+esc_open_lager_fire +esc_open_killer_fire%
 
+
+;-------------------------------------------------------------------------------------------------
+;-- ESCAPE Северный Блок Пост КПП, перед Свалкой
+;-------------------------------------------------------------------------------------------------
+; Толик
+[logic@esc_tolik_kpp]
+active = walker@esc_tolik_kpp
+
+[walker@esc_tolik_kpp]
+path_walk = tolik_walk
+path_look = tolik_look
+
+; Два кента Толика
+[logic@esc_lager_kpp_1]
+active = walker@esc_lager_kpp_1
+
+[walker@esc_lager_kpp_1]
+path_walk = patrol_1_walk
+path_look = patrol_1_look
+
+
+[logic@esc_lager_kpp_2]
+active = walker@esc_lager_kpp_2
+
+[walker@esc_lager_kpp_2]
+path_walk = walk_1
+path_look = look_1
+
 ;-------------------------------------------------------------------------------------------------
 ;-- ESCAPE FACTORY BANDITS
 ;-------------------------------------------------------------------------------------------------

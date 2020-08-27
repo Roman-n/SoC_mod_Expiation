@@ -128,36 +128,35 @@ ammo_9x19_fmj=2 \n
 		<actor_dialog>dm_cool_info_dialog</actor_dialog>
 		<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>
 	</specific_character>
-<!---------------------------------------esc_tutorial_wounded----------------------------------------------------->	
-	<specific_character id="esc_tutorial_wounded" team_default = "1">
+<!--------------------------------------- Esc Tolik ----------------------------------------------------->	
+	<specific_character id="esc_tolik" team_default = "1">
 		<name>esc_tolik_name</name>
 		<icon>ui_npc_u_green_stalker_2</icon>
 		<bio>esc_tolik_bio</bio>
 
-		<class>esc_tutorial_wounded</class>
+		<class>esc_tolik</class>
 		<community>stalker</community> <terrain_sect>stalker_terrain</terrain_sect>
 		
-		<rank>196</rank>
-		<reputation>6</reputation>
-		<money min="200" max="600" infinitive="0"/>
+		<rank>1522</rank>
+		<reputation>755</reputation>
+		<money min="3700" max="7240" infinitive="0"/>
 		
 		<snd_config>characters_voice\human_02\newbie\</snd_config>
 		<crouch_type>-1</crouch_type>
 
-		<visual>actors\novice\green_stalker_2</visual>
+		<visual>actors\neytral\stalker_neytral_hood_uzor</visual>
 		<supplies>
 			[spawn] \n
-			wpn_pm \n
-			ammo_9x18_fmj = 1 \n
+			wpn_spas12 \n
+			wpn_val \n
+			ammo_12x70_buck = 10 \n
+			ammo_9x39_ap = 10 \n
 		</supplies>
 
 #include "gameplay\character_criticals_5.xml"
 
-		<start_dialog>tutorial_wounded_give_medkit</start_dialog>
 		<start_dialog>dm_hello_dialog</start_dialog>
 		<actor_dialog>dm_cool_info_dialog</actor_dialog>
-		<actor_dialog>dm_help_wounded_medkit_dialog</actor_dialog>
-
 	</specific_character>
 <!---------------------------------------esc_shustryi----------------------------------------------------->	
 	<specific_character id="esc_shustryi" team_default = "1">
