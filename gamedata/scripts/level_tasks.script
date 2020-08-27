@@ -147,6 +147,18 @@ function add_lchanger_location()
 		if obj then
 			level.map_add_object_spot(obj.id, "level_changer", "to_darkvalley")
 		end
+		obj = sim:story_object(351)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "to_agr_underground")
+		end
+		obj = sim:story_object(352)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "to_agr_underground")
+		end
+		obj = sim:story_object(353)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "to_agr_underground")
+		end
 		
 		-- agroprom
 		obj = sim:story_object(391)
@@ -217,6 +229,10 @@ function add_lchanger_location()
 		if obj then
 			level.map_add_object_spot(obj.id, "level_changer", "to_military")
 		end
+		obj = sim:story_object(1009)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "to_rad_bun")
+		end
 
 		-- pripyat
 		obj = sim:story_object(833)
@@ -228,7 +244,27 @@ function add_lchanger_location()
 			level.map_add_object_spot(obj.id, "level_changer", "to_aes")
 		end
 
+		-- AES
+		obj = sim:story_object(1125)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "aes_to_sarcofag")
+		end
+		obj = sim:story_object(1126)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "aes_to_pripyat")
+		end
 
+		-- AES 2
+		obj = sim:story_object(6000)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "aes2_to_con_mon")
+		end
+
+		-- control_monolith
+		obj = sim:story_object(6600)
+		if obj then
+			level.map_add_object_spot(obj.id, "level_changer", "con_mon_to_aes2")
+		end
 	end
 end
 

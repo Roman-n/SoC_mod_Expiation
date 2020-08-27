@@ -90,6 +90,25 @@
 	<string id="to_yantar">
 		<text>На Янтарь</text>
 	</string>
+	<string id="to_agr_underground">
+		<text>В Подземелье Агропрома</text>
+	</string>
+	<string id="to_rad_bun">
+		<text>В Бункер X-10</text>
+	</string>
+	<string id="aes_to_sarcofag">
+		<text>В Саркофаг</text>
+	</string>
+	<string id="aes_to_pripyat">
+		<text>В Припять</text>
+	</string>
+	<string id="aes2_to_con_mon">
+		<text>В Контроль Монолитом</text>
+	</string>
+	<string id="con_mon_to_aes2">
+		<text>На Станцию АЭС 2</text>
+	</string>
+
 	<string id="st_helmet_countdown">
 		<text>Отключение защиты</text>
 	</string>
