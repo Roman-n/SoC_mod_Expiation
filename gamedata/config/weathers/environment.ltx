@@ -1,27 +1,10 @@
-#include "ambient_effects.ltx"
 #include "env_ambient.ltx"
 #include "flares.ltx"
 #include "thunderbolt.ltx"
 
-#include "ambients\ugrnd_env_ambient.ltx"
-#include "ambients\garbage_env_ambient.ltx"
-#include "ambients\agro_env_ambient.ltx"
-#include "ambients\valley_env_ambient.ltx"
-#include "ambients\bar_env_ambient.ltx"
-#include "ambients\rostok_env_ambient.ltx"
-#include "ambients\yantar_env_ambient.ltx"
-#include "ambients\military_env_ambient.ltx"
-#include "ambients\forest_env_ambient.ltx"
-#include "ambients\pripyat_env_ambient.ltx"
-#include "ambients\stancia_env_ambient.ltx"
-#include "ambients\stancia2_env_ambient.ltx"
-
-#include "weather_dynamic.ltx"
- 
-
 #include "weather_default.ltx"
-#include "weather_default1.ltx"
 #include "weather_sarkofag.ltx"
+;#include "weather_mp.ltx"
 #include "weather_test.ltx"
 #include "weather_map.ltx"
 #include "weather_surge.ltx"
@@ -31,17 +14,14 @@
 #include "weather_prypyat.ltx"
 #include "weather_stancia.ltx"
 #include "weather_indoor.ltx"
-#include "weather_blowout.ltx"
-#include "weather_horror.ltx"
-#include "weather_ini.ltx"  
 
-[weathers]:weather_dynamic 
+[weathers]
 map             = sect_map
 test            = sect_test
 default         = sect_default_weather
-default1        = sect_default1_weather
 indoor          = sect_indoor
-pripyat         = sect_prypyat
+indoor_x18      = sect_indoor_x18
+pripyat	    	= sect_prypyat
 radar           = sect_radar
 rain            = sect_rain
 sarkofag        = sect_sarkofag
@@ -49,59 +29,58 @@ stancia         = sect_stancia
 stancia2        = sect_stancia2
 yantar          = sect_yantar
 yantar_indoor   = sect_yantar_indoor
-ini_weather = sect_weather_ini 
-
-amk_for_blow    = amk_sect_for_sun
-pre_blow        = sect_stancia
-chernobyl       = sect_stancia
-m_blow		= sect_blow_m
-d_blow		= sect_blow_d
-n_blow		= sect_blow_n
-horror		= sect_horror
-
-agr_ugrnd	= sect_ugrnd_agro
-x18_ugrnd	= sect_ugrnd_x18
-x16_ugrnd	= sect_ugrnd_x16
-x19_ugrnd	= sect_ugrnd_x19
-NPP_ugrnd	= sect_sarcophagus
-mono_ugrnd	= sect_monolith
-boloto	= sect_boloto
- 
+surge           = sect_surge
 
 [weather_effects]
-surge_aes_m  = sect_blow_aes_m
-surge_aes_d  = sect_blow_aes_d
-surge_aes_n  = sect_blow_aes_n
-surge_m_0		= blow_m_00
-surge_m_1		= blow_m_01
-surge_m_2		= blow_m_02
-surge_m_3		= blow_m_03
-surge_m_4		= blow_m_04
-surge_d_0		= blow_d_00
-surge_d_1		= blow_d_01
-surge_d_2		= blow_d_02
-surge_d_3		= blow_d_03
-surge_d_4		= blow_d_04
-surge_n_0		= blow_n_00
-surge_n_1		= blow_n_01
-surge_n_2		= blow_n_02
-surge_n_3		= blow_n_03
-surge_n_4		= blow_n_04
-isurge_m_0		= iblow_m_00
-isurge_m_1		= iblow_m_01
-isurge_m_2		= iblow_m_02
-isurge_m_3		= iblow_m_03
-isurge_m_4		= iblow_m_04
-isurge_d_0		= iblow_d_00
-isurge_d_1		= iblow_d_01
-isurge_d_2		= iblow_d_02
-isurge_d_3		= iblow_d_03
-isurge_d_4		= iblow_d_04
-isurge_n_0		= iblow_n_00
-isurge_n_1		= iblow_n_01
-isurge_n_2		= iblow_n_02
-isurge_n_3		= iblow_n_03
-isurge_n_4		= iblow_n_04
-surge_horr_1	= horr_01
-surge_horr_2	= horr_02
-surge_horr_3	= horr_03
+surge_day_1		= sect_surge_day_02
+surge_day_2		= sect_surge_day_03
+surge_day_3		= sect_surge_day_04
+surge_day_4		= sect_surge_day_05
+surge_day_5		= sect_surge_day_06
+surge_day_6		= sect_surge_day_07
+surge_day_7		= sect_surge_day_08
+surge_day_8		= sect_surge_day_09
+surge_day_9		= sect_surge_day_10
+surge_day_10		= sect_surge_day_11
+surge_day_11		= sect_surge_day_12
+surge_day_12		= sect_surge_day_13
+surge_day_13		= sect_surge_day_14
+surge_day_14		= sect_surge_day_15
+surge_day_15		= sect_surge_day_16
+surge_day_16		= sect_surge_day_17
+surge_day_17		= sect_surge_day_18
+surge_day_18		= sect_surge_day_19
+surge_day_19		= sect_surge_day_20
+surge_day_20		= sect_surge_day_21
+surge_day_21		= sect_surge_day_22
+surge_day_22		= sect_surge_day_23
+surge_day_23		= sect_surge_day_00
+surge_day_0		= sect_surge_day_01
+
+p_surge_day_1		= sect_p_surge_day_02
+p_surge_day_2		= sect_p_surge_day_03
+p_surge_day_3		= sect_p_surge_day_04
+p_surge_day_4		= sect_p_surge_day_05
+p_surge_day_5		= sect_p_surge_day_06
+p_surge_day_6		= sect_p_surge_day_07
+p_surge_day_7		= sect_p_surge_day_08
+p_surge_day_8		= sect_p_surge_day_09
+p_surge_day_9		= sect_p_surge_day_10
+p_surge_day_10		= sect_p_surge_day_11
+p_surge_day_11		= sect_p_surge_day_12
+p_surge_day_12		= sect_p_surge_day_13
+p_surge_day_13		= sect_p_surge_day_14
+p_surge_day_14		= sect_p_surge_day_15
+p_surge_day_15		= sect_p_surge_day_16
+p_surge_day_16		= sect_p_surge_day_17
+p_surge_day_17		= sect_p_surge_day_18
+p_surge_day_18		= sect_p_surge_day_19
+p_surge_day_19		= sect_p_surge_day_20
+p_surge_day_20		= sect_p_surge_day_21
+p_surge_day_21		= sect_p_surge_day_22
+p_surge_day_22		= sect_p_surge_day_23
+p_surge_day_23		= sect_p_surge_day_00
+p_surge_day_0		= sect_p_surge_day_01
+
+surge_day		= sect_surge_day
+p_surge_day		= sect_p_surge_day
