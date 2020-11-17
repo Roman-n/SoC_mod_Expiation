@@ -18,34 +18,42 @@ struct vf
 };
 
 uniform sampler2D	s_nmap;
+uniform samplerCUBE	s_env0;
+uniform samplerCUBE	s_env1;
 uniform sampler2D	s_leaves;
-uniform samplerCUBE	s_env0; 
-uniform samplerCUBE	s_env1; 
+
 half4 main (vf I) : COLOR
 {
 	half4 base = tex2D(s_base,I.tbase);
-	half3 n0 = tex2D(s_nmap,I.tnorm0);
-	half3 n1 = tex2D(s_nmap,I.tnorm1);
-	half3 Navg = n0 + n1 - 1;	
-	half3 Nw = normalize(mul(half3x3(I.M1, I.M2, I.M3), Navg));
-			
+	half3 n0   = tex2D(s_nmap,I.tnorm0);
+	half3 n1   = tex2D(s_nmap,I.tnorm1);
+	half3 Navg = n0 + n1 - 1;
+	half3 Nw   = normalize(mul(half3x3(I.M1, I.M2, I.M3), Navg));
+
 		/*cubemap reflections*/
 	half3 v2point = normalize(I.v2point);
 	half3 vreflect = reflect(v2point, Nw);
-	vreflect.y = vreflect.y*2-1;
+	// Правка неба by xrModder
+	half3 vreflectabs    = abs(vreflect);
+	half  vreflectmax    = max(vreflectabs.x, max(vreflectabs.y, vreflectabs.z));
+		vreflect      /= vreflectmax;
+	if (vreflect.y < 0.999)
+		vreflect.y = vreflect.y*2-1;
 
-	half3        env0               = texCUBE          (s_env0, vreflect);
-	half3        env1               = texCUBE          (s_env1, vreflect);
-	half3         env               = lerp                (env0,env1,L_ambient.w);
-	
+	half3   env0 = texCUBE (s_env0, vreflect);
+	half3   env1 = texCUBE (s_env1, vreflect);
+	half3   env  = lerp (env0,env1,L_ambient.w);
+            env *= env*2;
+
 	half fresnel = saturate(dot(vreflect,v2point));
 	half power = pow(fresnel,9);
 	half amount	= 0.15h+0.25h*power;	// 1=full env, 0=no env
 
-	half3 c_reflection = amount*env;
-	half3 final = lerp(c_reflection,base.rgb,base.a);
+	half3	c_reflection       = env*amount;
+	half3	final              = lerp(c_reflection,base.rgb,base.a);
 
-	final *= I.c0*2;
+			final	*= I.c0*2;
+
 
 #ifdef	USE_SOFT_WATER
 	half alpha = 0.75h+0.25h*power;                        // 1=full env, 0=no env
@@ -58,12 +66,12 @@ half4 main (vf I) : COLOR
 	//	water fog
 	half fog_exp_intens = -4.0h;
 	float fog = 1 - exp(fog_exp_intens*waterDepth);
-	half3 Fc = half3(0.1h, 0.1h, 0.1h) * SW_WATER_INTENSITY;
-	final = lerp(Fc, final, alpha);
+	half3 Fc  = half3(0.1h, 0.1h, 0.1h) * SW_WATER_INTENSITY;
+	final     = lerp(Fc, final, alpha);
 
-	alpha = min(alpha, saturate(waterDepth));
-	alpha = max (fog, alpha);
-	
+	alpha     = min(alpha, saturate(waterDepth));
+	alpha     = max (fog, alpha);
+
 	#ifndef LOW_WATER_DEPTH
 		#ifdef SW_USE_FOAM
 			//	Leaves

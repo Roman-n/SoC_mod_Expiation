@@ -3,10 +3,11 @@
 
 // #define USE_SUPER_SPECULAR
 #include "shared\common.h"
+#include "options.h"
 //////////////////////////////////////////////////////////////////////////////////////////
 // *** options
 
-// #define USE_GAMMA_22
+ #define USE_GAMMA_22
 // #define USE_SJITTER
 // #define USE_SUNFILTER
 //
@@ -46,6 +47,7 @@ uniform half4                Ldynamic_dir;                        // dynamic lig
 
 uniform half4                J_direct        [6];
 uniform half4                J_spot                [6];
+
 half          calc_fogging               (half4 w_pos)      { return dot(w_pos,fog_plane);         }
 half2         calc_detail                (half3 w_pos)      {
         float                 dtl        = distance                (w_pos,eye_position)*dt_params.w;
@@ -243,7 +245,14 @@ uniform sampler2D       s_tonemap;              // actually MidleGray / exp(Lw +
 #define def_dbumph      half(0.333f)
 #define def_virtualh    half(.05f)              // 5cm
 #define def_distort     half(0.05f)             // we get -0.5 .. 0.5 range, this is -512 .. 512 for 1024, so scale it
+
+//ослабляем hdr (чем больше цифра, тем он слабее) при использовании подставленного USE_SJITTER
+#ifdef USE_SJITTER
+#define def_hdr         half(10.h)         		// hight luminance range half(3.h)
+#else
 #define def_hdr         half(8.h)         		// hight luminance range half(3.h)
+#endif
+
 #define def_hdr_clip	half(0.75h)        		//
 
 //////////////////////////////////////////////////////////////////////////////////////////
@@ -290,6 +299,70 @@ float4 convert_to_screen_space(float4 proj)
 	screen.z = proj.z;
 	screen.w = proj.w;
 	return screen;
+}
+
+float2 lod				(float3 eye, float2 tc, sampler2D s_base)
+{
+	half		height					=	tex2D(s_base, tc).w * 0.016 - 0.009;    
+    return tc + height * normalize(eye);
+}
+
+float2 AdvancedParallax	(float3 eye, float2 tc, sampler2D s_base)
+{
+	const int	maxSamples				=	MAX_SAMPLES;
+	const int	minSamples				=	MIN_SAMPLES;
+	float		fParallaxOffset			=	PARALLAX_OFFSET;
+	int			nNumSteps				=	lerp(maxSamples, minSamples, normalize(eye).z);
+	float2		vDelta					=	-normalize(eye).xy * fParallaxOffset;
+
+	#ifdef CORRECT_PERSPECTIVE
+				vDelta					/=	normalize(eye).z;
+	#endif
+
+	float		fStepSize				=	1.0 / nNumSteps;
+	float2		vTexOffsetPerStep		=	fStepSize * vDelta;
+	double2		vTexCurrentOffset		=	tc;
+
+	float		fCurrHeight				=	0;
+	float		fCurrentBound			=	1.0;
+
+	for (;fCurrHeight < fCurrentBound; fCurrentBound -= fStepSize)
+	{
+				vTexCurrentOffset.xy	+=	vTexOffsetPerStep;
+				fCurrHeight				=	tex2Dlod(s_base, float4(vTexCurrentOffset.xy, 0, 0)).a;
+	}
+ 
+	float4		offsetBest				=	float4(vTexCurrentOffset, 0, 0);
+				vTexCurrentOffset.xy	-=	vTexOffsetPerStep;
+	float		fPrevHeight				=	tex2Dlod(s_base, float4(vTexCurrentOffset.xy, 0, 0)).a;
+	float		error					=	1.0;
+	float		t1						=	fCurrentBound;
+	float		t0						=	t1 + fStepSize;
+	float		delta1					=	t1 - fCurrHeight;
+	float		delta0					=	t0 - fPrevHeight;
+	float4		intersect				=	float4(vDelta, vDelta + tc);
+
+	for (int i = 0; i < FINAL_INTERSECTION_LOOPS && abs(error) > 0.01; i++)
+    { 
+		float	denom					=	delta1 - delta0;
+		float	t						=	(t0 * delta1 - t1 * delta0) / denom;
+				offsetBest.xy			=	-t * intersect.xy + intersect.zw;
+		float	NB						=	tex2Dlod(s_base, offsetBest).a;
+				error					=	t - NB;
+
+		if (error < 0)
+		{
+			delta1	= error;
+			t1		= t;
+		}
+		else
+		{
+			delta0	= error;
+			t0		= t;
+		}
+	}
+
+	return offsetBest.xy;
 }
 #define FXPS technique _render{pass _code{PixelShader=compile ps_3_0 main();}}
 #define FXVS technique _render{pass _code{VertexShader=compile vs_3_0 main();}}

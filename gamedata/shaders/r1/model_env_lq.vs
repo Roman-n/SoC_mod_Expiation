@@ -44,5 +44,5 @@ vf	main(v_model_skinned_1 v) 	{ return _main(skinning_1(v)); 	}
 #endif
 
 #ifdef	SKIN_2
-vf	main(v_model_skinned_2 v) 	{ return _main(skinning_2lq(v)); }
+vf	main(v_model_skinned_2 v) 	{ return _main(skinning_2(v)); }
 #endif

@@ -36,7 +36,7 @@ function normal_hq(shader, t_base, t_second, t_detail)
 end
 
 function normal   (shader, t_base, t_second, t_detail)
-  shader:begin    ("model_env_lq","model_env_lq")
+  shader:begin    ("model_env_hq","model_env_hq")
       : fog       (true)
       : zb        (true,false)
       : blend     (true,blend.srcalpha,blend.invsrcalpha)
