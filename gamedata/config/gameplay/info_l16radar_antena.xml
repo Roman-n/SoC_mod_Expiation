@@ -1,9 +1,0 @@
-<?xml version='1.0' encoding="windows-1251"?>
-
-<game_information_portions>
- <!-- комментируем теги <task></task> -->
- <info_portion id="rad_task_aes">
- <!-- task>rad_get_to_aes</task -->
- </info_portion>
-
-</game_information_portions>
